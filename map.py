@@ -1,14 +1,15 @@
-import re, argparse
+import re, sys, argparse
 parser = argparse.ArgumentParser()
 parser.description="Best viewed when piped into `less -RS`"
+parser.add_argument('file', help='Mapfile')
 parser.add_argument('-x', action='store_true', help='print HTML instead of ANSI')
 parser.add_argument('-v', action='store_true', help='Do not print anything. Usefull for checking for errors in the mapfile')
 parser.add_argument('-p', action='store_true', help='Parse mapfile to XPM')
-parser.add_argument('-r', action='store_true', help='Parse XPM to mapfile')
 options = parser.parse_args()
 
-with open ("mapfile.map", "r") as myfile:
-	map=myfile.read()
+
+with open (options.file, "r") as myfile:
+    map=myfile.read()
 
 
 
@@ -239,156 +240,155 @@ htmlend="</body></html>"
 
 lines=map.split('\n')
 if options.p:
-  output="""/* XPM */
+    output="""/* XPM */
 static char *map[] = {
 /* columns rows colors chars-per-pixel */
 """
-  output+="\""+str(len(max(lines,key=len)))+" "+str(len(lines)-1)+" "+str(len(objects))+" 1 \",\n"
-  for this in objects:
-    output+="\""+this+" c "+objects[this]["xpmcolor"]+"\",\n"
-  output+="/* pixels */\n"
-  for line in lines:
-    output+="\""+line+"\",\n"
-  output=output[:-6]
-  output+="\n};\n"
-  
-  with open('testmap.xpm', 'w') as the_file:
-    the_file.write(output)
+    output+="\""+str(len(max(lines,key=len)))+" "+str(len(lines)-1)+" "+str(len(objects))+" 1 \",\n"
+    for this in objects:
+        output+="\""+this+" c "+objects[this]["xpmcolor"]+"\",\n"
+    output+="/* pixels */\n"
+    for line in lines:
+        output+="\""+line+"\",\n"
+    output=output[:-6]
+    output+="\n};\n"
+    
+    with open('testmap.xpm', 'w') as the_file:
+        the_file.write(output)
 else:
-  if options.x:
-    if not options.v:
-      print(htmlstart)
-
-  map=None
-  i=0
-  label=False
-  for line in lines:
-    charsinline=list(line)
-    j=0
-    lastc=""
-    lastfg=""
-    lastbg=""
-    for c in charsinline:
-      if c == ")":
-        backgroundcolor="on_yellow"
-        foregroundcolor="black"
-        character=" "
-        label=False
-      elif label==True:
-        backgroundcolor="on_yellow"
-        foregroundcolor="black"
-        character=c
-      elif c == "(":
-        backgroundcolor="on_yellow"
-        foregroundcolor="black"
-        character=" "
-        label=True
-      # This is just for speed. It will work without it.
-      # It probably doesn't matter now, that that while loop is gone.
-      elif c==lastc and c!="x":
-        character=lastcharacter
-        backgroundcolor=lastbg
-        foregroundcolor=lastfg
-      else:
-          if c == "x":
-            try:
-              leftc=charsinline[j-1]
-            except IndexError:
-              leftc=" "
-            try:
-              rightc=charsinline[j+1]
-            except IndexError:
-              rightc=" "
-            try:
-              upc=re.findall(".", lines[i-1])[j]
-            except IndexError:
-              upc=" "
-            try:
-              downc=re.findall(".", lines[i+1])[j]
-            except IndexError:
-              downc=" "
-            uptrue=upc in ["x","|","0","1","2","5","7","8","j"]
-            downtrue=downc in ["x","|","0","3","4","6","7","8","j"]
-            lefttrue=leftc in ["x","-","0","2","4","5","6","8","q"]
-            righttrue=rightc in ["x","-","0","1","3","5","6","7","q"]
-            if uptrue and downtrue and lefttrue and righttrue:
-              c="0"
-            elif not uptrue and not downtrue and lefttrue and righttrue:
-              c="-"
-            elif not uptrue and not downtrue and lefttrue and not righttrue:
-              c="-"
-            elif not uptrue and not downtrue and not lefttrue and righttrue:
-              c="-"
-            elif uptrue and downtrue and not lefttrue and not righttrue:
-              c="|"
-            elif uptrue and not downtrue and not lefttrue and not righttrue:
-              c="|"
-            elif not uptrue and downtrue and not lefttrue and not righttrue:
-              c="|"
-            elif not uptrue and downtrue and lefttrue and not righttrue:
-              c="1"
-            elif not uptrue and downtrue and not lefttrue and righttrue:
-              c="2"
-            elif uptrue and not downtrue and lefttrue and not righttrue:
-              c="3"
-            elif uptrue and not downtrue and not lefttrue and righttrue:
-              c="4"
-            elif not uptrue and downtrue and lefttrue and righttrue:
-              c="5"
-            elif uptrue and not downtrue and lefttrue and righttrue:
-              c="6"
-            elif uptrue and downtrue and lefttrue and not righttrue:
-              c="7"
-            elif uptrue and downtrue and not lefttrue and righttrue:
-              c="8"
-            elif not uptrue and not downtrue and not lefttrue and not righttrue:
-              c="9"
-            else:
-              c="9"
-          try:
-            foregroundcolor=objects[c]["color"]
-          except KeyError:
-            print("\nError at line:"+str(i+1)+":"+str(j+1))
-            exit()
-          try:
-            backgroundcolor=objects[c]["bgcolor"]
-          except KeyError:
-            backgroundcolor="empty"
-          character=objects[c]["r"]
-      if options.x:
-        if lastbg==backgroundcolor and lastfg==foregroundcolor:
-          if not options.v:
-            print(character, end="")
-        else:
-          if not j==0:
-            if not options.v:
-              print("</i>",end="")
-          if not options.v:
-            print("<i class=\""+foregroundcolor+" "+backgroundcolor+"\">"+character, end="")
-        if j==len(charsinline)-1:
-          if not options.v:
-            print("</i>",end="")
-      else:
-        if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
-          if not options.v:
-            print(globals()[foregroundcolor]+globals()[backgroundcolor],end="")
-        if not options.v:
-          print(character, end="")
-      lastbg=backgroundcolor
-      lastfg=foregroundcolor
-      lastc=c
-      lastcharacter=character
-      j+=1
     if options.x:
-      if not options.v:
-        print("<br />",end="")
-    else:
-      if not options.v:
-        print(reset)
-    i+=1
-  
-  
-  if options.x:
-    if not options.v:
-      print(htmlend)
+        if not options.v:
+            print(htmlstart)
+    map=None
+    i=0
+    label=False
+    for line in lines:
+        charsinline=list(line)
+        j=0
+        lastc=""
+        lastfg=""
+        lastbg=""
+        for c in charsinline:
+            if c == ")":
+                backgroundcolor="on_yellow"
+                foregroundcolor="black"
+                character=" "
+                label=False
+            elif label==True:
+                backgroundcolor="on_yellow"
+                foregroundcolor="black"
+                character=c
+            elif c == "(":
+                backgroundcolor="on_yellow"
+                foregroundcolor="black"
+                character=" "
+                label=True
+            # This is just for speed. It will work without it.
+            # It probably doesn't matter now, that that while loop is gone.
+            elif c==lastc and c!="x":
+                character=lastcharacter
+                backgroundcolor=lastbg
+                foregroundcolor=lastfg
+            else:
+                if c == "x":
+                    try:
+                        leftc=charsinline[j-1]
+                    except IndexError:
+                        leftc=" "
+                    try:
+                        rightc=charsinline[j+1]
+                    except IndexError:
+                        rightc=" "
+                    try:
+                        upc=re.findall(".", lines[i-1])[j]
+                    except IndexError:
+                        upc=" "
+                    try:
+                        downc=re.findall(".", lines[i+1])[j]
+                    except IndexError:
+                        downc=" "
+                    uptrue=upc in ["x","|","0","1","2","5","7","8","j"]
+                    downtrue=downc in ["x","|","0","3","4","6","7","8","j"]
+                    lefttrue=leftc in ["x","-","0","2","4","5","6","8","q"]
+                    righttrue=rightc in ["x","-","0","1","3","5","6","7","q"]
+                    if uptrue and downtrue and lefttrue and righttrue:
+                        c="0"
+                    elif not uptrue and not downtrue and lefttrue and righttrue:
+                        c="-"
+                    elif not uptrue and not downtrue and lefttrue and not righttrue:
+                        c="-"
+                    elif not uptrue and not downtrue and not lefttrue and righttrue:
+                        c="-"
+                    elif uptrue and downtrue and not lefttrue and not righttrue:
+                        c="|"
+                    elif uptrue and not downtrue and not lefttrue and not righttrue:
+                        c="|"
+                    elif not uptrue and downtrue and not lefttrue and not righttrue:
+                        c="|"
+                    elif not uptrue and downtrue and lefttrue and not righttrue:
+                        c="1"
+                    elif not uptrue and downtrue and not lefttrue and righttrue:
+                        c="2"
+                    elif uptrue and not downtrue and lefttrue and not righttrue:
+                        c="3"
+                    elif uptrue and not downtrue and not lefttrue and righttrue:
+                        c="4"
+                    elif not uptrue and downtrue and lefttrue and righttrue:
+                        c="5"
+                    elif uptrue and not downtrue and lefttrue and righttrue:
+                        c="6"
+                    elif uptrue and downtrue and lefttrue and not righttrue:
+                        c="7"
+                    elif uptrue and downtrue and not lefttrue and righttrue:
+                        c="8"
+                    elif not uptrue and not downtrue and not lefttrue and not righttrue:
+                        c="9"
+                    else:
+                        c="9"
+                try:
+                    foregroundcolor=objects[c]["color"]
+                except KeyError:
+                    print("\nError at line:"+str(i+1)+":"+str(j+1))
+                    exit()
+                try:
+                    backgroundcolor=objects[c]["bgcolor"]
+                except KeyError:
+                    backgroundcolor="empty"
+                character=objects[c]["r"]
+            if options.x:
+                if lastbg==backgroundcolor and lastfg==foregroundcolor:
+                    if not options.v:
+                        print(character, end="")
+                else:
+                    if not j==0:
+                        if not options.v:
+                            print("</i>",end="")
+                    if not options.v:
+                        print("<i class=\""+foregroundcolor+" "+backgroundcolor+"\">"+character, end="")
+                if j==len(charsinline)-1:
+                    if not options.v:
+                        print("</i>",end="")
+            else:
+                if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
+                    if not options.v:
+                        print(globals()[foregroundcolor]+globals()[backgroundcolor],end="")
+                if not options.v:
+                    print(character, end="")
+            lastbg=backgroundcolor
+            lastfg=foregroundcolor
+            lastc=c
+            lastcharacter=character
+            j+=1
+        if options.x:
+            if not options.v:
+                print("<br />",end="")
+        else:
+            if not options.v:
+                print(reset)
+        i+=1
+    
+    
+    if options.x:
+        if not options.v:
+            print(htmlend)
 
