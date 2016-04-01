@@ -191,6 +191,109 @@ objects['9']['color']="biwhite"
 objects['9']['bgcolor']="on_black"
 objects['9']['xpmcolor']="#DAD4D4"
 
+
+
+
+objects['0r']={}
+objects['0r']['name']="rails_crossing"
+objects['0r']['r']="╬"
+objects['0r']['color']="bired"
+objects['0r']['bgcolor']="on_black"
+objects['0r']['xpmcolor']="#EDEDED"
+
+objects['-r']={}
+objects['-r']['name']="rails_h"
+objects['-r']['r']="═"
+objects['-r']['color']="bired"
+objects['-r']['bgcolor']="on_black"
+objects['-r']['xpmcolor']="#D0D0D0"
+
+objects['|r']={}
+objects['|r']['name']="rails_v"
+objects['|r']['r']="║"
+objects['|r']['color']="bired"
+objects['|r']['bgcolor']="on_black"
+objects['|r']['xpmcolor']="#B3ACAC"
+
+objects['1r']={}
+objects['1r']['name']="rails_c1"
+objects['1r']['r']="╗"
+objects['1r']['color']="bired"
+objects['1r']['bgcolor']="on_black"
+objects['1r']['xpmcolor']="#AFA6A6"
+
+objects['2r']={}
+objects['2r']['name']="rails_c2"
+objects['2r']['r']="╔"
+objects['2r']['color']="bired"
+objects['2r']['bgcolor']="on_black"
+objects['2r']['xpmcolor']="#D2A9A9"
+
+objects['3r']={}
+objects['3r']['name']="rails_c3"
+objects['3r']['r']="╝"
+objects['3r']['color']="bired"
+objects['3r']['bgcolor']="on_black"
+objects['3r']['xpmcolor']="#9B9797"
+
+objects['4r']={}
+objects['4r']['name']="rails_c4"
+objects['4r']['r']="╚"
+objects['4r']['color']="bired"
+objects['4r']['bgcolor']="on_black"
+objects['4r']['xpmcolor']="#9D9595"
+
+objects['5r']={}
+objects['5r']['name']="rails_c5"
+objects['5r']['r']="╦"
+objects['5r']['color']="bired"
+objects['5r']['bgcolor']="on_black"
+objects['5r']['xpmcolor']="#97969D"
+
+objects['6r']={}
+objects['6r']['name']="rails_c6"
+objects['6r']['r']="╩"
+objects['6r']['color']="bired"
+objects['6r']['bgcolor']="on_black"
+objects['6r']['xpmcolor']="#717375"
+
+objects['7r']={}
+objects['7r']['name']="rails_c7"
+objects['7r']['r']="╣"
+objects['7r']['color']="bired"
+objects['7r']['bgcolor']="on_black"
+objects['7r']['xpmcolor']="#DCCECE"
+
+objects['8r']={}
+objects['8r']['name']="rails_c8"
+objects['8r']['r']="╠"
+objects['8r']['color']="bired"
+objects['8r']['bgcolor']="on_black"
+objects['8r']['xpmcolor']="#B5B2B2"
+
+objects['9r']={}
+objects['9r']['name']="rails_none"
+objects['9r']['r']="▪"
+objects['9r']['color']="bired"
+objects['9r']['bgcolor']="on_black"
+objects['9r']['xpmcolor']="#DAD4D4"
+
+
+objects['[']={}
+objects['[']['name']="street-rails-crossing-horizontal"
+objects['[']['r']="╫"
+objects['[']['color']="bired"
+objects['[']['bgcolor']="on_black"
+objects['[']['xpmcolor']="#DAD4D4"
+
+
+objects[']']={}
+objects[']']['name']="street-rails-crossing-vertical"
+objects[']']['r']="╪"
+objects[']']['color']="bired"
+objects[']']['bgcolor']="on_black"
+objects[']']['xpmcolor']="#DAD4D4"
+
 objects['j']={}
 objects['j']['name']="bridgev"
 objects['j']['r']="║"
@@ -290,7 +393,12 @@ else:
                 backgroundcolor=lastbg
                 foregroundcolor=lastfg
             else:
-                if c == "x":
+                if c == "x" or c == "r":
+                    if c == "r":
+                        rails=True
+                        c="x"
+                    else:
+                        rails=False
                     try:
                         leftc=charsinline[j-1]
                     except IndexError:
@@ -307,10 +415,10 @@ else:
                         downc=re.findall(".", lines[i+1])[j]
                     except IndexError:
                         downc=" "
-                    uptrue=upc in ["x","|","0","1","2","5","7","8","j"]
-                    downtrue=downc in ["x","|","0","3","4","6","7","8","j"]
-                    lefttrue=leftc in ["x","-","0","2","4","5","6","8","q"]
-                    righttrue=rightc in ["x","-","0","1","3","5","6","7","q"]
+                    uptrue=upc in ["x","|","0","1","2","5","7","8","j","r","[","]"]
+                    downtrue=downc in ["x","|","0","3","4","6","7","8","j","r","[","]"]
+                    lefttrue=leftc in ["x","-","0","2","4","5","6","8","q","r","[","]"]
+                    righttrue=rightc in ["x","-","0","1","3","5","6","7","q","r","[","]"]
                     if uptrue and downtrue and lefttrue and righttrue:
                         c="0"
                     elif not uptrue and not downtrue and lefttrue and righttrue:
@@ -345,6 +453,8 @@ else:
                         c="9"
                     else:
                         c="9"
+                    if rails:
+                        c+="r"
                 try:
                     foregroundcolor=objects[c]["color"]
                 except KeyError:
