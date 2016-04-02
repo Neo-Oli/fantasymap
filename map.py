@@ -297,11 +297,11 @@ body{white-space:nowrap;margin:0}i{line-height:16px;font-family:'Roboto Mono',mo
 </style></head><body class="on_black">
 """
 htmlend="</body></html>"
+output=""
 
 lines=map.split('\n')
 if options.x:
-    if not options.v:
-        print(htmlstart)
+    output+=htmlstart
 map=None
 i=0
 label=False
@@ -326,12 +326,6 @@ for line in lines:
             foregroundcolor="black"
             character=" "
             label=True
-        # This is just for speed. It will work without it.
-        # It probably doesn't matter now, that that while loop is gone.
-        elif c==lastc and c!="x":
-            character=lastcharacter
-            backgroundcolor=lastbg
-            foregroundcolor=lastfg
         else:
             if c == "x" or c == "r":
                 if c == "r":
@@ -413,23 +407,17 @@ for line in lines:
             character=objects[c]["r"]
         if options.x:
             if lastbg==backgroundcolor and lastfg==foregroundcolor:
-                if not options.v:
-                    print(character, end="")
+                    output+=character
             else:
                 if not j==0:
-                    if not options.v:
-                        print("</i>",end="")
-                if not options.v:
-                    print("<i class=\""+foregroundcolor+" "+backgroundcolor+"\">"+character, end="")
+                    output+="</i>"
+                output+="<i class=\""+foregroundcolor+" "+backgroundcolor+"\">"+character
             if j==len(charsinline)-1:
-                if not options.v:
-                    print("</i>",end="")
+                    output+="</i>"
         else:
             if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
-                if not options.v:
-                    print(globals()[foregroundcolor]+globals()[backgroundcolor],end="")
-            if not options.v:
-                print(character, end="")
+                output+=globals()[foregroundcolor]+globals()[backgroundcolor]
+            output+=character
         lastbg=backgroundcolor
         lastfg=foregroundcolor
         lastc=c
@@ -437,12 +425,12 @@ for line in lines:
         j+=1
     if options.x:
         if not options.v:
-            print("<br />",end="")
+            output+="<br />"
     else:
-        if not options.v:
-            print(reset)
+        output+=reset+"\n"
     i+=1
 if options.x:
     if not options.v:
-        print(htmlend)
-
+        output+=htmlend
+if not options.v:
+    print(output)
