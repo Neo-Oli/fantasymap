@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import re, sys, argparse
 parser = argparse.ArgumentParser()
 parser.description="Best viewed when piped into `less -RS`"
