@@ -1,5 +1,5 @@
 #!/bin/sh
-python cutmapfile.py $@ > .tempmap.map
-python map.py .tempmap.map
+python3 cutmapfile.py $@ > .tempmap.map
+python3 map.py .tempmap.map
 rm .tempmap.map
 
