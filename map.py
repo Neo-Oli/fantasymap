@@ -355,7 +355,6 @@ static char *map[] = {
         output+="\""+line+"\",\n"
     output=output[:-6]
     output+="\n};\n"
-    
     with open('testmap.xpm', 'w') as the_file:
         the_file.write(output)
 else:
@@ -415,10 +414,16 @@ else:
                         downc=re.findall(".", lines[i+1])[j]
                     except IndexError:
                         downc=" "
-                    uptrue=upc in ["x","|","0","1","2","5","7","8","j","r","[","]"]
-                    downtrue=downc in ["x","|","0","3","4","6","7","8","j","r","[","]"]
-                    lefttrue=leftc in ["x","-","0","2","4","5","6","8","q","r","[","]"]
-                    righttrue=rightc in ["x","-","0","1","3","5","6","7","q","r","[","]"]
+                    if rails:
+                        uptrue=upc in ["r","[", "]"]
+                        downtrue=downc in ["r","[", "]"]
+                        lefttrue=leftc in ["r","[", "]"]
+                        righttrue=rightc in ["r","[", "]"]
+                    else:
+                        uptrue=upc in ["x","|","0","1","2","5","7","8","j","]"]
+                        downtrue=downc in ["x","|","0","3","4","6","7","8","j","]"]
+                        lefttrue=leftc in ["x","-","0","2","4","5","6","8","q","["]
+                        righttrue=rightc in ["x","-","0","1","3","5","6","7","q","["]
                     if uptrue and downtrue and lefttrue and righttrue:
                         c="0"
                     elif not uptrue and not downtrue and lefttrue and righttrue:
@@ -496,8 +501,6 @@ else:
             if not options.v:
                 print(reset)
         i+=1
-    
-    
     if options.x:
         if not options.v:
             print(htmlend)
