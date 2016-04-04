@@ -304,13 +304,13 @@ if options.x:
     output+=htmlstart
 map=None
 i=0
-label=False
 for line in lines:
     charsinline=list(line)
     j=0
     lastc=""
     lastfg=""
     lastbg=""
+    label=False
     for c in charsinline:
         if c == ")":
             backgroundcolor="on_yellow"
