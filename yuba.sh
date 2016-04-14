@@ -1,1 +1,1 @@
-bash getsubmap.sh mapfile.map 173 40 762 150
+bash getsubmap.sh mapfile.map 173 40 762 165
