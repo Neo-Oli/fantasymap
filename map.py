@@ -18,36 +18,36 @@ objects['w']={}
 objects['w']['name']="water"
 objects['w']['r']="▓"
 objects['w']['color']="blue"
-objects['w']['bgcolor']="on_black"
+objects['w']['bgcolor']="on_white"
 
 objects[',']={}
 objects[',']['name']="sand"
 objects[',']['r']="▓"
 objects[',']['color']="yellow"
-objects[',']['bgcolor']="on_black"
+objects[',']['bgcolor']="on_white"
 
 objects['.']={}
 objects['.']['name']="grass"
 objects['.']['r']="░"
 objects['.']['color']="green"
-objects['.']['bgcolor']="on_black"
+objects['.']['bgcolor']="on_white"
 
 objects['i']={}
 objects['i']['name']="snow"
 objects['i']['r']="▓"
 objects['i']['color']="iwhite"
-objects['i']['bgcolor']="on_black"
+objects['i']['bgcolor']="on_white"
 
 objects['s']={}
 objects['s']['name']="street"
 objects['s']['r']="█"
 objects['s']['color']="biwhite"
-objects['s']['bgcolor']="on_black"
+objects['s']['bgcolor']="on_white"
 
 
 objects['y']={}
 objects['y']['name']="farmland"
-objects['y']['r']="▓"
+objects['y']['r']="░"
 objects['y']['color']="yellow"
 objects['y']['bgcolor']="on_black"
 objects['y']['xggpmcolor']="#AA9106"
@@ -56,116 +56,116 @@ objects['a']={}
 objects['a']['name']="forrest"
 objects['a']['r']="♣"
 objects['a']['color']="bigreen"
-objects['a']['bgcolor']="on_black"
+objects['a']['bgcolor']="on_white"
 
 objects['ä']={}
 objects['ä']['name']="forrest2"
 objects['ä']['r']="♠"
 objects['ä']['color']="bigreen"
-objects['ä']['bgcolor']="on_black"
+objects['ä']['bgcolor']="on_white"
 
 objects['à']={}
 objects['à']['name']="palmforrest"
 objects['à']['r']="Γ"
 objects['à']['color']="bigreen"
-objects['à']['bgcolor']="on_black"
+objects['à']['bgcolor']="on_white"
 
 objects['b']={}
 objects['b']['name']="building"
 objects['b']['r']="▪"
 objects['b']['color']="biblack"
-objects['b']['bgcolor']="on_black"
+objects['b']['bgcolor']="on_white"
 
 objects['B']={}
 objects['B']['name']="multiblock_building"
 objects['B']['r']="█"
 objects['B']['color']="biblack"
-objects['B']['bgcolor']="on_black"
+objects['B']['bgcolor']="on_white"
 
 objects['L']={}
 objects['L']['name']="special_building_lighthouse"
 objects['L']['r']="◘"
 objects['L']['color']="ired"
-objects['L']['bgcolor']="on_black"
+objects['L']['bgcolor']="on_white"
 
 
 objects['m']={}
 objects['m']['name']="mountain"
 objects['m']['r']="▲"
 objects['m']['color']="iblack"
-objects['m']['bgcolor']="on_black"
+objects['m']['bgcolor']="on_white"
 
 objects['0']={}
 objects['0']['name']="street_crossing"
 objects['0']['r']="┼"
-objects['0']['color']="biwhite"
-objects['0']['bgcolor']="on_black"
+objects['0']['color']="biblack"
+objects['0']['bgcolor']="on_white"
 
 objects['-']={}
 objects['-']['name']="street_h"
 objects['-']['r']="─"
-objects['-']['color']="biwhite"
-objects['-']['bgcolor']="on_black"
+objects['-']['color']="biblack"
+objects['-']['bgcolor']="on_white"
 
 objects['|']={}
 objects['|']['name']="street_v"
 objects['|']['r']="│"
-objects['|']['color']="biwhite"
-objects['|']['bgcolor']="on_black"
+objects['|']['color']="biblack"
+objects['|']['bgcolor']="on_white"
 
 objects['1']={}
 objects['1']['name']="street_c1"
 objects['1']['r']="┐"
-objects['1']['color']="biwhite"
-objects['1']['bgcolor']="on_black"
+objects['1']['color']="biblack"
+objects['1']['bgcolor']="on_white"
 
 objects['2']={}
 objects['2']['name']="street_c2"
 objects['2']['r']="┌"
-objects['2']['color']="biwhite"
-objects['2']['bgcolor']="on_black"
+objects['2']['color']="biblack"
+objects['2']['bgcolor']="on_white"
 
 objects['3']={}
 objects['3']['name']="street_c3"
 objects['3']['r']="┘"
-objects['3']['color']="biwhite"
-objects['3']['bgcolor']="on_black"
+objects['3']['color']="biblack"
+objects['3']['bgcolor']="on_white"
 
 objects['4']={}
 objects['4']['name']="street_c4"
 objects['4']['r']="└"
-objects['4']['color']="biwhite"
-objects['4']['bgcolor']="on_black"
+objects['4']['color']="biblack"
+objects['4']['bgcolor']="on_white"
 
 objects['5']={}
 objects['5']['name']="street_c5"
 objects['5']['r']="┬"
-objects['5']['color']="biwhite"
-objects['5']['bgcolor']="on_black"
+objects['5']['color']="biblack"
+objects['5']['bgcolor']="on_white"
 
 objects['6']={}
 objects['6']['name']="street_c6"
 objects['6']['r']="┴"
-objects['6']['color']="biwhite"
-objects['6']['bgcolor']="on_black"
+objects['6']['color']="biblack"
+objects['6']['bgcolor']="on_white"
 
 objects['7']={}
 objects['7']['name']="street_c7"
 objects['7']['r']="┤"
-objects['7']['color']="biwhite"
-objects['7']['bgcolor']="on_black"
+objects['7']['color']="biblack"
+objects['7']['bgcolor']="on_white"
 
 objects['8']={}
 objects['8']['name']="street_c8"
 objects['8']['r']="├"
-objects['8']['color']="biwhite"
-objects['8']['bgcolor']="on_black"
+objects['8']['color']="biblack"
+objects['8']['bgcolor']="on_white"
 
 objects['9']={}
 objects['9']['name']="street_none"
 objects['9']['r']="▪"
-objects['9']['color']="biwhite"
-objects['9']['bgcolor']="on_black"
+objects['9']['color']="biwhit"
+objects['9']['bgcolor']="on_white"
 
 
 
@@ -174,117 +174,117 @@ objects['0r']={}
 objects['0r']['name']="rails_crossing"
 objects['0r']['r']="╬"
 objects['0r']['color']="bired"
-objects['0r']['bgcolor']="on_black"
+objects['0r']['bgcolor']="on_white"
 
 objects['-r']={}
 objects['-r']['name']="rails_h"
 objects['-r']['r']="═"
 objects['-r']['color']="bired"
-objects['-r']['bgcolor']="on_black"
+objects['-r']['bgcolor']="on_white"
 
 objects['|r']={}
 objects['|r']['name']="rails_v"
 objects['|r']['r']="║"
 objects['|r']['color']="bired"
-objects['|r']['bgcolor']="on_black"
+objects['|r']['bgcolor']="on_white"
 
 objects['1r']={}
 objects['1r']['name']="rails_c1"
 objects['1r']['r']="╗"
 objects['1r']['color']="bired"
-objects['1r']['bgcolor']="on_black"
+objects['1r']['bgcolor']="on_white"
 
 objects['2r']={}
 objects['2r']['name']="rails_c2"
 objects['2r']['r']="╔"
 objects['2r']['color']="bired"
-objects['2r']['bgcolor']="on_black"
+objects['2r']['bgcolor']="on_white"
 
 objects['3r']={}
 objects['3r']['name']="rails_c3"
 objects['3r']['r']="╝"
 objects['3r']['color']="bired"
-objects['3r']['bgcolor']="on_black"
+objects['3r']['bgcolor']="on_white"
 
 objects['4r']={}
 objects['4r']['name']="rails_c4"
 objects['4r']['r']="╚"
 objects['4r']['color']="bired"
-objects['4r']['bgcolor']="on_black"
+objects['4r']['bgcolor']="on_white"
 
 objects['5r']={}
 objects['5r']['name']="rails_c5"
 objects['5r']['r']="╦"
 objects['5r']['color']="bired"
-objects['5r']['bgcolor']="on_black"
+objects['5r']['bgcolor']="on_white"
 
 objects['6r']={}
 objects['6r']['name']="rails_c6"
 objects['6r']['r']="╩"
 objects['6r']['color']="bired"
-objects['6r']['bgcolor']="on_black"
+objects['6r']['bgcolor']="on_white"
 
 objects['7r']={}
 objects['7r']['name']="rails_c7"
 objects['7r']['r']="╣"
 objects['7r']['color']="bired"
-objects['7r']['bgcolor']="on_black"
+objects['7r']['bgcolor']="on_white"
 
 objects['8r']={}
 objects['8r']['name']="rails_c8"
 objects['8r']['r']="╠"
 objects['8r']['color']="bired"
-objects['8r']['bgcolor']="on_black"
+objects['8r']['bgcolor']="on_white"
 
 objects['9r']={}
 objects['9r']['name']="rails_none"
 objects['9r']['r']="▪"
 objects['9r']['color']="bired"
-objects['9r']['bgcolor']="on_black"
+objects['9r']['bgcolor']="on_white"
 
 
 objects['[']={}
 objects['[']['name']="street-rails-crossing-horizontal"
 objects['[']['r']="╫"
 objects['[']['color']="bired"
-objects['[']['bgcolor']="on_black"
+objects['[']['bgcolor']="on_white"
 
 
 objects[']']={}
 objects[']']['name']="street-rails-crossing-vertical"
 objects[']']['r']="╪"
 objects[']']['color']="bired"
-objects[']']['bgcolor']="on_black"
+objects[']']['bgcolor']="on_white"
 
 objects['j']={}
 objects['j']['name']="bridgev"
 objects['j']['r']="║"
-objects['j']['color']="white"
+objects['j']['color']="biblack"
 objects['j']['bgcolor']="on_blue"
 
 objects['q']={}
 objects['q']['name']="bridgeh"
 objects['q']['r']="═"
-objects['q']['color']="white"
+objects['q']['color']="biblack"
 objects['q']['bgcolor']="on_blue"
 
 objects['p']={}
 objects['p']['name']="pool"
 objects['p']['r']="▐"
 objects['p']['color']="blue"
-objects['p']['bgcolor']="on_black"
+objects['p']['bgcolor']="on_white"
 
 objects['o']={}
 objects['o']['name']="pond"
 objects['o']['r']="●"
 objects['o']['color']="blue"
-objects['o']['bgcolor']="on_black"
+objects['o']['bgcolor']="on_white"
 
 objects[' ']={}
 objects[' ']['name']="empty"
 objects[' ']['r']=" "
 objects[' ']['color']="empty"
-objects[' ']['bgcolor']="on_black"
+objects[' ']['bgcolor']="on_white"
 
 
 
