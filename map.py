@@ -4,6 +4,7 @@ parser = argparse.ArgumentParser()
 parser.description="Best viewed when piped into `less -RS`"
 parser.add_argument('file', help='Mapfile')
 parser.add_argument('-x', action='store_true', help='print HTML instead of ANSI')
+parser.add_argument('-d', action='store_true', help='Doesn\'t print html skeleton')
 parser.add_argument('-v', action='store_true', help='Do not print anything. Usefull for checking for errors in the mapfile')
 options = parser.parse_args()
 
@@ -41,7 +42,7 @@ objects['i']['bgcolor']="on_white"
 objects['s']={}
 objects['s']['name']="street"
 objects['s']['r']="█"
-objects['s']['color']="biwhite"
+objects['s']['color']="iwhite"
 objects['s']['bgcolor']="on_white"
 
 
@@ -55,31 +56,31 @@ objects['y']['xggpmcolor']="#AA9106"
 objects['a']={}
 objects['a']['name']="forrest"
 objects['a']['r']="♣"
-objects['a']['color']="bigreen"
+objects['a']['color']="igreen"
 objects['a']['bgcolor']="on_white"
 
 objects['ä']={}
 objects['ä']['name']="forrest2"
 objects['ä']['r']="♠"
-objects['ä']['color']="bigreen"
+objects['ä']['color']="igreen"
 objects['ä']['bgcolor']="on_white"
 
 objects['à']={}
 objects['à']['name']="palmforrest"
 objects['à']['r']="Γ"
-objects['à']['color']="bigreen"
+objects['à']['color']="igreen"
 objects['à']['bgcolor']="on_white"
 
 objects['b']={}
 objects['b']['name']="building"
 objects['b']['r']="▪"
-objects['b']['color']="biblack"
+objects['b']['color']="iblack"
 objects['b']['bgcolor']="on_white"
 
 objects['B']={}
 objects['B']['name']="multiblock_building"
 objects['B']['r']="█"
-objects['B']['color']="biblack"
+objects['B']['color']="iblack"
 objects['B']['bgcolor']="on_white"
 
 objects['L']={}
@@ -98,73 +99,73 @@ objects['m']['bgcolor']="on_white"
 objects['0']={}
 objects['0']['name']="street_crossing"
 objects['0']['r']="┼"
-objects['0']['color']="biblack"
+objects['0']['color']="iblack"
 objects['0']['bgcolor']="on_white"
 
 objects['-']={}
 objects['-']['name']="street_h"
 objects['-']['r']="─"
-objects['-']['color']="biblack"
+objects['-']['color']="iblack"
 objects['-']['bgcolor']="on_white"
 
 objects['|']={}
 objects['|']['name']="street_v"
 objects['|']['r']="│"
-objects['|']['color']="biblack"
+objects['|']['color']="iblack"
 objects['|']['bgcolor']="on_white"
 
 objects['1']={}
 objects['1']['name']="street_c1"
 objects['1']['r']="┐"
-objects['1']['color']="biblack"
+objects['1']['color']="iblack"
 objects['1']['bgcolor']="on_white"
 
 objects['2']={}
 objects['2']['name']="street_c2"
 objects['2']['r']="┌"
-objects['2']['color']="biblack"
+objects['2']['color']="iblack"
 objects['2']['bgcolor']="on_white"
 
 objects['3']={}
 objects['3']['name']="street_c3"
 objects['3']['r']="┘"
-objects['3']['color']="biblack"
+objects['3']['color']="iblack"
 objects['3']['bgcolor']="on_white"
 
 objects['4']={}
 objects['4']['name']="street_c4"
 objects['4']['r']="└"
-objects['4']['color']="biblack"
+objects['4']['color']="iblack"
 objects['4']['bgcolor']="on_white"
 
 objects['5']={}
 objects['5']['name']="street_c5"
 objects['5']['r']="┬"
-objects['5']['color']="biblack"
+objects['5']['color']="iblack"
 objects['5']['bgcolor']="on_white"
 
 objects['6']={}
 objects['6']['name']="street_c6"
 objects['6']['r']="┴"
-objects['6']['color']="biblack"
+objects['6']['color']="iblack"
 objects['6']['bgcolor']="on_white"
 
 objects['7']={}
 objects['7']['name']="street_c7"
 objects['7']['r']="┤"
-objects['7']['color']="biblack"
+objects['7']['color']="iblack"
 objects['7']['bgcolor']="on_white"
 
 objects['8']={}
 objects['8']['name']="street_c8"
 objects['8']['r']="├"
-objects['8']['color']="biblack"
+objects['8']['color']="iblack"
 objects['8']['bgcolor']="on_white"
 
 objects['9']={}
 objects['9']['name']="street_none"
 objects['9']['r']="▪"
-objects['9']['color']="biwhit"
+objects['9']['color']="iwhit"
 objects['9']['bgcolor']="on_white"
 
 
@@ -173,99 +174,99 @@ objects['9']['bgcolor']="on_white"
 objects['0r']={}
 objects['0r']['name']="rails_crossing"
 objects['0r']['r']="╬"
-objects['0r']['color']="bired"
+objects['0r']['color']="ired"
 objects['0r']['bgcolor']="on_white"
 
 objects['-r']={}
 objects['-r']['name']="rails_h"
 objects['-r']['r']="═"
-objects['-r']['color']="bired"
+objects['-r']['color']="ired"
 objects['-r']['bgcolor']="on_white"
 
 objects['|r']={}
 objects['|r']['name']="rails_v"
 objects['|r']['r']="║"
-objects['|r']['color']="bired"
+objects['|r']['color']="ired"
 objects['|r']['bgcolor']="on_white"
 
 objects['1r']={}
 objects['1r']['name']="rails_c1"
 objects['1r']['r']="╗"
-objects['1r']['color']="bired"
+objects['1r']['color']="ired"
 objects['1r']['bgcolor']="on_white"
 
 objects['2r']={}
 objects['2r']['name']="rails_c2"
 objects['2r']['r']="╔"
-objects['2r']['color']="bired"
+objects['2r']['color']="ired"
 objects['2r']['bgcolor']="on_white"
 
 objects['3r']={}
 objects['3r']['name']="rails_c3"
 objects['3r']['r']="╝"
-objects['3r']['color']="bired"
+objects['3r']['color']="ired"
 objects['3r']['bgcolor']="on_white"
 
 objects['4r']={}
 objects['4r']['name']="rails_c4"
 objects['4r']['r']="╚"
-objects['4r']['color']="bired"
+objects['4r']['color']="ired"
 objects['4r']['bgcolor']="on_white"
 
 objects['5r']={}
 objects['5r']['name']="rails_c5"
 objects['5r']['r']="╦"
-objects['5r']['color']="bired"
+objects['5r']['color']="ired"
 objects['5r']['bgcolor']="on_white"
 
 objects['6r']={}
 objects['6r']['name']="rails_c6"
 objects['6r']['r']="╩"
-objects['6r']['color']="bired"
+objects['6r']['color']="ired"
 objects['6r']['bgcolor']="on_white"
 
 objects['7r']={}
 objects['7r']['name']="rails_c7"
 objects['7r']['r']="╣"
-objects['7r']['color']="bired"
+objects['7r']['color']="ired"
 objects['7r']['bgcolor']="on_white"
 
 objects['8r']={}
 objects['8r']['name']="rails_c8"
 objects['8r']['r']="╠"
-objects['8r']['color']="bired"
+objects['8r']['color']="ired"
 objects['8r']['bgcolor']="on_white"
 
 objects['9r']={}
 objects['9r']['name']="rails_none"
 objects['9r']['r']="▪"
-objects['9r']['color']="bired"
+objects['9r']['color']="ired"
 objects['9r']['bgcolor']="on_white"
 
 
 objects['[']={}
 objects['[']['name']="street-rails-crossing-horizontal"
 objects['[']['r']="╫"
-objects['[']['color']="bired"
+objects['[']['color']="ired"
 objects['[']['bgcolor']="on_white"
 
 
 objects[']']={}
 objects[']']['name']="street-rails-crossing-vertical"
 objects[']']['r']="╪"
-objects[']']['color']="bired"
+objects[']']['color']="ired"
 objects[']']['bgcolor']="on_white"
 
 objects['j']={}
 objects['j']['name']="bridgev"
 objects['j']['r']="║"
-objects['j']['color']="biblack"
+objects['j']['color']="iblack"
 objects['j']['bgcolor']="on_blue"
 
 objects['q']={}
 objects['q']['name']="bridgeh"
 objects['q']['r']="═"
-objects['q']['color']="biblack"
+objects['q']['color']="iblack"
 objects['q']['bgcolor']="on_blue"
 
 objects['p']={}
@@ -288,15 +289,56 @@ objects[' ']['bgcolor']="on_white"
 
 
 
-empty="";reset='\033[0m';black='\033[0;30m';red='\033[0;31m';green='\033[0;32m';yellow='\033[0;33m';blue='\033[0;34m';purple='\033[0;35m';cyan='\033[0;36m';white='\033[0;37m';bblack='\033[1;30m';bred='\033[1;31m';bgreen='\033[1;32m';byellow='\033[1;33m';bblue='\033[1;34m';bpurple='\033[1;35m';bcyan='\033[1;36m';bwhite='\033[1;37m';ublack='\033[4;30m';ured='\033[4;31m';ugreen='\033[4;32m';uyellow='\033[4;33m';ublue='\033[4;34m';upurple='\033[4;35m';ucyan='\033[4;36m';uwhite='\033[4;37m';on_black='\033[40m';on_red='\033[41m';on_green='\033[42m';on_yellow='\033[43m';on_blue='\033[44m';on_purple='\033[45m';on_cyan='\033[46m';on_white='\033[47m';iblack='\033[0;90m';ired='\033[0;91m';igreen='\033[0;92m';iyellow='\033[0;93m';iblue='\033[0;94m';ipurple='\033[0;95m';icyan='\033[0;96m';iwhite='\033[0;97m';biblack='\033[1;90m';bired='\033[1;91m';bigreen='\033[1;92m';biyellow='\033[1;93m';biblue='\033[1;94m';bipurple='\033[1;95m';bicyan='\033[1;96m';biwhite='\033[1;97m';on_iblack='\033[0;100m';on_ired='\033[0;101m';on_igreen='\033[0;102m';on_iyellow='\033[0;103m';on_iblue='\033[0;104m';on_ipurple='\033[0;105m';on_icyan='\033[0;106m';on_iwhite='\033[0;107m';on_biblack='\033[1;100m';on_bired='\033[1;101m';on_bigreen='\033[1;102m';on_biyellow='\033[1;103m';on_biblue='\033[1;104m';on_bipurple='\033[1;105m';on_bicyan='\033[1;106m';on_biwhite='\033[1;107m';
+empty="";reset='\033[0m';
 
+black='\033[0;30m';
+red='\033[0;31m';
+green='\033[0;32m';
+yellow='\033[0;33m';
+blue='\033[0;34m';
+purple='\033[0;35m';
+cyan='\033[0;36m';
+white='\033[0;37m';
 
-htmlstart="""
-<!DOCTYPE html><html><head><meta charset="UTF-8"><style type="text/css">@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
-body{white-space:nowrap;margin:0}i{line-height:16px;font-family:'Roboto Mono',monospace;margin:0;vertical-align:top;display:inline-block;white-space:pre;height:20px;font-size:18px;text-align:center;font-style:normal}br:first-child{display:none}.black{color:#282828}.red{color:#cc241d}.green{color:#98971a}.yellow{color:#d79921}.blue{color:#458588}.purple{color:#689d6a}.cyan{color:#689d6a}.white{color:#a89985}.bblack{color:#282828}.bred{color:#cc241d}.bgreen{color:#98971a}.byellow{color:#d79921}.bblue{color:#458588}.bpurple{color:#689d6a}.bcyan{color:#689d6a}.bwhite{color:#a89985}.ublack{color:#282828}.ured{color:#cc241d}.ugreen{color:#98971a}.uyellow{color:#d79921}.ublue{color:#458588}.upurple{color:#689d6a}.ucyan{color:#689d6a}.uwhite{color:#a89985}.on_black{background-color:#282828}.on_red{background-color:#cc241d}.on_green{background-color:#98971a}.on_yellow{background-color:#d79921}.on_blue{background-color:#458588}.on_purple{background-color:#689d6a}.on_cyan{background-color:#689d6a}.on_white{background-color:#a89985}.iblack{color:#928379}.ired{color:#fb4934}.igreen{color:#b8bb26}.iyellow{color:#fabd2f}.iblue{color:#83a590}.ipurple{color:#d3869b}.icyan{color:#8ec07c}.iwhite{color:#ebdbb2}.biblack{color:#928379}.bired{color:#fb4934}.bigreen{color:#b8bb26}.biyellow{color:#fabd2f}.biblue{color:#83a590}.bipurple{color:#d3869b}.bicyan{color:#8ec07c}.biwhite{color:#ebdbb2}.on_iblack{background-color:#282828}.on_ired{background-color:#cc241d}.on_igreen{background-color:#98971a}.on_iyellow{background-color:#d79921}.on_iblue{background-color:#458588}.on_ipurple{background-color:#689d6a}.on_icyan{background-color:#689d6a}.on_iwhite{background-color:#a89985}.on_biblack{background-color:#928375}.on_bired{background-color:#fb4934}.on_bigreen{background-color:#b8bb26}.on_biyellow{background-color:#fabd2f}.on_biblue{background-color:#83a590}.on_bipurple{background-color:#d3869b}.on_bicyan{background-color:#8ec07c}.on_biwhite{background-color:#ebdbb2}
-</style></head><body class="on_black">
+on_black='\033[40m';
+on_red='\033[41m';
+on_green='\033[42m';
+on_yellow='\033[43m';
+on_blue='\033[44m';
+on_purple='\033[45m';
+on_cyan='\033[46m';
+on_white='\033[47m';
+
+iblack='\033[0;90m';
+ired='\033[0;91m';
+igreen='\033[0;92m';
+iyellow='\033[0;93m';
+iblue='\033[0;94m';
+ipurple='\033[0;95m';
+icyan='\033[0;96m';
+iwhite='\033[0;97m';
+
+on_biblack='\033[1;100m';
+on_bired='\033[1;101m';
+on_bigreen='\033[1;102m';
+on_biyellow='\033[1;103m';
+on_biblue='\033[1;104m';
+on_bipurple='\033[1;105m';
+on_bicyan='\033[1;106m';
+on_biwhite='\033[1;107m';
+if options.d:
+    htmlstart="""
+<div class="map"><div class="on_black">
 """
-htmlend="</body></html>"
+    htmlend="</div></div>"
+else:
+    htmlstart="""
+<!DOCTYPE html><html><head><meta charset="UTF-8"><style type="text/css">
+<link rel="stylesheet" href="map.css">
+</style></head><body><div class="map"><div class="on_black">
+"""
+    htmlend="</div></div></body></html>"
+
 output=""
 
 lines=map.split('\n')
