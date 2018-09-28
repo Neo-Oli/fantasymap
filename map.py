@@ -333,9 +333,9 @@ if options.d:
     htmlend="</div></div>"
 else:
     htmlstart="""
-<!DOCTYPE html><html><head><meta charset="UTF-8"><style type="text/css">
+<!DOCTYPE html><html><head><meta charset="UTF-8">
 <link rel="stylesheet" href="map.css">
-</style></head><body><div class="map"><div class="on_black">
+</head><body><div class="map"><div class="on_black">
 """
     htmlend="</div></div></body></html>"
 
