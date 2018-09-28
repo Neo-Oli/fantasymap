@@ -5,10 +5,14 @@ endef
 .PHONY: whole
 whole: build/map
 	$(call display,$<)
-build/map: map map.py
+build/map: map
 	./map.py "$<" > "$@"
 
-map: build
+.PHONY: all
+all: build/map html build/yuba
+
+map: build map.py
+	@touch "$@"
 build:
 	mkdir -p build
 
@@ -21,3 +25,11 @@ yuba: build/yuba
 	$(call display,$<)
 build/yuba: map
 	./getsubmap.sh map 173 40 762 165 > "$@"
+
+.PHONY: html
+html: build/index.html build/map.css
+build/index.html: map
+	./map.py -x map > "$@"
+build/map.css:
+	cp map.css build
+
