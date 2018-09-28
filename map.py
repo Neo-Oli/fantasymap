@@ -11,7 +11,7 @@ options = parser.parse_args()
 
 
 with open (options.file, "r") as myfile:
-	map=myfile.read()
+    map=myfile.read()
 
 
 
@@ -166,7 +166,7 @@ objects['8']['bgcolor']="on_white"
 objects['9']={}
 objects['9']['name']="street_none"
 objects['9']['r']="▪"
-objects['9']['color']="iwhit"
+objects['9']['color']="iwhite"
 objects['9']['bgcolor']="on_white"
 
 
@@ -327,155 +327,155 @@ on_bicyan='\033[1;106m';
 on_biwhite='\033[1;107m';
 
 if options.d:
-	htmlstart="""
+    htmlstart="""
 <div class="map"><div class="on_black">
 """
-	htmlend="</div></div>"
+    htmlend="</div></div>"
 else:
-	htmlstart="""
+    htmlstart="""
 <!DOCTYPE html><html><head><meta charset="UTF-8"><style type="text/css">
 <link rel="stylesheet" href="map.css">
 </style></head><body><div class="map"><div class="on_black">
 """
-	htmlend="</div></div></body></html>"
+    htmlend="</div></div></body></html>"
 
 output=""
 
 lines=map.split('\n')
 if options.x:
-	output+=htmlstart
+    output+=htmlstart
 map=None
 i=0
 for line in lines:
-	charsinline=list(line)
-	j=0
-	lastc=""
-	lastfg=""
-	lastbg=""
-	label=False
-	for c in charsinline:
-		if c == ")":
-			backgroundcolor="on_yellow"
-			foregroundcolor="black"
-			character=" "
-			label=False
-		elif label==True:
-			backgroundcolor="on_yellow"
-			foregroundcolor="black"
-			character=c
-		elif c == "(":
-			backgroundcolor="on_yellow"
-			foregroundcolor="black"
-			character=" "
-			label=True
-		else:
-			if c == "x" or c == "r":
-				if c == "r":
-					rails=True
-					c="x"
-				else:
-					rails=False
-				try:
-					leftc=charsinline[j-1]
-				except IndexError:
-					leftc=" "
-				try:
-					rightc=charsinline[j+1]
-				except IndexError:
-					rightc=" "
-				try:
-					upc=re.findall(".", lines[i-1])[j]
-				except IndexError:
-					upc=" "
-				try:
-					downc=re.findall(".", lines[i+1])[j]
-				except IndexError:
-					downc=" "
-				if rails:
-					uptrue=upc in ["r","[", "]"]
-					downtrue=downc in ["r","[", "]"]
-					lefttrue=leftc in ["r","[", "]"]
-					righttrue=rightc in ["r","[", "]"]
-				else:
-					uptrue=upc in ["x","|","0","1","2","5","7","8","j","]"]
-					downtrue=downc in ["x","|","0","3","4","6","7","8","j","]"]
-					lefttrue=leftc in ["x","-","0","2","4","5","6","8","q","["]
-					righttrue=rightc in ["x","-","0","1","3","5","6","7","q","["]
-				if uptrue and downtrue and lefttrue and righttrue:
-					c="0"
-				elif not uptrue and not downtrue and lefttrue and righttrue:
-					c="-"
-				elif not uptrue and not downtrue and lefttrue and not righttrue:
-					c="-"
-				elif not uptrue and not downtrue and not lefttrue and righttrue:
-					c="-"
-				elif uptrue and downtrue and not lefttrue and not righttrue:
-					c="|"
-				elif uptrue and not downtrue and not lefttrue and not righttrue:
-					c="|"
-				elif not uptrue and downtrue and not lefttrue and not righttrue:
-					c="|"
-				elif not uptrue and downtrue and lefttrue and not righttrue:
-					c="1"
-				elif not uptrue and downtrue and not lefttrue and righttrue:
-					c="2"
-				elif uptrue and not downtrue and lefttrue and not righttrue:
-					c="3"
-				elif uptrue and not downtrue and not lefttrue and righttrue:
-					c="4"
-				elif not uptrue and downtrue and lefttrue and righttrue:
-					c="5"
-				elif uptrue and not downtrue and lefttrue and righttrue:
-					c="6"
-				elif uptrue and downtrue and lefttrue and not righttrue:
-					c="7"
-				elif uptrue and downtrue and not lefttrue and righttrue:
-					c="8"
-				elif not uptrue and not downtrue and not lefttrue and not righttrue:
-					c="9"
-				else:
-					c="9"
-				if rails:
-					c+="r"
-			try:
-				foregroundcolor=objects[c]["color"]
-			except KeyError:
-				print("\nError at line:"+str(i+1)+":"+str(j+1))
-				exit()
-			try:
-				backgroundcolor=objects[c]["bgcolor"]
-			except KeyError:
-				backgroundcolor="empty"
-			character=objects[c]["r"]
-		if options.b:
-			foregroundcolor="empty"
-			backgroundcolor="empty"
-		if options.x:
-			if lastbg==backgroundcolor and lastfg==foregroundcolor:
-					output+=character
-			else:
-				if not j==0:
-					output+="</i>"
-				output+="<i class=\""+foregroundcolor+" "+backgroundcolor+"\">"+character
-			if j==len(charsinline)-1:
-					output+="</i>"
-		else:
-			if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
-				output+=globals()[foregroundcolor]+globals()[backgroundcolor]
-			output+=character
-		lastbg=backgroundcolor
-		lastfg=foregroundcolor
-		lastc=c
-		lastcharacter=character
-		j+=1
-	if options.x:
-		if not options.v:
-			output+="<br />"
-	else:
-		output+=reset+"\n"
-	i+=1
+    charsinline=list(line)
+    j=0
+    lastc=""
+    lastfg=""
+    lastbg=""
+    label=False
+    for c in charsinline:
+        if c == ")":
+            backgroundcolor="on_yellow"
+            foregroundcolor="black"
+            character=" "
+            label=False
+        elif label==True:
+            backgroundcolor="on_yellow"
+            foregroundcolor="black"
+            character=c
+        elif c == "(":
+            backgroundcolor="on_yellow"
+            foregroundcolor="black"
+            character=" "
+            label=True
+        else:
+            if c == "x" or c == "r":
+                if c == "r":
+                    rails=True
+                    c="x"
+                else:
+                    rails=False
+                try:
+                    leftc=charsinline[j-1]
+                except IndexError:
+                    leftc=" "
+                try:
+                    rightc=charsinline[j+1]
+                except IndexError:
+                    rightc=" "
+                try:
+                    upc=re.findall(".", lines[i-1])[j]
+                except IndexError:
+                    upc=" "
+                try:
+                    downc=re.findall(".", lines[i+1])[j]
+                except IndexError:
+                    downc=" "
+                if rails:
+                    uptrue=upc in ["r","[", "]"]
+                    downtrue=downc in ["r","[", "]"]
+                    lefttrue=leftc in ["r","[", "]"]
+                    righttrue=rightc in ["r","[", "]"]
+                else:
+                    uptrue=upc in ["x","|","0","1","2","5","7","8","j","]"]
+                    downtrue=downc in ["x","|","0","3","4","6","7","8","j","]"]
+                    lefttrue=leftc in ["x","-","0","2","4","5","6","8","q","["]
+                    righttrue=rightc in ["x","-","0","1","3","5","6","7","q","["]
+                if uptrue and downtrue and lefttrue and righttrue:
+                    c="0"
+                elif not uptrue and not downtrue and lefttrue and righttrue:
+                    c="-"
+                elif not uptrue and not downtrue and lefttrue and not righttrue:
+                    c="-"
+                elif not uptrue and not downtrue and not lefttrue and righttrue:
+                    c="-"
+                elif uptrue and downtrue and not lefttrue and not righttrue:
+                    c="|"
+                elif uptrue and not downtrue and not lefttrue and not righttrue:
+                    c="|"
+                elif not uptrue and downtrue and not lefttrue and not righttrue:
+                    c="|"
+                elif not uptrue and downtrue and lefttrue and not righttrue:
+                    c="1"
+                elif not uptrue and downtrue and not lefttrue and righttrue:
+                    c="2"
+                elif uptrue and not downtrue and lefttrue and not righttrue:
+                    c="3"
+                elif uptrue and not downtrue and not lefttrue and righttrue:
+                    c="4"
+                elif not uptrue and downtrue and lefttrue and righttrue:
+                    c="5"
+                elif uptrue and not downtrue and lefttrue and righttrue:
+                    c="6"
+                elif uptrue and downtrue and lefttrue and not righttrue:
+                    c="7"
+                elif uptrue and downtrue and not lefttrue and righttrue:
+                    c="8"
+                elif not uptrue and not downtrue and not lefttrue and not righttrue:
+                    c="9"
+                else:
+                    c="9"
+                if rails:
+                    c+="r"
+            try:
+                foregroundcolor=objects[c]["color"]
+            except KeyError:
+                print("\nError at line:"+str(i+1)+":"+str(j+1))
+                exit()
+            try:
+                backgroundcolor=objects[c]["bgcolor"]
+            except KeyError:
+                backgroundcolor="empty"
+            character=objects[c]["r"]
+        if options.b:
+            foregroundcolor="empty"
+            backgroundcolor="empty"
+        if options.x:
+            if lastbg==backgroundcolor and lastfg==foregroundcolor:
+                output+=character
+            else:
+                if not j==0:
+                    output+="</i>"
+                output+="<i class=\""+foregroundcolor+" "+backgroundcolor+"\">"+character
+            if j==len(charsinline)-1:
+                output+="</i>"
+        else:
+            if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
+                output+=globals()[foregroundcolor]+globals()[backgroundcolor]
+            output+=character
+        lastbg=backgroundcolor
+        lastfg=foregroundcolor
+        lastc=c
+        lastcharacter=character
+        j+=1
+    if options.x:
+        if not options.v:
+            output+="<br />"
+    else:
+        output+=reset+"\n"
+    i+=1
 if options.x:
-	if not options.v:
-		output+=htmlend
+    if not options.v:
+        output+=htmlend
 if not options.v:
-	print(output)
+    print(output)
