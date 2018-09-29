@@ -350,19 +350,32 @@ on_bipurple='\033[1;105m';
 on_bicyan='\033[1;106m';
 on_biwhite='\033[1;107m';
 
+with open ("map.css", "r") as myfile:
+    css=myfile.read()
+htmlstart="""
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <style>
+    {}
+    </style>
+    </head>
+    <body>""".format(css)
+htmlend="""
+    </body>
+</html>"""
 if options.d:
-    htmlstart="""
-<div class="map"><div class="on_black">
-"""
-    htmlend="</div></div>"
-else:
-    htmlstart="""
-<!DOCTYPE html><html><head><meta charset="UTF-8">
-<link rel="stylesheet" href="map.css">
-</head><body><div class="map"><div class="on_black">
-"""
-    htmlend="</div></div></body></html>"
+    htmlstart=""
+    htmlend=""
 
+htmlstart="""{}
+        <div class="map">
+            <div class="on_black white"> """.format(htmlstart)
+htmlend="""
+            </div>
+        </div>
+        {}""".format(htmlend)
 output=""
 
 lines=map.split('\n')

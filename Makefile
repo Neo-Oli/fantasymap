@@ -2,7 +2,7 @@ define display
 	less -RS "$(1)"
 endef
 
-REQ := map.py map Makefile legend
+REQ := map.py map Makefile legend map.css
 .PHONY: whole
 whole: build/map
 	$(call display,$<)
@@ -10,7 +10,17 @@ build/map: $(REQ)
 	./map.py map > "$@"
 
 .PHONY: all
-all: build/map html build/monochrome build/legend build/yuba build/witton build/onyx
+all:\
+	test\
+	build/map\
+	build/index.html\
+	build/monochrome\
+	build/monochrome.html\
+	build/legend\
+	build/yuba\
+	build/witton\
+	build/onyx\
+
 
 .PHONY: clean
 clean:
@@ -22,18 +32,29 @@ help: build/legend
 build/legend: $(REQ)
 	./map.py legend > "$@"
 
+.PHONY: test
+test: build/test_legend build/test_map
+build/test_legend: $(REQ)
+	./map.py -v legend
+	@touch "$@"
+build/test_map: $(REQ)
+	./map.py -v map
+	@touch "$@"
+.PHONY: html
+html: build/index.html
+build/index.html: $(REQ)
+	./map.py -x map > "$@"
+
 .PHONY: monochrome
 monochrome: build/monochrome
 	$(call display,$<)
 build/monochrome: $(REQ)
 	./map.py -b map > "$@"
 
-.PHONY: html
-html: build/index.html build/map.css
-build/index.html: $(REQ)
-	./map.py -x map > "$@"
-build/map.css: map.css
-	cp map.css build
+.PHONY: monochrome-html
+monochrome-html: build/monochrome.html
+build/monochrome.html: $(REQ)
+	./map.py -xb map > "$@"
 
 .PHONY: yuba
 yuba: build/yuba
