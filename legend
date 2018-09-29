@@ -1,0 +1,49 @@
+(===Legend for Mapmakers===) 
+(w) w (water)
+(,) , (sand)
+(.) . (grass)
+(i) i (ice/snow)
+(s) s (plaza
+(y) y (farmland
+(a) a (forrest)
+(ä) ä (forrest on asphalt)
+(â) â (forrest on sand)
+(u) u (palm forrest on sand)
+(ü) ü (palm forrest on asphalt)
+(ú) ú (palm forrest on grass)
+(b) b (small building
+(B) B (large building/multiblock building)
+(L) L (Lighthouse)
+(m) m (mountain)
+
+(j) j (bridge vertical)
+(q) q (bridge horizontal)
+(p) p (pool right)
+(P) P (pool left)
+(o) o (pond/round pool)
+( )   (empty space)
+
+www(Streets)www
+
+(x) x (automatic street)     xxx
+(forced street shapes)       x xxx
+(0) 0                        x x x
+(-) -                        xxxxxx
+(|) |                            x
+(1) 1
+(2) 2
+(3) 3
+(4) 4
+(5) 5
+(6) 6
+(7) 7
+(8) 8
+(9) 9
+
+www(rails)www
+(r) r (automatic rails)
+(forced rail shapes)
+(automatic rails not possible)
+([) [ (rail crossing horizontal)
+(]) ] (rail crossing vertical)
+

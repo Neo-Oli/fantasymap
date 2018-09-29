@@ -55,22 +55,40 @@ objects['y']['bgcolor']="on_black"
 objects['y']['xggpmcolor']="#AA9106"
 
 objects['a']={}
-objects['a']['name']="forrest"
+objects['a']['name']="forrest on grass"
 objects['a']['r']="♣"
 objects['a']['color']="igreen"
 objects['a']['bgcolor']="on_green"
 
 objects['ä']={}
-objects['ä']['name']="forrest2"
+objects['ä']['name']="forrest on asphalt"
 objects['ä']['r']="♠"
 objects['ä']['color']="igreen"
 objects['ä']['bgcolor']="on_white"
 
-objects['à']={}
-objects['à']['name']="palmforrest"
-objects['à']['r']="Γ"
-objects['à']['color']="igreen"
-objects['à']['bgcolor']="on_white"
+objects['â']={}
+objects['â']['name']="forrest on sand"
+objects['â']['r']="♠"
+objects['â']['color']="igreen"
+objects['â']['bgcolor']="on_yellow"
+
+objects['u']={}
+objects['u']['name']="palmforrest on sand"
+objects['u']['r']="Γ"
+objects['u']['color']="igreen"
+objects['u']['bgcolor']="on_yellow"
+
+objects['ü']={}
+objects['ü']['name']="palmforrest on asphalt"
+objects['ü']['r']="Γ"
+objects['ü']['color']="igreen"
+objects['ü']['bgcolor']="on_white"
+
+objects['ú']={}
+objects['ú']['name']="palmforrest on grass"
+objects['ú']['r']="Γ"
+objects['ú']['color']="igreen"
+objects['ú']['bgcolor']="on_green"
 
 objects['b']={}
 objects['b']['name']="building"
@@ -271,10 +289,16 @@ objects['q']['color']="iblack"
 objects['q']['bgcolor']="on_blue"
 
 objects['p']={}
-objects['p']['name']="pool"
+objects['p']['name']="pool_right"
 objects['p']['r']="▐"
 objects['p']['color']="blue"
 objects['p']['bgcolor']="on_white"
+
+objects['P']={}
+objects['P']['name']="pool_left"
+objects['P']['r']="▌"
+objects['P']['color']="blue"
+objects['P']['bgcolor']="on_white"
 
 objects['o']={}
 objects['o']['name']="pond"
@@ -440,8 +464,8 @@ for line in lines:
             try:
                 foregroundcolor=objects[c]["color"]
             except KeyError:
-                print("\nError at line:"+str(i+1)+":"+str(j+1))
-                exit()
+                print("\nError at line:"+str(i+1)+":"+str(j+1),file=sys.stderr)
+                sys.exit(1)
             try:
                 backgroundcolor=objects[c]["bgcolor"]
             except KeyError:
