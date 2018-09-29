@@ -1,35 +1,34 @@
 .background{
-position: absolute;
-  width: 100%;
-  opacity: 0.3;
-  text-align: center;
+    position: absolute;
+    width: 100%;
+    opacity: 0.3;
+    text-align: center;
 }
 body.background{
-  background-color:#171717;
+    background-color:#171717;
 }
 .map {
-  white-space: nowrap;
-  margin: 0;
-  display: inline;
+    white-space: nowrap;
+    margin: 0;
+    display: inline;
 }
 .map *{
-  line-height: 20px;
-  font-family:monospace;
+    line-height: 20px;
+    font-family:monospace;
 }
 .map i {
-  
-  margin: 0;
-  vertical-align: top;
-  display: inline-block;
-  white-space: pre;
-  height: 20px;
-  font-size: 18px;
-  text-align: center;
-  font-style: normal;
-  overflow:hidden
+    margin: 0;
+    vertical-align: top;
+    display: inline-block;
+    white-space: pre;
+    height: 20px;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    overflow:hidden
 }
 .map br:first-child {
-  display: none
+    display: none
 }
 .map .black{color:#171717;}
 .map .red{color:#D81765;}
