@@ -3,15 +3,15 @@
 (,) , (sand)
 (.) . (grass)
 (i) i (ice/snow)
-(s) s (plaza
-(y) y (farmland
+(s) s (plaza)
+(y) y (farmland)
 (a) a (forrest)
 (ä) ä (forrest on asphalt)
 (â) â (forrest on sand)
 (u) u (palm forrest on sand)
 (ü) ü (palm forrest on asphalt)
 (ú) ú (palm forrest on grass)
-(b) b (small building
+(b) b (small building)
 (B) B (large building/multiblock building)
 (L) L (Lighthouse)
 (m) m (mountain)
@@ -43,6 +43,21 @@ www(Streets)www
 www(rails)www
 (r) r (automatic rails)
 (forced rail shapes)
-(automatic rails not possible)
+(⁰) ⁰                        rrr
+(=) =                        r rrr
+(§) )                        r r r
+(¹) ¹                        rrrrrr
+(²) ²                            r
+(³) ³
+(⁴) ⁴                        rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+(⁵) ⁵                        r¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁰r[ ]r =r §r
+(⁶) ⁶                        rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+(⁷) ⁷
+(⁸) ⁸
+(₉) ⁹
 ([) [ (rail crossing horizontal)
 (]) ] (rail crossing vertical)
+
+rrrrrrrrrrrrrrrrrrrrrrrrrrrr
+(abcdefghijklmnopqrstuvwxyz)
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx

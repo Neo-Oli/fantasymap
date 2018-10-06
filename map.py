@@ -1,18 +1,4 @@
 #!/usr/bin/env python3
-import re, sys, argparse
-parser = argparse.ArgumentParser()
-parser.description="Best viewed when piped into `less -RS`"
-parser.add_argument('file', help='Mapfile')
-parser.add_argument('-x', action='store_true', help='print HTML instead of ANSI')
-parser.add_argument('-d', action='store_true', help='Doesn\'t print html skeleton')
-parser.add_argument('-v', action='store_true', help='Do not print anything. Usefull for checking for errors in the mapfile')
-parser.add_argument('-b', action='store_true', help='Don\'t print color')
-options = parser.parse_args()
-
-
-with open (options.file, "r") as myfile:
-    map=myfile.read()
-
 
 
 objects={}
@@ -134,49 +120,49 @@ objects['|']['color']="iblack"
 objects['|']['bgcolor']="on_white"
 
 objects['1']={}
-objects['1']['name']="street_c1"
+objects['1']['name']="street_1"
 objects['1']['r']="┐"
 objects['1']['color']="iblack"
 objects['1']['bgcolor']="on_white"
 
 objects['2']={}
-objects['2']['name']="street_c2"
+objects['2']['name']="street_2"
 objects['2']['r']="┌"
 objects['2']['color']="iblack"
 objects['2']['bgcolor']="on_white"
 
 objects['3']={}
-objects['3']['name']="street_c3"
+objects['3']['name']="street_3"
 objects['3']['r']="┘"
 objects['3']['color']="iblack"
 objects['3']['bgcolor']="on_white"
 
 objects['4']={}
-objects['4']['name']="street_c4"
+objects['4']['name']="street_4"
 objects['4']['r']="└"
 objects['4']['color']="iblack"
 objects['4']['bgcolor']="on_white"
 
 objects['5']={}
-objects['5']['name']="street_c5"
+objects['5']['name']="street_5"
 objects['5']['r']="┬"
 objects['5']['color']="iblack"
 objects['5']['bgcolor']="on_white"
 
 objects['6']={}
-objects['6']['name']="street_c6"
+objects['6']['name']="street_6"
 objects['6']['r']="┴"
 objects['6']['color']="iblack"
 objects['6']['bgcolor']="on_white"
 
 objects['7']={}
-objects['7']['name']="street_c7"
+objects['7']['name']="street_7"
 objects['7']['r']="┤"
 objects['7']['color']="iblack"
 objects['7']['bgcolor']="on_white"
 
 objects['8']={}
-objects['8']['name']="street_c8"
+objects['8']['name']="street_8"
 objects['8']['r']="├"
 objects['8']['color']="iblack"
 objects['8']['bgcolor']="on_white"
@@ -190,77 +176,77 @@ objects['9']['bgcolor']="on_white"
 
 
 
-objects['0r']={}
-objects['0r']['name']="rails_crossing"
-objects['0r']['r']="╬"
-objects['0r']['color']="ired"
-objects['0r']['bgcolor']="on_white"
+objects['⁰']={}
+objects['⁰']['name']="rails_crossing"
+objects['⁰']['r']="╬"
+objects['⁰']['color']="ired"
+objects['⁰']['bgcolor']="on_white"
 
-objects['-r']={}
-objects['-r']['name']="rails_h"
-objects['-r']['r']="═"
-objects['-r']['color']="ired"
-objects['-r']['bgcolor']="on_white"
+objects['=']={}
+objects['=']['name']="rails_h"
+objects['=']['r']="═"
+objects['=']['color']="ired"
+objects['=']['bgcolor']="on_white"
 
-objects['|r']={}
-objects['|r']['name']="rails_v"
-objects['|r']['r']="║"
-objects['|r']['color']="ired"
-objects['|r']['bgcolor']="on_white"
+objects['§']={}
+objects['§']['name']="rails_v"
+objects['§']['r']="║"
+objects['§']['color']="ired"
+objects['§']['bgcolor']="on_white"
 
-objects['1r']={}
-objects['1r']['name']="rails_c1"
-objects['1r']['r']="╗"
-objects['1r']['color']="ired"
-objects['1r']['bgcolor']="on_white"
+objects['¹']={}
+objects['¹']['name']="rails_1"
+objects['¹']['r']="╗"
+objects['¹']['color']="ired"
+objects['¹']['bgcolor']="on_white"
 
-objects['2r']={}
-objects['2r']['name']="rails_c2"
-objects['2r']['r']="╔"
-objects['2r']['color']="ired"
-objects['2r']['bgcolor']="on_white"
+objects['²']={}
+objects['²']['name']="rails_2"
+objects['²']['r']="╔"
+objects['²']['color']="ired"
+objects['²']['bgcolor']="on_white"
 
-objects['3r']={}
-objects['3r']['name']="rails_c3"
-objects['3r']['r']="╝"
-objects['3r']['color']="ired"
-objects['3r']['bgcolor']="on_white"
+objects['³']={}
+objects['³']['name']="rails_3"
+objects['³']['r']="╝"
+objects['³']['color']="ired"
+objects['³']['bgcolor']="on_white"
 
-objects['4r']={}
-objects['4r']['name']="rails_c4"
-objects['4r']['r']="╚"
-objects['4r']['color']="ired"
-objects['4r']['bgcolor']="on_white"
+objects['⁴']={}
+objects['⁴']['name']="rails_4"
+objects['⁴']['r']="╚"
+objects['⁴']['color']="ired"
+objects['⁴']['bgcolor']="on_white"
 
-objects['5r']={}
-objects['5r']['name']="rails_c5"
-objects['5r']['r']="╦"
-objects['5r']['color']="ired"
-objects['5r']['bgcolor']="on_white"
+objects['⁵']={}
+objects['⁵']['name']="rails_5"
+objects['⁵']['r']="╦"
+objects['⁵']['color']="ired"
+objects['⁵']['bgcolor']="on_white"
 
-objects['6r']={}
-objects['6r']['name']="rails_c6"
-objects['6r']['r']="╩"
-objects['6r']['color']="ired"
-objects['6r']['bgcolor']="on_white"
+objects['⁶']={}
+objects['⁶']['name']="rails_6"
+objects['⁶']['r']="╩"
+objects['⁶']['color']="ired"
+objects['⁶']['bgcolor']="on_white"
 
-objects['7r']={}
-objects['7r']['name']="rails_c7"
-objects['7r']['r']="╣"
-objects['7r']['color']="ired"
-objects['7r']['bgcolor']="on_white"
+objects['⁷']={}
+objects['⁷']['name']="rails_7"
+objects['⁷']['r']="╣"
+objects['⁷']['color']="ired"
+objects['⁷']['bgcolor']="on_white"
 
-objects['8r']={}
-objects['8r']['name']="rails_c8"
-objects['8r']['r']="╠"
-objects['8r']['color']="ired"
-objects['8r']['bgcolor']="on_white"
+objects['⁸']={}
+objects['⁸']['name']="rails_8"
+objects['⁸']['r']="╠"
+objects['⁸']['color']="ired"
+objects['⁸']['bgcolor']="on_white"
 
-objects['9r']={}
-objects['9r']['name']="rails_none"
-objects['9r']['r']="▪"
-objects['9r']['color']="ired"
-objects['9r']['bgcolor']="on_white"
+objects['⁹']={}
+objects['⁹']['name']="rails_none"
+objects['⁹']['r']="▪"
+objects['⁹']['color']="ired"
+objects['⁹']['bgcolor']="on_white"
 
 
 objects['[']={}
@@ -350,6 +336,29 @@ on_bipurple='\033[1;105m';
 on_bicyan='\033[1;106m';
 on_biwhite='\033[1;107m';
 
+import re, sys, argparse
+
+def findObject(name):
+    for c in objects:
+        if objects[c]["name"]==name:
+            return c
+    print("Error: Object not found with name: {}".format(name),file=sys.stderr)
+
+
+parser = argparse.ArgumentParser()
+parser.description="Best viewed when piped into `less -RS`"
+parser.add_argument('file', help='Mapfile')
+parser.add_argument('-x', action='store_true', help='print HTML instead of ANSI')
+parser.add_argument('-d', action='store_true', help='Doesn\'t print html skeleton')
+parser.add_argument('-v', action='store_true', help='Do not print anything. Usefull for checking for errors in the mapfile')
+parser.add_argument('-b', action='store_true', help='Don\'t print color')
+options = parser.parse_args()
+
+
+with open (options.file, "r") as myfile:
+    map=myfile.read()
+
+
 with open ("map.css", "r") as myfile:
     css=myfile.read()
 htmlstart="""
@@ -409,9 +418,10 @@ for line in lines:
             if c == "x" or c == "r":
                 if c == "r":
                     rails=True
-                    c="x"
+                    prefix="rails_{}"
                 else:
                     rails=False
+                    prefix="street_{}"
                 try:
                     leftc=charsinline[j-1]
                 except IndexError:
@@ -429,55 +439,54 @@ for line in lines:
                 except IndexError:
                     downc=" "
                 if rails:
-                    uptrue=upc in ["r","[", "]"]
-                    downtrue=downc in ["r","[", "]"]
-                    lefttrue=leftc in ["r","[", "]"]
-                    righttrue=rightc in ["r","[", "]"]
+                    uptrue=upc in list("§r[⁰¹²⁵⁷⁸")
+                    downtrue=downc in list("§r[⁰³⁴⁶⁷⁸")
+                    lefttrue=leftc in list("=r]⁰²⁴⁵⁶⁸")
+                    righttrue=rightc in list("=r]⁰¹³⁵⁶⁷")
                 else:
-                    uptrue=upc in ["x","|","0","1","2","5","7","8","j","]"]
-                    downtrue=downc in ["x","|","0","3","4","6","7","8","j","]"]
-                    lefttrue=leftc in ["x","-","0","2","4","5","6","8","q","["]
-                    righttrue=rightc in ["x","-","0","1","3","5","6","7","q","["]
+                    uptrue=upc in list("x|012578j]")
+                    downtrue=downc in list("x|034678j]")
+                    lefttrue=leftc in list("x-024568q[")
+                    righttrue=rightc in list("x-013567q[")
                 if uptrue and downtrue and lefttrue and righttrue:
-                    c="0"
+                    p="crossing"
                 elif not uptrue and not downtrue and lefttrue and righttrue:
-                    c="-"
+                    p="h"
                 elif not uptrue and not downtrue and lefttrue and not righttrue:
-                    c="-"
+                    p="h"
                 elif not uptrue and not downtrue and not lefttrue and righttrue:
-                    c="-"
+                    p="h"
                 elif uptrue and downtrue and not lefttrue and not righttrue:
-                    c="|"
+                    p="v"
                 elif uptrue and not downtrue and not lefttrue and not righttrue:
-                    c="|"
+                    p="v"
                 elif not uptrue and downtrue and not lefttrue and not righttrue:
-                    c="|"
+                    p="v"
                 elif not uptrue and downtrue and lefttrue and not righttrue:
-                    c="1"
+                    p="1"
                 elif not uptrue and downtrue and not lefttrue and righttrue:
-                    c="2"
+                    p="2"
                 elif uptrue and not downtrue and lefttrue and not righttrue:
-                    c="3"
+                    p="3"
                 elif uptrue and not downtrue and not lefttrue and righttrue:
-                    c="4"
+                    p="4"
                 elif not uptrue and downtrue and lefttrue and righttrue:
-                    c="5"
+                    p="5"
                 elif uptrue and not downtrue and lefttrue and righttrue:
-                    c="6"
+                    p="6"
                 elif uptrue and downtrue and lefttrue and not righttrue:
-                    c="7"
+                    p="7"
                 elif uptrue and downtrue and not lefttrue and righttrue:
-                    c="8"
+                    p="8"
                 elif not uptrue and not downtrue and not lefttrue and not righttrue:
-                    c="9"
+                    p="none"
                 else:
-                    c="9"
-                if rails:
-                    c+="r"
+                    p="none"
+                c=findObject(prefix.format(p))
             try:
                 foregroundcolor=objects[c]["color"]
             except KeyError:
-                print("\nError at line:"+str(i+1)+":"+str(j+1),file=sys.stderr)
+                print("\nError at line:{}:{} c={}".format(str(i+1),str(j+1),c),file=sys.stderr)
                 sys.exit(1)
             try:
                 backgroundcolor=objects[c]["bgcolor"]
