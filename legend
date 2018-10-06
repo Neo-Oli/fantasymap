@@ -40,6 +40,23 @@ www(Streets)www
 (8) 8
 (9) 9
 
+www(Dirt trails)www
+
+(+) + (automatic trail)      +++
+(forced dirt shapes)       xx+x+++
+(₀) ₀                      x + + +
+(~) ~                      xx++++++
+(!) !                        x   x
+(₁) ₁                        xxxxx
+(₂) ₂
+(₃) ₃
+(₄) ₄
+(₅) ₅
+(₆) ₆
+(₇) ₇
+(₈) ₈
+(₉) ₉
+
 www(rails)www
 (r) r (automatic rails)
 (forced rail shapes)

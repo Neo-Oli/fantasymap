@@ -10,15 +10,15 @@ objects['w']['bgcolor']="on_white"
 
 objects[',']={}
 objects[',']['name']="sand"
-objects[',']['r']="▓"
-objects[',']['color']="yellow"
-objects[',']['bgcolor']="on_white"
+objects[',']['r']="░"
+objects[',']['color']="white"
+objects[',']['bgcolor']="on_yellow"
 
 objects['.']={}
 objects['.']['name']="grass"
-objects['.']['r']="▓"
-objects['.']['color']="green"
-objects['.']['bgcolor']="on_white"
+objects['.']['r']="░"
+objects['.']['color']="igreen"
+objects['.']['bgcolor']="on_green"
 
 objects['i']={}
 objects['i']['name']="snow"
@@ -172,6 +172,79 @@ objects['9']['name']="street_none"
 objects['9']['r']="▪"
 objects['9']['color']="iwhite"
 objects['9']['bgcolor']="on_white"
+
+
+objects['₀']={}
+objects['₀']['name']="dirt_crossing"
+objects['₀']['r']="┼"
+objects['₀']['color']="iyellow"
+objects['₀']['bgcolor']="s_average"
+
+objects['~']={}
+objects['~']['name']="dirt_h"
+objects['~']['r']="─"
+objects['~']['color']="iyellow"
+objects['~']['bgcolor']="s_average"
+
+objects['!']={}
+objects['!']['name']="dirt_v"
+objects['!']['r']="│"
+objects['!']['color']="iyellow"
+objects['!']['bgcolor']="s_average"
+
+objects['₁']={}
+objects['₁']['name']="dirt_1"
+objects['₁']['r']="┐"
+objects['₁']['color']="iyellow"
+objects['₁']['bgcolor']="s_average"
+
+objects['₂']={}
+objects['₂']['name']="dirt_2"
+objects['₂']['r']="┌"
+objects['₂']['color']="iyellow"
+objects['₂']['bgcolor']="s_average"
+
+objects['₃']={}
+objects['₃']['name']="dirt_3"
+objects['₃']['r']="┘"
+objects['₃']['color']="iyellow"
+objects['₃']['bgcolor']="s_average"
+
+objects['₄']={}
+objects['₄']['name']="dirt_4"
+objects['₄']['r']="└"
+objects['₄']['color']="iyellow"
+objects['₄']['bgcolor']="s_average"
+
+objects['₅']={}
+objects['₅']['name']="dirt_5"
+objects['₅']['r']="┬"
+objects['₅']['color']="iyellow"
+objects['₅']['bgcolor']="s_average"
+
+objects['₆']={}
+objects['₆']['name']="dirt_6"
+objects['₆']['r']="┴"
+objects['₆']['color']="iyellow"
+objects['₆']['bgcolor']="s_average"
+
+objects['₇']={}
+objects['₇']['name']="dirt_7"
+objects['₇']['r']="┤"
+objects['₇']['color']="iyellow"
+objects['₇']['bgcolor']="s_average"
+
+objects['₈']={}
+objects['₈']['name']="dirt_8"
+objects['₈']['r']="├"
+objects['₈']['color']="iyellow"
+objects['₈']['bgcolor']="s_average"
+
+objects['₉']={}
+objects['₉']['name']="dirt_none"
+objects['₉']['r']="▪"
+objects['₉']['color']="iyellow"
+objects['₉']['bgcolor']="s_average"
 
 
 
@@ -400,6 +473,44 @@ for line in lines:
     lastbg=""
     label=False
     for c in charsinline:
+
+
+        # get the surounding characters
+
+        try:
+            leftc=charsinline[j-1]
+        except IndexError:
+            leftc=" "
+        try:
+            rightc=charsinline[j+1]
+        except IndexError:
+            rightc=" "
+        try:
+            upc=lines[i-1][j:j+1]
+        except IndexError:
+            upc=" "
+        try:
+            downc=lines[i+1][j:j+1]
+        except IndexError:
+            downc=" "
+        try:
+            upleftc=lines[i-1][j-1:j]
+        except IndexError:
+            upleftc=" "
+        try:
+            uprightc=lines[i-1][j+1:j+2]
+        except IndexError:
+            uprightc=" "
+
+        try:
+            downleftc=lines[i+1][j-1:j]
+        except IndexError:
+            downleftc=" "
+        try:
+            downrightc=lines[i+1][j+1:j+2]
+        except IndexError:
+            downrightc=" "
+
         if c == ")":
             backgroundcolor="on_yellow"
             foregroundcolor="black"
@@ -415,39 +526,27 @@ for line in lines:
             character=" "
             label=True
         else:
-            if c == "x" or c == "r":
+            if c in list("x+r"):
+                rails=False
+                dirt=False
                 if c == "r":
                     rails=True
                     prefix="rails_{}"
+                elif c=="+":
+                    dirt=True
+                    prefix="dirt_{}"
                 else:
-                    rails=False
                     prefix="street_{}"
-                try:
-                    leftc=charsinline[j-1]
-                except IndexError:
-                    leftc=" "
-                try:
-                    rightc=charsinline[j+1]
-                except IndexError:
-                    rightc=" "
-                try:
-                    upc=re.findall(".", lines[i-1])[j]
-                except IndexError:
-                    upc=" "
-                try:
-                    downc=re.findall(".", lines[i+1])[j]
-                except IndexError:
-                    downc=" "
                 if rails:
                     uptrue=upc in list("§r[⁰¹²⁵⁷⁸")
                     downtrue=downc in list("§r[⁰³⁴⁶⁷⁸")
                     lefttrue=leftc in list("=r]⁰²⁴⁵⁶⁸")
                     righttrue=rightc in list("=r]⁰¹³⁵⁶⁷")
                 else:
-                    uptrue=upc in list("x|012578j]")
-                    downtrue=downc in list("x|034678j]")
-                    lefttrue=leftc in list("x-024568q[")
-                    righttrue=rightc in list("x-013567q[")
+                    uptrue=upc in list("x+|!012578j]⁰¹²⁵⁷⁸")
+                    downtrue=downc in list("x+!|034678j]⁰³⁴⁶⁷⁸")
+                    lefttrue=leftc in list("x+~-024568q[⁰²⁴⁵⁶⁸")
+                    righttrue=rightc in list("x+~-013567q[⁰¹³⁵⁶⁷")
                 if uptrue and downtrue and lefttrue and righttrue:
                     p="crossing"
                 elif not uptrue and not downtrue and lefttrue and righttrue:
@@ -493,6 +592,17 @@ for line in lines:
             except KeyError:
                 backgroundcolor="empty"
             character=objects[c]["r"]
+        if backgroundcolor=="s_average":
+            allcolors=[]
+            for f in [upc,downc,leftc,rightc,upleftc,uprightc,downleftc,downrightc]:
+                try:
+                    allcolors.append(objects[f]["bgcolor"])
+                except KeyError:
+                    pass
+            backgroundcolor=max(set(allcolors), key=allcolors.count)
+            if backgroundcolor=="s_average":
+                backgroundcolor="on_red"
+
         if options.b:
             foregroundcolor="empty"
             backgroundcolor="empty"
