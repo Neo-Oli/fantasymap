@@ -1,4 +1,5 @@
-(===Legend for Mapmakers===) 
+(===Legend for Mapmakers===)#test
+#test
 (w) w (water)
 (,) , (sand)
 (.) . (grass)
@@ -14,6 +15,7 @@
 (b) b (small building)
 (B) B (large building/multiblock building)
 (L) L (Lighthouse)
+(g) g (Gravestones)
 (m) m (mountain)
 
 (j) j (bridge vertical)

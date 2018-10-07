@@ -30,6 +30,11 @@ body.background{
     font-style: normal;
     overflow:hidden
 }
+.map b{
+    font-weight: normal;
+    width: 0.611em;
+    display: inline-block;
+}
 .map br:first-child {
     display: none
 }

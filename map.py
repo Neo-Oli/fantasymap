@@ -4,9 +4,10 @@
 objects={}
 objects['w']={}
 objects['w']['name']="water"
-objects['w']['r']="▓"
-objects['w']['color']="blue"
-objects['w']['bgcolor']="on_white"
+objects['w']['r']="≈"
+objects['w']['color']="white"
+objects['w']['bgcolor']="on_blue"
+objects['w']['bgcolor_average_overwrite']="on_yellow"
 
 objects[',']={}
 objects[',']['name']="sand"
@@ -16,7 +17,8 @@ objects[',']['bgcolor']="on_yellow"
 
 objects['.']={}
 objects['.']['name']="grass"
-objects['.']['r']="░"
+objects['.']['r']=""
+objects['.']['r']="`"
 objects['.']['color']="igreen"
 objects['.']['bgcolor']="on_green"
 
@@ -25,6 +27,7 @@ objects['i']['name']="snow"
 objects['i']['r']="▓"
 objects['i']['color']="iwhite"
 objects['i']['bgcolor']="on_white"
+objects['i']['bgcolor_average_overwrite']="on_white"
 
 objects['s']={}
 objects['s']['name']="street"
@@ -42,19 +45,19 @@ objects['y']['xggpmcolor']="#AA9106"
 
 objects['a']={}
 objects['a']['name']="forrest on grass"
-objects['a']['r']="♣"
+objects['a']['r']="φ"
 objects['a']['color']="igreen"
 objects['a']['bgcolor']="on_green"
 
 objects['ä']={}
 objects['ä']['name']="forrest on asphalt"
-objects['ä']['r']="♠"
+objects['ä']['r']="φ"
 objects['ä']['color']="igreen"
 objects['ä']['bgcolor']="on_white"
 
 objects['â']={}
 objects['â']['name']="forrest on sand"
-objects['â']['r']="♠"
+objects['â']['r']="φ"
 objects['â']['color']="igreen"
 objects['â']['bgcolor']="on_yellow"
 
@@ -79,6 +82,7 @@ objects['ú']['bgcolor']="on_green"
 objects['b']={}
 objects['b']['name']="building"
 objects['b']['r']="▪"
+# objects['b']['r']="⌂"
 objects['b']['color']="iblack"
 objects['b']['bgcolor']="on_white"
 
@@ -89,17 +93,23 @@ objects['B']['color']="iblack"
 objects['B']['bgcolor']="on_white"
 
 objects['L']={}
-objects['L']['name']="special_building_lighthouse"
+objects['L']['name']="lighthouse"
 objects['L']['r']="◘"
 objects['L']['color']="ired"
 objects['L']['bgcolor']="on_white"
 
+objects['g']={}
+objects['g']['name']="gravestones"
+objects['g']['r']="⌂"
+objects['g']['color']="iblack"
+objects['g']['bgcolor']="on_green"
 
 objects['m']={}
 objects['m']['name']="mountain"
 objects['m']['r']="▲"
 objects['m']['color']="iblack"
-objects['m']['bgcolor']="on_white"
+objects['m']['bgcolor']="s_average"
+objects['m']['bgcolor_fallback']="on_white"
 
 objects['0']={}
 objects['0']['name']="street_crossing"
@@ -179,72 +189,84 @@ objects['₀']['name']="dirt_crossing"
 objects['₀']['r']="┼"
 objects['₀']['color']="iyellow"
 objects['₀']['bgcolor']="s_average"
+objects['₀']['bgcolor_fallback']="on_white"
 
 objects['~']={}
 objects['~']['name']="dirt_h"
 objects['~']['r']="─"
 objects['~']['color']="iyellow"
 objects['~']['bgcolor']="s_average"
+objects['~']['bgcolor_fallback']="on_white"
 
 objects['!']={}
 objects['!']['name']="dirt_v"
 objects['!']['r']="│"
 objects['!']['color']="iyellow"
 objects['!']['bgcolor']="s_average"
+objects['!']['bgcolor_fallback']="on_white"
 
 objects['₁']={}
 objects['₁']['name']="dirt_1"
 objects['₁']['r']="┐"
 objects['₁']['color']="iyellow"
 objects['₁']['bgcolor']="s_average"
+objects['₁']['bgcolor_fallback']="on_white"
 
 objects['₂']={}
 objects['₂']['name']="dirt_2"
 objects['₂']['r']="┌"
 objects['₂']['color']="iyellow"
 objects['₂']['bgcolor']="s_average"
+objects['₂']['bgcolor_fallback']="on_white"
 
 objects['₃']={}
 objects['₃']['name']="dirt_3"
 objects['₃']['r']="┘"
 objects['₃']['color']="iyellow"
 objects['₃']['bgcolor']="s_average"
+objects['₃']['bgcolor_fallback']="on_white"
 
 objects['₄']={}
 objects['₄']['name']="dirt_4"
 objects['₄']['r']="└"
 objects['₄']['color']="iyellow"
 objects['₄']['bgcolor']="s_average"
+objects['₄']['bgcolor_fallback']="on_white"
 
 objects['₅']={}
 objects['₅']['name']="dirt_5"
 objects['₅']['r']="┬"
 objects['₅']['color']="iyellow"
 objects['₅']['bgcolor']="s_average"
+objects['₅']['bgcolor_fallback']="on_white"
 
 objects['₆']={}
 objects['₆']['name']="dirt_6"
 objects['₆']['r']="┴"
 objects['₆']['color']="iyellow"
 objects['₆']['bgcolor']="s_average"
+objects['₆']['bgcolor_fallback']="on_white"
 
 objects['₇']={}
 objects['₇']['name']="dirt_7"
 objects['₇']['r']="┤"
 objects['₇']['color']="iyellow"
 objects['₇']['bgcolor']="s_average"
+objects['₇']['bgcolor_fallback']="on_white"
 
 objects['₈']={}
 objects['₈']['name']="dirt_8"
 objects['₈']['r']="├"
 objects['₈']['color']="iyellow"
 objects['₈']['bgcolor']="s_average"
+objects['₈']['bgcolor_fallback']="on_white"
 
 objects['₉']={}
 objects['₉']['name']="dirt_none"
 objects['₉']['r']="▪"
 objects['₉']['color']="iyellow"
 objects['₉']['bgcolor']="s_average"
+objects['₉']['bgcolor_fallback']="on_white"
 
 
 
@@ -373,41 +395,41 @@ objects[' ']['bgcolor']="on_white"
 
 empty="";reset='\033[0m';
 
-black='\033[0;30m';
-red='\033[0;31m';
-green='\033[0;32m';
-yellow='\033[0;33m';
-blue='\033[0;34m';
-purple='\033[0;35m';
-cyan='\033[0;36m';
-white='\033[0;37m';
+black='\033[0;30m';vimblack=0
+red='\033[0;31m';vimred=1
+green='\033[0;32m';vimgreen=2
+yellow='\033[0;33m';vimyellow=3
+blue='\033[0;34m';vimblue=4
+purple='\033[0;35m';vimpurple=5
+cyan='\033[0;36m';vimcyan=6
+white='\033[0;37m';vimwhite=7
 
-on_black='\033[40m';
-on_red='\033[41m';
-on_green='\033[42m';
-on_yellow='\033[43m';
-on_blue='\033[44m';
-on_purple='\033[45m';
-on_cyan='\033[46m';
-on_white='\033[47m';
+on_black='\033[40m';vimon_black=vimblack
+on_red='\033[41m';vimon_red=vimred
+on_green='\033[42m';vimon_green=vimgreen
+on_yellow='\033[43m';vimon_yellow=vimyellow
+on_blue='\033[44m';vimon_blue=vimblue
+on_purple='\033[45m';vimon_purple=vimpurple
+on_cyan='\033[46m';vimon_cyan=vimcyan
+on_white='\033[47m';vimon_white=vimwhite
 
-iblack='\033[0;90m';
-ired='\033[0;91m';
-igreen='\033[0;92m';
-iyellow='\033[0;93m';
-iblue='\033[0;94m';
-ipurple='\033[0;95m';
-icyan='\033[0;96m';
-iwhite='\033[0;97m';
+iblack='\033[0;90m';vimiblack=8
+ired='\033[0;91m';vimired=9
+igreen='\033[0;92m';vimigreen=10
+iyellow='\033[0;93m';vimiyellow=11
+iblue='\033[0;94m';vimiblue=12
+ipurple='\033[0;95m';vimipurple=13
+icyan='\033[0;96m';vimicyan=14
+iwhite='\033[0;97m';vimiwhite=15
 
-on_biblack='\033[1;100m';
-on_bired='\033[1;101m';
-on_bigreen='\033[1;102m';
-on_biyellow='\033[1;103m';
-on_biblue='\033[1;104m';
-on_bipurple='\033[1;105m';
-on_bicyan='\033[1;106m';
-on_biwhite='\033[1;107m';
+# on_biblack='\033[1;100m';
+# on_bired='\033[1;101m';
+# on_bigreen='\033[1;102m';
+# on_biyellow='\033[1;103m';
+# on_biblue='\033[1;104m';
+# on_bipurple='\033[1;105m';
+# on_bicyan='\033[1;106m';
+# on_biwhite='\033[1;107m';
 
 import re, sys, argparse
 
@@ -425,12 +447,31 @@ parser.add_argument('-x', action='store_true', help='print HTML instead of ANSI'
 parser.add_argument('-d', action='store_true', help='Doesn\'t print html skeleton')
 parser.add_argument('-v', action='store_true', help='Do not print anything. Usefull for checking for errors in the mapfile')
 parser.add_argument('-b', action='store_true', help='Don\'t print color')
+parser.add_argument('-V', action='store_true', help='Print vim ftplugin file')
 options = parser.parse_args()
 
 
 with open (options.file, "r") as myfile:
     map=myfile.read()
 
+if options.V:
+    output="setlocal nowrap\n"
+    output="{}setlocal redrawtime=10000".format(output)
+    i=0
+    for c in objects:
+        rule="rule_{}".format(i)
+        match="syn match {} /[{}]/".format(rule,c)
+        try:
+            fg=globals()["vim{}".format(objects[c]["color"])]
+            bg=globals()["vim{}".format(objects[c]["bgcolor"])]
+        except KeyError:
+            fg="None"
+            bg="None"
+        hi="hi def {} ctermfg={} ctermbg={}".format(rule,fg,bg)
+        output="{}\n{}\n{}".format(output,match,hi);
+        i+=1
+    print(output)
+    sys.exit(0)
 
 with open ("map.css", "r") as myfile:
     css=myfile.read()
@@ -474,6 +515,11 @@ for line in lines:
     label=False
     for c in charsinline:
 
+        if c=="#":
+            #close all i tags
+            if options.x and j>0:
+                output+="</i>"
+            break;
 
         # get the surounding characters
 
@@ -596,17 +642,28 @@ for line in lines:
             allcolors=[]
             for f in [upc,downc,leftc,rightc,upleftc,uprightc,downleftc,downrightc]:
                 try:
-                    allcolors.append(objects[f]["bgcolor"])
+                    avcolor=objects[f]["bgcolor"]
+                    if "bgcolor_average_overwrite" in objects[f]:
+                        avcolor=objects[f]["bgcolor_average_overwrite"]
+                    elif "bgcolor_fallback" in objects[f]:
+                        avcolor=objects[f]["bgcolor_fallback"]
+                    allcolors.append(avcolor)
                 except KeyError:
                     pass
-            backgroundcolor=max(set(allcolors), key=allcolors.count)
+            if allcolors:
+                backgroundcolor=max(set(allcolors), key=allcolors.count)
             if backgroundcolor=="s_average":
-                backgroundcolor="on_red"
+                if "bgcolor_fallback" in objects[c]:
+                    backgroundcolor=objects[c]["bgcolor_fallback"]
+                else:
+                    print("\nError at line:{}:{} c={}: Coulnd't determine background color".format(str(i+1),str(j+1),c),file=sys.stderr)
+                    backgroundcolor="on_red"
 
         if options.b:
             foregroundcolor="empty"
             backgroundcolor="empty"
         if options.x:
+            # character="<b>{}</b>".format(character)
             if lastbg==backgroundcolor and lastfg==foregroundcolor:
                 output+=character
             else:
@@ -624,11 +681,12 @@ for line in lines:
         lastc=c
         lastcharacter=character
         j+=1
-    if options.x:
+    if j > 0:
         if not options.v:
-            output+="<br />"
-    else:
-        output+=reset+"\n"
+            if options.x:
+                output+="<br />"
+            else:
+                output+=reset+"\n"
     i+=1
 if options.x:
     if not options.v:

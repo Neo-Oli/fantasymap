@@ -2,18 +2,25 @@ define display
 	less -RS "$(1)"
 endef
 
-REQ := map.py map Makefile legend map.css
+REQ := map.py map.map Makefile legend.map map.css
 .PHONY: whole
 whole: build/map
 	$(call display,$<)
 build/map: $(REQ)
-	./map.py map > "$@"
+	./map.py map.map > "$@"
+.PHONY: edit
+edit: build/vimrc
+	$(EDITOR) map.map -c ":so build/vimrc"
+build/vimrc: map.py
+	./map.py -V /dev/null > "$@"
 
 .PHONY: all
 all:\
 	test\
+	build/vimrc\
 	build/map\
 	build/index.html\
+	build/help.html\
 	build/monochrome\
 	build/monochrome.html\
 	build/legend\
@@ -30,46 +37,49 @@ clean:
 help: build/legend
 	$(call display,$<)
 build/legend: $(REQ)
-	./map.py legend > "$@"
+	./map.py legend.map > "$@"
 
 .PHONY: test
 test: build/test_legend build/test_map
 build/test_legend: $(REQ)
-	./map.py -v legend
+	./map.py -v legend.map
 	@touch "$@"
 build/test_map: $(REQ)
-	./map.py -v map
+	./map.py -v map.map
 	@touch "$@"
 .PHONY: html
 html: build/index.html
 build/index.html: $(REQ)
-	./map.py -x map > "$@"
+	./map.py -x map.map > "$@"
+
+build/help.html: $(REQ)
+	./map.py -x legend.map > "$@"
 
 .PHONY: monochrome
 monochrome: build/monochrome
 	$(call display,$<)
 build/monochrome: $(REQ)
-	./map.py -b map > "$@"
+	./map.py -b map.map > "$@"
 
 .PHONY: monochrome-html
 monochrome-html: build/monochrome.html
 build/monochrome.html: $(REQ)
-	./map.py -xb map > "$@"
+	./map.py -xb map.map > "$@"
 
 .PHONY: yuba
 yuba: build/yuba
 	$(call display,$<)
 build/yuba: $(REQ)
-	bash -c './map.py <(./cutmapfile.py map 174 760 217 926 )' > "$@"
+	bash -c './map.py <(./cutmapfile.py map.map 170 760 217 926 )' > "$@"
 
 .PHONY: witton
 witton: build/witton
 	$(call display,$<)
 build/witton: $(REQ)
-	bash -c './map.py <(./cutmapfile.py map 100 24 135 135)' > "$@"
+	bash -c './map.py <(./cutmapfile.py map.map 100 24 135 135)' > "$@"
 
 .PHONY: onyx
 onyx: build/onyx
 	$(call display,$<)
 build/onyx: $(REQ)
-	bash -c './map.py <(./cutmapfile.py map 319 120 340 170)' > "$@"
+	bash -c './map.py <(./cutmapfile.py map.map 319 120 340 170)' > "$@"
