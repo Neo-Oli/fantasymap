@@ -493,11 +493,9 @@ if options.d:
     htmlend=""
 
 htmlstart="""{}
-        <div class="map">
-            <div class="on_black white"> """.format(htmlstart)
+        <div class="map">""".format(htmlstart)
 htmlend="""
-            </div>
-        </div>
+        </di:>
         {}""".format(htmlend)
 output=""
 
@@ -660,8 +658,8 @@ for line in lines:
                     backgroundcolor="on_red"
 
         if options.b:
-            foregroundcolor="empty"
-            backgroundcolor="empty"
+            foregroundcolor="white"
+            backgroundcolor="on_black"
         if options.x:
             # character="<b>{}</b>".format(character)
             if lastbg==backgroundcolor and lastfg==foregroundcolor:

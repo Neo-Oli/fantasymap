@@ -14,8 +14,6 @@ body.background{
     white-space: nowrap;
     margin: 0;
     display: inline;
-}
-.map *{
     line-height: 20px;
     font-family:monospace;
 }
@@ -24,7 +22,7 @@ body.background{
     vertical-align: top;
     display: inline-block;
     white-space: pre;
-    height: 20px;
+    height: 21px;
     font-size: 18px;
     text-align: center;
     font-style: normal;
