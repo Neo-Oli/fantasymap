@@ -387,6 +387,13 @@ objects['o']['r']="●"
 objects['o']['color']="blue"
 objects['o']['bgcolor']="on_white"
 
+objects['t']={}
+objects['t']['name']="Animal"
+objects['t']['r']="."
+objects['t']['color']="iblack"
+objects['t']['bgcolor']="s_average"
+objects['t']['bgcolor_fallback']="on_green"
+
 objects[' ']={}
 objects[' ']['name']="empty"
 objects[' ']['r']=" "
