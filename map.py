@@ -456,11 +456,13 @@ with open (options.file, "r") as myfile:
 
 if options.V:
     output="setlocal nowrap\n"
-    output="{}setlocal redrawtime=10000".format(output)
+    output="{}setlocal redrawtime=10000\n".format(output)
+    output="{}setlocal conceallevel=1\n".format(output)
+    output="{}hi Conceal ctermbg=NONE ctermfg=None\n".format(output)
     i=0
     for c in objects:
         rule="rule_{}".format(i)
-        match="syn match {} /[{}]/".format(rule,c)
+        match="syn match {} /[{}]/ conceal cchar={}".format(rule,c,objects[c]["r"])
         try:
             fg=globals()["vim{}".format(objects[c]["color"])]
             bg=globals()["vim{}".format(objects[c]["bgcolor"])]
