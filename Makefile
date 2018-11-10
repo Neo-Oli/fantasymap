@@ -27,6 +27,7 @@ all:\
 	build/yuba\
 	build/witton\
 	build/onyx\
+	build/angilles\
 
 
 .PHONY: clean
@@ -83,3 +84,9 @@ onyx: build/onyx
 	$(call display,$<)
 build/onyx: $(REQ)
 	bash -c './map.py <(./cutmapfile.py map.map 319 120 340 170)' > "$@"
+
+.PHONY: angilles
+angilles: build/angilles
+	$(call display,$<)
+build/angilles: $(REQ)
+	bash -c './map.py <(./cutmapfile.py map.map 17 711 108 836)' > "$@"
