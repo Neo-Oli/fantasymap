@@ -397,10 +397,10 @@ objects['t']['bgcolor_fallback']="on_green"
 objects[' ']={}
 objects[' ']['name']="empty"
 objects[' ']['r']=" "
-objects[' ']['color']="empty"
+objects[' ']['color']="black"
 objects[' ']['bgcolor']="on_white"
 
-empty="";reset='\033[0m';
+reset='\033[0m'
 
 black='\033[0;30m';vimblack=0
 red='\033[0;31m';vimred=1
@@ -472,10 +472,11 @@ hexcolors["on_biwhite"]="#ffffff"
 # on_bicyan='\033[1;106m';
 # on_biwhite='\033[1;107m';
 
+import os
 import re
 import sys
 import argparse
-import subprocess
+from uuid import uuid4
 
 def findObject(name):
     for c in objects:
@@ -492,6 +493,7 @@ parser.add_argument('-d', action='store_true', help='Doesn\'t print html skeleto
 parser.add_argument('-v', action='store_true', help='Do not print anything. Usefull for checking for errors in the mapfile')
 parser.add_argument('-b', action='store_true', help='Don\'t print color')
 parser.add_argument('-V', action='store_true', help='Print vim ftplugin file')
+parser.add_argument('-i', action='store_true', help='Create image')
 options = parser.parse_args()
 
 
@@ -517,38 +519,71 @@ if options.V:
     print(output)
     sys.exit(0)
 
-with open ("map.css", "r") as myfile:
-    css=myfile.read()
-htmlstart="""
+build=uuid4()
+if options.x:
+    with open ("map.css", "r") as myfile:
+        css=myfile.read()
+    csscolors=""
+    for key in hexcolors:
+        prefix=""
+        if "on_" in key:
+            prefix="background-"
+        color=".map .{}{{{}color:{};}}".format(key,prefix,hexcolors[key])
+        csscolors="{}{}".format(csscolors,color)
+    htmlstart="""
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
     <style>
     {}
+    {}
     </style>
     </head>
-    <body>""".format(css)
-htmlend="""
+    <body>""".format(css,csscolors)
+    htmlend="""
     </body>
 </html>"""
-if options.d:
-    htmlstart=""
-    htmlend=""
+    if options.d:
+        htmlstart=""
+        htmlend=""
 
-htmlstart="""{}
+    htmlstart="""{}
         <div class="map">""".format(htmlstart)
-htmlend="""
-        </di:>
+    htmlend="""
+        </div>
         {}""".format(htmlend)
+
+
 output=""
+
 
 lines=map.split('\n')
 if options.x:
     output+=htmlstart
+elif options.i:
+    scale=10
+    wshift=0.6
+    hshift=1.2
+
+    height=round((1*scale*hshift)-1)
+    width=round(len(lines[0])*scale*wshift)
+    imbase=[
+            "#!/usr/bin/env magick-script",
+            "-size {}x{}".format(width,height),
+            "xc:black",
+            "-font DejaVu-Sans-mono",
+            "-pointsize {}".format(scale),
+            "-gravity NorthWest"
+            ]
+    im=[]
 map=None
 i=0
 for line in lines:
+    if line=="":
+        continue
+    if options.i:
+        im.append(imbase[:])
     charsinline=list(line)
     j=0
     lastc=""
@@ -675,10 +710,7 @@ for line in lines:
             except KeyError:
                 print("\nError at line:{}:{} c={}".format(str(i+1),str(j+1),c),file=sys.stderr)
                 sys.exit(1)
-            try:
-                backgroundcolor=objects[c]["bgcolor"]
-            except KeyError:
-                backgroundcolor="empty"
+            backgroundcolor=objects[c]["bgcolor"]
             character=objects[c]["r"]
         if backgroundcolor=="s_average":
             allcolors=[]
@@ -714,6 +746,15 @@ for line in lines:
                 output+="<i class=\""+foregroundcolor+" "+backgroundcolor+"\">"+character
             if j==len(charsinline)-1:
                 output+="</i>"
+        elif options.i:
+            pos="{},{}".format((j*scale*wshift)-1,-1)
+            im[i].append("-fill '{}'".format(hexcolors[backgroundcolor]))
+            im[i].append("-draw \"text {} '█'\"".format(pos))
+            im[i].append("-fill '{}'".format(hexcolors[foregroundcolor]))
+            quote=""
+            if character in ["'","`"]:
+                quote="\\"
+            im[i].append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
         else:
             if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
                 output+=globals()[foregroundcolor]+globals()[backgroundcolor]
@@ -729,9 +770,17 @@ for line in lines:
                 output+="<br />"
             else:
                 output+=reset+"\n"
+    if options.i:
+        number=str(i).zfill(10)
+        im[i].append("-write commands/{}_image_{}.png".format(build,number))
+        with open("commands/{}_line_{}".format(build,number), "w") as file:
+            file.write("\n".join(im[i]))
     i+=1
 if options.x:
     if not options.v:
         output+=htmlend
-if not options.v:
+    print(output)
+elif options.i:
+    print(build)
+elif not options.v:
     print(output)
