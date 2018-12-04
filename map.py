@@ -567,7 +567,7 @@ elif options.i:
     hshift=1.2
 
     height=round((1*scale*hshift)-1)
-    width=round(len(lines[0])*scale*wshift)
+    width=round(len(lines[-1])*scale*wshift)
     imbase=[
             "#!/usr/bin/env magick-script",
             "-size {}x{}".format(width,height),
