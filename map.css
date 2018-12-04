@@ -36,36 +36,3 @@ body.background{
 .map br:first-child {
     display: none
 }
-.map .black{color:#000000;}
-.map .red{color:#d81765;}
-.map .green{color:#97D01A;}
-.map .yellow{color:#ffbc00;}
-.map .blue{color:#16b1fb;}
-.map .purple{color:#ff2491;}
-.map .cyan{color:#0fdcb6;}
-.map .white{color:#cccccc;}
-.map .on_black{background-color:#000000;}
-.map .on_red{background-color:#D81765;}
-.map .on_green{background-color:#97D01A;}
-.map .on_yellow{background-color:#FFA800;}
-.map .on_blue{background-color:#16B1FB;}
-.map .on_purple{background-color:#ff2491;}
-.map .on_cyan{background-color:#0fdcb6}
-.map .on_white{background-color:#cccccc;}
-.map .iblack{color:#38252C;}
-.map .ired{color:#FF0000;}
-.map .igreen{color:#00bb00;}
-.map .iyellow{color:#E1A126;}
-.map .iblue{color:#1267b9;}
-.map .ipurple{color:#b85ed6;}
-.map .icyan{color:#2ddbdb;}
-.map .iwhite{color:#ffffff;}
-.map .on_biblack{background-color:#38252c;}
-.map .on_bired{background-color:#FF0000;}
-.map .on_bigreen{background-color:#00bb00;}
-.map .on_biyellow{background-color:#E1A126;}
-.map .on_biblue{background-color:#1267b9;}
-.map .on_bipurple{background-color:#b85ed6;}
-.map .on_bicyan{background-color:#2ddbdb;}
-.map .on_biwhite{background-color:#ffffff;}
-

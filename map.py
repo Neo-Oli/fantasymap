@@ -429,6 +429,40 @@ ipurple='\033[0;95m';vimipurple=13
 icyan='\033[0;96m';vimicyan=14
 iwhite='\033[0;97m';vimiwhite=15
 
+hexcolors={}
+hexcolors["black"]="#000000"
+hexcolors["red"]="#d81765"
+hexcolors["green"]="#97D01A"
+hexcolors["yellow"]="#ffbc00"
+hexcolors["blue"]="#16b1fb"
+hexcolors["purple"]="#ff2491"
+hexcolors["cyan"]="#0fdcb6"
+hexcolors["white"]="#cccccc"
+hexcolors["on_black"]="#000000"
+hexcolors["on_red"]="#D81765"
+hexcolors["on_green"]="#97D01A"
+hexcolors["on_yellow"]="#FFA800"
+hexcolors["on_blue"]="#16B1FB"
+hexcolors["on_purple"]="#ff2491"
+hexcolors["on_cyan"]="#0fdcb6"
+hexcolors["on_white"]="#cccccc"
+hexcolors["iblack"]="#38252C"
+hexcolors["ired"]="#FF0000"
+hexcolors["igreen"]="#00bb00"
+hexcolors["iyellow"]="#E1A126"
+hexcolors["iblue"]="#1267b9"
+hexcolors["ipurple"]="#b85ed6"
+hexcolors["icyan"]="#2ddbdb"
+hexcolors["iwhite"]="#ffffff"
+hexcolors["on_biblack"]="#38252c"
+hexcolors["on_bired"]="#FF0000"
+hexcolors["on_bigreen"]="#00bb00"
+hexcolors["on_biyellow"]="#E1A126"
+hexcolors["on_biblue"]="#1267b9"
+hexcolors["on_bipurple"]="#b85ed6"
+hexcolors["on_bicyan"]="#2ddbdb"
+hexcolors["on_biwhite"]="#ffffff"
+
 # on_biblack='\033[1;100m';
 # on_bired='\033[1;101m';
 # on_bigreen='\033[1;102m';
@@ -438,7 +472,10 @@ iwhite='\033[0;97m';vimiwhite=15
 # on_bicyan='\033[1;106m';
 # on_biwhite='\033[1;107m';
 
-import re, sys, argparse
+import re
+import sys
+import argparse
+import subprocess
 
 def findObject(name):
     for c in objects:
