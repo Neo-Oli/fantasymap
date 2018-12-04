@@ -25,7 +25,7 @@ objects['.']['bgcolor']="on_green"
 objects['i']={}
 objects['i']['name']="snow"
 objects['i']['r']="▓"
-objects['i']['color']="iwhite"
+objects['i']['color']="white"
 objects['i']['bgcolor']="on_white"
 objects['i']['bgcolor_average_overwrite']="on_white"
 
