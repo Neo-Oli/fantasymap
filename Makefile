@@ -39,11 +39,11 @@ all: $(ALL)
 .PHONY: help
 help: build/legend
 	$(call display,$<)
-build/legend: $(REQ)
+build/legend: legend.map map.py
 	./map.py legend.map > "$@"
 
 .PRECIOUS: build/%.ansi build/%.map
-build/%.map: recipes/%.rec
+build/%.map: recipes/%.rec map.map map.py
 	mkdir -p build
 	./cutmapfile.py map.map `cat $<` > "$@"
 build/%.html: build/%.map
