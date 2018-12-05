@@ -42,19 +42,28 @@ help: build/legend
 build/legend: legend.map map.py
 	./map.py legend.map > "$@"
 
-.PRECIOUS: build/%.ansi build/%.map
-build/%.map: recipes/%.rec map.map map.py
-	mkdir -p build
-	./cutmapfile.py map.map `cat $<` > "$@"
-build/%.html: build/%.map
-	./map.py -x $< > $@
-build/%-monochrome.html: build/%.map
-	./map.py -xb $< > $@
-build/%-monochrome.ansi: build/%.map
-	./map.py -b $< > $@
-build/%.svg: build/%.map
-	./map.py -i $< > $@
-build/%-monochrome.svg: build/%.map
-	./map.py -ib $< > $@
-build/%.ansi: build/%.map
-	./map.py $< > $@
+REQ := recipes/%.rec map.py 
+build/%.html: $(REQ)
+	@mkdir -p build
+	./map.py -x map.map `cat $<` > $@
+build/%-monochrome.html: $(REQ)
+	@mkdir -p build
+	./map.py -xb map.map `cat $<` > $@
+build/%-monochrome.ansi: $(REQ)
+	@mkdir -p build
+	./map.py -b map.map `cat $<` > $@
+build/%.svg: $(REQ)
+	@mkdir -p build
+	./map.py -i map.map `cat $<` > $@
+build/%-monochrome.svg: $(REQ)
+	@mkdir -p build
+	./map.py -ib map.map `cat $<` > $@
+build/%.ansi: $(REQ)
+	@mkdir -p build
+	./map.py map.map `cat $<` > $@
+build/%.magick: $(REQ)
+	@mkdir -p build
+	./map.py map.map `cat $<` -iS 3 > $@
+build/%.png: build/%.magick
+	@mkdir -p build
+	magick-script $< > $@

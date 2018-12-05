@@ -400,6 +400,18 @@ objects[' ']['r']=" "
 objects[' ']['color']="black"
 objects[' ']['bgcolor']="on_white"
 
+objects['(']={}
+objects['(']['name']="label_start"
+objects['(']['r']="("
+objects['(']['color']="black"
+objects['(']['bgcolor']="on_yellow"
+
+objects[')']={}
+objects[')']['name']="empty"
+objects[')']['r']=" "
+objects[')']['color']=objects['(']['color']
+objects[')']['bgcolor']=objects['(']['bgcolor']
+
 reset='\033[0m'
 
 black='\033[0;30m';vimblack=0
@@ -484,6 +496,7 @@ def findObject(name):
     print("Error: Object not found with name: {}".format(name),file=sys.stderr)
 
 
+big=100000000000
 parser = argparse.ArgumentParser()
 parser.description="Best viewed when piped into `less -RS`"
 parser.add_argument('file', help='Mapfile')
@@ -492,9 +505,19 @@ parser.add_argument('-d', action='store_true', help='Doesn\'t print html skeleto
 parser.add_argument('-v', action='store_true', help='Do not print anything. Usefull for checking for errors in the mapfile')
 parser.add_argument('-b', action='store_true', help='Don\'t print color')
 parser.add_argument('-V', action='store_true', help='Print vim ftplugin file')
-parser.add_argument('-i', action='store_true', help='Create image')
+parser.add_argument('-i', action='store_true', help='Create png image')
+parser.add_argument('-s', action='store_true', help='Create svg image')
+
+
+parser.add_argument('starty', type=int, help='Start Y', nargs="?", default=0)
+parser.add_argument('startx', type=int, help='Start X', nargs="?", default=0)
+parser.add_argument('endy', type=int, help='End Y', nargs="?", default=big)
+parser.add_argument('endx', type=int, help='End X', nargs="?", default=big)
+parser.add_argument('-S', type=int, help='font size for several rendering methods', nargs="?", default=10)
+
 options = parser.parse_args()
 
+scale=options.S
 
 with open (options.file, "r") as myfile:
     map=myfile.read()
@@ -567,8 +590,7 @@ if options.x:
 
 
 
-elif options.i:
-    scale=20
+elif options.s:
     wshift=0.6
     hshift=1.15
     movedown=-0.3*scale
@@ -591,25 +613,53 @@ elif options.i:
     output+=svgstart
 
 
+
+elif options.i:
+    wshift=0.6
+    hshift=1.2
+
+    height=round((len(lines[options.starty:options.endy])*scale*hshift)-1)
+    line=lines[0].split("#")[0][options.startx:options.endx]
+    width=round(len(line)*scale*wshift)
+    im=[
+            "#!/usr/bin/env magick-script",
+            "-size {}x{}".format(width,height),
+            "xc:black",
+            "-font DejaVu-Sans-mono",
+            "-pointsize {}".format(scale),
+            "-gravity NorthWest"
+            ]
+
+
 map=None
-i=0
+i=-1
 for line in lines:
+    i+=1
+    if i<options.starty:
+        continue
+    if i>options.endy:
+        continue
     if line=="":
         continue
     charsinline=list(line)
-    j=0
+    j=-1
     lastc=""
     lastfg=""
     lastbg=""
-    label=False
     for c in charsinline:
+        j+=1
+        if j<options.startx:
+            continue
+        if j>options.endx:
+            continue
+
 
         if c=="#":
             #close all i tags
-            if j>0:
+            if j>options.startx:
                 if options.x:
                     output+="</i>"
-                if options.i:
+                if options.s:
                     outputfg+=svglineend
                     outputbg+=svglineend
             break;
@@ -651,20 +701,11 @@ for line in lines:
         except IndexError:
             downrightc=" "
 
-        if c == ")":
-            backgroundcolor="on_yellow"
-            foregroundcolor="black"
-            character=" "
-            label=False
-        elif label==True:
-            backgroundcolor="on_yellow"
-            foregroundcolor="black"
+
+        if charsinline[0:j].count("(")>charsinline[0:j].count(")"):
+            foregroundcolor=objects['(']['color']
+            backgroundcolor=objects['(']['bgcolor']
             character=c
-        elif c == "(":
-            backgroundcolor="on_yellow"
-            foregroundcolor="black"
-            character=" "
-            label=True
         else:
             if c in list("x+r"):
                 rails=False
@@ -762,7 +803,7 @@ for line in lines:
                 output+="""<i class="{} {}">{}""".format(foregroundcolor,backgroundcolor,character)
             if j==len(charsinline)-1:
                 output+="</i>"
-        elif options.i:
+        elif options.s:
             if lastbg==backgroundcolor and lastfg==foregroundcolor:
                 outputfg+=character
                 outputbg+=block
@@ -770,7 +811,6 @@ for line in lines:
                 if not j==0:
                     outputfg+=svglineend
                     outputbg+=svglineend
-
                 yshift=movedown + ((i+1)*(scale*hshift))
                 xshift=moveright+ ((j  )*(scale*wshift))
                 text="""<text y="{}" x="{}" style="fill:{{}}">""".format(yshift,xshift)
@@ -779,6 +819,15 @@ for line in lines:
             if j==len(charsinline)-1:
                 outputfg+=svglineend
                 outputbg+=svglineend
+        elif options.i:
+            pos="{},{}".format(((j-options.startx)*scale*wshift)-1,((i-options.starty)*scale*hshift)-1)
+            im.append("-fill '{}'".format(hexcolors[backgroundcolor]))
+            im.append("-draw \"text {} '█'\"".format(pos))
+            im.append("-fill '{}'".format(hexcolors[foregroundcolor]))
+            quote=""
+            if character in ["'","`"]:
+                quote="\\"
+            im.append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
         else:
             if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
                 output+=globals()[foregroundcolor]+globals()[backgroundcolor]
@@ -787,25 +836,29 @@ for line in lines:
         lastfg=foregroundcolor
         lastc=c
         lastcharacter=character
-        j+=1
     if j > 0:
         if not options.v:
             if options.x:
                 output+="<br />"
+            elif options.s:
+                pass
             elif options.i:
                 pass
             else:
                 output+=reset+"\n"
-    i+=1
 if options.x:
     output+=htmlend
     if not options.v:
         print(output)
-elif options.i:
+elif options.s:
     output+="\n"+outputbg+"\n"
     output+="\n"+outputfg+"\n"
     output+=svgend
     if not options.v:
         print(output)
+elif options.i:
+    im.append("-write png:-")
+    if not options.v:
+        print("\n".join(im))
 elif not options.v:
     print(output)
