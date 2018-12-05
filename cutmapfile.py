@@ -27,4 +27,4 @@ else:
                 if icol >= options.startx and icol <= options.endx:
                     output+=char
             output+='\n'
-    print(output)
+    print(output,end="")
