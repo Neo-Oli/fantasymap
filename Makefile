@@ -24,14 +24,14 @@ build/vimrc: map.py
 .PHONY: clean
 clean:
 	@rm -fvr build
-	@rm -fvr commands
 
 ALL := \
 $(subst recipes,build,$(subst .rec,.ansi,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,-monochrome.ansi,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,.html,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,-monochrome.html,$(wildcard recipes/*)))\
-$(subst recipes,build,$(subst .rec,.png,$(wildcard recipes/*)))\
+$(subst recipes,build,$(subst .rec,.svg,$(wildcard recipes/*)))\
+$(subst recipes,build,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
 
 .PHONY: all
 all: $(ALL)
@@ -52,19 +52,9 @@ build/%-monochrome.html: build/%.map
 	./map.py -xb $< > $@
 build/%-monochrome.ansi: build/%.map
 	./map.py -b $< > $@
-build/%.png: build/%.map
-	mkdir -p commands
-	build=`./map.py -i $<`;\
-	echo $${build};\
-	chmod +x commands/$${build}_line_*;\
-	ls commands/$${build}_line_* | parallel -j4 --bar {};\
-	convert xc:none -size 0x0 commands/$${build}_stitched.png;\
-	for f in commands/$${build}_image_*;do \
-	echo stitching $${f};\
-	montage -font DejaVu-Sans commands/$${build}_stitched.png $${f} -geometry +0 -tile 1x commands/$${build}_stitched.png;\
-	done;\
-	mv commands/$${build}_stitched.png $@;\
-	rm commands/$${build}_*
-	rmdir --ignore-fail-on-non-empty commands
+build/%.svg: build/%.map
+	./map.py -i $< > $@
+build/%-monochrome.svg: build/%.map
+	./map.py -ib $< > $@
 build/%.ansi: build/%.map
 	./map.py $< > $@

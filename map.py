@@ -476,7 +476,6 @@ import os
 import re
 import sys
 import argparse
-from uuid import uuid4
 
 def findObject(name):
     for c in objects:
@@ -500,6 +499,10 @@ options = parser.parse_args()
 with open (options.file, "r") as myfile:
     map=myfile.read()
 
+output=""
+lines=map.split('\n')
+del lines[-1] # delete last, empty line
+
 if options.V:
     output="setlocal nowrap\n"
     output="{}setlocal redrawtime=10000".format(output)
@@ -519,7 +522,6 @@ if options.V:
     print(output)
     sys.exit(0)
 
-build=uuid4()
 if options.x:
     with open ("map.css", "r") as myfile:
         css=myfile.read()
@@ -553,38 +555,45 @@ if options.x:
     htmlend="""
         </div>
         {}""".format(htmlend)
-
-
-output=""
-
-
-lines=map.split('\n')
-if options.x:
     output+=htmlstart
+
+
+
+
+
+
+
+
+
 elif options.i:
     scale=20
     wshift=0.6
-    hshift=1.2
-
-    height=round((1*scale*hshift)-1)
+    hshift=1.15
+    movedown=-0.3*scale
+    moveright=0*scale
+    height=len(lines)*(scale*hshift)
     line=lines[0].split("#")[0]
-    width=round(len(line)*scale*wshift)
-    imbase=[
-            "#!/usr/bin/env magick-script",
-            "-size {}x{}".format(width,height),
-            "xc:black",
-            "-font DejaVu-Sans-mono",
-            "-pointsize {}".format(scale),
-            "-gravity NorthWest"
-            ]
-    im=[]
+    width=len(line)*(scale*wshift)
+
+    outputbg=""
+    outputfg=""
+    svgstart="""<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" width="{}px" height="{}px" viewBox="0 0 {} {}">
+""".format(width,height,width,height)
+    svgend="""</svg>"""
+
+    if options.d:
+        htmlstart=""
+        htmlend=""
+
+    output+=svgstart
+
+
 map=None
 i=0
 for line in lines:
     if line=="":
         continue
-    if options.i:
-        im.append(imbase[:])
     charsinline=list(line)
     j=0
     lastc=""
@@ -595,9 +604,20 @@ for line in lines:
 
         if c=="#":
             #close all i tags
-            if options.x and j>0:
-                output+="</i>"
+            if j>0:
+                if options.x:
+                    output+="</i>"
+                if options.i:
+                    outputfg+="</tspan></text>\n"
+                    outputbg+="</tspan></text>\n"
             break;
+        if options.i and j==0:
+            yshift=movedown+((i+1)*(scale*hshift))
+            xshift=moveright
+            style="""style="letter-spacing:0em;font-size:{}px;font-family:&apos;DejaVu Sans Mono&apos;;" """.format(scale)
+            outputfg="""{}<text y="{}" x="{}" xml:space="preserve" {}>""".format(outputfg,yshift,xshift,style)
+            outputbg="""{}<text y="{}" x="{}" xml:space="preserve" {}>""".format(outputbg,yshift,xshift,style)
+
 
         # get the surounding characters
 
@@ -738,24 +758,27 @@ for line in lines:
             foregroundcolor="white"
             backgroundcolor="on_black"
         if options.x:
-            # character="<b>{}</b>".format(character)
             if lastbg==backgroundcolor and lastfg==foregroundcolor:
                 output+=character
             else:
                 if not j==0:
                     output+="</i>"
-                output+="<i class=\""+foregroundcolor+" "+backgroundcolor+"\">"+character
+                output+="""<i class="{} {}">{}""".format(foregroundcolor,backgroundcolor,character)
             if j==len(charsinline)-1:
                 output+="</i>"
         elif options.i:
-            pos="{},{}".format((j*scale*wshift)-1,-1)
-            im[i].append("-fill '{}'".format(hexcolors[backgroundcolor]))
-            im[i].append("-draw \"text {} '█'\"".format(pos))
-            im[i].append("-fill '{}'".format(hexcolors[foregroundcolor]))
-            quote=""
-            if character in ["'","`"]:
-                quote="\\"
-            im[i].append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
+            if lastbg==backgroundcolor and lastfg==foregroundcolor:
+                outputfg+=character
+                outputbg+="█"
+            else:
+                if not j==0:
+                    outputfg+="</tspan>"
+                    outputbg+="</tspan>"
+                outputfg+="""<tspan style="fill:{}">{}""".format(hexcolors[foregroundcolor],character)
+                outputbg+="""<tspan style="fill:{}">{}""".format(hexcolors[backgroundcolor],"█")
+            if j==len(charsinline)-1:
+                outputfg+="</tspan></text>\n"
+                outputbg+="</tspan></text>\n"
         else:
             if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
                 output+=globals()[foregroundcolor]+globals()[backgroundcolor]
@@ -769,19 +792,20 @@ for line in lines:
         if not options.v:
             if options.x:
                 output+="<br />"
+            elif options.i:
+                pass
             else:
                 output+=reset+"\n"
-    if options.i:
-        number=str(i).zfill(10)
-        im[i].append("-write commands/{}_image_{}.png".format(build,number))
-        with open("commands/{}_line_{}".format(build,number), "w") as file:
-            file.write("\n".join(im[i]))
     i+=1
 if options.x:
+    output+=htmlend
     if not options.v:
-        output+=htmlend
-    print(output)
+        print(output)
 elif options.i:
-    print(build)
+    output+="\n"+outputbg+"\n"
+    output+="\n"+outputfg+"\n"
+    output+=svgend
+    if not options.v:
+        print(output)
 elif not options.v:
     print(output)
