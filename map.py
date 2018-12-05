@@ -488,6 +488,7 @@ import os
 import re
 import sys
 import argparse
+from uuid import uuid4
 
 def findObject(name):
     for c in objects:
@@ -523,7 +524,7 @@ with open (options.file, "r") as myfile:
     map=myfile.read()
 
 block="█"
-
+build=uuid4()
 output=""
 lines=map.split('\n')
 del lines[-1] # delete last, empty line
@@ -618,18 +619,19 @@ elif options.i:
     wshift=0.6
     hshift=1.2
 
-    height=round((len(lines[options.starty:options.endy])*scale*hshift)-1)
+    height=round((1*scale*hshift)-1)
     line=lines[0].split("#")[0][options.startx:options.endx]
     width=round(len(line)*scale*wshift)
-    im=[
+    imbase=[
             "#!/usr/bin/env magick-script",
+            "-monitor",
             "-size {}x{}".format(width,height),
             "xc:black",
             "-font DejaVu-Sans-mono",
             "-pointsize {}".format(scale),
             "-gravity NorthWest"
             ]
-
+    im={}
 
 map=None
 i=-1
@@ -641,7 +643,10 @@ for line in lines:
         continue
     if line=="":
         continue
+    if options.i:
+        im[i]=imbase[:]
     charsinline=list(line)
+    linewidth=min([len(charsinline),options.endx])
     j=-1
     lastc=""
     lastfg=""
@@ -798,36 +803,36 @@ for line in lines:
             if lastbg==backgroundcolor and lastfg==foregroundcolor:
                 output+=character
             else:
-                if not j==0:
+                if not j==options.startx:
                     output+="</i>"
                 output+="""<i class="{} {}">{}""".format(foregroundcolor,backgroundcolor,character)
-            if j==len(charsinline)-1:
+            if j==linewidth:
                 output+="</i>"
         elif options.s:
             if lastbg==backgroundcolor and lastfg==foregroundcolor:
                 outputfg+=character
                 outputbg+=block
             else:
-                if not j==0:
+                if not j==options.startx:
                     outputfg+=svglineend
                     outputbg+=svglineend
-                yshift=movedown + ((i+1)*(scale*hshift))
-                xshift=moveright+ ((j  )*(scale*wshift))
+                yshift=movedown + (((i-options.starty)+1)*(scale*hshift))
+                xshift=moveright+ (((j-options.startx)  )*(scale*wshift))
                 text="""<text y="{}" x="{}" style="fill:{{}}">""".format(yshift,xshift)
                 outputfg+="""{}{}""".format(text.format(hexcolors[foregroundcolor]),character)
                 outputbg+="""{}{}""".format(text.format(hexcolors[backgroundcolor]),block)
-            if j==len(charsinline)-1:
+            if j==linewidth:
                 outputfg+=svglineend
                 outputbg+=svglineend
         elif options.i:
-            pos="{},{}".format(((j-options.startx)*scale*wshift)-1,((i-options.starty)*scale*hshift)-1)
-            im.append("-fill '{}'".format(hexcolors[backgroundcolor]))
-            im.append("-draw \"text {} '█'\"".format(pos))
-            im.append("-fill '{}'".format(hexcolors[foregroundcolor]))
+            pos="{},{}".format(((j-options.startx)*scale*wshift)-1,0)
+            im[i].append("-fill '{}'".format(hexcolors[backgroundcolor]))
+            im[i].append("-draw \"text {} '█'\"".format(pos))
+            im[i].append("-fill '{}'".format(hexcolors[foregroundcolor]))
             quote=""
             if character in ["'","`"]:
                 quote="\\"
-            im.append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
+            im[i].append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
         else:
             if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
                 output+=globals()[foregroundcolor]+globals()[backgroundcolor]
@@ -836,6 +841,12 @@ for line in lines:
         lastfg=foregroundcolor
         lastc=c
         lastcharacter=character
+    if options.i:
+        number=str(i).zfill(10)
+        im[i].append("-write commands/{}_image_{}.png".format(build,number))
+        with open("commands/{}_line_{}".format(build,number), "w") as file:
+            file.write("\n".join(im[i]))
+
     if j > 0:
         if not options.v:
             if options.x:
@@ -857,8 +868,6 @@ elif options.s:
     if not options.v:
         print(output)
 elif options.i:
-    im.append("-write png:-")
-    if not options.v:
-        print("\n".join(im))
+    print(build)
 elif not options.v:
     print(output)
