@@ -43,7 +43,7 @@ help: build/legend
 build/legend: legend.map map.py
 	./map.py legend.map > "$@"
 
-REQ := recipes/%.rec map.py
+REQ := recipes/%.rec map.py map.map
 .PRECIOUS: build/%
 build/%.html: $(REQ)
 	@mkdir -p build

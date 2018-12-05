@@ -38,10 +38,9 @@ objects['s']['bgcolor']="on_white"
 
 objects['y']={}
 objects['y']['name']="farmland"
-objects['y']['r']="░"
-objects['y']['color']="yellow"
-objects['y']['bgcolor']="on_black"
-objects['y']['xggpmcolor']="#AA9106"
+objects['y']['r']="▓"
+objects['y']['color']="iyellow"
+objects['y']['bgcolor']="on_green"
 
 objects['a']={}
 objects['a']['name']="forrest on grass"
@@ -402,7 +401,7 @@ objects[' ']['bgcolor']="on_white"
 
 objects['(']={}
 objects['(']['name']="label_start"
-objects['(']['r']="("
+objects['(']['r']=" "
 objects['(']['color']="black"
 objects['(']['bgcolor']="on_yellow"
 
@@ -707,7 +706,7 @@ for line in lines:
             downrightc=" "
 
 
-        if charsinline[0:j].count("(")>charsinline[0:j].count(")"):
+        if charsinline[0:j].count("(")>charsinline[0:j+1].count(")"):
             foregroundcolor=objects['(']['color']
             backgroundcolor=objects['(']['bgcolor']
             character=c
