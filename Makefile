@@ -58,7 +58,12 @@ build/%.png: build/%.map
 	echo $${build};\
 	chmod +x commands/$${build}_line_*;\
 	ls commands/$${build}_line_* | parallel -j4 --bar {};\
-	montage -font DejaVu-Sans commands/$${build}_image_* -geometry +0 -tile 1x $@;\
+	convert xc:none -size 0x0 commands/$${build}_stitched.png;\
+	for f in commands/$${build}_image_*;do \
+	echo stitching $${f};\
+	montage -font DejaVu-Sans commands/$${build}_stitched.png $${f} -geometry +0 -tile 1x commands/$${build}_stitched.png;\
+	done;\
+	mv commands/$${build}_stitched.png $@;\
 	rm commands/$${build}_*
 	rmdir --ignore-fail-on-non-empty commands
 build/%.ansi: build/%.map

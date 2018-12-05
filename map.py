@@ -562,7 +562,7 @@ lines=map.split('\n')
 if options.x:
     output+=htmlstart
 elif options.i:
-    scale=10
+    scale=20
     wshift=0.6
     hshift=1.2
 
