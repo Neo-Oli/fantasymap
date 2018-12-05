@@ -646,7 +646,7 @@ for line in lines:
     if options.i:
         im[i]=imbase[:]
     charsinline=list(line)
-    linewidth=min([len(charsinline),options.endx])
+    linewidth=min([len(charsinline)-1,options.endx])
     j=-1
     lastc=""
     lastfg=""
