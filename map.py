@@ -499,6 +499,8 @@ options = parser.parse_args()
 with open (options.file, "r") as myfile:
     map=myfile.read()
 
+block="█"
+
 output=""
 lines=map.split('\n')
 del lines[-1] # delete last, empty line
@@ -578,14 +580,14 @@ elif options.i:
     outputbg=""
     outputfg=""
     svgstart="""<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.2" width="{}px" height="{}px" viewBox="0 0 {} {}">
-""".format(width,height,width,height)
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="{}px" height="{}px" viewBox="0 0 {} {}" style="letter-spacing:0em;font-size:{}px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
+""".format(width,height,width,height,scale)
     svgend="""</svg>"""
 
     if options.d:
         htmlstart=""
         htmlend=""
-
+    svglineend="</text>\n"
     output+=svgstart
 
 
@@ -608,15 +610,9 @@ for line in lines:
                 if options.x:
                     output+="</i>"
                 if options.i:
-                    outputfg+="</tspan></text>\n"
-                    outputbg+="</tspan></text>\n"
+                    outputfg+=svglineend
+                    outputbg+=svglineend
             break;
-        if options.i and j==0:
-            yshift=movedown+((i+1)*(scale*hshift))
-            xshift=moveright
-            style="""style="letter-spacing:0em;font-size:{}px;font-family:&apos;DejaVu Sans Mono&apos;;" """.format(scale)
-            outputfg="""{}<text y="{}" x="{}" xml:space="preserve" {}>""".format(outputfg,yshift,xshift,style)
-            outputbg="""{}<text y="{}" x="{}" xml:space="preserve" {}>""".format(outputbg,yshift,xshift,style)
 
 
         # get the surounding characters
@@ -769,16 +765,20 @@ for line in lines:
         elif options.i:
             if lastbg==backgroundcolor and lastfg==foregroundcolor:
                 outputfg+=character
-                outputbg+="█"
+                outputbg+=block
             else:
                 if not j==0:
-                    outputfg+="</tspan>"
-                    outputbg+="</tspan>"
-                outputfg+="""<tspan style="fill:{}">{}""".format(hexcolors[foregroundcolor],character)
-                outputbg+="""<tspan style="fill:{}">{}""".format(hexcolors[backgroundcolor],"█")
+                    outputfg+=svglineend
+                    outputbg+=svglineend
+
+                yshift=movedown + ((i+1)*(scale*hshift))
+                xshift=moveright+ ((j  )*(scale*wshift))
+                text="""<text y="{}" x="{}" style="fill:{{}}">""".format(yshift,xshift)
+                outputfg+="""{}{}""".format(text.format(hexcolors[foregroundcolor]),character)
+                outputbg+="""{}{}""".format(text.format(hexcolors[backgroundcolor]),block)
             if j==len(charsinline)-1:
-                outputfg+="</tspan></text>\n"
-                outputbg+="</tspan></text>\n"
+                outputfg+=svglineend
+                outputbg+=svglineend
         else:
             if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
                 output+=globals()[foregroundcolor]+globals()[backgroundcolor]
