@@ -1,76 +1,4 @@
 #!/usr/bin/env python3
-reset='\033[0m'
-
-black='\033[0;30m';vimblack=0
-red='\033[0;31m';vimred=1
-green='\033[0;32m';vimgreen=2
-yellow='\033[0;33m';vimyellow=3
-blue='\033[0;34m';vimblue=4
-purple='\033[0;35m';vimpurple=5
-cyan='\033[0;36m';vimcyan=6
-white='\033[0;37m';vimwhite=7
-
-on_black='\033[40m';vimon_black=vimblack
-on_red='\033[41m';vimon_red=vimred
-on_green='\033[42m';vimon_green=vimgreen
-on_yellow='\033[43m';vimon_yellow=vimyellow
-on_blue='\033[44m';vimon_blue=vimblue
-on_purple='\033[45m';vimon_purple=vimpurple
-on_cyan='\033[46m';vimon_cyan=vimcyan
-on_white='\033[47m';vimon_white=vimwhite
-
-iblack='\033[0;90m';vimiblack=8
-ired='\033[0;91m';vimired=9
-igreen='\033[0;92m';vimigreen=10
-iyellow='\033[0;93m';vimiyellow=11
-iblue='\033[0;94m';vimiblue=12
-ipurple='\033[0;95m';vimipurple=13
-icyan='\033[0;96m';vimicyan=14
-iwhite='\033[0;97m';vimiwhite=15
-
-hexcolors={}
-hexcolors["black"]="#000000"
-hexcolors["red"]="#d81765"
-hexcolors["green"]="#97D01A"
-hexcolors["yellow"]="#ffbc00"
-hexcolors["blue"]="#16b1fb"
-hexcolors["purple"]="#ff2491"
-hexcolors["cyan"]="#0fdcb6"
-hexcolors["white"]="#cccccc"
-hexcolors["on_black"]="#000000"
-hexcolors["on_red"]="#D81765"
-hexcolors["on_green"]="#97D01A"
-hexcolors["on_yellow"]="#FFA800"
-hexcolors["on_blue"]="#16B1FB"
-hexcolors["on_purple"]="#ff2491"
-hexcolors["on_cyan"]="#0fdcb6"
-hexcolors["on_white"]="#cccccc"
-hexcolors["iblack"]="#38252C"
-hexcolors["ired"]="#FF0000"
-hexcolors["igreen"]="#00bb00"
-hexcolors["iyellow"]="#E1A126"
-hexcolors["iblue"]="#1267b9"
-hexcolors["ipurple"]="#b85ed6"
-hexcolors["icyan"]="#2ddbdb"
-hexcolors["iwhite"]="#ffffff"
-hexcolors["on_biblack"]="#38252c"
-hexcolors["on_bired"]="#FF0000"
-hexcolors["on_bigreen"]="#00bb00"
-hexcolors["on_biyellow"]="#E1A126"
-hexcolors["on_biblue"]="#1267b9"
-hexcolors["on_bipurple"]="#b85ed6"
-hexcolors["on_bicyan"]="#2ddbdb"
-hexcolors["on_biwhite"]="#ffffff"
-
-# on_biblack='\033[1;100m';
-# on_bired='\033[1;101m';
-# on_bigreen='\033[1;102m';
-# on_biyellow='\033[1;103m';
-# on_biblue='\033[1;104m';
-# on_bipurple='\033[1;105m';
-# on_bicyan='\033[1;106m';
-# on_biwhite='\033[1;107m';
-
 import os
 import re
 import sys
@@ -84,6 +12,18 @@ def findObject(name):
         if objects[c]["name"]==name:
             return c
     print("Error: Object not found with name: {}".format(name),file=sys.stderr)
+
+def config(filename):
+    obj={}
+    config = configparser.ConfigParser()
+    config.read(filename)
+    for section in config.sections():
+        obj[section]={}
+        for option in config[section]:
+            value=config[section][option][1:-1]
+            value=value.replace("\\033","\033")
+            obj[section][option]=value
+    return obj
 
 
 big=100000000000
@@ -116,13 +56,8 @@ block="█"
 build=uuid4()
 output=""
 
-objects={}
-objectsini = configparser.ConfigParser()
-objectsini.read('objects.ini')
-for section in objectsini.sections():
-    objects[section]={}
-    for option in objectsini[section]:
-        objects[section][option]=objectsini[section][option][1:-1]
+objects=config('objects.ini')
+colors=config('colors.ini')
 
 
 lines=map.split('\n')
@@ -136,8 +71,8 @@ if options.V:
         rule="rule_{}".format(i)
         match="syn match {} /[{}]/".format(rule,c)
         try:
-            fg=globals()["vim{}".format(objects[c]["color"])]
-            bg=globals()["vim{}".format(objects[c]["bgcolor"])]
+            fg=colors["vim"][objects[c]["color"]]
+            bg=colors["vim"][objects[c]["bgcolor"]]
         except KeyError:
             fg="None"
             bg="None"
@@ -151,11 +86,11 @@ if options.x:
     with open ("map.css", "r") as myfile:
         css=myfile.read()
     csscolors=""
-    for key in hexcolors:
+    for key in colors["hex"]:
         prefix=""
         if "on_" in key:
             prefix="background-"
-        color=".map .{}{{{}color:{};}}".format(key,prefix,hexcolors[key])
+        color=".map .{}{{{}color:{};}}".format(key,prefix,colors["hex"][key])
         csscolors="{}{}".format(csscolors,color)
     htmlstart="""
 <!DOCTYPE html>
@@ -324,14 +259,14 @@ for line in lines:
                     prefix="street_{}"
                 if rails:
                     uptrue=upc in list("§r[⁰¹²⁵⁷⁸")
-                    downtrue=downc in list("§r[⁰³⁴⁶⁷⁸")
-                    lefttrue=leftc in list("=r]⁰²⁴⁵⁶⁸")
-                    righttrue=rightc in list("=r]⁰¹³⁵⁶⁷")
+                    downtrue=downc in list("§rc⁰³⁴⁶⁷⁸")
+                    lefttrue=leftc in list("=rC⁰²⁴⁵⁶⁸")
+                    righttrue=rightc in list("=rC⁰¹³⁵⁶⁷")
                 else:
-                    uptrue=upc in list("x+|!012578j]⁰¹²⁵⁷⁸")
-                    downtrue=downc in list("x+!|034678j]⁰³⁴⁶⁷⁸")
-                    lefttrue=leftc in list("x+~-024568q[⁰²⁴⁵⁶⁸")
-                    righttrue=rightc in list("x+~-013567q[⁰¹³⁵⁶⁷")
+                    uptrue=upc in list("x+|!012578jC⁰¹²⁵⁷⁸")
+                    downtrue=downc in list("x+!|034678jC⁰³⁴⁶⁷⁸")
+                    lefttrue=leftc in list("x+~-024568qc⁰²⁴⁵⁶⁸")
+                    righttrue=rightc in list("x+~-013567qc⁰¹³⁵⁶⁷")
                 if uptrue and downtrue and lefttrue and righttrue:
                     p="crossing"
                 elif not uptrue and not downtrue and lefttrue and righttrue:
@@ -418,23 +353,24 @@ for line in lines:
                 yshift=movedown + (((i-options.starty)+1)*(scale*hshift))
                 xshift=moveright+ (((j-options.startx)  )*(scale*wshift))
                 text="""<text y="{}" x="{}" style="fill:{{}}">""".format(yshift,xshift)
-                outputfg+="""{}{}""".format(text.format(hexcolors[foregroundcolor]),character)
-                outputbg+="""{}{}""".format(text.format(hexcolors[backgroundcolor]),block)
+                outputfg+="""{}{}""".format(text.format(colors["hex"][foregroundcolor]),character)
+                outputbg+="""{}{}""".format(text.format(colors["hex"][backgroundcolor]),block)
             if j==linewidth:
                 outputfg+=svglineend
                 outputbg+=svglineend
         elif options.i:
             pos="{},{}".format(((j-options.startx)*scale*wshift)-1,0)
-            im[i].append("-fill '{}'".format(hexcolors[backgroundcolor]))
+            im[i].append("-fill '{}'".format(colors["hex"][backgroundcolor]))
             im[i].append("-draw \"text {} '█'\"".format(pos))
-            im[i].append("-fill '{}'".format(hexcolors[foregroundcolor]))
+            im[i].append("-fill '{}'".format(colors["hex"][foregroundcolor]))
             quote=""
             if character in ["'","`"]:
                 quote="\\"
             im[i].append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
         else:
             if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
-                output+=globals()[foregroundcolor]+globals()[backgroundcolor]
+                output+=colors["ansi"][foregroundcolor]+colors["ansi"][backgroundcolor]
+
             output+=character
         lastbg=backgroundcolor
         lastfg=foregroundcolor
@@ -455,7 +391,7 @@ for line in lines:
             elif options.i:
                 pass
             else:
-                output+=reset+"\n"
+                output+=colors["ansi"]["reset"]+"\n"
 if options.x:
     output+=htmlend
     if not options.v:
