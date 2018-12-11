@@ -24,7 +24,6 @@ build/vimrc: map.py
 .PHONY: clean
 clean:
 	@rm -fvr build
-	@rm -fvr commands
 
 ALL := \
 $(subst recipes,build,$(subst .rec,.ansi,$(wildcard recipes/*)))\
@@ -42,8 +41,8 @@ help: build/legend
 	$(call display,$<)
 build/legend: legend.map map.py
 	./map.py legend.map > "$@"
-
-REQ := recipes/%.rec map.py map.map
+BASE := map.py map.map
+REQ := recipes/%.rec $(BASE)
 .PRECIOUS: build/%
 build/%.html: $(REQ)
 	@mkdir -p build
@@ -64,13 +63,15 @@ build/%.ansi: $(REQ)
 	@mkdir -p build
 	./map.py map.map `cat $<` > $@
 build/%.png: $(REQ)
-	@mkdir -p commands build
-	build=`./map.py -iS 3 map.map \`cat $<\``;\
-	echo $${build};\
-	chmod +x commands/$${build}_line_*;\
-	ls commands/$${build}_line_* | parallel -j4 --bar {};\
-	montage -font DejaVu-Sans commands/$${build}_image_* $${f} -geometry +0 -tile 1x commands/$${build}_stitched.png;\
-	mv commands/$${build}_stitched.png $@;\
-	rm commands/$${build}_*
-	@rmdir --ignore-fail-on-non-empty commands
+	@mkdir -p build
+	./map.py -iS 22.35 map.map `cat $<` > $@.magick
+	echo -write png:$@ >> $@.magick
+	magick-script ./$@.magick
 
+
+
+
+.PHONY: tiles
+tiles:
+	./tiles.py
+	make $(MFLAGS) -C build/tilescripts

@@ -43,7 +43,7 @@ parser.add_argument('starty', type=int, help='Start Y', nargs="?", default=0)
 parser.add_argument('startx', type=int, help='Start X', nargs="?", default=0)
 parser.add_argument('endy', type=int, help='End Y', nargs="?", default=big)
 parser.add_argument('endx', type=int, help='End X', nargs="?", default=big)
-parser.add_argument('-S', type=int, help='font size for several rendering methods', nargs="?", default=10)
+parser.add_argument('-S', type=float, help='font size for several rendering methods', nargs="?", default=10)
 
 options = parser.parse_args()
 
@@ -62,6 +62,18 @@ colors=config('colors.ini')
 
 lines=map.split('\n')
 del lines[-1] # delete last, empty line
+height=len(lines)
+width=len(lines[0].split("#")[0])
+
+argheight=options.endy-options.starty
+if argheight!=big:
+    height=argheight
+argwidth=options.endx-options.startx
+if argwidth!=big:
+    width=argwidth
+
+
+
 
 if options.V:
     output="setlocal nowrap\n"
@@ -130,15 +142,14 @@ elif options.s:
     hshift=1.15
     movedown=-0.3*scale
     moveright=0*scale
-    height=len(lines)*(scale*hshift)
-    line=lines[0].split("#")[0]
-    width=len(line)*(scale*wshift)
+    picheight=height*(scale*hshift)
+    picwidth=width*(scale*wshift)
 
     outputbg=""
     outputfg=""
     svgstart="""<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="{}px" height="{}px" viewBox="0 0 {} {}" style="letter-spacing:0em;font-size:{}px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
-""".format(width,height,width,height,scale)
+""".format(picwidth,picheight,picwidth,picheight,scale)
     svgend="""</svg>"""
 
     if options.d:
@@ -150,22 +161,20 @@ elif options.s:
 
 
 elif options.i:
-    wshift=0.6
-    hshift=1.2
+    wshift=0.5725
+    hshift=1.15
 
-    height=round((1*scale*hshift)-1)
-    line=lines[0].split("#")[0][options.startx:options.endx]
-    width=round(len(line)*scale*wshift)
-    imbase=[
+    picheight=round((height*scale*hshift)-1)
+    picwidth=round(width*scale*wshift)
+    im=[
             "#!/usr/bin/env magick-script",
-            "-monitor",
-            "-size {}x{}".format(width,height),
+            # "-monitor",
+            "-size {}x{}".format(picwidth,picheight),
             "xc:black",
             "-font DejaVu-Sans-mono",
             "-pointsize {}".format(scale),
             "-gravity NorthWest"
             ]
-    im={}
 
 map=None
 i=-1
@@ -177,8 +186,6 @@ for line in lines:
         continue
     if line=="":
         continue
-    if options.i:
-        im[i]=imbase[:]
     charsinline=list(line)
     linewidth=min([len(charsinline)-1,options.endx])
     j=-1
@@ -359,14 +366,14 @@ for line in lines:
                 outputfg+=svglineend
                 outputbg+=svglineend
         elif options.i:
-            pos="{},{}".format(((j-options.startx)*scale*wshift)-1,0)
-            im[i].append("-fill '{}'".format(colors["hex"][backgroundcolor]))
-            im[i].append("-draw \"text {} '█'\"".format(pos))
-            im[i].append("-fill '{}'".format(colors["hex"][foregroundcolor]))
+            pos="{},{}".format(((j-options.startx)*scale*wshift)-1,((i-options.starty)*scale*hshift)-1)
+            im.append("-fill '{}'".format(colors["hex"][backgroundcolor]))
+            im.append("-draw \"text {} '█'\"".format(pos))
+            im.append("-fill '{}'".format(colors["hex"][foregroundcolor]))
             quote=""
             if character in ["'","`"]:
                 quote="\\"
-            im[i].append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
+            im.append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
         else:
             if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
                 output+=colors["ansi"][foregroundcolor]+colors["ansi"][backgroundcolor]
@@ -376,12 +383,6 @@ for line in lines:
         lastfg=foregroundcolor
         lastc=c
         lastcharacter=character
-    if options.i:
-        number=str(i).zfill(10)
-        im[i].append("-write commands/{}_image_{}.png".format(build,number))
-        with open("commands/{}_line_{}".format(build,number), "w") as file:
-            file.write("\n".join(im[i]))
-
     if j > 0:
         if not options.v:
             if options.x:
@@ -403,6 +404,6 @@ elif options.s:
     if not options.v:
         print(output)
 elif options.i:
-    print(build)
+    print("\n".join(im))
 elif not options.v:
     print(output)
