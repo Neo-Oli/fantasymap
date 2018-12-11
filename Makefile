@@ -34,7 +34,7 @@ $(subst recipes,build,$(subst .rec,.svg,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
 
 .PHONY: all
-all: $(ALL)
+all: $(ALL) tiles
 
 .PHONY: help
 help: build/legend

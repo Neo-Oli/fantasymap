@@ -161,7 +161,7 @@ elif options.s:
 
 
 elif options.i:
-    wshift=0.5725
+    wshift=0.5755
     hshift=1.15
 
     picheight=round((height*scale*hshift)-1)
@@ -170,7 +170,7 @@ elif options.i:
             "#!/usr/bin/env magick-script",
             # "-monitor",
             "-size {}x{}".format(picwidth,picheight),
-            "xc:black",
+            "xc:red",
             "-font DejaVu-Sans-mono",
             "-pointsize {}".format(scale),
             "-gravity NorthWest"
@@ -404,6 +404,7 @@ elif options.s:
     if not options.v:
         print(output)
 elif options.i:
+    im.append("-crop {}x{}+0+0".format(picwidth-1,picheight))
     print("\n".join(im))
 elif not options.v:
     print(output)
