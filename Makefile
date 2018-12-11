@@ -34,7 +34,7 @@ $(subst recipes,build,$(subst .rec,.svg,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
 
 .PHONY: all
-all: $(ALL) tiles
+all: $(ALL)
 
 .PHONY: help
 help: build/legend
@@ -72,6 +72,8 @@ build/%.png: $(REQ)
 
 
 .PHONY: tiles
-tiles:
+tiles: .make-tiles
+.make-tiles:
 	./tiles.py
 	make $(MFLAGS) -C build/tilescripts
+	touch $@
