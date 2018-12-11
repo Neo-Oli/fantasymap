@@ -24,6 +24,7 @@ build/vimrc: map.py
 .PHONY: clean
 clean:
 	@rm -fvr build
+	@rm -fvr .make-*
 
 ALL := \
 $(subst recipes,build,$(subst .rec,.ansi,$(wildcard recipes/*)))\
