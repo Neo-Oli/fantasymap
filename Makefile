@@ -78,3 +78,4 @@ tiles: .make-tiles
 	./tiles.py
 	make $(MFLAGS) -C build/tilescripts
 	touch $@
+	rm -vrf build/tilescripts
