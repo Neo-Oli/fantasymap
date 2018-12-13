@@ -21,7 +21,9 @@ def config(filename):
     for section in config.sections():
         obj[section]={}
         for option in config[section]:
-            value=config[section][option][1:-1]
+            value=config[section][option]
+            if isinstance(value,str):
+                value=value[1:-1]
             value=value.replace("\\033","\033")
             obj[section][option]=value
     return obj
