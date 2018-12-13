@@ -17,12 +17,13 @@ os.system("mkdir -p build/tilescripts")
 w=1000
 h=500
 
-xi=20
-yi=10
-z=6
+xi=19
+yi=9
+z=7
 i=0
-files={}
-files[z]=[]
+magick=[]
+png=[]
+stitched=[]
 for y in range(0,h,yi):
     j=0
     for x in range(0,w,xi):
@@ -31,62 +32,76 @@ for y in range(0,h,yi):
         xm=round(x/xi)
         ym=round(y/yi)
         name="{}-{}-{}".format(z,xm,ym)
-        newpath="build/tiles/{}/{}/{}.png".format(z,xm,ym)
-        files[z].append([z,xm,ym])
-        command="cd ../..;"
-        command+="mkdir -p build/tiles/{}/{};".format(z,xm)
-        command+="res=\"`./map.py -iS 22.35 map.map {} {} {} {}`\";".format(y,x,yy,xx)
-        # command+="echo \"#`echo \"$res\"|md5sum`\" > build/tilescripts/{}.magick;".format(name)
-        command+="echo \"$res\" > build/tilescripts/{}.magick;".format(name)
-        command+="echo -write png:{} >> build/tilescripts/{}.magick;".format(newpath,name)
-        command+="magick-script build/tilescripts/{}.magick".format(name)
-        filename="build/tilescripts/{}.sh".format(name)
-        write(filename,command)
+        newpath="../tiles/{}/{}/{}.png".format(z,xm,ym)
+        file="{}.magick".format(name)
+        magick.append("{}: ../../map.py ../../map.map ../../objects.ini ../../colors.ini".format(file))
+        # magick.append("\t@echo Building $@")
+        magick.append("\t@if [ ! -f \"$@\" ];then touch \"$@\";fi;\\")
+        magick.append("\tres=\"`../../map.py -iS 22.35 ../../map.map {} {} {} {}`\";\\".format(y,x,yy,xx))
+        magick.append("\thash=\"#`echo \\\"$$res\\\"|md5sum`\";\\")
+        magick.append("\tif [ \"$$hash\" != \"`head -n1 $@`\" ]; then \\")
+        magick.append("\t\techo \"$$hash\\n$$res\" > $@;\\")
+        magick.append("\t\techo -n \"#\";\\")
+        magick.append("\telse \\")
+        magick.append("\t\techo -n \".\";\\")
+        magick.append("\tfi")
+        png.append("{}: {}".format(newpath,file))
+        png.append("\t@echo Building $@")
+        png.append("\t@mkdir -p \"../tiles/{}/{}\"".format(z,xm))
+        png.append("\t@magick-script $< > $@")
         j+=1
     i+=1
 
 newi=i
 newj=j
 z-=1
+noimg="xc:none"
 for zoom in range(z,0, -1):
     i=newi
     j=newj
     newi=0
-    files[zoom]=[]
     for y in range(0,i,2):
         newj=0
         for x in range(0,j,2):
-            path="build/tiles/{}".format(zoom+1)
-            command="cd ../..;"
-            command+="i1={}/{}/{}.png;\n".format(path,x  ,y  )
-            command+="i2={}/{}/{}.png;\n".format(path,x+1,y  )
-            command+="i3={}/{}/{}.png;\n".format(path,x  ,y+1)
-            command+="i4={}/{}/{}.png;\n".format(path,x+1,y+1)
+            path="../tiles/{}".format(zoom+1)
+            newpath="../tiles/{}/{}/{}.png".format(zoom,round(x/2),round(y/2))
+            im=[
+                "{}/{}/{}.png".format(path,x  ,y  ),
+                "{}/{}/{}.png".format(path,x+1,y  ),
+                "{}/{}/{}.png".format(path,x  ,y+1),
+                "{}/{}/{}.png".format(path,x+1,y+1)
+                ]
+            ie=im[:]
+            if x>=j-1:
+                im[1]=noimg
+                im[3]=noimg
+                ie[1]=""
+                ie[3]=""
+            if y>=i-1:
+                im[2]=noimg
+                im[3]=noimg
+                ie[2]=""
+                ie[3]=""
+            stitched.append("{}: {} {} {} {}".format(newpath,ie[0],ie[1],ie[2],ie[3]))
+            stitched.append("\t@echo Building $@")
+            stitched.append("\t@mkdir -p \"../tiles/{}/{}\";\\".format(zoom,round(x/2)))
             name="{}-{}-{}".format(zoom,round(x/2),round(y/2))
-            newpath="build/tiles/{}/{}/{}.png".format(zoom,round(x/2),round(y/2))
-            files[zoom].append([zoom,round(x/2),round(y/2)])
-            command+="mkdir -p build/tiles/{}/{};\n".format(zoom,round(x/2))
-            for var in range(1,5):
-                command+="if [ ! -f \"$i{}\" ];then i{}=\"xc:none\";fi;\n".format(var,var)
-            command+="montage -font DejaVu-Sans $i1 $i2 $i3 $i4 -geometry 128x128 -tile 2x {};\n".format(newpath)
-            filename="build/tilescripts/{}.sh".format(name)
-            write(filename,command)
+            stitched.append("\tmontage -font DejaVu-Sans {} {} {} {} -geometry 128x128 -tile 2x $@".format(im[0],im[1],im[2],im[3]))
             newj+=1
         newi+=1
 
 
-m=".PHONY: tiles\n"
-m+="tiles:\n"
-for zoom in range(z+1,0, -1):
-    m+="\t make $(MFLAGS) tiles{}\n".format(zoom)
-
-
-for zoom in range(z+1,0, -1):
-    m+="TILES{} := $(sort $(subst -,/,$(subst tilescripts,tiles,$(subst .sh,.png,$(wildcard ../tilescripts/{}-*.sh)))))\n".format(zoom,zoom)
-    m+=".PHONY: tiles{}\n".format(zoom)
-    m+="tiles{}: $(TILES{})\n".format(zoom,zoom)
-    for f in files[zoom]:
-        m+="../tiles/{}/{}/{}.png: {}-{}-{}.sh\n".format(f[0],f[1],f[2],f[0],f[1],f[2])
-        m+="\tsh $<\n"
 filename="build/tilescripts/Makefile"
-write(filename,m)
+
+makefile="""
+.PHONY: tiles
+tiles: ../tiles/1/0/0.png
+{}
+{}
+{}
+""".format(
+        "\n".join(magick),
+        "\n".join(png),
+        "\n".join(stitched)
+        )
+write(filename,makefile)

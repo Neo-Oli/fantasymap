@@ -16,8 +16,9 @@ def findObject(name, objects):
 
 def config(filename):
     obj={}
+    dir_path = os.path.dirname(os.path.realpath(__file__))
     config = configparser.ConfigParser()
-    config.read(filename)
+    config.read("{}/{}".format(dir_path,filename))
     for section in config.sections():
         obj[section]={}
         for option in config[section]:
@@ -101,7 +102,8 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
     block="█"
     build=uuid4()
     output=""
-
+    # endy=endy-1
+    # endx=endx-1
     objects=config('objects.ini')
     colors=config('colors.ini')
 
@@ -110,9 +112,11 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
     height=len(lines)
     width=len(lines[0].split("#")[0])
     argheight=endy-starty
+    argheight+=1
     if argheight!=big:
         height=argheight
     argwidth=endx-startx
+    argwidth+=1
     if argwidth!=big:
         width=argwidth
 
@@ -347,7 +351,8 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                     except KeyError:
                         pass
                 if allcolors:
-                    backgroundcolor=max(set(allcolors), key=allcolors.count)
+                    # the output of set must be sorted otherwise it's order is essentially random, causing different results for max if the array has the same number of two elements
+                    backgroundcolor=max(sorted(set(allcolors)), key=allcolors.count)
                 if backgroundcolor=="s_average":
                     if "bgcolor_fallback" in objects[c]:
                         backgroundcolor=objects[c]["bgcolor_fallback"]
@@ -420,8 +425,9 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
         print(output)
     elif mode=="png":
         im.append("-crop {}x{}+0+0".format(picwidth-1,picheight))
+        im.append("-write png:-")
         print("\n".join(im))
     elif mode=="ansi":
-        print(output)
+        print(output[0:-1]) #cut off trailing newline
 
 main()

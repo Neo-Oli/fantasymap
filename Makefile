@@ -75,8 +75,7 @@ build/%.png: $(REQ)
 
 .PHONY: tiles
 tiles: .make-tiles
-.make-tiles:
+.make-tiles: $(BASE)
 	./tiles.py
 	make $(MFLAGS) -C build/tilescripts
 	touch $@
-	rm -vrf build/tilescripts
