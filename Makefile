@@ -40,9 +40,10 @@ all: $(ALL)
 .PHONY: help
 help: build/legend
 	$(call display,$<)
-build/legend: legend.map map.py
-	./map.py legend.map > "$@"
-BASE := map.py map.map
+build/legend: $(REQ)
+	@mkdir -p build
+	./map.py map.map -l > "$@"
+BASE := map.py map.map objects.ini colors.ini
 REQ := recipes/%.rec $(BASE)
 .PRECIOUS: build/%
 build/%.html: $(REQ)

@@ -6,7 +6,7 @@ import argparse
 from uuid import uuid4
 import configparser
 
-big=1000000000000
+big=1000000000
 
 def findObject(name, objects):
     for c in objects:
@@ -27,6 +27,17 @@ def config(filename):
             value=value.replace("\\033","\033")
             obj[section][option]=value
     return obj
+
+def legend():
+    map="===(Legend for Mapmakers)===#test\n"
+    objects=config('objects.ini')
+    for key in objects:
+        o=objects[key]
+        if key in ["(",")"]:
+            #don't start a label
+            continue
+        map+="({}) {} ({})\n".format(key,key,o["name"])
+    render(map)
 def vim():
     output="setlocal nowrap\n"
     output="{}setlocal redrawtime=10000".format(output)
@@ -56,6 +67,7 @@ def main():
     parser.add_argument('-V', action='store_true', help='Print vim ftplugin file')
     parser.add_argument('-i', action='store_true', help='Create png image')
     parser.add_argument('-s', action='store_true', help='Create svg image')
+    parser.add_argument('-l', action='store_true', help='Show Mapmakers legend')
 
 
     parser.add_argument('starty', type=int, help='Start Y', nargs="?", default=0)
@@ -68,6 +80,8 @@ def main():
 
     if options.V:
         vim()
+    elif options.l:
+        legend()
     else:
 
         with open (options.file, "r") as myfile:
@@ -82,9 +96,8 @@ def main():
             mode="png"
         if options.s:
             mode="svg"
-
         render(map, mode,        options.b,        options.startx, options.endx, options.starty,     options.endy,     options.S)
-def render(map, mode="ansi", monochrome=False, startx=0,       endx=0,       starty=big, endy=big, scale="12"):
+def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       starty=0, endy=big, scale="12"):
     block="█"
     build=uuid4()
     output=""
@@ -92,12 +105,10 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=0,       sta
     objects=config('objects.ini')
     colors=config('colors.ini')
 
-
     lines=map.split('\n')
     del lines[-1] # delete last, empty line
     height=len(lines)
     width=len(lines[0].split("#")[0])
-
     argheight=endy-starty
     if argheight!=big:
         height=argheight
@@ -412,4 +423,5 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=0,       sta
         print("\n".join(im))
     elif mode=="ansi":
         print(output)
+
 main()
