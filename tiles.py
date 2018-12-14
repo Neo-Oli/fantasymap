@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 import os
+import os.path
 import math
+from pathlib import Path
+from shutil import copyfile
 # import hashlib
 def write(filename,content):
     # h="#{}\n".format(hashlib.md5(content.encode("utf-8")).hexdigest())
@@ -16,14 +19,51 @@ os.system("mkdir -p build/tilescripts")
 
 w=1000
 h=500
-
 xi=19
 yi=9
 z=7
-i=0
+mapfile="map.map"
+cachemapfile="build/tilescripts/cache.map"
+with open (mapfile, "r") as myfile:
+    map=myfile.read()
+try:
+    with open (cachemapfile, "r") as myfile:
+        cachemap=myfile.read()
+except FileNotFoundError:
+    cachemap=""
+lines=map.split('\n')
+clines=cachemap.split('\n')
+files=os.listdir("build/tilescripts/")
+del lines[-1] # delete last, empty line
+del clines[-1] # delete last, empty line
+for i in range(0,h,yi):
+    for y in range(0,yi+1):
+        try:
+            line=lines[i+y]
+            cline=clines[i+y]
+        except IndexError:
+            line=""
+            cline=""
+        charsinline=list(line)
+        ccharsinline=list(cline)
+        for j in range(0,w,xi):
+            old="".join(charsinline[j:j+xi+1])
+            try:
+                new="".join(ccharsinline[j:j+xi+1])
+            except IndexError:
+                new=""
+            xm=round(j/xi)
+            ym=round(i/yi)
+            name="{}-{}-{}".format(z,xm,ym)
+            cachename="{}.cache".format(name)
+            if cachename not in files or old!=new:
+                Path("build/tilescripts/{}".format(cachename)).touch()
+                print("change detected in {}".format(name))
+copyfile(mapfile,cachemapfile)
 magick=[]
 png=[]
 stitched=[]
+i=0
 for y in range(0,h,yi):
     j=0
     for x in range(0,w,xi):
@@ -32,18 +72,18 @@ for y in range(0,h,yi):
         xm=round(x/xi)
         ym=round(y/yi)
         name="{}-{}-{}".format(z,xm,ym)
+        cachefile="{}.cache".format(name)
         newpath="../tiles/{}/{}/{}.png".format(z,xm,ym)
         file="{}.magick".format(name)
-        magick.append("{}: ../../map.py ../../map.map ../../objects.ini ../../colors.ini".format(file))
-        # magick.append("\t@echo Building $@")
+        magick.append("{}: {}".format(file,cachefile))
+        magick.append("\t@echo Building $@")
         magick.append("\t@if [ ! -f \"$@\" ];then touch \"$@\";fi;\\")
         magick.append("\tres=\"`../../map.py -iS 22.35 ../../map.map {} {} {} {}`\";\\".format(y,x,yy,xx))
         magick.append("\thash=\"#`echo \\\"$$res\\\"|md5sum`\";\\")
         magick.append("\tif [ \"$$hash\" != \"`head -n1 $@`\" ]; then \\")
         magick.append("\t\techo \"$$hash\\n$$res\" > $@;\\")
-        magick.append("\t\techo -n \"#\";\\")
         magick.append("\telse \\")
-        magick.append("\t\techo -n \".\";\\")
+        magick.append("\t\ttouch -r $@ $<;\\")
         magick.append("\tfi")
         png.append("{}: {}".format(newpath,file))
         png.append("\t@echo Building $@")
