@@ -36,7 +36,7 @@ clines=cachemap.split('\n')
 files=os.listdir("build/tilescripts/")
 del lines[-1] # delete last, empty line
 del clines[-1] # delete last, empty line
-for i in range(0,h,yi):
+for i in range(0,h,yi+1):
     for y in range(0,yi+1):
         try:
             line=lines[i+y]
@@ -46,7 +46,7 @@ for i in range(0,h,yi):
             cline=""
         charsinline=list(line)
         ccharsinline=list(cline)
-        for j in range(0,w,xi):
+        for j in range(0,w,xi+1):
             old="".join(charsinline[j:j+xi+1])
             try:
                 new="".join(ccharsinline[j:j+xi+1])
@@ -64,9 +64,9 @@ magick=[]
 png=[]
 stitched=[]
 i=0
-for y in range(0,h,yi):
+for y in range(0,h,yi+1):
     j=0
-    for x in range(0,w,xi):
+    for x in range(0,w,xi+1):
         xx=x+xi
         yy=y+yi
         xm=round(x/xi)
