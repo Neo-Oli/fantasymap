@@ -127,7 +127,7 @@ for zoom in range(z,0, -1):
             stitched.append("\t@echo Building $@")
             stitched.append("\t@mkdir -p \"../tiles/{}/{}\";\\".format(zoom,round(x/2)))
             name="{}-{}-{}".format(zoom,round(x/2),round(y/2))
-            stitched.append("\tmontage -font DejaVu-Sans {} {} {} {} -geometry 128x128 -tile 2x $@".format(im[0],im[1],im[2],im[3]))
+            stitched.append("\tmontage -font DejaVu-Sans -background none {} {} {} {} -geometry 128x128 -tile 2x $@".format(im[0],im[1],im[2],im[3]))
             stitched.append("\t@optipng $@ 2> /dev/null")
             newj+=1
         newi+=1
