@@ -19,8 +19,8 @@ os.system("mkdir -p build/tilescripts")
 
 w=1000
 h=500
-xi=19
-yi=9
+xi=20
+yi=10
 z=7
 mapfile="map.map"
 cachemapfile="build/tilescripts/cache.map"
@@ -36,8 +36,8 @@ clines=cachemap.split('\n')
 files=os.listdir("build/tilescripts/")
 del lines[-1] # delete last, empty line
 del clines[-1] # delete last, empty line
-for i in range(0,h,yi+1):
-    for y in range(0,yi+1):
+for i in range(0,h,yi):
+    for y in range(0,yi):
         try:
             line=lines[i+y]
             cline=clines[i+y]
@@ -46,10 +46,10 @@ for i in range(0,h,yi+1):
             cline=""
         charsinline=list(line)
         ccharsinline=list(cline)
-        for j in range(0,w,xi+1):
-            old="".join(charsinline[j:j+xi+1])
+        for j in range(0,w,xi):
+            old="".join(charsinline[j:j+xi])
             try:
-                new="".join(ccharsinline[j:j+xi+1])
+                new="".join(ccharsinline[j:j+xi])
             except IndexError:
                 new=""
             xm=round(j/xi)
@@ -64,9 +64,9 @@ magick=[]
 png=[]
 stitched=[]
 i=0
-for y in range(0,h,yi+1):
+for y in range(0,h,yi):
     j=0
-    for x in range(0,w,xi+1):
+    for x in range(0,w,xi):
         xx=x+xi
         yy=y+yi
         xm=round(x/xi)
@@ -78,7 +78,7 @@ for y in range(0,h,yi+1):
         magick.append("{}: {}".format(file,cachefile))
         magick.append("\t@echo Building $@")
         magick.append("\t@if [ ! -f \"$@\" ];then touch \"$@\";fi;\\")
-        magick.append("\tres=\"`../../map.py -iS 22.35 ../../map.map {} {} {} {}`\";\\".format(y,x,yy,xx))
+        magick.append("\tres=\"`../../map.py -iS 22.35 ../../map.map {} {} {} {}`\";\\".format(y,x,yy-1,xx-1))
         magick.append("\thash=\"#`echo \\\"$$res\\\"|md5sum`\";\\")
         magick.append("\tif [ \"$$hash\" != \"`head -n1 $@`\" ]; then \\")
         magick.append("\t\techo \"$$hash\\n$$res\" > $@;\\")
