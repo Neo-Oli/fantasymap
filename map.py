@@ -192,7 +192,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 "#!/usr/bin/env magick-script",
                 # "-monitor",
                 "-size {}x{}".format(picwidth,picheight),
-                "xc:white",
+                "xc:none",
                 "-font DejaVu-Sans-mono",
                 "-pointsize {}".format(scale),
                 "-gravity NorthWest"
