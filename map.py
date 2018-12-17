@@ -404,7 +404,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
             elif mode=="txt":
                 output+=orig
             elif mode=="ansi":
-                if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
+                if (lastbg is not backgroundcolor or lastfg is not foregroundcolor) and not monochrome:
                     output+=colors["ansi"][foregroundcolor]+colors["ansi"][backgroundcolor]
 
                 output+=character
@@ -422,7 +422,9 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
             elif mode=="txt":
                 output+="\n"
             elif mode=="ansi":
-                output+=colors["ansi"]["reset"]+"\n"
+                if not monochrome:
+                    output+=colors["ansi"]["reset"]
+                output+="\n"
     if mode=="html":
         output+=htmlend
         print(output)
