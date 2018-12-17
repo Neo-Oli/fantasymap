@@ -1,5 +1,5 @@
 define display
-	less -RS "$(1)"
+	less -RSF "$(1)"
 endef
 
 
@@ -28,6 +28,7 @@ clean:
 
 ALL := \
 $(subst recipes,build,$(subst .rec,.ansi,$(wildcard recipes/*)))\
+$(subst recipes,build,$(subst .rec,.txt,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,-monochrome.ansi,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,.html,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,-monochrome.html,$(wildcard recipes/*)))\
@@ -64,6 +65,9 @@ build/%-monochrome.svg: $(REQ)
 build/%.ansi: $(REQ)
 	@mkdir -p build
 	./map.py map.map `cat $<` > $@
+build/%.txt: $(REQ)
+	@mkdir -p build
+	./map.py -t map.map `cat $<` > $@
 build/%.png: $(REQ)
 	@mkdir -p build
 	./map.py -iS 22.35 map.map `cat $<` > $@.magick

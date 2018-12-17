@@ -69,6 +69,7 @@ def main():
     parser.add_argument('-i', action='store_true', help='Create png image')
     parser.add_argument('-s', action='store_true', help='Create svg image')
     parser.add_argument('-l', action='store_true', help='Show Mapmakers legend')
+    parser.add_argument('-t', action='store_true', help='Output input text (cuts map file)')
 
 
     parser.add_argument('starty', type=int, help='Start Y', nargs="?", default=0)
@@ -97,6 +98,8 @@ def main():
             mode="png"
         if options.s:
             mode="svg"
+        if options.t:
+            mode="txt"
         render(map, mode,        options.b,        options.startx, options.endx, options.starty,     options.endy,     options.S)
 def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       starty=0, endy=big, scale="12"):
     block="█"
@@ -396,6 +399,8 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 if character in ["'","`"]:
                     quote="\\"
                 im.append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
+            elif mode=="txt":
+                output+=c
             elif mode=="ansi":
                 if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
                     output+=colors["ansi"][foregroundcolor]+colors["ansi"][backgroundcolor]
@@ -412,6 +417,8 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 pass
             elif mode=="png":
                 pass
+            elif mode=="txt":
+                output+="\n"
             elif mode=="ansi":
                 output+=colors["ansi"]["reset"]+"\n"
     if mode=="html":
@@ -426,6 +433,8 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
         im.append("-crop {}x{}+0+0".format(picwidth-1,picheight))
         im.append("-write png:-")
         print("\n".join(im))
+    elif mode=="txt":
+        print(output[0:-1]) #cut off trailing newline
     elif mode=="ansi":
         print(output[0:-1]) #cut off trailing newline
 
