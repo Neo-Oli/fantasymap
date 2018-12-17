@@ -40,9 +40,6 @@ $(filter-out build/whole-monochrome.png, $(subst recipes,build,$(subst .rec,-mon
 .PHONY: all
 all: $(ALL)
 
-.PHONY: help
-help: build/help.ansi
-	$(call display,$<)
 BASE := map.py map.map objects.ini colors.ini
 REQ := recipes/%.rec $(BASE)
 .PRECIOUS: build/%
