@@ -113,11 +113,10 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
     width=len(lines[0].split("#")[0])
     argheight=endy-starty
     argheight+=1
-    if argheight!=big:
-        height=argheight
     argwidth=endx-startx
     argwidth+=1
-    if argwidth!=big:
+    if endx!=big or endy!=big or startx!=0 or starty!=0:
+        height=argheight
         width=argwidth
 
 
