@@ -34,16 +34,12 @@ $(subst recipes,build,$(subst .rec,.html,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,-monochrome.html,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,.svg,$(wildcard recipes/*)))\
 $(subst recipes,build,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
+$(filter-out build/whole.png, $(subst recipes,build,$(subst .rec,.png,$(wildcard recipes/*))))\
+$(filter-out build/whole-monochrome.png, $(subst recipes,build,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
 
 .PHONY: all
 all: $(ALL)
 
-.PHONY: help
-help: build/legend
-	$(call display,$<)
-build/legend: $(REQ)
-	@mkdir -p build
-	./map.py map.map -l > "$@"
 BASE := map.py map.map objects.ini colors.ini
 REQ := recipes/%.rec $(BASE)
 .PRECIOUS: build/%
@@ -58,7 +54,7 @@ build/%-monochrome.ansi: $(REQ)
 	./map.py -b map.map `cat $<` > $@
 build/%.svg: $(REQ)
 	@mkdir -p build
-	./map.py -sS 14 map.map `cat $<` > $@
+	./map.py -s map.map `cat $<` > $@
 build/%-monochrome.svg: $(REQ)
 	@mkdir -p build
 	./map.py -sb map.map `cat $<` > $@
@@ -70,9 +66,10 @@ build/%.txt: $(REQ)
 	./map.py -t map.map `cat $<` > $@
 build/%.png: $(REQ)
 	@mkdir -p build
-	./map.py -iS 22.35 map.map `cat $<` > $@.magick
-	echo -write png:$@ >> $@.magick
-	magick-script ./$@.magick
+	./map.py -iS 22.35 map.map `cat $<` | magick-script - > $@
+build/%-monochrome.png: $(REQ)
+	@mkdir -p build
+	./map.py -biS 22.35 map.map `cat $<` | magick-script - > $@
 
 
 

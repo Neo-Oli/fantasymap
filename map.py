@@ -30,7 +30,7 @@ def config(filename):
     return obj
 
 def legend():
-    map="===(Legend for Mapmakers)===#test\n"
+    map="===(Legend for Mapmakers)===            #test\n"
     objects=config('objects.ini')
     for key in objects:
         o=objects[key]
@@ -38,7 +38,7 @@ def legend():
             #don't start a label
             continue
         map+="({}) {} ({})\n".format(key,key,o["name"])
-    render(map)
+    return map
 def vim():
     output="setlocal nowrap\n"
     output="{}setlocal redrawtime=10000".format(output)
@@ -82,12 +82,13 @@ def main():
 
     if options.V:
         vim()
-    elif options.l:
-        legend()
     else:
 
         with open (options.file, "r") as myfile:
             map=myfile.read()
+
+        if options.l:
+            map=legend()
 
         mode="ansi"
         if options.x:
@@ -403,7 +404,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
             elif mode=="txt":
                 output+=orig
             elif mode=="ansi":
-                if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
+                if (lastbg is not backgroundcolor or lastfg is not foregroundcolor) and not monochrome:
                     output+=colors["ansi"][foregroundcolor]+colors["ansi"][backgroundcolor]
 
                 output+=character
@@ -421,7 +422,9 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
             elif mode=="txt":
                 output+="\n"
             elif mode=="ansi":
-                output+=colors["ansi"]["reset"]+"\n"
+                if not monochrome:
+                    output+=colors["ansi"]["reset"]
+                output+="\n"
     if mode=="html":
         output+=htmlend
         print(output)
