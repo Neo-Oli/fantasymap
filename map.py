@@ -217,6 +217,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
         lastfg=""
         lastbg=""
         for c in charsinline:
+            orig=c
             j+=1
             if j<startx:
                 continue
@@ -400,7 +401,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                     quote="\\"
                 im.append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
             elif mode=="txt":
-                output+=c
+                output+=orig
             elif mode=="ansi":
                 if lastbg is not backgroundcolor or lastfg is not foregroundcolor:
                     output+=colors["ansi"][foregroundcolor]+colors["ansi"][backgroundcolor]

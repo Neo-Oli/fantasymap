@@ -58,7 +58,7 @@ build/%-monochrome.ansi: $(REQ)
 	./map.py -b map.map `cat $<` > $@
 build/%.svg: $(REQ)
 	@mkdir -p build
-	./map.py -s map.map `cat $<` > $@
+	./map.py -sS 14 map.map `cat $<` > $@
 build/%-monochrome.svg: $(REQ)
 	@mkdir -p build
 	./map.py -sb map.map `cat $<` > $@
