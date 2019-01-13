@@ -393,7 +393,9 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                     outputfg+=svglineend
                     outputbg+=svglineend
             elif mode=="png":
-                pos="{},{}".format(((j-startx)*scale*wshift)-1,((i-starty)*scale*hshift)-1)
+                posx=((j-startx)*scale*wshift)
+                posy=((i-starty)*scale*hshift)
+                pos="{},{}".format(posx,posy)
                 im.append("-fill '{}'".format(colors["hex"][backgroundcolor]))
                 im.append("-draw \"text {} '█'\"".format(pos))
                 im.append("-fill '{}'".format(colors["hex"][foregroundcolor]))
@@ -434,7 +436,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
         output+=svgend
         print(output)
     elif mode=="png":
-        im.append("-crop {}x{}+0+0".format(picwidth-1,picheight))
+        im.append("-crop {}x{}+1+0".format(picwidth,picheight))
         im.append("-write png:-")
         print("\n".join(im))
     elif mode=="txt":
