@@ -190,7 +190,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
         hshift=1.15
 
         picheight=round((height*scale*hshift)-1)
-        picwidth=round(width*scale*wshift)
+        picwidth=round((width*scale*wshift)+1)
         im=[
                 "#!/usr/bin/env magick-script",
                 # "-monitor",
@@ -436,7 +436,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
         output+=svgend
         print(output)
     elif mode=="png":
-        im.append("-crop {}x{}+1+0".format(picwidth,picheight))
+        im.append("-crop {}x{}+1+0".format(picwidth-2,picheight))
         im.append("-write png:-")
         print("\n".join(im))
     elif mode=="txt":
