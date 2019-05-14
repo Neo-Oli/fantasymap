@@ -101,11 +101,16 @@ def main():
             mode="svg"
         if options.t:
             mode="txt"
-        render(map, mode,        options.b,        options.startx, options.endx, options.starty,     options.endy,     options.S)
+        output=render(map, mode,        options.b,        options.startx, options.endx, options.starty,     options.endy,     options.S)
+        display(output)
 def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       starty=0, endy=big, scale="12"):
     block="█"
     build=uuid4()
-    output=""
+    output={}
+    output['prefix']=""
+    output['fg']={}
+    output['bg']={}
+    output['postfix']=""
     # endy=endy-1
     # endx=endx-1
     objects=config('objects.ini')
@@ -114,7 +119,9 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
     lines=map.split('\n')
     del lines[-1] # delete last, empty line
     height=len(lines)
+    wholeheight=height
     width=len(lines[0].split("#")[0])
+    wholewidth=width
     argheight=endy-starty
     argheight+=1
     argwidth=endx-startx
@@ -155,7 +162,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
         htmlend="""
             </div>
             {}""".format(htmlend)
-        output+=htmlstart
+        output['prefix']=htmlstart
 
 
 
@@ -181,7 +188,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
         svgend="""</svg>"""
 
         svglineend="</text>\n"
-        output+=svgstart
+        output['prefix']=svgstart
 
 
 
@@ -191,7 +198,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
 
         picheight=round((height*scale*hshift)-1)
         picwidth=round((width*scale*wshift)+1)
-        im=[
+        output['prefix']="\n".join([
                 "#!/usr/bin/env magick-script",
                 # "-monitor",
                 "-size {}x{}".format(picwidth,picheight),
@@ -199,12 +206,22 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 "-font DejaVu-Sans-mono",
                 "-pointsize {}".format(scale),
                 "-gravity NorthWest"
-                ]
+                ])
 
     map=None
     i=-1
     for line in lines:
         i+=1
+        output['height']=wholeheight
+        output['width']=wholewidth
+        output['fg'][i]={}
+        output['fg'][i]['prefix']=""
+        output['fg'][i]['chars']={}
+        output['fg'][i]['postfix']=""
+        output['bg'][i]={}
+        output['bg'][i]['prefix']=""
+        output['bg'][i]['chars']={}
+        output['bg'][i]['postfix']=""
         if i<starty:
             continue
         if i>endy:
@@ -218,8 +235,10 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
         lastfg=""
         lastbg=""
         for c in charsinline:
-            orig=c
             j+=1
+            cout=""
+            coutbg=""
+            orig=c
             if j<startx:
                 continue
             if j>endx:
@@ -230,10 +249,10 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 #close all i tags
                 if j>startx:
                     if mode=="html":
-                        output+="</i>"
+                        cout+="</i>"
                     if mode=="svg":
-                        outputfg+=svglineend
-                        outputbg+=svglineend
+                        cout+=svglineend
+                        coutbg+=svglineend
                 break;
 
 
@@ -369,79 +388,94 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 backgroundcolor="on_black"
             if mode=="html":
                 if lastbg==backgroundcolor and lastfg==foregroundcolor:
-                    output+=character
+                    cout+=character
                 else:
                     if not j==startx:
-                        output+="</i>"
-                    output+="""<i class="{} {}">{}""".format(foregroundcolor,backgroundcolor,character)
+                        cout+="</i>"
+                    cout+="""<i class="{} {}">{}""".format(foregroundcolor,backgroundcolor,character)
                 if j==linewidth:
-                    output+="</i>"
+                    cout+="</i>"
             elif mode=="svg":
                 if lastbg==backgroundcolor and lastfg==foregroundcolor:
-                    outputfg+=character
-                    outputbg+=block
+                    cout+=character
+                    coutbg+=block
                 else:
                     if not j==startx:
-                        outputfg+=svglineend
-                        outputbg+=svglineend
+                        cout+=svglineend
+                        coutbg+=svglineend
                     yshift=movedown + (((i-starty)+1)*(scale*hshift))
                     xshift=moveright+ (((j-startx)  )*(scale*wshift))
                     text="""<text y="{}" x="{}" style="fill:{{}}">""".format(yshift,xshift)
-                    outputfg+="""{}{}""".format(text.format(colors["hex"][foregroundcolor]),character)
-                    outputbg+="""{}{}""".format(text.format(colors["hex"][backgroundcolor]),block)
+                    cout+="""{}{}""".format(text.format(colors["hex"][foregroundcolor]),character)
+                    coutbg+="""{}{}""".format(text.format(colors["hex"][backgroundcolor]),block)
                 if j==linewidth:
-                    outputfg+=svglineend
-                    outputbg+=svglineend
+                    cout+=svglineend
+                    coutbg+=svglineend
             elif mode=="png":
                 posx=((j-startx)*scale*wshift)
                 posy=((i-starty)*scale*hshift)
                 pos="{},{}".format(posx,posy)
-                im.append("-fill '{}'".format(colors["hex"][backgroundcolor]))
-                im.append("-draw \"text {} '█'\"".format(pos))
-                im.append("-fill '{}'".format(colors["hex"][foregroundcolor]))
+                cout+=("-fill '{}'".format(colors["hex"][backgroundcolor]))
                 quote=""
                 if character in ["'","`"]:
                     quote="\\"
-                im.append("-draw \"text {} '{}{}'\"".format(pos,quote,character))
+                cout="\n".join([
+                    "-draw \"text {} '█'\"".format(pos),
+                    "-fill '{}'".format(colors["hex"][foregroundcolor]),
+                    "-draw \"text {} '{}{}'\"".format(pos,quote,character),
+                ])
             elif mode=="txt":
-                output+=orig
+                cout+=orig
             elif mode=="ansi":
                 if (lastbg is not backgroundcolor or lastfg is not foregroundcolor) and not monochrome:
-                    output+=colors["ansi"][foregroundcolor]+colors["ansi"][backgroundcolor]
+                    cout+=colors["ansi"][foregroundcolor]+colors["ansi"][backgroundcolor]
 
-                output+=character
+                cout+=character
             lastbg=backgroundcolor
             lastfg=foregroundcolor
             lastc=c
             lastcharacter=character
+            output['fg'][i]['chars'][j]=cout
+            output['bg'][i]['chars'][j]=coutbg
         if j > 0:
             if mode=="html":
-                output+="<br />"
-            elif mode=="svg":
-                pass
-            elif mode=="png":
-                pass
+                output['fg'][i]['postfix']="<br />"
             elif mode=="txt":
-                output+="\n"
+                output['fg'][i]['postfix']="\n"
             elif mode=="ansi":
                 if not monochrome:
-                    output+=colors["ansi"]["reset"]
-                output+="\n"
+                    output['fg'][i]['postfix']="{}\n".format(colors["ansi"]["reset"])
+                else:
+                    output['fg'][i]['postfix']="\n"
     if mode=="html":
-        output+=htmlend
-        print(output)
+        output['postfix']=htmlend
     elif mode=="svg":
-        output+="\n"+outputbg+"\n"
-        output+="\n"+outputfg+"\n"
-        output+=svgend
-        print(output)
+        output['postfix']=svgend
     elif mode=="png":
-        im.append("-crop {}x{}+1+0".format(picwidth-2,picheight))
-        im.append("-write png:-")
-        print("\n".join(im))
-    elif mode=="txt":
-        print(output[0:-1]) #cut off trailing newline
-    elif mode=="ansi":
-        print(output[0:-1]) #cut off trailing newline
+        output['postfix']="\n".join([
+            "-crop {}x{}+1+0".format(picwidth-2,picheight),
+            "-write png:-"
+        ])
 
+    return output
+def display(output):
+    p=output['prefix']
+    for i in range(0,output['height']):
+        p+=output['fg'][i]['prefix']
+        for j in range(0,output['width']):
+            try:
+                p+=output['fg'][i]['chars'][j]
+            except KeyError:
+                pass
+        p+=output['fg'][i]['postfix']
+    for i in range(0,output['height']):
+        p+=output['bg'][i]['prefix']
+        for j in range(0,output['width']):
+            try:
+                p+=output['bg'][i]['chars'][j]
+            except KeyError:
+                pass
+        p+=output['bg'][i]['postfix']
+    p+=output['postfix']
+    print(p.strip())
 main()
