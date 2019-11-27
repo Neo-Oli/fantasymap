@@ -205,7 +205,8 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 "xc:none",
                 "-font DejaVu-Sans-mono",
                 "-pointsize {}".format(scale),
-                "-gravity NorthWest"
+                "-gravity NorthWest",
+                ""
                 ])
 
     map=None
@@ -423,6 +424,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                     "-draw \"text {} '█'\"".format(pos),
                     "-fill '{}'".format(colors["hex"][foregroundcolor]),
                     "-draw \"text {} '{}{}'\"".format(pos,quote,character),
+                    ""
                 ])
             elif mode=="txt":
                 cout+=orig
