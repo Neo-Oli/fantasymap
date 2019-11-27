@@ -205,8 +205,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 "xc:none",
                 "-font DejaVu-Sans-mono",
                 "-pointsize {}".format(scale),
-                "-gravity NorthWest",
-                ""
+                "-gravity NorthWest"
                 ])
 
     map=None
@@ -416,15 +415,15 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 posx=((j-startx)*scale*wshift)
                 posy=((i-starty)*scale*hshift)
                 pos="{},{}".format(posx,posy)
-                cout+=("-fill '{}'".format(colors["hex"][backgroundcolor]))
+                cout+=("\n-fill '{}'".format(colors["hex"][backgroundcolor]))
                 quote=""
                 if character in ["'","`"]:
                     quote="\\"
-                cout="\n".join([
+                cout+="\n".join([
+                    "",
                     "-draw \"text {} '█'\"".format(pos),
                     "-fill '{}'".format(colors["hex"][foregroundcolor]),
-                    "-draw \"text {} '{}{}'\"".format(pos,quote,character),
-                    ""
+                    "-draw \"text {} '{}{}'\"".format(pos,quote,character)
                 ])
             elif mode=="txt":
                 cout+=orig
@@ -455,6 +454,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
         output['postfix']=svgend
     elif mode=="png":
         output['postfix']="\n".join([
+            "",
             "-crop {}x{}+1+0".format(picwidth-2,picheight),
             "-write png:-"
         ])
