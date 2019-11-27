@@ -315,10 +315,10 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                         lefttrue=leftc in list("=rC⁰²⁴⁵⁶⁸")
                         righttrue=rightc in list("=rC⁰¹³⁵⁶⁷")
                     else:
-                        uptrue=upc in list("x+|!012578jC⁰¹²⁵⁷⁸")
-                        downtrue=downc in list("x+!|034678jC⁰³⁴⁶⁷⁸")
-                        lefttrue=leftc in list("x+~-024568qc⁰²⁴⁵⁶⁸")
-                        righttrue=rightc in list("x+~-013567qc⁰¹³⁵⁶⁷")
+                        uptrue=upc in list("x+|!012578jC₀₁₂₅₇₈")
+                        downtrue=downc in list("x+!|034678jC₀₃₄₆₇₈")
+                        lefttrue=leftc in list("x+~-024568qc₀₂₄₅₆₈")
+                        righttrue=rightc in list("x+~-013567qc₀₁₃₅₆₇")
                     if uptrue and downtrue and lefttrue and righttrue:
                         p="crossing"
                     elif not uptrue and not downtrue and lefttrue and righttrue:
