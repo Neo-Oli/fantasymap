@@ -228,7 +228,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
             continue
         if line=="":
             continue
-        charsinline=list(line)
+        charsinline=list(line.split("#")[0])
         linewidth=min([len(charsinline)-1,endx])
         j=-1
         lastc=""
@@ -243,19 +243,6 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 continue
             if j>endx:
                 continue
-
-
-            if c=="#":
-                #close all i tags
-                if j>startx:
-                    if mode=="html":
-                        cout+="</i>"
-                    if mode=="svg":
-                        cout+=svglineend
-                        coutbg+=svglineend
-                break;
-
-
             # get the surounding characters
 
             try:
