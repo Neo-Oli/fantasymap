@@ -463,14 +463,6 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
 def display(output):
     p=output['prefix']
     for i in range(0,output['height']):
-        p+=output['fg'][i]['prefix']
-        for j in range(0,output['width']):
-            try:
-                p+=output['fg'][i]['chars'][j]
-            except KeyError:
-                pass
-        p+=output['fg'][i]['postfix']
-    for i in range(0,output['height']):
         p+=output['bg'][i]['prefix']
         for j in range(0,output['width']):
             try:
@@ -478,6 +470,14 @@ def display(output):
             except KeyError:
                 pass
         p+=output['bg'][i]['postfix']
+    for i in range(0,output['height']):
+        p+=output['fg'][i]['prefix']
+        for j in range(0,output['width']):
+            try:
+                p+=output['fg'][i]['chars'][j]
+            except KeyError:
+                pass
+        p+=output['fg'][i]['postfix']
     p+=output['postfix']
     print(p.strip())
 main()
