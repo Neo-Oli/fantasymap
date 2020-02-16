@@ -1,5 +1,5 @@
 # fantasymap
-![Yuba Heights Theme Park Screenshot](/Screenshots/Yuba_Heights_Theme_Park.png)
+![Preview of map](/preview.png)
 
 Display Map
 `make`
