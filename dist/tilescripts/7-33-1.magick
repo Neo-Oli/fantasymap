@@ -1,809 +1,808 @@
-#66ccdfd7cddfeec9b3bfcd30caed54e5  -
-#!/usr/bin/env magick-script
--size 257x256
+#05cb4d1a3523f0649f694026db424fc1  -\n#!/usr/bin/env magick-script
+-size 258x256
 xc:none
 -font DejaVu-Sans-mono
 -pointsize 22.35
 -gravity NorthWest
--fill '#cccccc'
--draw "text -1.0,-1.0 '█'"
--fill '#cccccc'
--draw "text -1.0,-1.0 '▓'"
--fill '#cccccc'
--draw "text 11.862425000000002,-1.0 '█'"
--fill '#cccccc'
--draw "text 11.862425000000002,-1.0 '▓'"
--fill '#cccccc'
--draw "text 24.724850000000004,-1.0 '█'"
--fill '#cccccc'
--draw "text 24.724850000000004,-1.0 '▓'"
--fill '#cccccc'
--draw "text 37.587275000000005,-1.0 '█'"
--fill '#cccccc'
--draw "text 37.587275000000005,-1.0 '▓'"
--fill '#cccccc'
--draw "text 50.44970000000001,-1.0 '█'"
--fill '#cccccc'
--draw "text 50.44970000000001,-1.0 '▓'"
--fill '#cccccc'
--draw "text 63.312124999999995,-1.0 '█'"
--fill '#cccccc'
--draw "text 63.312124999999995,-1.0 '▓'"
--fill '#cccccc'
--draw "text 76.17455000000001,-1.0 '█'"
--fill '#cccccc'
--draw "text 76.17455000000001,-1.0 '▓'"
--fill '#cccccc'
--draw "text 89.03697500000001,-1.0 '█'"
--fill '#cccccc'
--draw "text 89.03697500000001,-1.0 '▓'"
--fill '#cccccc'
--draw "text 101.89940000000001,-1.0 '█'"
--fill '#cccccc'
--draw "text 101.89940000000001,-1.0 '▓'"
--fill '#cccccc'
--draw "text 114.761825,-1.0 '█'"
--fill '#cccccc'
--draw "text 114.761825,-1.0 '▓'"
--fill '#cccccc'
--draw "text 127.62424999999999,-1.0 '█'"
--fill '#cccccc'
--draw "text 127.62424999999999,-1.0 '▓'"
--fill '#cccccc'
--draw "text 140.48667500000002,-1.0 '█'"
--fill '#cccccc'
--draw "text 140.48667500000002,-1.0 '▓'"
--fill '#cccccc'
--draw "text 153.34910000000002,-1.0 '█'"
--fill '#cccccc'
--draw "text 153.34910000000002,-1.0 '▓'"
--fill '#cccccc'
--draw "text 166.21152500000002,-1.0 '█'"
--fill '#cccccc'
--draw "text 166.21152500000002,-1.0 '▓'"
--fill '#cccccc'
--draw "text 179.07395000000002,-1.0 '█'"
--fill '#cccccc'
--draw "text 179.07395000000002,-1.0 '▓'"
--fill '#cccccc'
--draw "text 191.936375,-1.0 '█'"
--fill '#cccccc'
--draw "text 191.936375,-1.0 '▓'"
--fill '#cccccc'
--draw "text 204.79880000000003,-1.0 '█'"
--fill '#cccccc'
--draw "text 204.79880000000003,-1.0 '▓'"
--fill '#cccccc'
--draw "text 217.66122500000003,-1.0 '█'"
--fill '#cccccc'
--draw "text 217.66122500000003,-1.0 '▓'"
--fill '#cccccc'
--draw "text 230.52365,-1.0 '█'"
--fill '#cccccc'
--draw "text 230.52365,-1.0 '▓'"
--fill '#cccccc'
--draw "text 243.38607500000003,-1.0 '█'"
--fill '#38252C'
--draw "text 243.38607500000003,-1.0 '▲'"
--fill '#cccccc'
--draw "text -1.0,24.7025 '█'"
--fill '#cccccc'
--draw "text -1.0,24.7025 '▓'"
--fill '#cccccc'
--draw "text 11.862425000000002,24.7025 '█'"
--fill '#cccccc'
--draw "text 11.862425000000002,24.7025 '▓'"
--fill '#cccccc'
--draw "text 24.724850000000004,24.7025 '█'"
--fill '#cccccc'
--draw "text 24.724850000000004,24.7025 '▓'"
--fill '#cccccc'
--draw "text 37.587275000000005,24.7025 '█'"
--fill '#cccccc'
--draw "text 37.587275000000005,24.7025 '▓'"
--fill '#cccccc'
--draw "text 50.44970000000001,24.7025 '█'"
--fill '#cccccc'
--draw "text 50.44970000000001,24.7025 '▓'"
--fill '#cccccc'
--draw "text 63.312124999999995,24.7025 '█'"
--fill '#cccccc'
--draw "text 63.312124999999995,24.7025 '▓'"
--fill '#cccccc'
--draw "text 76.17455000000001,24.7025 '█'"
--fill '#cccccc'
--draw "text 76.17455000000001,24.7025 '▓'"
--fill '#cccccc'
--draw "text 89.03697500000001,24.7025 '█'"
--fill '#cccccc'
--draw "text 89.03697500000001,24.7025 '▓'"
--fill '#cccccc'
--draw "text 101.89940000000001,24.7025 '█'"
--fill '#38252C'
--draw "text 101.89940000000001,24.7025 '▲'"
--fill '#cccccc'
--draw "text 114.761825,24.7025 '█'"
--fill '#cccccc'
--draw "text 114.761825,24.7025 '▓'"
--fill '#cccccc'
--draw "text 127.62424999999999,24.7025 '█'"
--fill '#cccccc'
--draw "text 127.62424999999999,24.7025 '▓'"
--fill '#cccccc'
--draw "text 140.48667500000002,24.7025 '█'"
--fill '#cccccc'
--draw "text 140.48667500000002,24.7025 '▓'"
--fill '#cccccc'
--draw "text 153.34910000000002,24.7025 '█'"
--fill '#cccccc'
--draw "text 153.34910000000002,24.7025 '▓'"
--fill '#cccccc'
--draw "text 166.21152500000002,24.7025 '█'"
--fill '#cccccc'
--draw "text 166.21152500000002,24.7025 '▓'"
--fill '#cccccc'
--draw "text 179.07395000000002,24.7025 '█'"
--fill '#38252C'
--draw "text 179.07395000000002,24.7025 '▲'"
--fill '#cccccc'
--draw "text 191.936375,24.7025 '█'"
--fill '#cccccc'
--draw "text 191.936375,24.7025 '▓'"
--fill '#cccccc'
--draw "text 204.79880000000003,24.7025 '█'"
--fill '#cccccc'
--draw "text 204.79880000000003,24.7025 '▓'"
--fill '#cccccc'
--draw "text 217.66122500000003,24.7025 '█'"
--fill '#cccccc'
--draw "text 217.66122500000003,24.7025 '▓'"
--fill '#cccccc'
--draw "text 230.52365,24.7025 '█'"
--fill '#cccccc'
--draw "text 230.52365,24.7025 '▓'"
--fill '#cccccc'
--draw "text 243.38607500000003,24.7025 '█'"
--fill '#cccccc'
--draw "text 243.38607500000003,24.7025 '▓'"
--fill '#cccccc'
--draw "text -1.0,50.405 '█'"
--fill '#cccccc'
--draw "text -1.0,50.405 '▓'"
--fill '#cccccc'
--draw "text 11.862425000000002,50.405 '█'"
--fill '#cccccc'
--draw "text 11.862425000000002,50.405 '▓'"
--fill '#cccccc'
--draw "text 24.724850000000004,50.405 '█'"
--fill '#cccccc'
--draw "text 24.724850000000004,50.405 '▓'"
--fill '#cccccc'
--draw "text 37.587275000000005,50.405 '█'"
--fill '#cccccc'
--draw "text 37.587275000000005,50.405 '▓'"
--fill '#cccccc'
--draw "text 50.44970000000001,50.405 '█'"
--fill '#cccccc'
--draw "text 50.44970000000001,50.405 '▓'"
--fill '#cccccc'
--draw "text 63.312124999999995,50.405 '█'"
--fill '#38252C'
--draw "text 63.312124999999995,50.405 '▲'"
--fill '#cccccc'
--draw "text 76.17455000000001,50.405 '█'"
--fill '#cccccc'
--draw "text 76.17455000000001,50.405 '▓'"
--fill '#cccccc'
--draw "text 89.03697500000001,50.405 '█'"
--fill '#cccccc'
--draw "text 89.03697500000001,50.405 '▓'"
--fill '#cccccc'
--draw "text 101.89940000000001,50.405 '█'"
--fill '#cccccc'
--draw "text 101.89940000000001,50.405 '▓'"
--fill '#cccccc'
--draw "text 114.761825,50.405 '█'"
--fill '#cccccc'
--draw "text 114.761825,50.405 '▓'"
--fill '#cccccc'
--draw "text 127.62424999999999,50.405 '█'"
--fill '#cccccc'
--draw "text 127.62424999999999,50.405 '▓'"
--fill '#cccccc'
--draw "text 140.48667500000002,50.405 '█'"
--fill '#cccccc'
--draw "text 140.48667500000002,50.405 '▓'"
--fill '#cccccc'
--draw "text 153.34910000000002,50.405 '█'"
--fill '#cccccc'
--draw "text 153.34910000000002,50.405 '▓'"
--fill '#cccccc'
--draw "text 166.21152500000002,50.405 '█'"
--fill '#cccccc'
--draw "text 166.21152500000002,50.405 '▓'"
--fill '#cccccc'
--draw "text 179.07395000000002,50.405 '█'"
--fill '#cccccc'
--draw "text 179.07395000000002,50.405 '▓'"
--fill '#cccccc'
--draw "text 191.936375,50.405 '█'"
--fill '#cccccc'
--draw "text 191.936375,50.405 '▓'"
--fill '#cccccc'
--draw "text 204.79880000000003,50.405 '█'"
--fill '#cccccc'
--draw "text 204.79880000000003,50.405 '▓'"
--fill '#cccccc'
--draw "text 217.66122500000003,50.405 '█'"
--fill '#cccccc'
--draw "text 217.66122500000003,50.405 '▓'"
--fill '#cccccc'
--draw "text 230.52365,50.405 '█'"
--fill '#cccccc'
--draw "text 230.52365,50.405 '▓'"
--fill '#cccccc'
--draw "text 243.38607500000003,50.405 '█'"
--fill '#38252C'
--draw "text 243.38607500000003,50.405 '▲'"
--fill '#cccccc'
--draw "text -1.0,76.1075 '█'"
--fill '#cccccc'
--draw "text -1.0,76.1075 '▓'"
--fill '#cccccc'
--draw "text 11.862425000000002,76.1075 '█'"
--fill '#cccccc'
--draw "text 11.862425000000002,76.1075 '▓'"
--fill '#cccccc'
--draw "text 24.724850000000004,76.1075 '█'"
--fill '#cccccc'
--draw "text 24.724850000000004,76.1075 '▓'"
--fill '#cccccc'
--draw "text 37.587275000000005,76.1075 '█'"
--fill '#cccccc'
--draw "text 37.587275000000005,76.1075 '▓'"
--fill '#cccccc'
--draw "text 50.44970000000001,76.1075 '█'"
--fill '#cccccc'
--draw "text 50.44970000000001,76.1075 '▓'"
--fill '#cccccc'
--draw "text 63.312124999999995,76.1075 '█'"
--fill '#cccccc'
--draw "text 63.312124999999995,76.1075 '▓'"
--fill '#cccccc'
--draw "text 76.17455000000001,76.1075 '█'"
--fill '#cccccc'
--draw "text 76.17455000000001,76.1075 '▓'"
--fill '#cccccc'
--draw "text 89.03697500000001,76.1075 '█'"
--fill '#cccccc'
--draw "text 89.03697500000001,76.1075 '▓'"
--fill '#cccccc'
--draw "text 101.89940000000001,76.1075 '█'"
--fill '#38252C'
--draw "text 101.89940000000001,76.1075 '▲'"
--fill '#cccccc'
--draw "text 114.761825,76.1075 '█'"
--fill '#cccccc'
--draw "text 114.761825,76.1075 '▓'"
--fill '#cccccc'
--draw "text 127.62424999999999,76.1075 '█'"
--fill '#cccccc'
--draw "text 127.62424999999999,76.1075 '▓'"
--fill '#cccccc'
--draw "text 140.48667500000002,76.1075 '█'"
--fill '#cccccc'
--draw "text 140.48667500000002,76.1075 '▓'"
--fill '#cccccc'
--draw "text 153.34910000000002,76.1075 '█'"
--fill '#cccccc'
--draw "text 153.34910000000002,76.1075 '▓'"
--fill '#cccccc'
--draw "text 166.21152500000002,76.1075 '█'"
--fill '#cccccc'
--draw "text 166.21152500000002,76.1075 '▓'"
--fill '#cccccc'
--draw "text 179.07395000000002,76.1075 '█'"
--fill '#cccccc'
--draw "text 179.07395000000002,76.1075 '▓'"
--fill '#cccccc'
--draw "text 191.936375,76.1075 '█'"
--fill '#cccccc'
--draw "text 191.936375,76.1075 '▓'"
--fill '#cccccc'
--draw "text 204.79880000000003,76.1075 '█'"
--fill '#cccccc'
--draw "text 204.79880000000003,76.1075 '▓'"
--fill '#cccccc'
--draw "text 217.66122500000003,76.1075 '█'"
--fill '#cccccc'
--draw "text 217.66122500000003,76.1075 '▓'"
--fill '#cccccc'
--draw "text 230.52365,76.1075 '█'"
--fill '#cccccc'
--draw "text 230.52365,76.1075 '▓'"
--fill '#cccccc'
--draw "text 243.38607500000003,76.1075 '█'"
--fill '#cccccc'
--draw "text 243.38607500000003,76.1075 '▓'"
--fill '#cccccc'
--draw "text -1.0,101.81 '█'"
--fill '#cccccc'
--draw "text -1.0,101.81 '▓'"
--fill '#cccccc'
--draw "text 11.862425000000002,101.81 '█'"
--fill '#cccccc'
--draw "text 11.862425000000002,101.81 '▓'"
--fill '#cccccc'
--draw "text 24.724850000000004,101.81 '█'"
--fill '#38252C'
--draw "text 24.724850000000004,101.81 '▲'"
--fill '#cccccc'
--draw "text 37.587275000000005,101.81 '█'"
--fill '#cccccc'
--draw "text 37.587275000000005,101.81 '▓'"
--fill '#cccccc'
--draw "text 50.44970000000001,101.81 '█'"
--fill '#cccccc'
--draw "text 50.44970000000001,101.81 '▓'"
--fill '#cccccc'
--draw "text 63.312124999999995,101.81 '█'"
--fill '#cccccc'
--draw "text 63.312124999999995,101.81 '▓'"
--fill '#cccccc'
--draw "text 76.17455000000001,101.81 '█'"
--fill '#38252C'
--draw "text 76.17455000000001,101.81 '▲'"
--fill '#cccccc'
--draw "text 89.03697500000001,101.81 '█'"
--fill '#cccccc'
--draw "text 89.03697500000001,101.81 '▓'"
--fill '#cccccc'
--draw "text 101.89940000000001,101.81 '█'"
--fill '#cccccc'
--draw "text 101.89940000000001,101.81 '▓'"
--fill '#cccccc'
--draw "text 114.761825,101.81 '█'"
--fill '#cccccc'
--draw "text 114.761825,101.81 '▓'"
--fill '#cccccc'
--draw "text 127.62424999999999,101.81 '█'"
--fill '#cccccc'
--draw "text 127.62424999999999,101.81 '▓'"
--fill '#cccccc'
--draw "text 140.48667500000002,101.81 '█'"
--fill '#cccccc'
--draw "text 140.48667500000002,101.81 '▓'"
--fill '#cccccc'
--draw "text 153.34910000000002,101.81 '█'"
--fill '#cccccc'
--draw "text 153.34910000000002,101.81 '▓'"
--fill '#cccccc'
--draw "text 166.21152500000002,101.81 '█'"
--fill '#cccccc'
--draw "text 166.21152500000002,101.81 '▓'"
--fill '#cccccc'
--draw "text 179.07395000000002,101.81 '█'"
--fill '#38252C'
--draw "text 179.07395000000002,101.81 '▲'"
--fill '#cccccc'
--draw "text 191.936375,101.81 '█'"
--fill '#cccccc'
--draw "text 191.936375,101.81 '▓'"
--fill '#cccccc'
--draw "text 204.79880000000003,101.81 '█'"
--fill '#38252C'
--draw "text 204.79880000000003,101.81 '▲'"
--fill '#cccccc'
--draw "text 217.66122500000003,101.81 '█'"
--fill '#cccccc'
--draw "text 217.66122500000003,101.81 '▓'"
--fill '#cccccc'
--draw "text 230.52365,101.81 '█'"
--fill '#cccccc'
--draw "text 230.52365,101.81 '▓'"
--fill '#cccccc'
--draw "text 243.38607500000003,101.81 '█'"
--fill '#cccccc'
--draw "text 243.38607500000003,101.81 '▓'"
--fill '#cccccc'
--draw "text -1.0,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text -1.0,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 11.862425000000002,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 11.862425000000002,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 24.724850000000004,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 24.724850000000004,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 37.587275000000005,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 37.587275000000005,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 50.44970000000001,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 50.44970000000001,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 63.312124999999995,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 63.312124999999995,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 76.17455000000001,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 76.17455000000001,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 89.03697500000001,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 89.03697500000001,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 101.89940000000001,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 101.89940000000001,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 114.761825,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 114.761825,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 127.62424999999999,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 127.62424999999999,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 140.48667500000002,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 140.48667500000002,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 153.34910000000002,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 153.34910000000002,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 166.21152500000002,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 166.21152500000002,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 179.07395000000002,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 179.07395000000002,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 191.936375,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 191.936375,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 204.79880000000003,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 204.79880000000003,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 217.66122500000003,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 217.66122500000003,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 230.52365,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 230.52365,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text 243.38607500000003,127.51249999999999 '█'"
--fill '#cccccc'
--draw "text 243.38607500000003,127.51249999999999 '▓'"
--fill '#cccccc'
--draw "text -1.0,153.215 '█'"
--fill '#cccccc'
--draw "text -1.0,153.215 '▓'"
--fill '#cccccc'
--draw "text 11.862425000000002,153.215 '█'"
--fill '#cccccc'
--draw "text 11.862425000000002,153.215 '▓'"
--fill '#cccccc'
--draw "text 24.724850000000004,153.215 '█'"
--fill '#cccccc'
--draw "text 24.724850000000004,153.215 '▓'"
--fill '#cccccc'
--draw "text 37.587275000000005,153.215 '█'"
--fill '#cccccc'
--draw "text 37.587275000000005,153.215 '▓'"
--fill '#cccccc'
--draw "text 50.44970000000001,153.215 '█'"
--fill '#cccccc'
--draw "text 50.44970000000001,153.215 '▓'"
--fill '#cccccc'
--draw "text 63.312124999999995,153.215 '█'"
--fill '#cccccc'
--draw "text 63.312124999999995,153.215 '▓'"
--fill '#cccccc'
--draw "text 76.17455000000001,153.215 '█'"
--fill '#cccccc'
--draw "text 76.17455000000001,153.215 '▓'"
--fill '#cccccc'
--draw "text 89.03697500000001,153.215 '█'"
--fill '#cccccc'
--draw "text 89.03697500000001,153.215 '▓'"
--fill '#cccccc'
--draw "text 101.89940000000001,153.215 '█'"
--fill '#cccccc'
--draw "text 101.89940000000001,153.215 '▓'"
--fill '#cccccc'
--draw "text 114.761825,153.215 '█'"
--fill '#cccccc'
--draw "text 114.761825,153.215 '▓'"
--fill '#cccccc'
--draw "text 127.62424999999999,153.215 '█'"
--fill '#cccccc'
--draw "text 127.62424999999999,153.215 '▓'"
--fill '#cccccc'
--draw "text 140.48667500000002,153.215 '█'"
--fill '#cccccc'
--draw "text 140.48667500000002,153.215 '▓'"
--fill '#cccccc'
--draw "text 153.34910000000002,153.215 '█'"
--fill '#cccccc'
--draw "text 153.34910000000002,153.215 '▓'"
--fill '#cccccc'
--draw "text 166.21152500000002,153.215 '█'"
--fill '#cccccc'
--draw "text 166.21152500000002,153.215 '▓'"
--fill '#cccccc'
--draw "text 179.07395000000002,153.215 '█'"
--fill '#cccccc'
--draw "text 179.07395000000002,153.215 '▓'"
--fill '#cccccc'
--draw "text 191.936375,153.215 '█'"
--fill '#cccccc'
--draw "text 191.936375,153.215 '▓'"
--fill '#cccccc'
--draw "text 204.79880000000003,153.215 '█'"
--fill '#cccccc'
--draw "text 204.79880000000003,153.215 '▓'"
--fill '#cccccc'
--draw "text 217.66122500000003,153.215 '█'"
--fill '#cccccc'
--draw "text 217.66122500000003,153.215 '▓'"
--fill '#cccccc'
--draw "text 230.52365,153.215 '█'"
--fill '#cccccc'
--draw "text 230.52365,153.215 '▓'"
--fill '#cccccc'
--draw "text 243.38607500000003,153.215 '█'"
--fill '#cccccc'
--draw "text 243.38607500000003,153.215 '▓'"
--fill '#cccccc'
--draw "text -1.0,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text -1.0,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 11.862425000000002,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 11.862425000000002,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 24.724850000000004,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 24.724850000000004,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 37.587275000000005,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 37.587275000000005,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 50.44970000000001,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 50.44970000000001,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 63.312124999999995,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 63.312124999999995,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 76.17455000000001,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 76.17455000000001,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 89.03697500000001,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 89.03697500000001,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 101.89940000000001,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 101.89940000000001,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 114.761825,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 114.761825,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 127.62424999999999,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 127.62424999999999,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 140.48667500000002,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 140.48667500000002,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 153.34910000000002,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 153.34910000000002,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 166.21152500000002,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 166.21152500000002,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 179.07395000000002,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 179.07395000000002,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 191.936375,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 191.936375,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 204.79880000000003,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 204.79880000000003,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 217.66122500000003,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 217.66122500000003,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 230.52365,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 230.52365,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text 243.38607500000003,178.91750000000002 '█'"
--fill '#cccccc'
--draw "text 243.38607500000003,178.91750000000002 '▓'"
--fill '#cccccc'
--draw "text -1.0,204.62 '█'"
--fill '#cccccc'
--draw "text -1.0,204.62 '▓'"
--fill '#cccccc'
--draw "text 11.862425000000002,204.62 '█'"
--fill '#cccccc'
--draw "text 11.862425000000002,204.62 '▓'"
--fill '#cccccc'
--draw "text 24.724850000000004,204.62 '█'"
--fill '#cccccc'
--draw "text 24.724850000000004,204.62 '▓'"
--fill '#cccccc'
--draw "text 37.587275000000005,204.62 '█'"
--fill '#cccccc'
--draw "text 37.587275000000005,204.62 '▓'"
--fill '#cccccc'
--draw "text 50.44970000000001,204.62 '█'"
--fill '#cccccc'
--draw "text 50.44970000000001,204.62 '▓'"
--fill '#cccccc'
--draw "text 63.312124999999995,204.62 '█'"
--fill '#cccccc'
--draw "text 63.312124999999995,204.62 '▓'"
--fill '#cccccc'
--draw "text 76.17455000000001,204.62 '█'"
--fill '#cccccc'
--draw "text 76.17455000000001,204.62 '▓'"
--fill '#cccccc'
--draw "text 89.03697500000001,204.62 '█'"
--fill '#cccccc'
--draw "text 89.03697500000001,204.62 '▓'"
--fill '#cccccc'
--draw "text 101.89940000000001,204.62 '█'"
--fill '#cccccc'
--draw "text 101.89940000000001,204.62 '▓'"
--fill '#cccccc'
--draw "text 114.761825,204.62 '█'"
--fill '#cccccc'
--draw "text 114.761825,204.62 '▓'"
--fill '#cccccc'
--draw "text 127.62424999999999,204.62 '█'"
--fill '#cccccc'
--draw "text 127.62424999999999,204.62 '▓'"
--fill '#cccccc'
--draw "text 140.48667500000002,204.62 '█'"
--fill '#cccccc'
--draw "text 140.48667500000002,204.62 '▓'"
--fill '#cccccc'
--draw "text 153.34910000000002,204.62 '█'"
--fill '#cccccc'
--draw "text 153.34910000000002,204.62 '▓'"
--fill '#cccccc'
--draw "text 166.21152500000002,204.62 '█'"
--fill '#cccccc'
--draw "text 166.21152500000002,204.62 '▓'"
--fill '#cccccc'
--draw "text 179.07395000000002,204.62 '█'"
--fill '#cccccc'
--draw "text 179.07395000000002,204.62 '▓'"
--fill '#cccccc'
--draw "text 191.936375,204.62 '█'"
--fill '#cccccc'
--draw "text 191.936375,204.62 '▓'"
--fill '#cccccc'
--draw "text 204.79880000000003,204.62 '█'"
--fill '#cccccc'
--draw "text 204.79880000000003,204.62 '▓'"
--fill '#cccccc'
--draw "text 217.66122500000003,204.62 '█'"
--fill '#cccccc'
--draw "text 217.66122500000003,204.62 '▓'"
--fill '#cccccc'
--draw "text 230.52365,204.62 '█'"
--fill '#cccccc'
--draw "text 230.52365,204.62 '▓'"
--fill '#cccccc'
--draw "text 243.38607500000003,204.62 '█'"
--fill '#cccccc'
--draw "text 243.38607500000003,204.62 '▓'"
--fill '#cccccc'
--draw "text -1.0,230.3225 '█'"
--fill '#cccccc'
--draw "text -1.0,230.3225 '▓'"
--fill '#cccccc'
--draw "text 11.862425000000002,230.3225 '█'"
--fill '#cccccc'
--draw "text 11.862425000000002,230.3225 '▓'"
--fill '#cccccc'
--draw "text 24.724850000000004,230.3225 '█'"
--fill '#cccccc'
--draw "text 24.724850000000004,230.3225 '▓'"
--fill '#cccccc'
--draw "text 37.587275000000005,230.3225 '█'"
--fill '#cccccc'
--draw "text 37.587275000000005,230.3225 '▓'"
--fill '#cccccc'
--draw "text 50.44970000000001,230.3225 '█'"
--fill '#cccccc'
--draw "text 50.44970000000001,230.3225 '▓'"
--fill '#cccccc'
--draw "text 63.312124999999995,230.3225 '█'"
--fill '#cccccc'
--draw "text 63.312124999999995,230.3225 '▓'"
--fill '#cccccc'
--draw "text 76.17455000000001,230.3225 '█'"
--fill '#cccccc'
--draw "text 76.17455000000001,230.3225 '▓'"
--fill '#cccccc'
--draw "text 89.03697500000001,230.3225 '█'"
--fill '#cccccc'
--draw "text 89.03697500000001,230.3225 '▓'"
--fill '#cccccc'
--draw "text 101.89940000000001,230.3225 '█'"
--fill '#cccccc'
--draw "text 101.89940000000001,230.3225 '▓'"
--fill '#cccccc'
--draw "text 114.761825,230.3225 '█'"
--fill '#cccccc'
--draw "text 114.761825,230.3225 '▓'"
--fill '#cccccc'
--draw "text 127.62424999999999,230.3225 '█'"
--fill '#cccccc'
--draw "text 127.62424999999999,230.3225 '▓'"
--fill '#cccccc'
--draw "text 140.48667500000002,230.3225 '█'"
--fill '#cccccc'
--draw "text 140.48667500000002,230.3225 '▓'"
--fill '#cccccc'
--draw "text 153.34910000000002,230.3225 '█'"
--fill '#cccccc'
--draw "text 153.34910000000002,230.3225 '▓'"
--fill '#cccccc'
--draw "text 166.21152500000002,230.3225 '█'"
--fill '#cccccc'
--draw "text 166.21152500000002,230.3225 '▓'"
--fill '#cccccc'
--draw "text 179.07395000000002,230.3225 '█'"
--fill '#cccccc'
--draw "text 179.07395000000002,230.3225 '▓'"
--fill '#cccccc'
--draw "text 191.936375,230.3225 '█'"
--fill '#cccccc'
--draw "text 191.936375,230.3225 '▓'"
--fill '#cccccc'
--draw "text 204.79880000000003,230.3225 '█'"
--fill '#cccccc'
--draw "text 204.79880000000003,230.3225 '▓'"
--fill '#cccccc'
--draw "text 217.66122500000003,230.3225 '█'"
--fill '#cccccc'
--draw "text 217.66122500000003,230.3225 '▓'"
--fill '#cccccc'
--draw "text 230.52365,230.3225 '█'"
--fill '#cccccc'
--draw "text 230.52365,230.3225 '▓'"
--fill '#cccccc'
--draw "text 243.38607500000003,230.3225 '█'"
--fill '#cccccc'
--draw "text 243.38607500000003,230.3225 '▓'"
--crop 256x256+0+0
+-fill '#cdcdcd'
+-draw "text 0.0,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 0.0,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 64.312125,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 64.312125,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 115.761825,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 115.761825,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 128.62425,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 128.62425,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 192.936375,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 192.936375,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 231.52365,0.0 '█'"
+-fill '#cdcdcd'
+-draw "text 231.52365,0.0 '▓'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,0.0 '█'"
+-fill '#232323'
+-draw "text 244.38607500000003,0.0 '▲'"
+-fill '#cdcdcd'
+-draw "text 0.0,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 0.0,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 64.312125,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 64.312125,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,25.7025 '█'"
+-fill '#232323'
+-draw "text 102.89940000000001,25.7025 '▲'"
+-fill '#cdcdcd'
+-draw "text 115.761825,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 115.761825,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 128.62425,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 128.62425,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,25.7025 '█'"
+-fill '#232323'
+-draw "text 180.07395000000002,25.7025 '▲'"
+-fill '#cdcdcd'
+-draw "text 192.936375,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 192.936375,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 231.52365,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 231.52365,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,25.7025 '█'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,25.7025 '▓'"
+-fill '#cdcdcd'
+-draw "text 0.0,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 0.0,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 64.312125,51.405 '█'"
+-fill '#232323'
+-draw "text 64.312125,51.405 '▲'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 115.761825,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 115.761825,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 128.62425,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 128.62425,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 192.936375,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 192.936375,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 231.52365,51.405 '█'"
+-fill '#cdcdcd'
+-draw "text 231.52365,51.405 '▓'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,51.405 '█'"
+-fill '#232323'
+-draw "text 244.38607500000003,51.405 '▲'"
+-fill '#cdcdcd'
+-draw "text 0.0,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 0.0,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 64.312125,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 64.312125,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,77.1075 '█'"
+-fill '#232323'
+-draw "text 102.89940000000001,77.1075 '▲'"
+-fill '#cdcdcd'
+-draw "text 115.761825,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 115.761825,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 128.62425,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 128.62425,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 192.936375,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 192.936375,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 231.52365,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 231.52365,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,77.1075 '█'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,77.1075 '▓'"
+-fill '#cdcdcd'
+-draw "text 0.0,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 0.0,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,102.81 '█'"
+-fill '#232323'
+-draw "text 25.724850000000004,102.81 '▲'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 64.312125,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 64.312125,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,102.81 '█'"
+-fill '#232323'
+-draw "text 77.17455000000001,102.81 '▲'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 115.761825,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 115.761825,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 128.62425,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 128.62425,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,102.81 '█'"
+-fill '#232323'
+-draw "text 180.07395000000002,102.81 '▲'"
+-fill '#cdcdcd'
+-draw "text 192.936375,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 192.936375,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,102.81 '█'"
+-fill '#232323'
+-draw "text 205.79880000000003,102.81 '▲'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 231.52365,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 231.52365,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,102.81 '█'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,102.81 '▓'"
+-fill '#cdcdcd'
+-draw "text 0.0,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 0.0,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 64.312125,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 64.312125,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 115.761825,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 115.761825,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 128.62425,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 128.62425,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 192.936375,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 192.936375,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 231.52365,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 231.52365,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,128.5125 '█'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,128.5125 '▓'"
+-fill '#cdcdcd'
+-draw "text 0.0,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 0.0,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 64.312125,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 64.312125,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 115.761825,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 115.761825,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 128.62425,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 128.62425,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 192.936375,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 192.936375,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 231.52365,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 231.52365,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,154.215 '█'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,154.215 '▓'"
+-fill '#cdcdcd'
+-draw "text 0.0,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 0.0,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 64.312125,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 64.312125,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 115.761825,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 115.761825,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 128.62425,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 128.62425,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 192.936375,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 192.936375,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 231.52365,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 231.52365,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,179.91750000000002 '█'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,179.91750000000002 '▓'"
+-fill '#cdcdcd'
+-draw "text 0.0,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 0.0,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 64.312125,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 64.312125,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 115.761825,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 115.761825,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 128.62425,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 128.62425,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 192.936375,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 192.936375,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 231.52365,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 231.52365,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,205.62 '█'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,205.62 '▓'"
+-fill '#cdcdcd'
+-draw "text 0.0,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 0.0,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 12.862425000000002,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 25.724850000000004,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 38.587275000000005,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 51.44970000000001,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 64.312125,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 64.312125,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 77.17455000000001,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 90.03697500000001,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 102.89940000000001,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 115.761825,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 115.761825,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 128.62425,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 128.62425,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 141.48667500000002,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 154.34910000000002,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 167.21152500000002,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 180.07395000000002,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 192.936375,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 192.936375,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 205.79880000000003,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 218.66122500000003,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 231.52365,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 231.52365,231.3225 '▓'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,231.3225 '█'"
+-fill '#cdcdcd'
+-draw "text 244.38607500000003,231.3225 '▓'"
+-crop 256x256+1+0
 -write png:-
