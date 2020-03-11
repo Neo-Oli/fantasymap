@@ -15,7 +15,7 @@ def write(filename,content):
     with open(filename, "w") as file:
         file.write(content)
     print("{} written".format(filename))
-os.system("mkdir -p build/tilescripts")
+os.system("mkdir -p dist/tilescripts")
 
 w=1000
 h=500
@@ -23,7 +23,7 @@ xi=20
 yi=10
 z=7
 mapfile="map.map"
-cachemapfile="build/tilescripts/cache.map"
+cachemapfile="dist/tilescripts/cache.map"
 with open (mapfile, "r") as myfile:
     map=myfile.read()
 try:
@@ -33,7 +33,7 @@ except FileNotFoundError:
     cachemap=""
 lines=map.split('\n')
 clines=cachemap.split('\n')
-files=os.listdir("build/tilescripts/")
+files=os.listdir("dist/tilescripts/")
 del lines[-1] # delete last, empty line
 del clines[-1] # delete last, empty line
 for i in range(0,h,yi):
@@ -57,7 +57,7 @@ for i in range(0,h,yi):
             name="{}-{}-{}".format(z,xm,ym)
             cachename="{}.cache".format(name)
             if cachename not in files or old!=new:
-                Path("build/tilescripts/{}".format(cachename)).touch()
+                Path("dist/tilescripts/{}".format(cachename)).touch()
                 print("change detected in {}".format(name))
 copyfile(mapfile,cachemapfile)
 magick=[]
@@ -133,7 +133,7 @@ for zoom in range(z,0, -1):
         newi+=1
 
 
-filename="build/tilescripts/Makefile"
+filename="dist/tilescripts/Makefile"
 
 makefile="""
 .PHONY: tiles
