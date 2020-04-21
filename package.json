@@ -1,0 +1,9 @@
+{
+  "name": "fantasymap",
+  "version": "1.0.0",
+  "description": "fantasymap",
+  "main": "none",
+  "repository": "git@github.com:Neo-Oli/fantasymap.git",
+  "author": "Oliver Schmidhauser <oli@glow.li>",
+  "license": "None"
+}
