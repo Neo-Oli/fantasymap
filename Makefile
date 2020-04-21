@@ -37,7 +37,15 @@ $(filter-out dist/whole.png, $(subst recipes,dist,$(subst .rec,.png,$(wildcard r
 $(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
 
 .PHONY: all
-all: $(ALL)
+all: $(ALL) dist/index.js
+
+dist/index.js: $(ALL)
+	cd dist;\
+		find -type f |\
+		grep -v '\.cache$$'|\
+		grep -v '\.magick$$'|\
+		xargs -I _ echo "import '_'" \
+		> index.js
 
 BASE := map.py map.map objects.ini colors.ini
 REQ := recipes/%.rec $(BASE)
