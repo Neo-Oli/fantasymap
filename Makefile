@@ -43,7 +43,7 @@ all: $(ALL) dist/index.js
 dist/recipes:
 	cp -vr recipes dist/recipes
 
-dist/index.js: $(ALL)
+dist/index.js: $(ALL) dist/tiles/1/0/0.png
 	cd dist;\
 		find -type f |\
 		grep -v 'vimrc$$'|\
