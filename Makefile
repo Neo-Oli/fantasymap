@@ -35,9 +35,13 @@ $(subst recipes,dist,$(subst .rec,.svg,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
 $(filter-out dist/whole.png, $(subst recipes,dist,$(subst .rec,.png,$(wildcard recipes/*))))\
 $(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
+dist/recipes
 
 .PHONY: all
 all: $(ALL) dist/index.js
+
+dist/recipes:
+	cp -vr recipes dist/recipes
 
 dist/index.js: $(ALL)
 	cd dist;\
