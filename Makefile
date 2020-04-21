@@ -42,8 +42,8 @@ all: $(ALL) dist/index.js
 dist/index.js: $(ALL)
 	cd dist;\
 		find -type f |\
-		grep -v '\.cache$$'|\
-		grep -v '\.magick$$'|\
+		grep -v 'vimrc$$'|\
+		grep -v 'tilescripts'|\
 		xargs -I _ echo "import '_'" \
 		> index.js
 
