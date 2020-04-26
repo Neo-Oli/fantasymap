@@ -44,11 +44,11 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.......................www
 aaaaaaaaaaaaaaa...aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa................w.....wwwwwwwwww
 aaaaaaaaaaaaaa..w.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.............wwwwwwwwww.w
 aaaaaaaaaaaaaa....aaaaaaaa....a..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa..........wwwwwwwwwww.w
-aaaaaaaaaaaaaaaaaaaaaaaaaa.ww.....aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa..........wwwwwwwwwww.w
-aaaaa..aaaaaaaaaaaaaaa..a..www..w..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.....aa.wwww...wwww.w
-aaaaa..aaaaaaaaaaaaaaa..a.......ww..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.....a.wwww.....wwww
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.www.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa..w.a.wwwww.aa.ww.w
-aaaaaaaaaaaaaaaaaaaaaa..a....aa.ww..aaaaaaaa...aaaaaaaaaa.....aa......w.a.wwwww....ww.w
-aaaaaaa...aaaaaaaaaaaa..a.ww..a.ww..aaaaaaaa.w..aaaaaaaa..www....ww...w.a.wwwww..wwwwww
-aa...........aaaaaaaaa..a.www...www.aaaaaaaa.ww..aaaaaa....www..www..ww.a.wwwwwwwwwwwww
-.....................aaaa.wwwwwwww..aaaaaaaa.www.aaaaaa....wwwwwwwwwwww...wwwwwwwwwwwww
+aaaaaaaaaaaaaaaaaaaaaaaaaa........aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa..........wwwwwwwwwww.w
+aaaaa..aaaaaaaaaaaaaaa..a..........aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.....aa.wwww...wwww.w
+aaaaa..aaaaaaaaaaa......................................................a.wwww.....wwww
+aaaaaaaaaaaaaaaaaa....................................................w.a.wwwww.aa.ww.w
+aaaaaaaaaaaaaaaaaa....................................................w.a.wwwww....ww.w
+aaaaaaa...aaaaaaaa....................................................w.a.wwwww..wwwwww
+aa...........aaaaa...............................................www..ww.a.wwwwwwwwwwww
+.....................(Yuba Airport)..................................ww...wwwwwwwwwwwww
