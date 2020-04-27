@@ -33,6 +33,7 @@ $(subst recipes,dist,$(subst .rec,.html,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,-monochrome.html,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,.svg,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
+$(subst recipes,dist/recipes,$(wildcard recipes/*))\
 $(filter-out dist/whole.png, $(subst recipes,dist,$(subst .rec,.png,$(wildcard recipes/*))))\
 $(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
 dist/recipes
@@ -40,7 +41,7 @@ dist/recipes
 .PHONY: all
 all: $(ALL) dist/index.js
 
-dist/recipes:
+dist/recipes/%: recipes/%.rec
 	cp -vr recipes dist/recipes
 
 dist/index.js: $(ALL) dist/tiles/1/0/0.png
@@ -81,7 +82,9 @@ dist/%.png: $(REQ)
 dist/%-monochrome.png: $(REQ)
 	@mkdir -p dist
 	./map.py -biS 22.35 map.map `cat $<` | magick-script - > $@
-
+dist/recipes/%.rec: $(REQ)
+	@mkdir -p dist/recipes
+	cp $< $@
 
 
 
