@@ -2,28 +2,38 @@
 .......x.aaaaaaaaaaaaaaaaaaaaaaaa....................................................w.a.wwwww.aa.ww.wwwwwwwwww..
 .......x.aaaaaaaaaaaaaaaaaaaaaaaa....................................................w.a.wwwww....ww.wwwwwwwwwww.
 aaa....x.aaaaaaaaaaaaa...aaaaaaaa....................................................w.a.wwwww..wwwwwwwwwwwwwwww.
-aaa....x.aaaaaaaa...........aaaaa...............................................www..ww.a.wwwwwwwwwwwwwwwwwwwwwww
-aa.....xaaaa........................(Yuba Airport)..................................ww...wwwwwwwwwwwwwwwwwwwwwww.
-aa.w...x..................        xxxxxxxxxxxxxxxxxxxxxx........................wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.
-aa.....xxxxxxxxxx......... B  B  Bx.........  ...x.....x...........................................wwwwwwwwwwwww.
-aa.....xBBBBBBBBx BBBBBBBBBBBBBBBBx.........  ...x.....                                           .wwwwwwwwwwwwww
-aa.....xBBBBBBBBx BBBBBBBB B  B  Bx.........  ...x...................x...............x.............wwwwwwwwwwwwww
-aaaa..axBBBBBBBBx BBBBBBBB        x.........  ...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..wwwwwwwwwwwwwwwwwwwwwwwww
-aaaaaaaxBBBBB   x BBBBBBBB B  B  Bx.........  ...x...................x...............x..wwwwwwwwwwwwwwwwwwwwwwwww
-aaaaaaaxBBBBB   x BBBBBBBBBBBBBBBBx.........  ...x...................x...............x....wwwwwwwwwwwwwwwwwwwwwww
-aaaaaaaxxxxxxxxxxx     BBB B  B  Bx.........  ...x                                    ...wwwwwwwwwwwwwwwwwwwwwwww
-aaaaaaa.aaaaaaaa..     BBB        x.........  ...x......................................wwwwwwwwwwwwwwwwwwwwwwwww
-aaaaaaa.aaaaaaaaaa     BBB B  B  Bx.........  ...x.......................................wwwwwwwwwwwwwwwwwww.....
-aaaaaaa.aaaaaaaaaa     BBBBBBBBBBBx.........  ...x.......................................wwwwwwwwwwwwwwwwwww.aaaa
-aaaaaaa.aaaaaaaaa.     BBB B  B  Bx.........  ...x......................................wwwwwwwwwwwwwwwwwwww.aaaa
-aaaaaa..aaaaa..a..     BBB        xxxxxxxxxx  xxxx.....................................wwwwwwwwwwwwwwwwwwwww..aaa
-aaaaaaaaaaaaa..a.......BBBBBBBBBBBx.,,......  .........................................wwwwwwwwwwwwwwwwwwwwww.aaa
-aaaaaaaaaaaaa..a.......BBBBBBBBBBB,,,,......  .........................................wwwwwwwwwwwwwwwwwwwwww.aaa
-aaaaaaaaaaaaaaaaa......BBBBBBBBBBB.,........  ....................aaaaaaaaaaaaaaaaaaaa.wwwwwwwwwwwwwwwwwwwwww.aaa
-aaaaaaaaaaaaaaaaa................,,,,.......  ......................aaaaaaaaaaaaaaaaaa.wwwwwwwwwwwwwwwwwwwwww.aaa
-aaaaaaaaaaaaaaaaaa...............,,,,,......  .......................aaaaaaaaaaaaaaaaa.....wwwwwwwwwwwwwwwwww....
-aaaaaaaaaaaaaaaaaa...............,,,,,......  ........................aaaaaaaaaaaaaaaaaaa..wwwwwwwwwwwwwwwwwwwwww
-aaaaaaaaaaaaaaaaaaaa.............,,,,,......  ................................aaaaaaaaaa..wwwwwwwwwwwwwwwwwwwwwww
-aaaaaaaaaaaaaaaaaaaaa............,,,,,,.....  .................................aaaaaaaaa.wwwwwwwwwwwwwwwwwww...ww
-aaaaaaaaaaaaaaaaaaaaaaa..........,,,,,,,.......................................aaaaaaaaa.wwwwwwwwwwwwwwwwwww.a..w
-aaaaaaaaaaaaaaaaaaaaaa...........,,,,,,,,......................................aaaaaaaaa.wwwwwwwwwwwwwwwwwww..a..
+aaa....x.aaaaaaaa...........aaaaa....................................................ww.a.wwwwwwwwwwwwwwwwwwwwwww
+aa.....xaaaa........................(Yuba Airport).......................................wwwwwwwwwwwwwwwwwwwwwww.
+aa.w...x..................        xxxxxxxxxxxxxxxxxxxxxx........................................wwwwwwwwwwwwwwww.
+aa.....xxxxxxxxxx......... B  B  Bx      x..  ...x.....x............................................wwwwwwwwwwww.
+aa.....xBBBBBBBBx BBBBBBBBBBBBBBBBx      x..  ...x.....                                           x.wwwwwwwwwwwww
+aa.....xBBBBBBBBx BBBBBBBB B  B  Bx      x..  ...x...................x...............x............x.wwwwwwwwwwwww
+aaaa..axBBBBBBBBx BBBBBBBB        xxxxxxxx..  ...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.wwwwwwwwwwwww
+aaaaaaaxBBBBB   x BBBBBBBB B  B  Bx      x..  ...x...................x...............x..............wwwwwwwwwwwww
+aaaaaaaxBBBBB   x BBBBBBBBBBBBBBBBx      x..  ...x...................x...............x....wwwwwwwwwwwwwwwwwwwwwww
+aaaaaaaxxxxxxxxxxx     BBB B  B  Bx      x..  ...x                                    ...wwwwwwwwwwwwwwwwwwwwwwww
+aaaaaaa.aaaaaaaa..     BBB        xxxxxxxx..  ...x...................................x..wwwwwwwwwwwwwwwwwwwwwwwww
+aaaaaaa.aaaaaaaaaa     BBB B  B  Bx      x..  ...x...................................x...wwwwwwwwwwwwwwwwwww.....
+aaaaaaa.aaaaaaaaaa     BBBBBBBBBBBx      x..  ...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...wwwwwwwwwwwwwwwwwww.aaaa
+aaaaaaa.aaaaaaaaa.     BBB B  B  Bx      x..  ...x.............x........................wwwwwwwwwwwwwwwwwwww.aaaa
+aaaaaa..aaaaa..a..     BBB        xxxxxxxxxx  xxxx             x.......................wwwwwwwwwwwwwwwwwwwww..aaa
+aaaaaaaaaaaaa..a.......BBBBBBBBBBBx      x..  ...x             x.......................wwwwwwwwwwwwwwwwwwwwww.aaa
+aaaaaaaaaaaaa..a.......BBBBBBBBBBBx      x..  ...x             x.......................wwwwwwwwwwwwwwwwwwwwww.aaa
+aaaaaaaaaaaaaaaaa......BBBBBBBBBBBx      x..  ...x             x..aaaaaaaaaaaaaaaaaaaa.wwwwwwwwwwwwwwwwwwwwww.aaa
+aaaaaaaaaaaaaaaaa................,x      x..  ...x             x....aaaaaaaaaaaaaaaaaa.wwwwwwwwwwwwwwwwwwwwww.aaa
+aaaaaaaaaaaaaaaaaa...............,xxxxxxxx..  ...x             x.....aaaaaaaaaaaaaaaaa.....wwwwwwwwwwwwwwwwww....
+aaaaaaaaaaaaaaaaaa...............,x      x..  ...x             x......aaaaaaaaaaaaaaaaaaa..wwwwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaaaaaaaa.............,x      x..  ...x             x..............aaaaaaaaaa..wwwwwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaaaaaaaaa............,xxxxxxxxxx  xxxxxxxxxxxxxxxxxx...............aaaaaaaaa.wwwwwwwwwwwwwwwwwww...ww
+aaaaaaaaaaaaaaaaaaaaaaa..........,,,,,,,.x..  ...x.............................aaaaaaaaa.wwwwwwwwwwwwwwwwwww.a..w
+aaaaaaaaaaaaaaaaaaaaaa...........,,,,,,,,x..  ...x.............................aaaaaaaaa.wwwwwwwwwwwwwwwwwww..a..
+a.....aaaaaaaaaaaaaaa..............,,,,,,x..  ...x..............................aaaaaaa..w..wwwwwwwwwwwwwwwww...a
+a.www.aaaaaaaaaaaaaaa..............,,,,..x..  ...x...............................aaaaa..ww..wwwwwwwwwwwwwwwwwww..
+..www....aaaaaaaaaaaa..............,,,,..x..  ...x...............................aaaaa.www..wwwwwwwwwwwwwwww.....
+wwwwwwww..aaaaaaaaaaa.................,,,x..  ...x..............................aaaaaa.wwwwwwwwwwwwwwwwwwwww.aa.w
+wwwwwwwww..aaaaaaaaaa.................,,,x..  ...x..............................aaaaaa.wwwwwwwwwwwwwwwwwwwww..a..
+wwwwwwwwww..aaaaaaaaa....................xxxxxxxxx..............................aaaaaa.wwwwww..wwwwwwwwwwwwww.aaa
+wwwwwwwwwww.aaaaaaaaaaa...........................................................aaaa.wwwww...wwwwwwwwwwwwww.aa.
+wwwwwwww....aaaaaaaaaaaa..........................................................aaaa.wwwww...wwwwwwwwwwwwww....
+wwwwwwww.a..aaaaaaaaaaaaaa..........................................................aa..wwwwwwwwwwwwwwwwwwwwwwwww
+wwwwwwww.....aaaaaaaaaaaaaaaa.........................aaaa............................a..wwwww...wwwwwwwwwwwwwwww
