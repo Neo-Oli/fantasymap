@@ -72,7 +72,7 @@
 <text y="802.0" x="0.0" style="fill:#1a1818">█████████████</text>
 <text y="8.5" x="0.0" style="fill:#cdcdcd">═══ Legend for Mapmakers ═══            </text>
 <text y="20.0" x="0.0" style="fill:#cdcdcd"> w  ≈  water </text>
-<text y="31.5" x="0.0" style="fill:#cdcdcd"> W  ≈  water_shallow </text>
+<text y="31.5" x="0.0" style="fill:#cdcdcd"> W  ~  water_shallow </text>
 <text y="43.0" x="0.0" style="fill:#cdcdcd"> D  ≈  water_deep </text>
 <text y="54.5" x="0.0" style="fill:#cdcdcd"> ,  ░  sand </text>
 <text y="66.0" x="0.0" style="fill:#cdcdcd"> .  ⌄  grass </text>
