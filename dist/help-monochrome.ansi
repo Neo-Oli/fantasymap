@@ -1,9 +1,11 @@
 ═══ Legend for Mapmakers ═══            
  w  ≈  water 
+ W  ≈  water_shallow 
+ D  ≈  water_deep 
  ,  ░  sand 
- .  `  grass 
+ .  ⌄  grass 
  i  ▓  snow 
- s  █  street 
+ s  █  plaza 
  y  █  farmland 
  U  ▓  Brache 
  a  φ  forrest on grass 
@@ -15,21 +17,23 @@
  b  ▪  building 
  B  █  multiblock_building 
  L  ◘  lighthouse 
- W  ○  Well 
+ O  ○  Well 
  g  ⌂  gravestones 
  m  ▲  mountain 
- 0  ┼  street_crossing 
- -  ─  street_h 
- |  │  street_v 
- 1  ┐  street_1 
- 2  ┌  street_2 
- 3  ┘  street_3 
- 4  └  street_4 
- 5  ┬  street_5 
- 6  ┴  street_6 
- 7  ┤  street_7 
- 8  ├  street_8 
+ x  ┃  street 
+ 0  ╋  street_crossing 
+ -  ━  street_h 
+ |  ┃  street_v 
+ 1  ┓  street_1 
+ 2  ┏  street_2 
+ 3  ┛  street_3 
+ 4  ┗  street_4 
+ 5  ┳  street_5 
+ 6  ┻  street_6 
+ 7  ┫  street_7 
+ 8  ┣  street_8 
  9  ▪  street_none 
+ +  │  dirt 
  ₀  ┼  dirt_crossing 
  ~  ─  dirt_h 
  !  │  dirt_v 
@@ -42,6 +46,7 @@
  ₇  ┤  dirt_7 
  ₈  ├  dirt_8 
  ₉  ▪  dirt_none 
+ r  ║  rails 
  ⁰  ╬  rails_crossing 
  =  ═  rails_h 
  §  ║  rails_v 
