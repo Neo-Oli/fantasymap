@@ -8,12 +8,14 @@
  s  █  plaza 
  y  █  farmland 
  U  ▓  Brache 
- a  φ  forrest on grass 
- ä  φ  forrest on asphalt 
- â  φ  forrest on sand 
- u  Γ  palmforrest on sand 
- ü  Γ  palmforrest on asphalt 
- ú  Γ  palmforrest on grass 
+ a  ●  forrest on grass 
+ v  ⬤  tree_top 
+ V  ┸  tree_bottom 
+ ä  ●  forrest on asphalt 
+ â  ●  forrest on sand 
+ u  *  palmforrest on sand 
+ ü  *  palmforrest on asphalt 
+ ú  *  palmforrest on grass 
  b  ▪  building 
  B  █  multiblock_building 
  L  ◘  lighthouse 

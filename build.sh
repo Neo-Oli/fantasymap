@@ -1,4 +1,5 @@
 dependencies+=('imagemagick')
+dependencies+=('coreutils')
 dependencies+=('make')
 dependencies+=('python3')
 dependencies+=('optipng')

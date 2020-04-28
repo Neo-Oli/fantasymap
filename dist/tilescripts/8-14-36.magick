@@ -1,4 +1,4 @@
-#103fad2a78de3b0aa124440ff8b47972  -\n#!/usr/bin/env magick-script
+#ed1d22c5d7e226d1e33ed0ef157c2c05  -\n#!/usr/bin/env magick-script
 -size 258x256
 xc:none
 -font DejaVu-Sans-mono
@@ -164,14 +164,14 @@ xc:none
 -draw "text 231.52365,154.215 '█'"
 -fill '#1b8b1b'
 -draw "text 231.52365,154.215 '⌄'"
--fill '#34d231'
+-fill '#301602'
 -draw "text 0.0,205.62 '█'"
 -fill '#1b8b1b'
--draw "text 0.0,205.62 'φ'"
--fill '#34d231'
+-draw "text 0.0,205.62 '⬤'"
+-fill '#301602'
 -draw "text 25.724850000000004,205.62 '█'"
 -fill '#1b8b1b'
--draw "text 25.724850000000004,205.62 'φ'"
+-draw "text 25.724850000000004,205.62 '⬤'"
 -fill '#34d231'
 -draw "text 51.44970000000001,205.62 '█'"
 -fill '#1b8b1b'
@@ -203,6 +203,6 @@ xc:none
 -fill '#34d231'
 -draw "text 231.52365,205.62 '█'"
 -fill '#1b8b1b'
--draw "text 231.52365,205.62 'φ'"
+-draw "text 231.52365,205.62 '⬤'"
 -crop 256x256+1+0
 -write png:-

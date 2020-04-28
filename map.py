@@ -349,11 +349,26 @@ def render(
             else:
                 if c == "w":
                     if isNear(
-                        objects, grid, i, j, ["name", "type"], ["grass", "sand"], 5
+                        objects,
+                        grid,
+                        i,
+                        j,
+                        ["name", "type"],
+                        ["grass", "sand", "dirt"],
+                        5,
                     ):
                         c = findObjects("water_shallow", objects)[0]
                     else:
                         c = findObjects("water_deep", objects)[0]
+                elif c == "a":
+                    numtrees = 1
+                    while i - numtrees > 0 and grid[i - numtrees][j] == "a":
+                        numtrees += 1
+                    if numtrees % 2:
+                        if downc == "a":
+                            c = findObjects("tree_top", objects)[0]
+                    else:
+                        c = findObjects("tree_bottom", objects)[0]
                 elif c in list("x+r"):
                     rails = False
                     dirt = False

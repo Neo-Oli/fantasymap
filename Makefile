@@ -37,7 +37,8 @@ $(subst recipes,dist/recipes,$(wildcard recipes/*))\
 $(filter-out dist/whole.png, $(subst recipes,dist,$(subst .rec,.png,$(wildcard recipes/*))))\
 $(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
 dist/recipes\
-dist/vimrc
+dist/vimrc\
+_fast
 
 .PHONY: all
 all: $(ALL) dist/index.js
@@ -89,6 +90,44 @@ dist/recipes/%.rec: $(REQ)
 
 
 
+.PHONY: _fast_source
+_fast_source: $(BASE)
+	mkdir -p dist/lines
+	i=0;\
+	while read line; do \
+		linename=$$(printf "%05d" $$i);\
+		old="";\
+		if [ -f dist/lines/$${linename}.txt ];then \
+			old=$$(cat dist/lines/$${linename}.txt);\
+		fi;\
+		if [ "$$old" != "$$line" ];then \
+			echo "$$line" > dist/lines/$${linename}.txt;\
+			echo "updated line $${linename}.txt";\
+		else\
+			touch -r dist/lines/$${linename}.txt dist/lines/$${linename}.ansi;\
+		fi;\
+		i=$$((i+1));\
+	done < map.map
+
+linenum := $(patsubst %,dist/lines/%.ansi,$(shell seq -f %05g 000 499))
+
+dist/lines/%.ansi: dist/lines/%.txt
+	rec=$$(basename $<|cut -d'.' -f1);\
+	./map.py map.map $$rec 0 $$rec 10000 > $@
+
+.PHONY: _fast
+dist/fast: $(linenum)
+	cat $(linenum) > $@
+
+
+.PHONY: _fast
+_fast:
+	make _fast_source
+	make $(MFLAGS) dist/fast
+.PHONY: fast
+fast: _fast
+	$(call display,dist/fast)
+
 .PHONY: tiles
 tiles: dist/tiles/1/0/0.png
 dist/tiles/1/0/0.png: $(BASE) tiles.py
@@ -101,7 +140,6 @@ lint: VENV/pyvenv.cfg
 	black map.py
 
 VENV/pyvenv.cfg: requirements.txt
-	rm -rf VENV
 	python3 -m venv VENV
 	. VENV/bin/activate;\
 	pip install -r requirements.txt

@@ -9,6 +9,8 @@
 (y) y (farmland)
 (U) U (Brache)
 (a) a (forrest on grass)
+(v) v (tree_top)
+(V) V (tree_bottom)
 (ä) ä (forrest on asphalt)
 (â) â (forrest on sand)
 (u) u (palmforrest on sand)

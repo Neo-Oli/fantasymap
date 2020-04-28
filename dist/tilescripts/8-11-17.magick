@@ -1,22 +1,22 @@
-#3bb1fb1ea9d4d2f671d7de0d14e1a54f  -\n#!/usr/bin/env magick-script
+#11e33ece7aaf7b4a8ed4b8456fac3e6c  -\n#!/usr/bin/env magick-script
 -size 258x256
 xc:none
 -font DejaVu-Sans-mono
 -pointsize 44.7
 -gravity NorthWest
--fill '#34d231'
+-fill '#301602'
 -draw "text 0.0,0.0 '█'"
 -fill '#301602'
 -draw "text 0.0,0.0 '─'"
--fill '#34d231'
+-fill '#301602'
 -draw "text 25.724850000000004,0.0 '█'"
 -fill '#301602'
 -draw "text 25.724850000000004,0.0 '─'"
--fill '#34d231'
+-fill '#301602'
 -draw "text 51.44970000000001,0.0 '█'"
 -fill '#301602'
 -draw "text 51.44970000000001,0.0 '─'"
--fill '#34d231'
+-fill '#301602'
 -draw "text 77.17455000000001,0.0 '█'"
 -fill '#301602'
 -draw "text 77.17455000000001,0.0 '─'"
@@ -44,26 +44,26 @@ xc:none
 -draw "text 231.52365,0.0 '█'"
 -fill '#301602'
 -draw "text 231.52365,0.0 '─'"
--fill '#34d231'
+-fill '#eab91c'
 -draw "text 0.0,51.405 '█'"
 -fill '#1b8b1b'
--draw "text 0.0,51.405 'φ'"
--fill '#34d231'
+-draw "text 0.0,51.405 '●'"
+-fill '#eab91c'
 -draw "text 25.724850000000004,51.405 '█'"
 -fill '#1b8b1b'
--draw "text 25.724850000000004,51.405 'φ'"
--fill '#34d231'
+-draw "text 25.724850000000004,51.405 '●'"
+-fill '#eab91c'
 -draw "text 51.44970000000001,51.405 '█'"
 -fill '#1b8b1b'
--draw "text 51.44970000000001,51.405 'φ'"
--fill '#34d231'
+-draw "text 51.44970000000001,51.405 '●'"
+-fill '#eab91c'
 -draw "text 77.17455000000001,51.405 '█'"
 -fill '#1b8b1b'
--draw "text 77.17455000000001,51.405 'φ'"
--fill '#34d231'
+-draw "text 77.17455000000001,51.405 '●'"
+-fill '#eab91c'
 -draw "text 102.89940000000001,51.405 '█'"
 -fill '#1b8b1b'
--draw "text 102.89940000000001,51.405 'φ'"
+-draw "text 102.89940000000001,51.405 '●'"
 -fill '#34d231'
 -draw "text 128.62425,51.405 '█'"
 -fill '#1b8b1b'
@@ -191,7 +191,7 @@ xc:none
 -fill '#34d231'
 -draw "text 154.34910000000002,205.62 '█'"
 -fill '#1b8b1b'
--draw "text 154.34910000000002,205.62 'φ'"
+-draw "text 154.34910000000002,205.62 '●'"
 -fill '#34d231'
 -draw "text 180.07395000000002,205.62 '█'"
 -fill '#1b8b1b'
