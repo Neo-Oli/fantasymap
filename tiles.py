@@ -19,9 +19,9 @@ os.system("mkdir -p dist/tilescripts")
 
 w=1000
 h=500
-xi=20
-yi=10
-z=7
+xi=10
+yi=5
+z=8
 mapfile="map.map"
 cachemapfile="dist/tilescripts/cache.map"
 with open (mapfile, "r") as myfile:
@@ -78,7 +78,7 @@ for y in range(0,h,yi):
         magick.append("{}: {}".format(file,cachefile))
         magick.append("\t@echo Building $@")
         magick.append("\t@if [ ! -f \"$@\" ];then touch \"$@\";fi;\\")
-        magick.append("\tres=\"`../../map.py -iS 22.35 ../../map.map {} {} {} {}`\";\\".format(y,x,yy-1,xx-1))
+        magick.append("\tres=\"`../../map.py -iS 44.7 ../../map.map {} {} {} {}`\";\\".format(y,x,yy-1,xx-1))
         magick.append("\thash=\"#`echo \\\"$$res\\\"|md5sum`\";\\")
         magick.append("\tif [ \"$$hash\" != \"`head -n1 $@`\" ]; then \\")
         magick.append("\t\techo \"$$hash\\n$$res\" > $@;\\")
