@@ -93,3 +93,14 @@ tiles: dist/tiles/1/0/0.png
 dist/tiles/1/0/0.png: $(BASE) tiles.py
 	./tiles.py
 	make $(MFLAGS) -C dist/tilescripts
+
+.PHONY: lint
+lint: VENV/pyvenv.cfg
+	. VENV/bin/activate;\
+	black map.py
+
+VENV/pyvenv.cfg: requirements.txt
+	rm -rf VENV
+	python3 -m venv VENV
+	. VENV/bin/activate;\
+	pip install -r requirements.txt
