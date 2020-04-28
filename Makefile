@@ -36,7 +36,8 @@ $(subst recipes,dist,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
 $(subst recipes,dist/recipes,$(wildcard recipes/*))\
 $(filter-out dist/whole.png, $(subst recipes,dist,$(subst .rec,.png,$(wildcard recipes/*))))\
 $(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
-dist/recipes
+dist/recipes\
+dist/vimrc
 
 .PHONY: all
 all: $(ALL) dist/index.js
