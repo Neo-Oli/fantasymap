@@ -1,4 +1,4 @@
-#4d6de3fad77efdbacd45c559eb6749ee  -\n#!/usr/bin/env magick-script
+#4d8b4af35d3a9bfefb460ad44f92958f  -\n#!/usr/bin/env magick-script
 -size 258x256
 xc:none
 -font DejaVu-Sans-mono
@@ -8,21 +8,21 @@ xc:none
 -draw "text 0.0,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 0.0,0.0 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 12.862425000000002,0.0 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 12.862425000000002,0.0 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 25.724850000000004,0.0 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 25.724850000000004,0.0 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 38.587275000000005,0.0 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 38.587275000000005,0.0 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 51.44970000000001,0.0 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 51.44970000000001,0.0 '≈'"
 -fill '#cdcdcd'
 -draw "text 64.312125,0.0 '█'"
@@ -48,13 +48,13 @@ xc:none
 -draw "text 128.62425,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 128.62425,0.0 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 141.48667500000002,0.0 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 141.48667500000002,0.0 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 154.34910000000002,0.0 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 154.34910000000002,0.0 '≈'"
 -fill '#cdcdcd'
 -draw "text 167.21152500000002,0.0 '█'"
@@ -88,25 +88,25 @@ xc:none
 -draw "text 0.0,25.7025 '█'"
 -fill '#cdcdcd'
 -draw "text 0.0,25.7025 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 12.862425000000002,25.7025 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 12.862425000000002,25.7025 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 25.724850000000004,25.7025 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 25.724850000000004,25.7025 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 38.587275000000005,25.7025 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 38.587275000000005,25.7025 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 51.44970000000001,25.7025 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 51.44970000000001,25.7025 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 64.312125,25.7025 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 64.312125,25.7025 '≈'"
 -fill '#cdcdcd'
 -draw "text 77.17455000000001,25.7025 '█'"
@@ -176,21 +176,21 @@ xc:none
 -draw "text 25.724850000000004,51.405 '█'"
 -fill '#cdcdcd'
 -draw "text 25.724850000000004,51.405 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 38.587275000000005,51.405 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 38.587275000000005,51.405 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 51.44970000000001,51.405 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 51.44970000000001,51.405 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 64.312125,51.405 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 64.312125,51.405 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 77.17455000000001,51.405 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 77.17455000000001,51.405 '≈'"
 -fill '#cdcdcd'
 -draw "text 90.03697500000001,51.405 '█'"
@@ -260,21 +260,21 @@ xc:none
 -draw "text 38.587275000000005,77.1075 '█'"
 -fill '#cdcdcd'
 -draw "text 38.587275000000005,77.1075 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 51.44970000000001,77.1075 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 51.44970000000001,77.1075 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 64.312125,77.1075 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 64.312125,77.1075 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 77.17455000000001,77.1075 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 77.17455000000001,77.1075 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 90.03697500000001,77.1075 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 90.03697500000001,77.1075 '≈'"
 -fill '#cdcdcd'
 -draw "text 102.89940000000001,77.1075 '█'"
@@ -288,13 +288,13 @@ xc:none
 -draw "text 128.62425,77.1075 '█'"
 -fill '#cdcdcd'
 -draw "text 128.62425,77.1075 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 141.48667500000002,77.1075 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 141.48667500000002,77.1075 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 154.34910000000002,77.1075 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 154.34910000000002,77.1075 '≈'"
 -fill '#cdcdcd'
 -draw "text 167.21152500000002,77.1075 '█'"
@@ -340,25 +340,25 @@ xc:none
 -draw "text 38.587275000000005,102.81 '█'"
 -fill '#cdcdcd'
 -draw "text 38.587275000000005,102.81 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 51.44970000000001,102.81 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 51.44970000000001,102.81 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 64.312125,102.81 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 64.312125,102.81 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 77.17455000000001,102.81 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 77.17455000000001,102.81 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 90.03697500000001,102.81 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 90.03697500000001,102.81 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 102.89940000000001,102.81 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 102.89940000000001,102.81 '≈'"
 -fill '#cdcdcd'
 -draw "text 115.761825,102.81 '█'"
@@ -368,13 +368,13 @@ xc:none
 -draw "text 128.62425,102.81 '█'"
 -fill '#cdcdcd'
 -draw "text 128.62425,102.81 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 141.48667500000002,102.81 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 141.48667500000002,102.81 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 154.34910000000002,102.81 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 154.34910000000002,102.81 '≈'"
 -fill '#cdcdcd'
 -draw "text 167.21152500000002,102.81 '█'"
@@ -412,13 +412,13 @@ xc:none
 -draw "text 12.862425000000002,128.5125 '█'"
 -fill '#cdcdcd'
 -draw "text 12.862425000000002,128.5125 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 25.724850000000004,128.5125 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 25.724850000000004,128.5125 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 38.587275000000005,128.5125 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 38.587275000000005,128.5125 '≈'"
 -fill '#cdcdcd'
 -draw "text 51.44970000000001,128.5125 '█'"
@@ -432,9 +432,9 @@ xc:none
 -draw "text 77.17455000000001,128.5125 '█'"
 -fill '#cdcdcd'
 -draw "text 77.17455000000001,128.5125 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 90.03697500000001,128.5125 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 90.03697500000001,128.5125 '≈'"
 -fill '#cdcdcd'
 -draw "text 102.89940000000001,128.5125 '█'"

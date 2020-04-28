@@ -1,4 +1,4 @@
-#a1609b91e854df944c6b72cc681a25ef  -\n#!/usr/bin/env magick-script
+#55cce8ac5d3f35b13d97c144d1eb4aff  -\n#!/usr/bin/env magick-script
 -size 258x256
 xc:none
 -font DejaVu-Sans-mono
@@ -80,13 +80,13 @@ xc:none
 -draw "text 231.52365,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 231.52365,0.0 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 244.38607500000003,0.0 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 244.38607500000003,0.0 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 0.0,25.7025 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 0.0,25.7025 '≈'"
 -fill '#cdcdcd'
 -draw "text 12.862425000000002,25.7025 '█'"
@@ -164,9 +164,9 @@ xc:none
 -draw "text 244.38607500000003,25.7025 '█'"
 -fill '#cdcdcd'
 -draw "text 244.38607500000003,25.7025 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 0.0,51.405 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 0.0,51.405 '≈'"
 -fill '#cdcdcd'
 -draw "text 12.862425000000002,51.405 '█'"
@@ -244,13 +244,13 @@ xc:none
 -draw "text 244.38607500000003,51.405 '█'"
 -fill '#cdcdcd'
 -draw "text 244.38607500000003,51.405 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 0.0,77.1075 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 0.0,77.1075 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 12.862425000000002,77.1075 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 12.862425000000002,77.1075 '≈'"
 -fill '#cdcdcd'
 -draw "text 25.724850000000004,77.1075 '█'"
@@ -324,17 +324,17 @@ xc:none
 -draw "text 244.38607500000003,77.1075 '█'"
 -fill '#cdcdcd'
 -draw "text 244.38607500000003,77.1075 '▓'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 0.0,102.81 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 0.0,102.81 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 12.862425000000002,102.81 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 12.862425000000002,102.81 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 25.724850000000004,102.81 '█'"
--fill '#cdcdcd'
+-fill '#ffffff'
 -draw "text 25.724850000000004,102.81 '≈'"
 -fill '#cdcdcd'
 -draw "text 38.587275000000005,102.81 '█'"

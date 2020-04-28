@@ -1,4 +1,4 @@
-#679e0ebc526a715a4a171714934e00fc  -\n#!/usr/bin/env magick-script
+#f3dd656da947aa1f6d19b3734ec05ba7  -\n#!/usr/bin/env magick-script
 -size 258x256
 xc:none
 -font DejaVu-Sans-mono
@@ -39,50 +39,50 @@ xc:none
 -fill '#34d231'
 -draw "text 102.89940000000001,0.0 '█'"
 -fill '#1b8b1b'
--draw "text 102.89940000000001,0.0 '\`'"
+-draw "text 102.89940000000001,0.0 '⌄'"
 -fill '#cdcdcd'
 -draw "text 115.761825,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 115.761825,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 128.62425,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 128.62425,0.0 '▪'"
 -fill '#cdcdcd'
 -draw "text 141.48667500000002,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 141.48667500000002,0.0 '▪'"
 -fill '#cdcdcd'
 -draw "text 154.34910000000002,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 154.34910000000002,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 167.21152500000002,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 167.21152500000002,0.0 '▪'"
 -fill '#cdcdcd'
 -draw "text 180.07395000000002,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 180.07395000000002,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 192.936375,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 192.936375,0.0 '▪'"
 -fill '#cdcdcd'
 -draw "text 205.79880000000003,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 205.79880000000003,0.0 '▪'"
 -fill '#cdcdcd'
 -draw "text 218.66122500000003,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 218.66122500000003,0.0 '▪'"
 -fill '#cdcdcd'
 -draw "text 231.52365,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 231.52365,0.0 '▪'"
 -fill '#cdcdcd'
 -draw "text 244.38607500000003,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 244.38607500000003,0.0 '▪'"
 -fill '#eab91c'
 -draw "text 0.0,25.7025 '█'"
