@@ -66,17 +66,18 @@ def isNear(objects,grid,i,j,fields,values,radius=5):
         line=grid[y]
         for x in range(j-radius,j+radius):
             if math.sqrt(math.pow((x-j),2)+math.pow((y-i)*heightstretch,2))<radius:
-                if line[0:x].count("(")<=line[0:x+1].count(")"):
                     if x == j and y == i:
                         continue
                     else:
                         try:
                             c=objects[line[x]]
                             for field in fields:
-                                if field in c:
-                                    if c[field] in values:
+                                if c[field] in values:
+                                    if line[0:x].count("(")<=line[0:x+1].count(")"):
                                         return True
                         except IndexError:
+                            pass
+                        except KeyError:
                             pass
 def main():
     parser = argparse.ArgumentParser()
