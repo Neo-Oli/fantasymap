@@ -5,15 +5,18 @@ import sys
 import argparse
 from uuid import uuid4
 import configparser
+import math
 
 big=1000000000
+heightstretch=2
 
-def findObject(name, objects):
+def findObjects(name, objects, fields=["name"]):
+    obj=[]
     for c in objects:
-        if objects[c]["name"]==name:
-            return c
-    print("Error: Object not found with name: {}".format(name),file=sys.stderr)
-
+        for field in fields:
+            if objects[c][field]==name:
+                obj.append(c)
+    return obj
 def config(filename):
     obj={}
     dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -58,6 +61,23 @@ def vim():
         output="{}\n{}\n{}".format(output,match,hi);
         i+=1
     print(output)
+def isNear(objects,grid,i,j,fields,values,radius=5):
+    for y in range(i-radius,i+radius):
+        line=grid[y]
+        for x in range(j-radius,j+radius):
+            if math.sqrt(math.pow((x-j),2)+math.pow((y-i)*heightstretch,2))<radius:
+                if line[0:x].count("(")<=line[0:x+1].count(")"):
+                    if x == j and y == i:
+                        continue
+                    else:
+                        try:
+                            c=objects[line[x]]
+                            for field in fields:
+                                if field in c:
+                                    if c[field] in values:
+                                        return True
+                        except IndexError:
+                            pass
 def main():
     parser = argparse.ArgumentParser()
     parser.description="Best viewed when piped into `less -RS`"
@@ -116,11 +136,13 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
     objects=config('objects.ini')
     colors=config('colors.ini')
 
-    lines=map.split('\n')
-    del lines[-1] # delete last, empty line
-    height=len(lines)
+    grid=map.split('\n')
+    del grid[-1] # delete last, empty line
+    height=len(grid)
     wholeheight=height
-    width=len(lines[0].split("#")[0])
+    width=len(grid[0].split("#")[0])
+    for key, line in enumerate(grid):
+        grid[key]=list(line.split("#")[0])
     wholewidth=width
     argheight=endy-starty
     argheight+=1
@@ -208,9 +230,8 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                 "-gravity NorthWest"
                 ])
 
-    map=None
     i=-1
-    for line in lines:
+    for line in grid:
         i+=1
         output['height']=wholeheight
         output['width']=wholewidth
@@ -228,13 +249,12 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
             continue
         if line=="":
             continue
-        charsinline=list(line.split("#")[0])
-        linewidth=min([len(charsinline)-1,endx])
+        linewidth=min([len(line)-1,endx])
         j=-1
         lastc=""
         lastfg=""
         lastbg=""
-        for c in charsinline:
+        for c in line:
             j+=1
             cout=""
             coutbg=""
@@ -246,46 +266,52 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
             # get the surounding characters
 
             try:
-                leftc=charsinline[j-1]
+                leftc=line[j-1]
             except IndexError:
                 leftc=" "
             try:
-                rightc=charsinline[j+1]
+                rightc=line[j+1]
             except IndexError:
                 rightc=" "
             try:
-                upc=lines[i-1][j:j+1]
+                upc=grid[i-1][j]
             except IndexError:
                 upc=" "
             try:
-                downc=lines[i+1][j:j+1]
+                downc=grid[i+1][j]
             except IndexError:
                 downc=" "
             try:
-                upleftc=lines[i-1][j-1:j]
+                upleftc=grid[i-1][j-1]
             except IndexError:
                 upleftc=" "
             try:
-                uprightc=lines[i-1][j+1:j+2]
+                uprightc=grid[i-1][j+1]
             except IndexError:
                 uprightc=" "
 
             try:
-                downleftc=lines[i+1][j-1:j]
+                downleftc=grid[i+1][j-1]
             except IndexError:
                 downleftc=" "
             try:
-                downrightc=lines[i+1][j+1:j+2]
+                downrightc=grid[i+1][j+1]
             except IndexError:
                 downrightc=" "
 
 
-            if charsinline[0:j].count("(")>charsinline[0:j+1].count(")"):
+            #We're within a label
+            if line[0:j].count("(")>line[0:j+1].count(")"):
                 foregroundcolor=objects['(']['color']
                 backgroundcolor=objects['(']['bgcolor']
                 character=c
             else:
-                if c in list("x+r"):
+                if c == "w":
+                    if isNear(objects,grid,i,j,["name", "type"],["grass","sand"],5):
+                        c=findObjects("water_shallow", objects)[0]
+                    else:
+                        c=findObjects("water_deep", objects)[0]
+                elif c in list("x+r"):
                     rails=False
                     dirt=False
                     if c == "r":
@@ -340,7 +366,7 @@ def render(map, mode="ansi", monochrome=False, startx=0,       endx=big,       s
                         p="none"
                     else:
                         p="none"
-                    c=findObject(prefix.format(p), objects)
+                    c=findObjects(prefix.format(p), objects)[0]
                 try:
                     foregroundcolor=objects[c]["color"]
                 except KeyError:
