@@ -118,17 +118,17 @@ dist/lines/%.ansi: dist/lines/%.txt
 	./map.py map.map $$rec 0 $$rec 10000 > $@
 
 .PHONY: _fast
-dist/fast: $(linenum)
+dist/fast.ansi: $(linenum)
 	cat $(linenum) > $@
 
 
 .PHONY: _fast
 _fast:
 	make _fast_source
-	make $(MFLAGS) dist/fast
+	make $(MFLAGS) dist/fast.ansi
 .PHONY: fast
 fast: _fast
-	$(call display,dist/fast)
+	$(call display,dist/fast.ansi)
 
 .PHONY: tiles
 tiles: dist/tiles/1/0/0.png
