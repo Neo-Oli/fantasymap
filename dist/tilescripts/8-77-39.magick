@@ -1,4 +1,4 @@
-#05deb4ee10670a89bcca05d7629e59a9  -\n#!/usr/bin/env magick-script
+#f9b88385d8713d08a9f4f3346ef28c71  -\n#!/usr/bin/env magick-script
 -size 258x256
 xc:none
 -font DejaVu-Sans-mono
@@ -6,31 +6,31 @@ xc:none
 -gravity NorthWest
 -fill '#cdcdcd'
 -draw "text 0.0,0.0 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 0.0,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 25.724850000000004,0.0 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 25.724850000000004,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 51.44970000000001,0.0 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 51.44970000000001,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 77.17455000000001,0.0 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 77.17455000000001,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 102.89940000000001,0.0 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 102.89940000000001,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 128.62425,0.0 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 128.62425,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 154.34910000000002,0.0 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 154.34910000000002,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 180.07395000000002,0.0 '█'"
@@ -38,11 +38,11 @@ xc:none
 -draw "text 180.07395000000002,0.0 '┻'"
 -fill '#cdcdcd'
 -draw "text 205.79880000000003,0.0 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 205.79880000000003,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 231.52365,0.0 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 231.52365,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 0.0,51.405 '█'"
@@ -158,11 +158,11 @@ xc:none
 -draw "text 180.07395000000002,154.215 '█'"
 -fill '#cdcdcd'
 -draw "text 205.79880000000003,154.215 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 205.79880000000003,154.215 '█'"
 -fill '#cdcdcd'
 -draw "text 231.52365,154.215 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 231.52365,154.215 '█'"
 -fill '#34d231'
 -draw "text 0.0,205.62 '█'"
@@ -198,11 +198,11 @@ xc:none
 -draw "text 180.07395000000002,205.62 '█'"
 -fill '#cdcdcd'
 -draw "text 205.79880000000003,205.62 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 205.79880000000003,205.62 '█'"
 -fill '#cdcdcd'
 -draw "text 231.52365,205.62 '█'"
--fill '#1a1818'
+-fill '#cdcdcd'
 -draw "text 231.52365,205.62 '█'"
 -crop 256x256+1+0
 -write png:-
