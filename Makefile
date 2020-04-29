@@ -104,7 +104,9 @@ _fast_source: $(BASE)
 			echo "$$line" > dist/lines/$${linename}.txt;\
 			echo "updated line $${linename}.txt";\
 		else\
-			touch -r dist/lines/$${linename}.txt dist/lines/$${linename}.ansi;\
+			if [ -f dist/lines/$${linename}.ansi ]; then \
+				touch -r dist/lines/$${linename}.txt dist/lines/$${linename}.ansi;\
+			fi;\
 		fi;\
 		i=$$((i+1));\
 	done < map.map
