@@ -13,6 +13,9 @@ whole: dist/whole.ansi
 m-%: dist/%-monochrome.ansi
 	$(call display,$<)
 
+i-%: dist/%.png
+	feh $<
+
 .PHONY: edit
 edit: dist/vimrc
 	$(EDITOR) map.map -c ":so dist/vimrc"
