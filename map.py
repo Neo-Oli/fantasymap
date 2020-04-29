@@ -344,10 +344,10 @@ def render(
                 downrightc = " "
 
             # Reading from -1 causes wrap
-            if j==0:
-                leftc=" "
-            if i==0:
-                upc=" "
+            if j == 0:
+                leftc = " "
+            if i == 0:
+                upc = " "
 
             # We're within a label
             if line[0:j].count("(") > line[0 : j + 1].count(")"):
