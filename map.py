@@ -37,14 +37,16 @@ def config(filename):
 
 
 def legend():
-    map = "===(Legend for Mapmakers)===            #test\n"
+    map = "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#test\n"
+    map += "r(        Legend for Mapmakers        )r\n"
+    map += "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\n"
     objects = config("objects.ini")
     for key in objects:
         o = objects[key]
         if key in ["(", ")"]:
             # don't start a label
             continue
-        map += "({}) {} ({})\n".format(key, key, o["name"])
+        map += "({}){}({})\n".format(key, key, o["name"])
     return map
 
 
@@ -340,6 +342,12 @@ def render(
                 downrightc = grid[i + 1][j + 1]
             except IndexError:
                 downrightc = " "
+
+            # Reading from -1 causes wrap
+            if j==0:
+                leftc=" "
+            if i==0:
+                upc=" "
 
             # We're within a label
             if line[0:j].count("(") > line[0 : j + 1].count(")"):
