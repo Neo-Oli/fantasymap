@@ -1,4 +1,4 @@
-#928b8ef8290d6da136b2dc669cf798de  -\n#!/usr/bin/env magick-script
+#5dc0b5e4a88690daeb98a5aab2fd502c  -\n#!/usr/bin/env magick-script
 -size 258x256
 xc:none
 -font DejaVu-Sans-mono
@@ -30,19 +30,19 @@ xc:none
 -draw "text 128.62425,0.0 '░'"
 -fill '#eab91c'
 -draw "text 154.34910000000002,0.0 '█'"
--fill '#1a1818'
--draw "text 154.34910000000002,0.0 '▪'"
+-fill '#000000'
+-draw "text 154.34910000000002,0.0 '■'"
 -fill '#cdcdcd'
 -draw "text 180.07395000000002,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 180.07395000000002,0.0 '┃'"
 -fill '#cdcdcd'
 -draw "text 205.79880000000003,0.0 '█'"
--fill '#1a1818'
+-fill '#000000'
 -draw "text 205.79880000000003,0.0 '█'"
 -fill '#cdcdcd'
 -draw "text 231.52365,0.0 '█'"
--fill '#1a1818'
+-fill '#000000'
 -draw "text 231.52365,0.0 '█'"
 -fill '#eab91c'
 -draw "text 0.0,51.405 '█'"
@@ -70,19 +70,19 @@ xc:none
 -draw "text 128.62425,51.405 '░'"
 -fill '#cdcdcd'
 -draw "text 154.34910000000002,51.405 '█'"
--fill '#1a1818'
+-fill '#000000'
 -draw "text 154.34910000000002,51.405 '█'"
 -fill '#cdcdcd'
 -draw "text 180.07395000000002,51.405 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 180.07395000000002,51.405 '┃'"
 -fill '#cdcdcd'
 -draw "text 205.79880000000003,51.405 '█'"
--fill '#1a1818'
+-fill '#000000'
 -draw "text 205.79880000000003,51.405 '█'"
 -fill '#cdcdcd'
 -draw "text 231.52365,51.405 '█'"
--fill '#1a1818'
+-fill '#000000'
 -draw "text 231.52365,51.405 '█'"
 -fill '#eab91c'
 -draw "text 0.0,102.81 '█'"
@@ -110,15 +110,15 @@ xc:none
 -draw "text 128.62425,102.81 '░'"
 -fill '#eab91c'
 -draw "text 154.34910000000002,102.81 '█'"
--fill '#1a1818'
--draw "text 154.34910000000002,102.81 '▪'"
+-fill '#000000'
+-draw "text 154.34910000000002,102.81 '■'"
 -fill '#cdcdcd'
 -draw "text 180.07395000000002,102.81 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 180.07395000000002,102.81 '┃'"
 -fill '#cdcdcd'
 -draw "text 205.79880000000003,102.81 '█'"
--fill '#1a1818'
+-fill '#000000'
 -draw "text 205.79880000000003,102.81 '█'"
 -fill '#34d231'
 -draw "text 231.52365,102.81 '█'"

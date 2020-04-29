@@ -1,72 +1,74 @@
-═══ Legend for Mapmakers ═══            
- w  ≈  water 
- W  ~  water_shallow 
- D  ≈  water_deep 
- ,  ░  sand 
- .  ⌄  grass 
- i  ▓  snow 
- s  █  plaza 
- y  █  farmland 
- U  ▓  Brache 
- a  ●  forrest on grass 
- v  ⬤  tree_top 
- V  ┸  tree_bottom 
- ä  ●  forrest on asphalt 
- â  ●  forrest on sand 
- u  *  palmforrest on sand 
- ü  *  palmforrest on asphalt 
- ú  *  palmforrest on grass 
- b  ▪  building 
- B  █  multiblock_building 
- L  ◘  lighthouse 
- O  ○  Well 
- g  ⌂  gravestones 
- m  ▲  mountain 
- x  ┃  street 
- 0  ╋  street_crossing 
- -  ━  street_h 
- |  ┃  street_v 
- 1  ┓  street_1 
- 2  ┏  street_2 
- 3  ┛  street_3 
- 4  ┗  street_4 
- 5  ┳  street_5 
- 6  ┻  street_6 
- 7  ┫  street_7 
- 8  ┣  street_8 
- 9  ▪  street_none 
- +  │  dirt 
- ₀  ┼  dirt_crossing 
- ~  ─  dirt_h 
- !  │  dirt_v 
- ₁  ┐  dirt_1 
- ₂  ┌  dirt_2 
- ₃  ┘  dirt_3 
- ₄  └  dirt_4 
- ₅  ┬  dirt_5 
- ₆  ┴  dirt_6 
- ₇  ┤  dirt_7 
- ₈  ├  dirt_8 
- ₉  ▪  dirt_none 
- r  ║  rails 
- ⁰  ╬  rails_crossing 
- =  ═  rails_h 
- §  ║  rails_v 
- ¹  ╗  rails_1 
- ²  ╔  rails_2 
- ³  ╝  rails_3 
- ⁴  ╚  rails_4 
- ⁵  ╦  rails_5 
- ⁶  ╩  rails_6 
- ⁷  ╣  rails_7 
- ⁸  ╠  rails_8 
- ⁹  ▪  rails_none 
- c  ╫  street-rails-crossing-horizontal 
- C  ╪  street-rails-crossing-vertical 
- j  ║  bridgev 
- q  ═  bridgeh 
- p  ▐  pool_right 
- P  ▌  pool_left 
- o  ●  pond 
- t  .  Animal 
-       empty
+═══ Legend for Mapmakers ═══            
+ w  ≈  water 
+ W  ~  water_shallow 
+ D  ≈  water_deep 
+ ,  ░  sand 
+ .  ⌄  grass 
+ i  ▓  snow 
+ y  █  farmland 
+ U  ▓  Brache 
+ a  ●  forrest on grass 
+ v  ▆  tree_top 
+ V  ╹  tree_bottom 
+ ä  ●  forrest on asphalt 
+ â  ●  forrest on sand 
+ u  *  palmforrest on sand 
+ ü  *  palmforrest on asphalt 
+ ú  *  palmforrest on grass 
+ b  ■  building 
+ B  █  multiblock_building 
+ L  ◘  lighthouse 
+ O  ○  Well 
+ g  ⌂  gravestones 
+ m  ▲  mountain 
+ x  ▪  street 
+ s  █  plaza 
+ S  █  plaza_connecting 
+ 0  ╋  street_crossing 
+ -  ━  street_h 
+ |  ┃  street_v 
+ 1  ┓  street_1 
+ 2  ┏  street_2 
+ 3  ┛  street_3 
+ 4  ┗  street_4 
+ 5  ┳  street_5 
+ 6  ┻  street_6 
+ 7  ┫  street_7 
+ 8  ┣  street_8 
+ 9  ▪  street_none 
+ +  │  dirt 
+ ₀  ┼  dirt_crossing 
+ ~  ─  dirt_h 
+ !  │  dirt_v 
+ ₁  ┐  dirt_1 
+ ₂  ┌  dirt_2 
+ ₃  ┘  dirt_3 
+ ₄  └  dirt_4 
+ ₅  ┬  dirt_5 
+ ₆  ┴  dirt_6 
+ ₇  ┤  dirt_7 
+ ₈  ├  dirt_8 
+ ₉  ▪  dirt_none 
+ r  ║  rails 
+ ⁰  ╬  rails_crossing 
+ =  ═  rails_h 
+ §  ║  rails_v 
+ ¹  ╗  rails_1 
+ ²  ╔  rails_2 
+ ³  ╝  rails_3 
+ ⁴  ╚  rails_4 
+ ⁵  ╦  rails_5 
+ ⁶  ╩  rails_6 
+ ⁷  ╣  rails_7 
+ ⁸  ╠  rails_8 
+ ⁹  ▪  rails_none 
+ c  ╫  street-rails-crossing-horizontal 
+ C  ╪  street-rails-crossing-vertical 
+ j  ║  bridgev 
+ q  ═  bridgeh 
+ p  ▐  pool_right 
+ P  ▌  pool_left 
+ o  ●  pond 
+ t  .  Animal 
+       empty 
+ ?  ?  label_letter

@@ -1,4 +1,4 @@
-#82923b00d0d98a1c40b235eaad69e3a3  -\n#!/usr/bin/env magick-script
+#441b4864e83be68d0785c1cffd3dfcb8  -\n#!/usr/bin/env magick-script
 -size 258x256
 xc:none
 -font DejaVu-Sans-mono
@@ -6,7 +6,7 @@ xc:none
 -gravity NorthWest
 -fill '#cdcdcd'
 -draw "text 0.0,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 0.0,0.0 '▲'"
 -fill '#cdcdcd'
 -draw "text 25.724850000000004,0.0 '█'"
@@ -14,7 +14,7 @@ xc:none
 -draw "text 25.724850000000004,0.0 '▓'"
 -fill '#cdcdcd'
 -draw "text 51.44970000000001,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 51.44970000000001,0.0 '▲'"
 -fill '#cdcdcd'
 -draw "text 77.17455000000001,0.0 '█'"
@@ -34,15 +34,15 @@ xc:none
 -draw "text 154.34910000000002,0.0 '▓'"
 -fill '#cdcdcd'
 -draw "text 180.07395000000002,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 180.07395000000002,0.0 '▲'"
 -fill '#cdcdcd'
 -draw "text 205.79880000000003,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 205.79880000000003,0.0 '▲'"
 -fill '#cdcdcd'
 -draw "text 231.52365,0.0 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 231.52365,0.0 '▲'"
 -fill '#cdcdcd'
 -draw "text 0.0,51.405 '█'"
@@ -62,7 +62,7 @@ xc:none
 -draw "text 77.17455000000001,51.405 '▓'"
 -fill '#cdcdcd'
 -draw "text 102.89940000000001,51.405 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 102.89940000000001,51.405 '▲'"
 -fill '#cdcdcd'
 -draw "text 128.62425,51.405 '█'"
@@ -82,7 +82,7 @@ xc:none
 -draw "text 205.79880000000003,51.405 '▓'"
 -fill '#cdcdcd'
 -draw "text 231.52365,51.405 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 231.52365,51.405 '▲'"
 -fill '#cdcdcd'
 -draw "text 0.0,102.81 '█'"
@@ -154,11 +154,11 @@ xc:none
 -draw "text 154.34910000000002,154.215 '▓'"
 -fill '#cdcdcd'
 -draw "text 180.07395000000002,154.215 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 180.07395000000002,154.215 '▲'"
 -fill '#cdcdcd'
 -draw "text 205.79880000000003,154.215 '█'"
--fill '#232323'
+-fill '#1a1818'
 -draw "text 205.79880000000003,154.215 '▲'"
 -fill '#cdcdcd'
 -draw "text 231.52365,154.215 '█'"
