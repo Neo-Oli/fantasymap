@@ -343,8 +343,8 @@ def render(
 
             # We're within a label
             if line[0:j].count("(") > line[0 : j + 1].count(")"):
-                foregroundcolor = objects["("]["color"]
-                backgroundcolor = objects["("]["bgcolor"]
+                foregroundcolor = objects["?"]["color"]
+                backgroundcolor = objects["?"]["bgcolor"]
                 character = c
             else:
                 if c == "w":
@@ -386,10 +386,10 @@ def render(
                         lefttrue = leftc in list("=rC⁰²⁴⁵⁶⁸")
                         righttrue = rightc in list("=rC⁰¹³⁵⁶⁷")
                     else:
-                        uptrue = upc in list("x+|!012578jC₀₁₂₅₇₈")
-                        downtrue = downc in list("x+!|034678jC₀₃₄₆₇₈")
-                        lefttrue = leftc in list("x+~-024568qc₀₂₄₅₆₈")
-                        righttrue = rightc in list("x+~-013567qc₀₁₃₅₆₇")
+                        uptrue = upc in list("x+S|!012578jC₀₁₂₅₇₈")
+                        downtrue = downc in list("x+S!|034678jC₀₃₄₆₇₈")
+                        lefttrue = leftc in list("x+S~-024568qc₀₂₄₅₆₈")
+                        righttrue = rightc in list("x+S~-013567qc₀₁₃₅₆₇")
                     if uptrue and downtrue and lefttrue and righttrue:
                         p = "crossing"
                     elif not uptrue and not downtrue and lefttrue and righttrue:
