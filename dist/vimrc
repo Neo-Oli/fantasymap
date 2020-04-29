@@ -142,11 +142,9 @@ syn match rule_69 /[o]/
 hi def rule_69 ctermfg=4 ctermbg=7
 syn match rule_70 /[t]/
 hi def rule_70 ctermfg=None ctermbg=None
-syn match rule_71 /[ ]/
-hi def rule_71 ctermfg=7 ctermbg=7
-syn match rule_72 /[(]/
+syn match rule_71 /[(]/
+hi def rule_71 ctermfg=3 ctermbg=3
+syn match rule_72 /[)]/
 hi def rule_72 ctermfg=3 ctermbg=3
-syn match rule_73 /[)]/
-hi def rule_73 ctermfg=3 ctermbg=3
-syn match rule_74 /[?]/
-hi def rule_74 ctermfg=0 ctermbg=3
+syn match rule_73 /[?]/
+hi def rule_73 ctermfg=0 ctermbg=3

@@ -1,14 +1,14 @@
-#f1dc9964580fc6f93f58f31a7c507a6d  -\n#!/usr/bin/env magick-script
+#ff1f9bbb24d463f1866679264d90a1ee  -\n#!/usr/bin/env magick-script
 -size 258x256
 xc:none
 -font DejaVu-Sans-mono
 -pointsize 44.7
 -gravity NorthWest
--fill '#cdcdcd'
+-fill '#34d231'
 -draw "text 0.0,0.0 '█'"
--fill '#cdcdcd'
--draw "text 0.0,0.0 ' '"
--fill '#783908'
+-fill '#1b8b1b'
+-draw "text 0.0,0.0 '⌄'"
+-fill '#34d231'
 -draw "text 25.724850000000004,0.0 '█'"
 -fill '#1a1818'
 -draw "text 25.724850000000004,0.0 '┗'"
