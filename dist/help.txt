@@ -71,5 +71,6 @@ rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 (p)p(pool_right)
 (P)P(pool_left)
 (o)o(pond)
+(F)F(airplane)
 (t)t(Animal)
 (?)?(label)

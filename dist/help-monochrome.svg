@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="240.0px" height="862.5px" viewBox="0 0 240.0 862.5" style="letter-spacing:0em;font-size:10px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="240.0px" height="874.0px" viewBox="0 0 240.0 874.0" style="letter-spacing:0em;font-size:10px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
     <text y="8.5" x="0.0" style="fill:#000000">████████████████████████████████████████</text>
 <text y="20.0" x="0.0" style="fill:#000000">████████████████████████████████████████</text>
 <text y="31.5" x="0.0" style="fill:#000000">████████████████████████████████████████</text>
@@ -73,8 +73,9 @@
 <text y="813.5" x="0.0" style="fill:#000000">████████████████</text>
 <text y="825.0" x="0.0" style="fill:#000000">███████████████</text>
 <text y="836.5" x="0.0" style="fill:#000000">██████████</text>
-<text y="848.0" x="0.0" style="fill:#000000">████████████</text>
-<text y="859.5" x="0.0" style="fill:#000000">███████████</text>
+<text y="848.0" x="0.0" style="fill:#000000">██████████████</text>
+<text y="859.5" x="0.0" style="fill:#000000">████████████</text>
+<text y="871.0" x="0.0" style="fill:#000000">███████████</text>
 <text y="8.5" x="0.0" style="fill:#cdcdcd">╔══════════════════╦════════╦══════════╗</text>
 <text y="20.0" x="0.0" style="fill:#cdcdcd">║         Legend for Mapmakers         ║</text>
 <text y="31.5" x="0.0" style="fill:#cdcdcd">╚════════╦═════════╩════════╩══════════╝</text>
@@ -148,6 +149,7 @@
 <text y="813.5" x="0.0" style="fill:#cdcdcd"> p ▐ pool_right </text>
 <text y="825.0" x="0.0" style="fill:#cdcdcd"> P ▌ pool_left </text>
 <text y="836.5" x="0.0" style="fill:#cdcdcd"> o ● pond </text>
-<text y="848.0" x="0.0" style="fill:#cdcdcd"> t . Animal </text>
-<text y="859.5" x="0.0" style="fill:#cdcdcd"> ? ? label </text>
+<text y="848.0" x="0.0" style="fill:#cdcdcd"> F ✈ airplane </text>
+<text y="859.5" x="0.0" style="fill:#cdcdcd"> t . Animal </text>
+<text y="871.0" x="0.0" style="fill:#cdcdcd"> ? ? label </text>
 </svg>
