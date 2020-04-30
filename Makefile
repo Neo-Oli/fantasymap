@@ -28,6 +28,29 @@ dist/vimrc: map.py
 clean:
 	@rm -fvr dist
 
+.PHONY: compare
+COMP ?= oogle
+compare:
+	git checkout dist/${COMP}.ansi
+	old="`cat dist/${COMP}.ansi`";\
+	make -B dist/${COMP}.ansi;\
+	clear;\
+	while true; do \
+		tput civis;\
+		printf "\033[41mOld\n";\
+		echo "$$old";\
+		tput cnorm;\
+		sleep 1;\
+		tput cup 0 0;\
+		printf "\033[42mNew\n";\
+		make -s dist/${COMP}.ansi;\
+		tput civis;\
+		cat dist/${COMP}.ansi;\
+		tput cnorm;\
+		sleep 1;\
+		tput cup 0 0;\
+	done
+
 ALL := \
 $(subst recipes,dist,$(subst .rec,.ansi,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,.txt,$(wildcard recipes/*)))\
