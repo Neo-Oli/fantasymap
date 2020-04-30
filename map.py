@@ -6,9 +6,14 @@ import argparse
 from uuid import uuid4
 import configparser
 import math
+from collections import Counter
 
 big = 1000000000
 heightstretch = 2
+
+
+def error(err):
+    print(err, file=sys.stderr)
 
 
 def findObjects(name, objects, fields=["name"]):
@@ -73,7 +78,6 @@ def vim():
 
 def isNear(objects, grid, i, j, fields, values, radius=5):
     for y in range(i - radius, i + radius):
-        line = grid[y]
         for x in range(j - radius, j + radius):
             if (
                 math.sqrt(math.pow((x - j), 2) + math.pow((y - i) * heightstretch, 2))
@@ -83,10 +87,12 @@ def isNear(objects, grid, i, j, fields, values, radius=5):
                     continue
                 else:
                     try:
-                        c = objects[line[x]]
+                        c = objects[grid[y][x]]
                         for field in fields:
                             if c[field] in values:
-                                if line[0:x].count("(") <= line[0 : x + 1].count(")"):
+                                if grid[y][0:x].count("(") <= grid[y][0 : x + 1].count(
+                                    ")"
+                                ):
                                     return True
                     except IndexError:
                         pass
@@ -183,6 +189,14 @@ def render(
     objects = config("objects.ini")
     colors = config("colors.ini")
 
+    # get values from type
+    for c in objects:
+        if "type" in objects[c]:
+            parent = objects[findObjects(objects[c]["type"], objects)[0]]
+            new = parent.copy()
+            new.update(objects[c])
+            objects[c] = new
+
     grid = map.split("\n")
     del grid[-1]  # delete last, empty line
     height = len(grid)
@@ -274,9 +288,7 @@ def render(
             ]
         )
 
-    i = -1
-    for line in grid:
-        i += 1
+    for i in range(0, len(grid)):
         output["height"] = wholeheight
         output["width"] = wholewidth
         output["fg"][i] = {}
@@ -291,15 +303,16 @@ def render(
             continue
         if i > endy:
             continue
-        if line == "":
+        if grid[i] == "":
             continue
-        linewidth = min([len(line) - 1, endx])
-        j = -1
+        linewidth = min([len(grid[i]) - 1, endx])
         lastc = ""
         lastfg = ""
         lastbg = ""
-        for c in line:
-            j += 1
+        for j in range(0, len(grid[i])):
+            c = grid[i][j]
+            backgroundcolor=""
+            foregroundcolor=""
             cout = ""
             coutbg = ""
             orig = c
@@ -310,11 +323,11 @@ def render(
             # get the surounding characters
 
             try:
-                leftc = line[j - 1]
+                leftc = grid[i][j - 1]
             except IndexError:
                 leftc = " "
             try:
-                rightc = line[j + 1]
+                rightc = grid[i][j + 1]
             except IndexError:
                 rightc = " "
             try:
@@ -348,9 +361,9 @@ def render(
                 leftc = " "
             if i == 0:
                 upc = " "
-
+            
             # We're within a label
-            if line[0:j].count("(") > line[0 : j + 1].count(")"):
+            if grid[i][0:j].count("(") > grid[i][0 : j + 1].count(")"):
                 foregroundcolor = objects["?"]["color"]
                 backgroundcolor = objects["?"]["bgcolor"]
                 character = c
@@ -375,6 +388,11 @@ def render(
                     if numtrees % 2:
                         if downc == "a":
                             c = findObjects("tree_top", objects)[0]
+                            if upc != "a":
+                                try:
+                                    backgroundcolor=objects[upc]["bgcolor"]
+                                except:
+                                    pass
                     else:
                         c = findObjects("tree_bottom", objects)[0]
                 elif c in list("x+r"):
@@ -433,52 +451,52 @@ def render(
                     else:
                         p = "none"
                     c = findObjects(prefix.format(p), objects)[0]
-                try:
-                    foregroundcolor = objects[c]["color"]
-                except KeyError:
-                    print(
-                        "\nError at line:{}:{} c={}".format(str(i + 1), str(j + 1), c),
-                        file=sys.stderr,
-                    )
-                    sys.exit(1)
-                backgroundcolor = objects[c]["bgcolor"]
-                character = objects[c]["r"]
-            if backgroundcolor == "s_average":
-                allcolors = []
-                for f in [
-                    upc,
-                    downc,
-                    leftc,
-                    rightc,
-                    upleftc,
-                    uprightc,
-                    downleftc,
-                    downrightc,
-                ]:
+                if not foregroundcolor:
                     try:
-                        avcolor = objects[f]["bgcolor"]
-                        if "bgcolor_average_overwrite" in objects[f]:
-                            avcolor = objects[f]["bgcolor_average_overwrite"]
-                        elif "bgcolor_fallback" in objects[f]:
-                            avcolor = objects[f]["bgcolor_fallback"]
-                        allcolors.append(avcolor)
+                        foregroundcolor = objects[c]["color"]
                     except KeyError:
-                        pass
-                if allcolors:
-                    # the output of set must be sorted otherwise it's order is essentially random, causing different results for max if the array has the same number of two elements
-                    backgroundcolor = max(sorted(set(allcolors)), key=allcolors.count)
-                if backgroundcolor == "s_average":
-                    if "bgcolor_fallback" in objects[c]:
-                        backgroundcolor = objects[c]["bgcolor_fallback"]
-                    else:
-                        print(
-                            "\nError at line:{}:{} c={}: Coulnd't determine background color".format(
-                                str(i + 1), str(j + 1), c
-                            ),
-                            file=sys.stderr,
-                        )
-                        backgroundcolor = "on_red"
+                        error("Error at line (foregroundcolor:{}:{} c={}".format(str(i + 1), str(j + 1), c))
+                        sys.exit(1)
 
+                if not backgroundcolor:
+                    try:
+                        backgroundcolor = objects[c]["bgcolor"]
+                    except KeyError:
+                        error("Error at line (backgroundcolor):{}:{} c={}".format(str(i + 1), str(j + 1), c))
+                        sys.exit(1)
+                character = objects[c]["r"]
+            radius = 1
+            while backgroundcolor == "s_average":
+                allcolors = []
+                for y in range(i - radius, i + radius + 1):
+                    for x in range(j - radius, j + radius + 1):
+                        if y == i and x == j:
+                            # ignore slef
+                            continue
+                        f = grid[y][x]
+                        try:
+                            avcolor = objects[f]["bgcolor"]
+                            if "bgcolor_average_overwrite" in objects[f]:
+                                avcolor = objects[f]["bgcolor_average_overwrite"]
+                            elif "bgcolor_fallback" in objects[f]:
+                                avcolor = objects[f]["bgcolor_fallback"]
+                            if avcolor != "ignore":
+                                allcolors.append(avcolor)
+                        except KeyError:
+                            pass
+                if allcolors:
+                    counted = Counter(allcolors).most_common()
+                    if c == "$":
+                        error("Average Debug: {}".format(counted))
+                    if len(counted) == 1 or counted[0][1] != counted[1][1]:
+                        backgroundcolor = counted[0][0]
+                radius += 1
+
+            if (
+                backgroundcolor == "on_{}".format(foregroundcolor)
+                and "same_color_fallback" in objects[c]
+            ):
+                foregroundcolor = objects[c]["same_color_fallback"]
             if monochrome:
                 foregroundcolor = "white"
                 backgroundcolor = "on_black"
