@@ -474,7 +474,7 @@ def render(
                             # ignore slef
                             continue
                         try:
-                        f = grid[y][x]
+                            f = grid[y][x]
                         except IndexError:
                             continue
                         try:
