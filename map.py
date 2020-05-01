@@ -473,7 +473,10 @@ def render(
                         if y == i and x == j:
                             # ignore slef
                             continue
+                        try:
                         f = grid[y][x]
+                        except IndexError:
+                            continue
                         try:
                             avcolor = objects[f]["bgcolor"]
                             if "bgcolor_average_overwrite" in objects[f]:
