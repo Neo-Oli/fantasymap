@@ -1,3 +1,79 @@
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#test
+r(        Legend for Mapmakers        )r
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+(w)w(water)
+(W)W(water_shallow)
+(D)D(water_deep)
+(,),(sand)
+(.).(grass)
+(i)i(snow)
+(y)y(farmland)
+(U)U(Brache)
+(a)a(forest on grass)
+(ä)ä(forest on plaza)
+(â)â(forest on sand)
+(u)u(palmforest on sand)
+(ü)ü(palmforest on plaza)
+(ú)ú(palmforest on grass)
+(b)b(building)
+(B)B(multiblock_building)
+(L)L(lighthouse)
+(O)O(Well)
+(g)g(gravestones)
+(m)m(mountain)
+(s)s(plaza)
+(S)S(plaza_connecting)
+(x)x(street)
+(0)0(street_crossing)
+(-)-(street_h)
+(|)|(street_v)
+(1)1(street_1)
+(2)2(street_2)
+(3)3(street_3)
+(4)4(street_4)
+(5)5(street_5)
+(6)6(street_6)
+(7)7(street_7)
+(8)8(street_8)
+(9)9(street_none)
+(+)+(dirt)
+(₀)₀(dirt_crossing)
+(~)~(dirt_h)
+(!)!(dirt_v)
+(₁)₁(dirt_1)
+(₂)₂(dirt_2)
+(₃)₃(dirt_3)
+(₄)₄(dirt_4)
+(₅)₅(dirt_5)
+(₆)₆(dirt_6)
+(₇)₇(dirt_7)
+(₈)₈(dirt_8)
+(₉)₉(dirt_none)
+(r)r(rails)
+(⁰)⁰(rails_crossing)
+(=)=(rails_h)
+(§)§(rails_v)
+(¹)¹(rails_1)
+(²)²(rails_2)
+(³)³(rails_3)
+(⁴)⁴(rails_4)
+(⁵)⁵(rails_5)
+(⁶)⁶(rails_6)
+(⁷)⁷(rails_7)
+(⁸)⁸(rails_8)
+(⁹)⁹(rails_none)
+(c)c(street-rails-crossing-horizontal)
+(C)C(street-rails-crossing-vertical)
+(j)j(bridgev)
+(q)q(bridgeh)
+(p)p(pool_right)
+(P)P(pool_left)
+(o)o(pond)
+(F)F(airplane)
+(t)t(animal)
+(?)?(label)
+($)$(debugger)
+
 [0;91m[48;5;7m╔══════════════════╦════════╦══════════╗[0m
 [0;91m[48;5;7m║[0;30m[48;5;3m         Legend for Mapmakers         [0;91m[48;5;7m║[0m
 [0;91m[48;5;7m╚════════╦═════════╩════════╩══════════╝[0m
@@ -10,8 +86,6 @@
 [0;30m[48;5;3m y [0;33m[48;5;2m█[0;30m[48;5;3m farmland [0m
 [0;30m[48;5;3m U [0;90m[48;5;0m▓[0;30m[48;5;3m Brache [0m
 [0;30m[48;5;3m a [0;92m[48;5;3m●[0;30m[48;5;3m forest on grass [0m
-[0;30m[48;5;3m v [0;92m[48;5;3m▆[0;30m[48;5;3m tree_top [0m
-[0;30m[48;5;3m V [0;30m[48;5;3m╹[0;30m[48;5;3m tree_bottom [0m
 [0;30m[48;5;3m ä [0;92m[48;5;7m●[0;30m[48;5;3m forest on plaza [0m
 [0;30m[48;5;3m â [0;92m[48;5;3m●[0;30m[48;5;3m forest on sand [0m
 [0;30m[48;5;3m u [0;92m[48;5;3m*[0;30m[48;5;3m palmforest on sand [0m
