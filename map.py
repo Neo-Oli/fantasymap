@@ -311,8 +311,8 @@ def render(
         lastbg = ""
         for j in range(0, len(grid[i])):
             c = grid[i][j]
-            backgroundcolor=""
-            foregroundcolor=""
+            backgroundcolor = ""
+            foregroundcolor = ""
             cout = ""
             coutbg = ""
             orig = c
@@ -361,7 +361,6 @@ def render(
                 leftc = " "
             if i == 0:
                 upc = " "
-            
             # We're within a label
             if grid[i][0:j].count("(") > grid[i][0 : j + 1].count(")"):
                 foregroundcolor = objects["?"]["color"]
@@ -382,19 +381,38 @@ def render(
                     else:
                         c = findObjects("water_deep", objects)[0]
                 elif c == "a":
-                    numtrees = 1
-                    while i - numtrees > 0 and grid[i - numtrees][j] == "a":
-                        numtrees += 1
-                    if numtrees % 2:
+                    numtrees_top = 1
+                    while i - numtrees_top > 0 and grid[i - numtrees_top][j] == "a":
+                        numtrees_top += 1
+                    if numtrees_top % 2:
                         if downc == "a":
-                            c = findObjects("tree_top", objects)[0]
+                            numtrees_left = 1
+                            while (
+                                j - numtrees_left > 0
+                                and grid[i][j - numtrees_left] == "a"
+                            ):
+                                numtrees_left += 1
+                            mod = numtrees_left % 4
+                            c = findObjects("tree_top_{}".format(mod), objects)[0]
                             if upc != "a":
                                 try:
-                                    backgroundcolor=objects[upc]["bgcolor"]
+                                    backgroundcolor = objects[upc]["bgcolor"]
                                 except:
                                     pass
                     else:
-                        c = findObjects("tree_bottom", objects)[0]
+                        numtrees_right = 1
+                        while (
+                            j + numtrees_right < linewidth
+                            and grid[i][j + numtrees_right] == "a"
+                        ):
+                            numtrees_right += 1
+                        mod = numtrees_right % 3
+                        c = findObjects("tree_bottom_{}".format(mod), objects)[0]
+                        if downc != "a":
+                            try:
+                                backgroundcolor = objects[downc]["bgcolor"]
+                            except:
+                                pass
                 elif c in list("x+r"):
                     rails = False
                     dirt = False
@@ -455,14 +473,22 @@ def render(
                     try:
                         foregroundcolor = objects[c]["color"]
                     except KeyError:
-                        error("Error at line (foregroundcolor:{}:{} c={}".format(str(i + 1), str(j + 1), c))
+                        error(
+                            "Error at line (foregroundcolor:{}:{} c={}".format(
+                                str(i + 1), str(j + 1), c
+                            )
+                        )
                         sys.exit(1)
 
                 if not backgroundcolor:
                     try:
                         backgroundcolor = objects[c]["bgcolor"]
                     except KeyError:
-                        error("Error at line (backgroundcolor):{}:{} c={}".format(str(i + 1), str(j + 1), c))
+                        error(
+                            "Error at line (backgroundcolor):{}:{} c={}".format(
+                                str(i + 1), str(j + 1), c
+                            )
+                        )
                         sys.exit(1)
                 character = objects[c]["r"]
             radius = 1
