@@ -392,7 +392,7 @@ def render(
                                 and grid[i][j - numtrees_left] == "a"
                             ):
                                 numtrees_left += 1
-                            mod = numtrees_left % 4
+                            mod = (numtrees_left - 1) % 4
                             c = findObjects("tree_top_{}".format(mod), objects)[0]
                             if upc != "a":
                                 try:
@@ -406,13 +406,8 @@ def render(
                             and grid[i][j + numtrees_right] == "a"
                         ):
                             numtrees_right += 1
-                        mod = numtrees_right % 3
+                        mod = (numtrees_right - 1) % 3
                         c = findObjects("tree_bottom_{}".format(mod), objects)[0]
-                        if downc != "a":
-                            try:
-                                backgroundcolor = objects[downc]["bgcolor"]
-                            except:
-                                pass
                 elif c in list("x+r"):
                     rails = False
                     dirt = False
