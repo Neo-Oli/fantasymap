@@ -10,8 +10,6 @@ rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 (y)y(farmland)
 (U)U(Brache)
 (a)a(forest on grass)
-(v)v(tree_top)
-(V)V(tree_bottom)
 (ä)ä(forest on plaza)
 (â)â(forest on sand)
 (u)u(palmforest on sand)
