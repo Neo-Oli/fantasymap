@@ -48,7 +48,7 @@ def legend():
     objects = config("objects.ini")
     for key in objects:
         o = objects[key]
-        if key in ["(", ")"]:
+        if key in ["(", ")"] or len(key) > 1:
             # don't start a label
             continue
         map += "({}){}({})\n".format(key, key, o["name"])
@@ -469,7 +469,7 @@ def render(
                         foregroundcolor = objects[c]["color"]
                     except KeyError:
                         error(
-                            "Error at line (foregroundcolor:{}:{} c={}".format(
+                            "Error at line (foregroundcolor):{}:{} c={}".format(
                                 str(i + 1), str(j + 1), c
                             )
                         )
