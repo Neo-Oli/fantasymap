@@ -16,6 +16,22 @@ def error(err):
     print(err, file=sys.stderr)
 
 
+def progress(done, ultimate):
+    width = 50
+    bar = ""
+    percentage = math.floor((done / ultimate) * 100)
+    for i in range(0, width):
+        if (i / width) * 100 <= percentage:
+            bar += "="
+        else:
+            bar += " "
+    print(
+        "\r[{}] {}% {}/{}".format(bar, percentage, done, ultimate),
+        file=sys.stderr,
+        end="",
+    )
+
+
 def findObjects(name, objects, fields=["name"]):
     obj = []
     for c in objects:
@@ -287,7 +303,6 @@ def render(
                 "-gravity NorthWest",
             ]
         )
-
     for i in range(0, len(grid)):
         output["height"] = wholeheight
         output["width"] = wholewidth
@@ -320,6 +335,7 @@ def render(
                 continue
             if j > endx:
                 continue
+            progress((((i - starty) * width) + (j - startx)) + 1, height * width)
             # get the surounding characters
 
             try:
