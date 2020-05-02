@@ -17,19 +17,20 @@ def error(err):
 
 
 def progress(done, ultimate):
-    width = 50
-    bar = ""
-    percentage = math.floor((done / ultimate) * 100)
-    for i in range(0, width):
-        if (i / width) * 100 <= percentage:
-            bar += "="
-        else:
-            bar += " "
-    print(
-        "\r[{}] {}% {}/{}".format(bar, percentage, done, ultimate),
-        file=sys.stderr,
-        end="",
-    )
+    if "NOPROGRESS" not in os.environ:
+        width = 50
+        bar = ""
+        percentage = math.floor((done / ultimate) * 100)
+        for i in range(0, width):
+            if (i / width) * 100 <= percentage:
+                bar += "="
+            else:
+                bar += " "
+        print(
+            "\r[{}] {}% {}/{}".format(bar, percentage, done, ultimate),
+            file=sys.stderr,
+            end="",
+        )
 
 
 def findObjects(name, objects, fields=["name"]):
@@ -226,8 +227,10 @@ def render(
     argwidth = endx - startx
     argwidth += 1
     if endx != big or endy != big or startx != 0 or starty != 0:
-        height = argheight
-        width = argwidth
+        if argheight<=height:
+            height = argheight
+        if argwidth<=width:
+            width = argwidth
 
     if mode == "html":
         with open("map.css", "r") as myfile:
