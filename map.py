@@ -227,9 +227,9 @@ def render(
     argwidth = endx - startx
     argwidth += 1
     if endx != big or endy != big or startx != 0 or starty != 0:
-        if argheight<=height:
+        if argheight <= height:
             height = argheight
-        if argwidth<=width:
+        if argwidth <= width:
             width = argwidth
 
     if mode == "html":
@@ -395,7 +395,7 @@ def render(
                         ["name", "type"],
                         ["grass", "sand", "dirt"],
                         5,
-                    ):
+                    ) or isNear(objects, grid, i, j, ["name", "type"], ["mountain"], 3):
                         c = findObjects("water_shallow", objects)[0]
                     else:
                         c = findObjects("water_deep", objects)[0]
