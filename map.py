@@ -21,16 +21,17 @@ def progress(done, ultimate):
         width = 50
         bar = ""
         percentage = math.floor((done / ultimate) * 100)
-        for i in range(0, width):
-            if (i / width) * 100 <= percentage:
-                bar += "="
-            else:
-                bar += " "
-        print(
-            "\r[{}] {}% {}/{}".format(bar, percentage, done, ultimate),
-            file=sys.stderr,
-            end="",
-        )
+        if done % 1000 == 0 or percentage == 100:
+            for i in range(0, width):
+                if (i / width) * 100 <= percentage:
+                    bar += "="
+                else:
+                    bar += " "
+            print(
+                "\r[{}] {}% {}/{}".format(bar, percentage, done, ultimate),
+                file=sys.stderr,
+                end="",
+            )
 
 
 def findObjects(name, objects, fields=["name"]):
