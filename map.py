@@ -388,15 +388,20 @@ def render(
                 character = c
             else:
                 if c == "w":
-                    if isNear(
-                        objects,
-                        grid,
-                        i,
-                        j,
-                        ["name", "type"],
-                        ["grass", "sand", "dirt"],
-                        5,
-                    ) or isNear(objects, grid, i, j, ["name", "type"], ["mountain"], 3):
+                    if (
+                        isNear(
+                            objects,
+                            grid,
+                            i,
+                            j,
+                            ["name", "type"],
+                            ["grass", "sand", "dirt"],
+                            5,
+                        )
+                        or isNear(
+                            objects, grid, i, j, ["name", "type"], ["mountain"], 3
+                        )
+                    ):
                         c = findObjects("water_shallow", objects)[0]
                     else:
                         c = findObjects("water_deep", objects)[0]
