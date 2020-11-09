@@ -661,3 +661,5 @@ def display(output):
 
 
 main()
+if "NOPROGRESS" not in os.environ:
+    print(file=sys.stderr)
