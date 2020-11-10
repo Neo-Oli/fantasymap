@@ -1,4 +1,5 @@
-#8d2596e519e2e9e9414ec3180418ccda  -\n#!/usr/bin/env magick-script
+#8d2596e519e2e9e9414ec3180418ccda  -
+#!/usr/bin/env magick-script
 -size 258x256
 xc:none
 -font DejaVu-Sans-mono
