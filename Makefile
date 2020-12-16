@@ -76,7 +76,8 @@ dist/index.js: $(ALL) dist/tiles/1/0/0.png
 	cd dist;\
 		find -type f |\
 		grep -v 'vimrc$$'|\
-		grep -v 'tilescripts'|\
+		grep -v '\/tilescripts\/'|\
+		grep -v '\/lines\/'|\
 		xargs -I _ echo "import '_'" \
 		> index.js
 
