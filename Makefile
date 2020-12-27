@@ -83,7 +83,7 @@ dist/index.js: $(ALL) dist/tiles/1/0/0.png
 		grep -v '\/tilescripts\/'|\
 		grep -v '\/lines\/'|\
 		sort|\
-		sed -e 's/^/import "/' -e 's/$$/"/' \
+		sed -e "s/^/import '/" -e "s/$$/'/" \
 		> index.js
 
 BASE := map.py map.map objects.ini colors.ini
