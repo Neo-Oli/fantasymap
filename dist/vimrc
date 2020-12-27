@@ -1,7 +1,7 @@
 setlocal nowrap
 setlocal redrawtime=10000
 syn match rule_0 /[w]/
-hi def rule_0 ctermfg=15 ctermbg=12
+hi def rule_0 ctermfg=15 ctermbg=4
 syn match rule_1 /[W]/
 hi def rule_1 ctermfg=None ctermbg=None
 syn match rule_2 /[D]/
@@ -140,25 +140,51 @@ syn match rule_68 /[c]/
 hi def rule_68 ctermfg=None ctermbg=None
 syn match rule_69 /[C]/
 hi def rule_69 ctermfg=None ctermbg=None
-syn match rule_70 /[j]/
+syn match rule_70 /[*]/
 hi def rule_70 ctermfg=8 ctermbg=4
-syn match rule_71 /[q]/
-hi def rule_71 ctermfg=8 ctermbg=4
-syn match rule_72 /[p]/
-hi def rule_72 ctermfg=4 ctermbg=7
-syn match rule_73 /[P]/
-hi def rule_73 ctermfg=4 ctermbg=7
-syn match rule_74 /[o]/
-hi def rule_74 ctermfg=4 ctermbg=7
-syn match rule_75 /[F]/
+syn match rule_71 /[⑩]/
+hi def rule_71 ctermfg=None ctermbg=None
+syn match rule_72 /[⑪]/
+hi def rule_72 ctermfg=None ctermbg=None
+syn match rule_73 /[⑫]/
+hi def rule_73 ctermfg=None ctermbg=None
+syn match rule_74 /[①]/
+hi def rule_74 ctermfg=None ctermbg=None
+syn match rule_75 /[②]/
 hi def rule_75 ctermfg=None ctermbg=None
-syn match rule_76 /[t]/
+syn match rule_76 /[③]/
 hi def rule_76 ctermfg=None ctermbg=None
-syn match rule_77 /[(]/
+syn match rule_77 /[④]/
 hi def rule_77 ctermfg=None ctermbg=None
-syn match rule_78 /[)]/
+syn match rule_78 /[⑤]/
 hi def rule_78 ctermfg=None ctermbg=None
-syn match rule_79 /[?]/
-hi def rule_79 ctermfg=0 ctermbg=3
-syn match rule_80 /[$]/
+syn match rule_79 /[⑥]/
+hi def rule_79 ctermfg=None ctermbg=None
+syn match rule_80 /[⑦]/
 hi def rule_80 ctermfg=None ctermbg=None
+syn match rule_81 /[⑧]/
+hi def rule_81 ctermfg=None ctermbg=None
+syn match rule_82 /[⑨]/
+hi def rule_82 ctermfg=None ctermbg=None
+syn match rule_83 /[j]/
+hi def rule_83 ctermfg=8 ctermbg=4
+syn match rule_84 /[q]/
+hi def rule_84 ctermfg=8 ctermbg=4
+syn match rule_85 /[p]/
+hi def rule_85 ctermfg=4 ctermbg=7
+syn match rule_86 /[P]/
+hi def rule_86 ctermfg=4 ctermbg=7
+syn match rule_87 /[o]/
+hi def rule_87 ctermfg=4 ctermbg=7
+syn match rule_88 /[F]/
+hi def rule_88 ctermfg=None ctermbg=None
+syn match rule_89 /[t]/
+hi def rule_89 ctermfg=None ctermbg=None
+syn match rule_90 /[(]/
+hi def rule_90 ctermfg=None ctermbg=None
+syn match rule_91 /[)]/
+hi def rule_91 ctermfg=None ctermbg=None
+syn match rule_92 /[?]/
+hi def rule_92 ctermfg=0 ctermbg=3
+syn match rule_93 /[$]/
+hi def rule_93 ctermfg=None ctermbg=None
