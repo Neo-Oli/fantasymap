@@ -13,6 +13,9 @@ whole: dist/whole.ansi
 m-%: dist/%-monochrome.ansi
 	$(call display,$<)
 
+t-%: dist/%-truecolor.ansi
+	$(call display,$<)
+
 i-%: dist/%.png
 	feh $<
 
@@ -55,6 +58,7 @@ ALL := \
 $(subst recipes,dist,$(subst .rec,.ansi,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,.txt,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,-monochrome.ansi,$(wildcard recipes/*)))\
+$(subst recipes,dist,$(subst .rec,-truecolor.ansi,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,.html,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,-monochrome.html,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,.svg,$(wildcard recipes/*)))\
@@ -93,6 +97,9 @@ dist/%-monochrome.html: $(REQ)
 dist/%-monochrome.ansi: $(REQ)
 	@mkdir -p dist
 	./map.py -b map.map `cat $<` > $@
+dist/%-truecolor.ansi: $(REQ)
+	@mkdir -p dist
+	./map.py -T map.map `cat $<` > $@
 dist/%.svg: $(REQ)
 	@mkdir -p dist
 	./map.py -s map.map `cat $<` > $@

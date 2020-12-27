@@ -118,6 +118,11 @@ def isNear(objects, grid, i, j, fields, values, radius=5):
                         pass
 
 
+def hexToRGB(color):
+    color = color.lstrip("#")
+    return tuple(int(color[i : i + 2], 16) for i in (0, 2, 4))
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.description = "Best viewed when piped into `less -RS`"
@@ -133,6 +138,7 @@ def main():
     parser.add_argument("-i", action="store_true", help="Create png image")
     parser.add_argument("-s", action="store_true", help="Create svg image")
     parser.add_argument("-l", action="store_true", help="Show Mapmakers legend")
+    parser.add_argument("-T", action="store_true", help="Print true color ansi")
     parser.add_argument(
         "-t", action="store_true", help="Output input text (cuts map file)"
     )
@@ -181,6 +187,7 @@ def main():
             options.starty,
             options.endy,
             options.S,
+            options.T,
         )
         display(output)
 
@@ -194,6 +201,7 @@ def render(
     starty=0,
     endy=big,
     scale="12",
+    truecolor=False,
 ):
     block = "█"
     build = uuid4()
@@ -604,11 +612,18 @@ def render(
                 if (
                     lastbg is not backgroundcolor or lastfg is not foregroundcolor
                 ) and not monochrome:
-                    cout += (
-                        colors["ansi"][foregroundcolor]
-                        + colors["ansi"][backgroundcolor]
-                    )
-
+                    if not truecolor:
+                        cout += (
+                            colors["ansi"][foregroundcolor]
+                            + colors["ansi"][backgroundcolor]
+                        )
+                    else:
+                        r, g, b = hexToRGB(colors["hex"][backgroundcolor])
+                        bg = "\x1b[48;2;{};{};{}m".format(r, g, b)
+                        r, g, b = hexToRGB(colors["hex"][foregroundcolor])
+                        fg = "\x1b[38;2;{};{};{}m".format(r, g, b)
+                        cout += fg
+                        cout += bg
                 cout += character
             lastbg = backgroundcolor
             lastfg = foregroundcolor
