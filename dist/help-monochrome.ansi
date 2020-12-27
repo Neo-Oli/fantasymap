@@ -64,6 +64,19 @@
  ⁹ ▪ rails_none 
  c ╫ street-rails-crossing-horizontal 
  C ╪ street-rails-crossing-vertical 
+ * │ waterway 
+ ⑩ ┼ waterway_crossing 
+ ⑪ ─ waterway_h 
+ ⑫ │ waterway_v 
+ ① ┐ waterway_1 
+ ② ┌ waterway_2 
+ ③ ┘ waterway_3 
+ ④ └ waterway_4 
+ ⑤ ┬ waterway_5 
+ ⑥ ┴ waterway_6 
+ ⑦ ┤ waterway_7 
+ ⑧ ├ waterway_8 
+ ⑨ ▪ waterway_none 
  j ║ bridgev 
  q ═ bridgeh 
  p ▐ pool_right 
