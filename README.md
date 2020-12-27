@@ -1,5 +1,5 @@
 # fantasymap
-![Preview of map](/preview.png)
+![Preview of map](/dist/oogle.png)
 
 Display Map
 `make`
