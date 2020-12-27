@@ -433,15 +433,15 @@ def render(
                             numtrees_right += 1
                         mod = (numtrees_right - 1) % 3
                         c = findObjects("tree_bottom_{}".format(mod), objects)[0]
-                elif c in list("x+r"):
+                elif c in list("x+r*"):
                     rails = False
-                    dirt = False
                     if c == "r":
                         rails = True
                         prefix = "rails_{}"
                     elif c == "+":
-                        dirt = True
                         prefix = "dirt_{}"
+                    elif c == "*":
+                        prefix = "waterway_{}"
                     else:
                         prefix = "street_{}"
                     if rails:
@@ -450,10 +450,10 @@ def render(
                         lefttrue = leftc in list("=rC⁰²⁴⁵⁶⁸")
                         righttrue = rightc in list("=rC⁰¹³⁵⁶⁷")
                     else:
-                        uptrue = upc in list("x+S|!012578jC₀₁₂₅₇₈")
-                        downtrue = downc in list("x+S!|034678jC₀₃₄₆₇₈")
-                        lefttrue = leftc in list("x+S~-024568qc₀₂₄₅₆₈")
-                        righttrue = rightc in list("x+S~-013567qc₀₁₃₅₆₇")
+                        uptrue = upc in list("x+*S|!012578jC₀₁₂₅₇₈⑩⑫①②⑤⑦⑧")
+                        downtrue = downc in list("x+*S!|034678jC₀₃₄₆₇₈⑩⑫③④⑥⑦⑧")
+                        lefttrue = leftc in list("x+*S~-024568qc₀₂₄₅₆₈⑩⑪②④⑤⑥⑧")
+                        righttrue = rightc in list("x+*S~-013567qc₀₁₃₅₆₇⑩⑪①③⑤⑥⑦")
                     if uptrue and downtrue and lefttrue and righttrue:
                         p = "crossing"
                     elif not uptrue and not downtrue and lefttrue and righttrue:
