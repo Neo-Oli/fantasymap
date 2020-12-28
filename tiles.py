@@ -17,7 +17,7 @@ def write(filename,content):
     print("{} written".format(filename))
 os.system("mkdir -p dist/tilescripts")
 
-w=1000
+w=1100
 h=500
 xi=10
 yi=5
