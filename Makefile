@@ -86,39 +86,39 @@ dist/index.js: $(ALL) dist/tiles/1/0/0.png
 		sed -e "s/^/import '/" -e "s/$$/'/" \
 		> index.js
 
-BASE := map.py map.map objects.ini colors.ini
+BASE := map.py map.map objects.ini colors.ini getCoordinates.py
 REQ := recipes/%.rec $(BASE)
 .PRECIOUS: dist/%
 dist/%.html: $(REQ)
 	@mkdir -p dist
-	./map.py -x map.map `cat $<` > $@
+	./map.py -x map.map `./getCoordinates.py $<` > $@
 dist/%-monochrome.html: $(REQ)
 	@mkdir -p dist
-	./map.py -xb map.map `cat $<` > $@
+	./map.py -xb map.map `./getCoordinates.py $<` > $@
 dist/%-monochrome.ansi: $(REQ)
 	@mkdir -p dist
-	./map.py -b map.map `cat $<` > $@
+	./map.py -b map.map `./getCoordinates.py $<` > $@
 dist/%-truecolor.ansi: $(REQ)
 	@mkdir -p dist
-	./map.py -T map.map `cat $<` > $@
+	./map.py -T map.map `./getCoordinates.py $<` > $@
 dist/%.svg: $(REQ)
 	@mkdir -p dist
-	./map.py -s map.map `cat $<` > $@
+	./map.py -s map.map `./getCoordinates.py $<` > $@
 dist/%-monochrome.svg: $(REQ)
 	@mkdir -p dist
-	./map.py -sb map.map `cat $<` > $@
+	./map.py -sb map.map `./getCoordinates.py $<` > $@
 dist/%.ansi: $(REQ)
 	@mkdir -p dist
-	./map.py map.map `cat $<` > $@
+	./map.py map.map `./getCoordinates.py $<` > $@
 dist/%.txt: $(REQ)
 	@mkdir -p dist
-	./map.py -t map.map `cat $<` > $@
+	./map.py -t map.map `./getCoordinates.py $<` > $@
 dist/%.png: $(REQ)
 	@mkdir -p dist
-	./map.py -iS 22.35 map.map `cat $<` | magick-script - > $@
+	./map.py -iS 22.35 map.map `./getCoordinates.py $<` | magick-script - > $@
 dist/%-monochrome.png: $(REQ)
 	@mkdir -p dist
-	./map.py -biS 22.35 map.map `cat $<` | magick-script - > $@
+	./map.py -biS 22.35 map.map `./getCoordinates.py $<` | magick-script - > $@
 dist/recipes/%.rec: $(REQ)
 	@mkdir -p dist/recipes
 	cp $< $@
@@ -174,7 +174,7 @@ dist/tiles/1/0/0.png: $(BASE) tiles.py
 .PHONY: lint
 lint: VENV/pyvenv.cfg
 	. VENV/bin/activate;\
-	black map.py
+	black *.py
 
 VENV/pyvenv.cfg: requirements.txt
 	python3 -m venv VENV
