@@ -546,7 +546,7 @@ def render(
                 for y in range(i - radius, i + radius + 1):
                     for x in range(j - radius, j + radius + 1):
                         if y == i and x == j:
-                            # ignore slef
+                            # ignore self
                             continue
                         try:
                             f = grid[y][x]
