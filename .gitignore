@@ -1,5 +1,5 @@
 .make-*
 VENV
-dist/tilescripts
+dist/tilescripts/*.cache
 dist/lines
 dist/vimrc
