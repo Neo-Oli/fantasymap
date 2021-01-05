@@ -18,7 +18,6 @@ for c in $commits;do
                 mkdir -p history
                 echo "$map" > "${filename}.map"
             fi
-            echo "dist/${filename}.png"
         fi
     else
         echo error at $c
