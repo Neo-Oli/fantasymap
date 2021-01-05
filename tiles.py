@@ -20,8 +20,6 @@ def write(filename, content):
 
 os.system("mkdir -p dist/tilescripts")
 
-w = 1100
-h = 500
 xi = 10
 yi = 5
 z = 8
@@ -39,6 +37,8 @@ clines = cachemap.split("\n")
 files = os.listdir("dist/tilescripts/")
 del lines[-1]  # delete last, empty line
 del clines[-1]  # delete last, empty line
+h = len(lines)
+w = len(lines[0].split("#")[0])
 for i in range(0, h, yi):
     for y in range(0, yi):
         try:
