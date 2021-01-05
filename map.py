@@ -521,27 +521,13 @@ def render(
                     else:
                         p = "none"
                     c = findObjects(prefix.format(p), objects)[0]
+                if not c in objects:
+                    error("Error at line:{} c={}".format(str(i + 1), str(j + 1), c))
+                    c = "E"
                 if not foregroundcolor:
-                    try:
-                        foregroundcolor = objects[c]["color"]
-                    except KeyError:
-                        error(
-                            "Error at line (foregroundcolor):{}:{} c={}".format(
-                                str(i + 1), str(j + 1), c
-                            )
-                        )
-                        sys.exit(1)
-
+                    foregroundcolor = objects[c]["color"]
                 if not backgroundcolor:
-                    try:
-                        backgroundcolor = objects[c]["bgcolor"]
-                    except KeyError:
-                        error(
-                            "Error at line (backgroundcolor):{}:{} c={}".format(
-                                str(i + 1), str(j + 1), c
-                            )
-                        )
-                        sys.exit(1)
+                    backgroundcolor = objects[c]["bgcolor"]
                 character = objects[c]["r"]
             radius = 1
             while backgroundcolor == "s_average":
