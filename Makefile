@@ -70,8 +70,9 @@ dist/recipes\
 dist/vimrc\
 _fast
 
+HISTORY := $(subst history,dist/history,$(subst .map,.png,$(wildcard history/*)))
 .PHONY: all
-all: $(ALL) dist/index.js history
+all: $(ALL) dist/index.js $(HISTORY)
 
 dist/recipes/%: recipes/%.rec
 	cp -vr recipes dist/recipes
@@ -181,9 +182,10 @@ VENV/pyvenv.cfg: requirements.txt
 	. VENV/bin/activate;\
 	pip install -r requirements.txt
 
-.PHONY: history
-history:
-	$(MAKE) `./history.sh`
+.PHONY: history-sources
+history-sources:
+	./history.sh
+history: $(HISTORY)
 
 dist/history/%.svg: history/%.map $(BASE)
 	@mkdir -p dist/history
