@@ -36,7 +36,7 @@ COMP ?= oogle
 compare:
 	git checkout dist/${COMP}.ansi
 	old="`cat dist/${COMP}.ansi`";\
-	make -B dist/${COMP}.ansi;\
+	$(MAKE) -B dist/${COMP}.ansi;\
 	clear;\
 	while true; do \
 		tput civis;\
@@ -46,7 +46,7 @@ compare:
 		sleep 1;\
 		tput cup 0 0;\
 		printf "\033[42mNew\n";\
-		make -s dist/${COMP}.ansi;\
+		$(MAKE) -s dist/${COMP}.ansi;\
 		tput civis;\
 		cat dist/${COMP}.ansi;\
 		tput cnorm;\
@@ -159,8 +159,8 @@ dist/fast.ansi: $(linenum)
 
 .PHONY: _fast
 _fast:
-	make _fast_source
-	make $(MFLAGS) dist/fast.ansi
+	$(MAKE) _fast_source
+	$(MAKE) dist/fast.ansi
 .PHONY: fast
 fast: _fast
 	$(call display,dist/fast.ansi)
@@ -169,7 +169,7 @@ fast: _fast
 tiles: dist/tiles/1/0/0.png
 dist/tiles/1/0/0.png: $(BASE) tiles.py
 	./tiles.py
-	make $(MFLAGS) -C dist/tilescripts
+	$(MAKE) -C dist/tilescripts
 
 .PHONY: lint
 lint: VENV/pyvenv.cfg
