@@ -315,9 +315,9 @@ def render(
                 "-gravity NorthWest",
             ]
         )
+    output["width"] = wholewidth
     for i in range(0, len(grid)):
         output["height"] = wholeheight
-        output["width"] = wholewidth
         output["fg"][i] = {}
         output["fg"][i]["prefix"] = ""
         output["fg"][i]["chars"] = {}
@@ -332,7 +332,8 @@ def render(
             continue
         if grid[i] == "":
             continue
-        linewidth = min([len(grid[i]) - 1, endx])
+        linewidth = min([len(grid[i]), endx])
+        output["width"] = max(output["width"], linewidth)
         lastc = ""
         lastfg = ""
         lastbg = ""
@@ -458,7 +459,7 @@ def render(
                     else:
                         numtrees_right = 1
                         while (
-                            j + numtrees_right < linewidth
+                            j + numtrees_right <= linewidth
                             and grid[i][j + numtrees_right] == "a"
                         ):
                             numtrees_right += 1
@@ -589,7 +590,7 @@ def render(
                     cout += """<i class="{} {}">{}""".format(
                         foregroundcolor, backgroundcolor, character
                     )
-                if j == linewidth:
+                if j + 1 == linewidth:
                     cout += "</i>"
             elif mode == "svg":
                 if lastbg == backgroundcolor and lastfg == foregroundcolor:
@@ -610,7 +611,7 @@ def render(
                     coutbg += """{}{}""".format(
                         text.format(colors["hex"][backgroundcolor]), block
                     )
-                if j == linewidth:
+                if j + 1 == linewidth:
                     cout += svglineend
                     coutbg += svglineend
             elif mode == "png":
