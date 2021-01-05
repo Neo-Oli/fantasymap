@@ -422,6 +422,8 @@ def render(
                         ["name", "type"],
                         ["grass", "gravel", "sand", "dirt"],
                         5,
+                    ) and isNear(
+                        objects, grid, i, j, ["name", "type"], ["mountain"], 2
                     ):
                         c = findObjects("mountain_high", objects)[0]
                         if not isNear(
