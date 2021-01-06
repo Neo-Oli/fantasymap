@@ -9,6 +9,7 @@
  i ▓ snow 
  y █ farmland 
  U ▓ Brache 
+ ; ░ gravel 
  a ● forest on grass 
  ä ● forest on plaza 
  â ● forest on sand 
@@ -21,6 +22,8 @@
  O ○ Well 
  g ⌂ gravestones 
  m ▲ mountain 
+ M █ mountain_high 
+ V █ mountain_very_high 
  s █ plaza 
  S █ plaza_connecting 
  x ┃ street 
@@ -85,4 +88,5 @@
  F ✈ airplane 
  t . animal 
  ? ? label 
- $ $ debugger
+ $ $ debugger 
+ E E error
