@@ -414,29 +414,6 @@ def render(
                         c = findObjects("water_shallow", objects)[0]
                     else:
                         c = findObjects("water_deep", objects)[0]
-                if c == "m":
-                    if not isNear(
-                        objects,
-                        grid,
-                        i,
-                        j,
-                        ["name", "type"],
-                        ["grass", "gravel", "sand", "dirt"],
-                        5,
-                    ) and isNear(
-                        objects, grid, i, j, ["name", "type"], ["mountain"], 2
-                    ):
-                        c = findObjects("mountain_high", objects)[0]
-                        if not isNear(
-                            objects,
-                            grid,
-                            i,
-                            j,
-                            ["name", "type"],
-                            ["grass", "gravel", "sand", "dirt"],
-                            7,
-                        ):
-                            c = findObjects("mountain_very_high", objects)[0]
                 elif c == "a":
                     numtrees_top = 1
                     while i - numtrees_top > 0 and grid[i - numtrees_top][j] == "a":
