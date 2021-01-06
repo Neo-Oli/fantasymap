@@ -448,7 +448,7 @@ def render(
                         rails = True
                         prefix = "rails_{}"
                     elif c == "+":
-                        prefix = "dirt_{}"
+                        prefix = "dirtroad_{}"
                     elif c == "*":
                         prefix = "waterway_{}"
                     else:
