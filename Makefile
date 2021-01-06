@@ -70,7 +70,10 @@ dist/recipes\
 dist/vimrc\
 _fast
 
-HISTORY := $(subst history,dist/history,$(subst .map,.png,$(wildcard history/*)))
+HISTORY := \
+	$(subst history,dist/history,$(subst .map,.svg,$(wildcard history/*)))\
+	$(subst history,dist/history,$(subst .map,.png,$(wildcard history/*)))\
+	dist/history/history.mp4
 .PHONY: all
 all: $(ALL) dist/index.js $(HISTORY)
 
@@ -185,7 +188,11 @@ VENV/pyvenv.cfg: requirements.txt
 .PHONY: history-sources
 history-sources:
 	./history.sh
+.PHONY: history
 history: $(HISTORY)
+
+dist/history/history.mp4: $(HISTORY)
+	ffmpeg -y -r 1 -pattern_type glob -i 'dist/history/*.png' -c:v libx264 $@
 
 dist/history/%.svg: history/%.map $(BASE)
 	@mkdir -p dist/history
@@ -193,4 +200,4 @@ dist/history/%.svg: history/%.map $(BASE)
 
 dist/history/%.png: dist/history/%.svg $(BASE)
 	@mkdir -p dist/history
-	convert -size 3000x3000 $< $@
+	convert -size 2000x2000 $< $@
