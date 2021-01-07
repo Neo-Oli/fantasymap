@@ -8,7 +8,7 @@
  . ⌄ grass 
  i ▓ snow 
  y █ farmland 
- U ▓ Brache 
+ U ░ dirt 
  ; ░ gravel 
  a ● forest on grass 
  ä ● forest on plaza 
@@ -22,8 +22,6 @@
  O ○ Well 
  g ⌂ gravestones 
  m ▲ mountain 
- M █ mountain_high 
- V █ mountain_very_high 
  s █ plaza 
  S █ plaza_connecting 
  x ┃ street 
@@ -39,19 +37,19 @@
  7 ┫ street_7 
  8 ┣ street_8 
  9 ▪ street_none 
- + │ dirt 
- ₀ ┼ dirt_crossing 
- ~ ─ dirt_h 
- ! │ dirt_v 
- ₁ ┐ dirt_1 
- ₂ ┌ dirt_2 
- ₃ ┘ dirt_3 
- ₄ └ dirt_4 
- ₅ ┬ dirt_5 
- ₆ ┴ dirt_6 
- ₇ ┤ dirt_7 
- ₈ ├ dirt_8 
- ₉ ▪ dirt_none 
+ + │ dirtroad 
+ ₀ ┼ dirtroad_crossing 
+ ~ ─ dirtroad_h 
+ ! │ dirtroad_v 
+ ₁ ┐ dirtroad_1 
+ ₂ ┌ dirtroad_2 
+ ₃ ┘ dirtroad_3 
+ ₄ └ dirtroad_4 
+ ₅ ┬ dirtroad_5 
+ ₆ ┴ dirtroad_6 
+ ₇ ┤ dirtroad_7 
+ ₈ ├ dirtroad_8 
+ ₉ ▪ dirtroad_none 
  r ║ rails 
  ⁰ ╬ rails_crossing 
  = ═ rails_h 

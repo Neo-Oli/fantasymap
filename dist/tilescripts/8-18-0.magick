@@ -1,4 +1,4 @@
-#be5b0033033728cd09b4924f5c0fb1d4  -
+#4812b29ffb4fde9e05a1bced029aa79c  -
 #!/usr/bin/env magick-script
 -size 258x256
 xc:none
@@ -19,16 +19,16 @@ xc:none
 -draw "text 51.44970000000001,0.0 '▓'"
 -fill '#cdcdcd'
 -draw "text 77.17455000000001,0.0 '█'"
--fill '#000000'
--draw "text 77.17455000000001,0.0 '█'"
+-fill '#1a1818'
+-draw "text 77.17455000000001,0.0 '▲'"
 -fill '#cdcdcd'
 -draw "text 102.89940000000001,0.0 '█'"
--fill '#000000'
--draw "text 102.89940000000001,0.0 '█'"
+-fill '#1a1818'
+-draw "text 102.89940000000001,0.0 '▲'"
 -fill '#cdcdcd'
 -draw "text 128.62425,0.0 '█'"
--fill '#000000'
--draw "text 128.62425,0.0 '█'"
+-fill '#1a1818'
+-draw "text 128.62425,0.0 '▲'"
 -fill '#cdcdcd'
 -draw "text 154.34910000000002,0.0 '█'"
 -fill '#cdcdcd'
@@ -47,12 +47,12 @@ xc:none
 -draw "text 231.52365,0.0 '▓'"
 -fill '#cdcdcd'
 -draw "text 0.0,51.405 '█'"
--fill '#000000'
--draw "text 0.0,51.405 '█'"
+-fill '#1a1818'
+-draw "text 0.0,51.405 '▲'"
 -fill '#cdcdcd'
 -draw "text 25.724850000000004,51.405 '█'"
--fill '#000000'
--draw "text 25.724850000000004,51.405 '█'"
+-fill '#1a1818'
+-draw "text 25.724850000000004,51.405 '▲'"
 -fill '#cdcdcd'
 -draw "text 51.44970000000001,51.405 '█'"
 -fill '#cdcdcd'
@@ -87,8 +87,8 @@ xc:none
 -draw "text 231.52365,51.405 '▓'"
 -fill '#cdcdcd'
 -draw "text 0.0,102.81 '█'"
--fill '#000000'
--draw "text 0.0,102.81 '█'"
+-fill '#1a1818'
+-draw "text 0.0,102.81 '▲'"
 -fill '#cdcdcd'
 -draw "text 25.724850000000004,102.81 '█'"
 -fill '#cdcdcd'
@@ -99,12 +99,12 @@ xc:none
 -draw "text 51.44970000000001,102.81 '▓'"
 -fill '#cdcdcd'
 -draw "text 77.17455000000001,102.81 '█'"
--fill '#000000'
--draw "text 77.17455000000001,102.81 '█'"
+-fill '#1a1818'
+-draw "text 77.17455000000001,102.81 '▲'"
 -fill '#cdcdcd'
 -draw "text 102.89940000000001,102.81 '█'"
--fill '#000000'
--draw "text 102.89940000000001,102.81 '█'"
+-fill '#1a1818'
+-draw "text 102.89940000000001,102.81 '▲'"
 -fill '#cdcdcd'
 -draw "text 128.62425,102.81 '█'"
 -fill '#cdcdcd'
@@ -167,8 +167,8 @@ xc:none
 -draw "text 231.52365,154.215 '▓'"
 -fill '#cdcdcd'
 -draw "text 0.0,205.62 '█'"
--fill '#000000'
--draw "text 0.0,205.62 '█'"
+-fill '#1a1818'
+-draw "text 0.0,205.62 '▲'"
 -fill '#cdcdcd'
 -draw "text 25.724850000000004,205.62 '█'"
 -fill '#cdcdcd'

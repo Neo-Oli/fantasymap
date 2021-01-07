@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="240.0px" height="1058.0px" viewBox="0 0 240.0 1058.0" style="letter-spacing:0em;font-size:10px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="240.0px" height="1035.0px" viewBox="0 0 240.0 1035.0" style="letter-spacing:0em;font-size:10px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
     <text y="8.5" x="0.0" style="fill:#cdcdcd">████████████████████████████████████████</text>
 <text y="20.0" x="0.0" style="fill:#cdcdcd">█</text>
 <text y="20.0" x="6.0" style="fill:#eab91c">██████████████████████████████████████</text>
@@ -27,8 +27,8 @@
 <text y="112.0" x="18.0" style="fill:#34d231">█</text>
 <text y="112.0" x="24.0" style="fill:#eab91c">██████████</text>
 <text y="123.5" x="0.0" style="fill:#eab91c">███</text>
-<text y="123.5" x="18.0" style="fill:#000000">█</text>
-<text y="123.5" x="24.0" style="fill:#eab91c">████████</text>
+<text y="123.5" x="18.0" style="fill:#783908">█</text>
+<text y="123.5" x="24.0" style="fill:#eab91c">██████</text>
 <text y="135.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="135.0" x="18.0" style="fill:#cdcdcd">█</text>
 <text y="135.0" x="24.0" style="fill:#eab91c">████████</text>
@@ -67,23 +67,23 @@
 <text y="273.0" x="18.0" style="fill:#eab91c">█</text>
 <text y="273.0" x="24.0" style="fill:#eab91c">██████████</text>
 <text y="284.5" x="0.0" style="fill:#eab91c">███</text>
-<text y="284.5" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="284.5" x="24.0" style="fill:#eab91c">███████████████</text>
+<text y="284.5" x="18.0" style="fill:#eab91c">█</text>
+<text y="284.5" x="24.0" style="fill:#eab91c">███████</text>
 <text y="296.0" x="0.0" style="fill:#eab91c">███</text>
-<text y="296.0" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="296.0" x="24.0" style="fill:#eab91c">████████████████████</text>
+<text y="296.0" x="18.0" style="fill:#eab91c">█</text>
+<text y="296.0" x="24.0" style="fill:#eab91c">██████████████████</text>
 <text y="307.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="307.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="307.5" x="24.0" style="fill:#eab91c">███████</text>
+<text y="307.5" x="24.0" style="fill:#eab91c">████████</text>
 <text y="319.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="319.0" x="18.0" style="fill:#eab91c">█</text>
-<text y="319.0" x="24.0" style="fill:#eab91c">██████████████████</text>
+<text y="319.0" x="24.0" style="fill:#eab91c">█████████████████</text>
 <text y="330.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="330.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="330.5" x="24.0" style="fill:#eab91c">████████</text>
+<text y="330.5" x="24.0" style="fill:#eab91c">██████████</text>
 <text y="342.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="342.0" x="18.0" style="fill:#eab91c">█</text>
-<text y="342.0" x="24.0" style="fill:#eab91c">█████████████████</text>
+<text y="342.0" x="24.0" style="fill:#eab91c">██████████</text>
 <text y="353.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="353.5" x="18.0" style="fill:#eab91c">█</text>
 <text y="353.5" x="24.0" style="fill:#eab91c">██████████</text>
@@ -110,58 +110,58 @@
 <text y="434.0" x="24.0" style="fill:#eab91c">██████████</text>
 <text y="445.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="445.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="445.5" x="24.0" style="fill:#eab91c">██████████</text>
+<text y="445.5" x="24.0" style="fill:#eab91c">█████████████</text>
 <text y="457.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="457.0" x="18.0" style="fill:#eab91c">█</text>
 <text y="457.0" x="24.0" style="fill:#eab91c">██████████</text>
 <text y="468.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="468.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="468.5" x="24.0" style="fill:#eab91c">█████████████</text>
+<text y="468.5" x="24.0" style="fill:#eab91c">███████████████████</text>
 <text y="480.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="480.0" x="18.0" style="fill:#eab91c">█</text>
-<text y="480.0" x="24.0" style="fill:#eab91c">██████</text>
+<text y="480.0" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="491.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="491.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="491.5" x="24.0" style="fill:#eab91c">███████████████</text>
+<text y="491.5" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="503.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="503.0" x="18.0" style="fill:#eab91c">█</text>
-<text y="503.0" x="24.0" style="fill:#eab91c">████████</text>
+<text y="503.0" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="514.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="514.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="514.5" x="24.0" style="fill:#eab91c">████████</text>
+<text y="514.5" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="526.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="526.0" x="18.0" style="fill:#eab91c">█</text>
-<text y="526.0" x="24.0" style="fill:#eab91c">████████</text>
+<text y="526.0" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="537.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="537.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="537.5" x="24.0" style="fill:#eab91c">████████</text>
+<text y="537.5" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="549.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="549.0" x="18.0" style="fill:#eab91c">█</text>
-<text y="549.0" x="24.0" style="fill:#eab91c">████████</text>
+<text y="549.0" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="560.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="560.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="560.5" x="24.0" style="fill:#eab91c">████████</text>
+<text y="560.5" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="572.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="572.0" x="18.0" style="fill:#eab91c">█</text>
-<text y="572.0" x="24.0" style="fill:#eab91c">████████</text>
+<text y="572.0" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="583.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="583.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="583.5" x="24.0" style="fill:#eab91c">████████</text>
+<text y="583.5" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="595.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="595.0" x="18.0" style="fill:#eab91c">█</text>
-<text y="595.0" x="24.0" style="fill:#eab91c">████████</text>
+<text y="595.0" x="24.0" style="fill:#eab91c">███████████████</text>
 <text y="606.5" x="0.0" style="fill:#eab91c">███</text>
-<text y="606.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="606.5" x="24.0" style="fill:#eab91c">████████</text>
+<text y="606.5" x="18.0" style="fill:#cdcdcd">█</text>
+<text y="606.5" x="24.0" style="fill:#eab91c">███████</text>
 <text y="618.0" x="0.0" style="fill:#eab91c">███</text>
-<text y="618.0" x="18.0" style="fill:#eab91c">█</text>
-<text y="618.0" x="24.0" style="fill:#eab91c">███████████</text>
+<text y="618.0" x="18.0" style="fill:#cdcdcd">█</text>
+<text y="618.0" x="24.0" style="fill:#eab91c">████████████████</text>
 <text y="629.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="629.5" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="629.5" x="24.0" style="fill:#eab91c">███████</text>
+<text y="629.5" x="24.0" style="fill:#eab91c">█████████</text>
 <text y="641.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="641.0" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="641.0" x="24.0" style="fill:#eab91c">████████████████</text>
+<text y="641.0" x="24.0" style="fill:#eab91c">█████████</text>
 <text y="652.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="652.5" x="18.0" style="fill:#cdcdcd">█</text>
 <text y="652.5" x="24.0" style="fill:#eab91c">█████████</text>
@@ -188,25 +188,25 @@
 <text y="733.0" x="24.0" style="fill:#eab91c">█████████</text>
 <text y="744.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="744.5" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="744.5" x="24.0" style="fill:#eab91c">█████████</text>
+<text y="744.5" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="756.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="756.0" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="756.0" x="24.0" style="fill:#eab91c">█████████</text>
+<text y="756.0" x="24.0" style="fill:#eab91c">██████████████████████████████████</text>
 <text y="767.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="767.5" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="767.5" x="24.0" style="fill:#eab91c">████████████</text>
+<text y="767.5" x="24.0" style="fill:#eab91c">████████████████████████████████</text>
 <text y="779.0" x="0.0" style="fill:#eab91c">███</text>
-<text y="779.0" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="779.0" x="24.0" style="fill:#eab91c">██████████████████████████████████</text>
+<text y="779.0" x="18.0" style="fill:#268dca">█</text>
+<text y="779.0" x="24.0" style="fill:#eab91c">██████████</text>
 <text y="790.5" x="0.0" style="fill:#eab91c">███</text>
-<text y="790.5" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="790.5" x="24.0" style="fill:#eab91c">████████████████████████████████</text>
+<text y="790.5" x="18.0" style="fill:#268dca">█</text>
+<text y="790.5" x="24.0" style="fill:#eab91c">███████████████████</text>
 <text y="802.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="802.0" x="18.0" style="fill:#268dca">█</text>
-<text y="802.0" x="24.0" style="fill:#eab91c">██████████</text>
+<text y="802.0" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="813.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="813.5" x="18.0" style="fill:#268dca">█</text>
-<text y="813.5" x="24.0" style="fill:#eab91c">███████████████████</text>
+<text y="813.5" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="825.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="825.0" x="18.0" style="fill:#268dca">█</text>
 <text y="825.0" x="24.0" style="fill:#eab91c">████████████</text>
@@ -233,41 +233,35 @@
 <text y="905.5" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="917.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="917.0" x="18.0" style="fill:#268dca">█</text>
-<text y="917.0" x="24.0" style="fill:#eab91c">████████████</text>
+<text y="917.0" x="24.0" style="fill:#eab91c">███████████████</text>
 <text y="928.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="928.5" x="18.0" style="fill:#268dca">█</text>
-<text y="928.5" x="24.0" style="fill:#eab91c">████████████</text>
+<text y="928.5" x="24.0" style="fill:#eab91c">█████████</text>
 <text y="940.0" x="0.0" style="fill:#eab91c">███</text>
 <text y="940.0" x="18.0" style="fill:#268dca">█</text>
-<text y="940.0" x="24.0" style="fill:#eab91c">███████████████</text>
+<text y="940.0" x="24.0" style="fill:#eab91c">█████████</text>
 <text y="951.5" x="0.0" style="fill:#eab91c">███</text>
-<text y="951.5" x="18.0" style="fill:#268dca">█</text>
-<text y="951.5" x="24.0" style="fill:#eab91c">█████████</text>
+<text y="951.5" x="18.0" style="fill:#cdcdcd">█</text>
+<text y="951.5" x="24.0" style="fill:#eab91c">████████████</text>
 <text y="963.0" x="0.0" style="fill:#eab91c">███</text>
-<text y="963.0" x="18.0" style="fill:#268dca">█</text>
-<text y="963.0" x="24.0" style="fill:#eab91c">█████████</text>
+<text y="963.0" x="18.0" style="fill:#cdcdcd">█</text>
+<text y="963.0" x="24.0" style="fill:#eab91c">███████████</text>
 <text y="974.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="974.5" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="974.5" x="24.0" style="fill:#eab91c">████████████</text>
+<text y="974.5" x="24.0" style="fill:#eab91c">██████</text>
 <text y="986.0" x="0.0" style="fill:#eab91c">███</text>
-<text y="986.0" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="986.0" x="24.0" style="fill:#eab91c">███████████</text>
+<text y="986.0" x="18.0" style="fill:#eab91c">█</text>
+<text y="986.0" x="24.0" style="fill:#eab91c">██████████</text>
 <text y="997.5" x="0.0" style="fill:#eab91c">███</text>
-<text y="997.5" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="997.5" x="24.0" style="fill:#eab91c">██████</text>
-<text y="1009.0" x="0.0" style="fill:#eab91c">███</text>
-<text y="1009.0" x="18.0" style="fill:#eab91c">█</text>
-<text y="1009.0" x="24.0" style="fill:#eab91c">██████████</text>
+<text y="997.5" x="18.0" style="fill:#eab91c">█</text>
+<text y="997.5" x="24.0" style="fill:#eab91c">████████</text>
+<text y="1009.0" x="0.0" style="fill:#eab91c">███████████</text>
 <text y="1020.5" x="0.0" style="fill:#eab91c">███</text>
 <text y="1020.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="1020.5" x="24.0" style="fill:#eab91c">████████</text>
-<text y="1032.0" x="0.0" style="fill:#eab91c">███████████</text>
-<text y="1043.5" x="0.0" style="fill:#eab91c">███</text>
-<text y="1043.5" x="18.0" style="fill:#eab91c">█</text>
-<text y="1043.5" x="24.0" style="fill:#eab91c">██████████</text>
-<text y="1055.0" x="0.0" style="fill:#eab91c">███</text>
-<text y="1055.0" x="18.0" style="fill:#d67088">█</text>
-<text y="1055.0" x="24.0" style="fill:#eab91c">███████</text>
+<text y="1020.5" x="24.0" style="fill:#eab91c">██████████</text>
+<text y="1032.0" x="0.0" style="fill:#eab91c">███</text>
+<text y="1032.0" x="18.0" style="fill:#d67088">█</text>
+<text y="1032.0" x="24.0" style="fill:#eab91c">███████</text>
 <text y="8.5" x="0.0" style="fill:#c52525">╔══════════════════╦════════╦══════════╗</text>
 <text y="20.0" x="0.0" style="fill:#c52525">║</text>
 <text y="20.0" x="6.0" style="fill:#000000">         Legend for Mapmakers         </text>
@@ -295,8 +289,8 @@
 <text y="112.0" x="18.0" style="fill:#eab91c">█</text>
 <text y="112.0" x="24.0" style="fill:#000000"> farmland </text>
 <text y="123.5" x="0.0" style="fill:#000000"> U </text>
-<text y="123.5" x="18.0" style="fill:#1a1818">▓</text>
-<text y="123.5" x="24.0" style="fill:#000000"> Brache </text>
+<text y="123.5" x="18.0" style="fill:#1a1818">░</text>
+<text y="123.5" x="24.0" style="fill:#000000"> dirt </text>
 <text y="135.0" x="0.0" style="fill:#000000"> ; </text>
 <text y="135.0" x="18.0" style="fill:#34d231">░</text>
 <text y="135.0" x="24.0" style="fill:#000000"> gravel </text>
@@ -334,206 +328,200 @@
 <text y="273.0" x="0.0" style="fill:#000000"> m </text>
 <text y="273.0" x="18.0" style="fill:#1a1818">▲</text>
 <text y="273.0" x="24.0" style="fill:#000000"> mountain </text>
-<text y="284.5" x="0.0" style="fill:#000000"> M </text>
-<text y="284.5" x="18.0" style="fill:#1a1818">█</text>
-<text y="284.5" x="24.0" style="fill:#000000"> mountain_high </text>
-<text y="296.0" x="0.0" style="fill:#000000"> V </text>
-<text y="296.0" x="18.0" style="fill:#000000">█</text>
-<text y="296.0" x="24.0" style="fill:#000000"> mountain_very_high </text>
-<text y="307.5" x="0.0" style="fill:#000000"> s </text>
-<text y="307.5" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="307.5" x="24.0" style="fill:#000000"> plaza </text>
-<text y="319.0" x="0.0" style="fill:#000000"> S </text>
-<text y="319.0" x="18.0" style="fill:#cdcdcd">█</text>
-<text y="319.0" x="24.0" style="fill:#000000"> plaza_connecting </text>
-<text y="330.5" x="0.0" style="fill:#000000"> x </text>
-<text y="330.5" x="18.0" style="fill:#1a1818">┃</text>
-<text y="330.5" x="24.0" style="fill:#000000"> street </text>
-<text y="342.0" x="0.0" style="fill:#000000"> 0 </text>
-<text y="342.0" x="18.0" style="fill:#1a1818">╋</text>
-<text y="342.0" x="24.0" style="fill:#000000"> street_crossing </text>
-<text y="353.5" x="0.0" style="fill:#000000"> - </text>
-<text y="353.5" x="18.0" style="fill:#1a1818">━</text>
-<text y="353.5" x="24.0" style="fill:#000000"> street_h </text>
-<text y="365.0" x="0.0" style="fill:#000000"> | </text>
-<text y="365.0" x="18.0" style="fill:#1a1818">┃</text>
-<text y="365.0" x="24.0" style="fill:#000000"> street_v </text>
-<text y="376.5" x="0.0" style="fill:#000000"> 1 </text>
-<text y="376.5" x="18.0" style="fill:#1a1818">┓</text>
-<text y="376.5" x="24.0" style="fill:#000000"> street_1 </text>
-<text y="388.0" x="0.0" style="fill:#000000"> 2 </text>
-<text y="388.0" x="18.0" style="fill:#1a1818">┏</text>
-<text y="388.0" x="24.0" style="fill:#000000"> street_2 </text>
-<text y="399.5" x="0.0" style="fill:#000000"> 3 </text>
-<text y="399.5" x="18.0" style="fill:#1a1818">┛</text>
-<text y="399.5" x="24.0" style="fill:#000000"> street_3 </text>
-<text y="411.0" x="0.0" style="fill:#000000"> 4 </text>
-<text y="411.0" x="18.0" style="fill:#1a1818">┗</text>
-<text y="411.0" x="24.0" style="fill:#000000"> street_4 </text>
-<text y="422.5" x="0.0" style="fill:#000000"> 5 </text>
-<text y="422.5" x="18.0" style="fill:#1a1818">┳</text>
-<text y="422.5" x="24.0" style="fill:#000000"> street_5 </text>
-<text y="434.0" x="0.0" style="fill:#000000"> 6 </text>
-<text y="434.0" x="18.0" style="fill:#1a1818">┻</text>
-<text y="434.0" x="24.0" style="fill:#000000"> street_6 </text>
-<text y="445.5" x="0.0" style="fill:#000000"> 7 </text>
-<text y="445.5" x="18.0" style="fill:#1a1818">┫</text>
-<text y="445.5" x="24.0" style="fill:#000000"> street_7 </text>
-<text y="457.0" x="0.0" style="fill:#000000"> 8 </text>
-<text y="457.0" x="18.0" style="fill:#1a1818">┣</text>
-<text y="457.0" x="24.0" style="fill:#000000"> street_8 </text>
-<text y="468.5" x="0.0" style="fill:#000000"> 9 </text>
-<text y="468.5" x="18.0" style="fill:#1a1818">▪</text>
-<text y="468.5" x="24.0" style="fill:#000000"> street_none </text>
-<text y="480.0" x="0.0" style="fill:#000000"> + </text>
-<text y="480.0" x="18.0" style="fill:#783908">│</text>
-<text y="480.0" x="24.0" style="fill:#000000"> dirt </text>
-<text y="491.5" x="0.0" style="fill:#000000"> ₀ </text>
-<text y="491.5" x="18.0" style="fill:#783908">┼</text>
-<text y="491.5" x="24.0" style="fill:#000000"> dirt_crossing </text>
-<text y="503.0" x="0.0" style="fill:#000000"> ~ </text>
-<text y="503.0" x="18.0" style="fill:#783908">─</text>
-<text y="503.0" x="24.0" style="fill:#000000"> dirt_h </text>
-<text y="514.5" x="0.0" style="fill:#000000"> ! </text>
-<text y="514.5" x="18.0" style="fill:#783908">│</text>
-<text y="514.5" x="24.0" style="fill:#000000"> dirt_v </text>
-<text y="526.0" x="0.0" style="fill:#000000"> ₁ </text>
-<text y="526.0" x="18.0" style="fill:#783908">┐</text>
-<text y="526.0" x="24.0" style="fill:#000000"> dirt_1 </text>
-<text y="537.5" x="0.0" style="fill:#000000"> ₂ </text>
-<text y="537.5" x="18.0" style="fill:#783908">┌</text>
-<text y="537.5" x="24.0" style="fill:#000000"> dirt_2 </text>
-<text y="549.0" x="0.0" style="fill:#000000"> ₃ </text>
-<text y="549.0" x="18.0" style="fill:#783908">┘</text>
-<text y="549.0" x="24.0" style="fill:#000000"> dirt_3 </text>
-<text y="560.5" x="0.0" style="fill:#000000"> ₄ </text>
-<text y="560.5" x="18.0" style="fill:#783908">└</text>
-<text y="560.5" x="24.0" style="fill:#000000"> dirt_4 </text>
-<text y="572.0" x="0.0" style="fill:#000000"> ₅ </text>
-<text y="572.0" x="18.0" style="fill:#783908">┬</text>
-<text y="572.0" x="24.0" style="fill:#000000"> dirt_5 </text>
-<text y="583.5" x="0.0" style="fill:#000000"> ₆ </text>
-<text y="583.5" x="18.0" style="fill:#783908">┴</text>
-<text y="583.5" x="24.0" style="fill:#000000"> dirt_6 </text>
-<text y="595.0" x="0.0" style="fill:#000000"> ₇ </text>
-<text y="595.0" x="18.0" style="fill:#783908">┤</text>
-<text y="595.0" x="24.0" style="fill:#000000"> dirt_7 </text>
-<text y="606.5" x="0.0" style="fill:#000000"> ₈ </text>
-<text y="606.5" x="18.0" style="fill:#783908">├</text>
-<text y="606.5" x="24.0" style="fill:#000000"> dirt_8 </text>
-<text y="618.0" x="0.0" style="fill:#000000"> ₉ </text>
-<text y="618.0" x="18.0" style="fill:#783908">▪</text>
-<text y="618.0" x="24.0" style="fill:#000000"> dirt_none </text>
-<text y="629.5" x="0.0" style="fill:#000000"> r </text>
-<text y="629.5" x="18.0" style="fill:#c52525">║</text>
-<text y="629.5" x="24.0" style="fill:#000000"> rails </text>
-<text y="641.0" x="0.0" style="fill:#000000"> ⁰ </text>
-<text y="641.0" x="18.0" style="fill:#c52525">╬</text>
-<text y="641.0" x="24.0" style="fill:#000000"> rails_crossing </text>
-<text y="652.5" x="0.0" style="fill:#000000"> = </text>
-<text y="652.5" x="18.0" style="fill:#c52525">═</text>
-<text y="652.5" x="24.0" style="fill:#000000"> rails_h </text>
-<text y="664.0" x="0.0" style="fill:#000000"> § </text>
-<text y="664.0" x="18.0" style="fill:#c52525">║</text>
-<text y="664.0" x="24.0" style="fill:#000000"> rails_v </text>
-<text y="675.5" x="0.0" style="fill:#000000"> ¹ </text>
-<text y="675.5" x="18.0" style="fill:#c52525">╗</text>
-<text y="675.5" x="24.0" style="fill:#000000"> rails_1 </text>
-<text y="687.0" x="0.0" style="fill:#000000"> ² </text>
-<text y="687.0" x="18.0" style="fill:#c52525">╔</text>
-<text y="687.0" x="24.0" style="fill:#000000"> rails_2 </text>
-<text y="698.5" x="0.0" style="fill:#000000"> ³ </text>
-<text y="698.5" x="18.0" style="fill:#c52525">╝</text>
-<text y="698.5" x="24.0" style="fill:#000000"> rails_3 </text>
-<text y="710.0" x="0.0" style="fill:#000000"> ⁴ </text>
-<text y="710.0" x="18.0" style="fill:#c52525">╚</text>
-<text y="710.0" x="24.0" style="fill:#000000"> rails_4 </text>
-<text y="721.5" x="0.0" style="fill:#000000"> ⁵ </text>
-<text y="721.5" x="18.0" style="fill:#c52525">╦</text>
-<text y="721.5" x="24.0" style="fill:#000000"> rails_5 </text>
-<text y="733.0" x="0.0" style="fill:#000000"> ⁶ </text>
-<text y="733.0" x="18.0" style="fill:#c52525">╩</text>
-<text y="733.0" x="24.0" style="fill:#000000"> rails_6 </text>
-<text y="744.5" x="0.0" style="fill:#000000"> ⁷ </text>
-<text y="744.5" x="18.0" style="fill:#c52525">╣</text>
-<text y="744.5" x="24.0" style="fill:#000000"> rails_7 </text>
-<text y="756.0" x="0.0" style="fill:#000000"> ⁸ </text>
-<text y="756.0" x="18.0" style="fill:#c52525">╠</text>
-<text y="756.0" x="24.0" style="fill:#000000"> rails_8 </text>
-<text y="767.5" x="0.0" style="fill:#000000"> ⁹ </text>
-<text y="767.5" x="18.0" style="fill:#c52525">▪</text>
-<text y="767.5" x="24.0" style="fill:#000000"> rails_none </text>
-<text y="779.0" x="0.0" style="fill:#000000"> c </text>
-<text y="779.0" x="18.0" style="fill:#c52525">╫</text>
-<text y="779.0" x="24.0" style="fill:#000000"> street-rails-crossing-horizontal </text>
-<text y="790.5" x="0.0" style="fill:#000000"> C </text>
-<text y="790.5" x="18.0" style="fill:#c52525">╪</text>
-<text y="790.5" x="24.0" style="fill:#000000"> street-rails-crossing-vertical </text>
-<text y="802.0" x="0.0" style="fill:#000000"> * </text>
-<text y="802.0" x="18.0" style="fill:#1a1818">│</text>
-<text y="802.0" x="24.0" style="fill:#000000"> waterway </text>
-<text y="813.5" x="0.0" style="fill:#000000"> ⑩ </text>
-<text y="813.5" x="18.0" style="fill:#1a1818">┼</text>
-<text y="813.5" x="24.0" style="fill:#000000"> waterway_crossing </text>
-<text y="825.0" x="0.0" style="fill:#000000"> ⑪ </text>
-<text y="825.0" x="18.0" style="fill:#1a1818">─</text>
-<text y="825.0" x="24.0" style="fill:#000000"> waterway_h </text>
-<text y="836.5" x="0.0" style="fill:#000000"> ⑫ </text>
-<text y="836.5" x="18.0" style="fill:#1a1818">│</text>
-<text y="836.5" x="24.0" style="fill:#000000"> waterway_v </text>
-<text y="848.0" x="0.0" style="fill:#000000"> ① </text>
-<text y="848.0" x="18.0" style="fill:#1a1818">┐</text>
-<text y="848.0" x="24.0" style="fill:#000000"> waterway_1 </text>
-<text y="859.5" x="0.0" style="fill:#000000"> ② </text>
-<text y="859.5" x="18.0" style="fill:#1a1818">┌</text>
-<text y="859.5" x="24.0" style="fill:#000000"> waterway_2 </text>
-<text y="871.0" x="0.0" style="fill:#000000"> ③ </text>
-<text y="871.0" x="18.0" style="fill:#1a1818">┘</text>
-<text y="871.0" x="24.0" style="fill:#000000"> waterway_3 </text>
-<text y="882.5" x="0.0" style="fill:#000000"> ④ </text>
-<text y="882.5" x="18.0" style="fill:#1a1818">└</text>
-<text y="882.5" x="24.0" style="fill:#000000"> waterway_4 </text>
-<text y="894.0" x="0.0" style="fill:#000000"> ⑤ </text>
-<text y="894.0" x="18.0" style="fill:#1a1818">┬</text>
-<text y="894.0" x="24.0" style="fill:#000000"> waterway_5 </text>
-<text y="905.5" x="0.0" style="fill:#000000"> ⑥ </text>
-<text y="905.5" x="18.0" style="fill:#1a1818">┴</text>
-<text y="905.5" x="24.0" style="fill:#000000"> waterway_6 </text>
-<text y="917.0" x="0.0" style="fill:#000000"> ⑦ </text>
-<text y="917.0" x="18.0" style="fill:#1a1818">┤</text>
-<text y="917.0" x="24.0" style="fill:#000000"> waterway_7 </text>
-<text y="928.5" x="0.0" style="fill:#000000"> ⑧ </text>
-<text y="928.5" x="18.0" style="fill:#1a1818">├</text>
-<text y="928.5" x="24.0" style="fill:#000000"> waterway_8 </text>
-<text y="940.0" x="0.0" style="fill:#000000"> ⑨ </text>
-<text y="940.0" x="18.0" style="fill:#1a1818">▪</text>
-<text y="940.0" x="24.0" style="fill:#000000"> waterway_none </text>
-<text y="951.5" x="0.0" style="fill:#000000"> j </text>
-<text y="951.5" x="18.0" style="fill:#1a1818">║</text>
-<text y="951.5" x="24.0" style="fill:#000000"> bridgev </text>
-<text y="963.0" x="0.0" style="fill:#000000"> q </text>
-<text y="963.0" x="18.0" style="fill:#1a1818">═</text>
-<text y="963.0" x="24.0" style="fill:#000000"> bridgeh </text>
-<text y="974.5" x="0.0" style="fill:#000000"> p </text>
-<text y="974.5" x="18.0" style="fill:#268dca">▐</text>
-<text y="974.5" x="24.0" style="fill:#000000"> pool_right </text>
-<text y="986.0" x="0.0" style="fill:#000000"> P </text>
-<text y="986.0" x="18.0" style="fill:#268dca">▌</text>
-<text y="986.0" x="24.0" style="fill:#000000"> pool_left </text>
-<text y="997.5" x="0.0" style="fill:#000000"> o </text>
-<text y="997.5" x="18.0" style="fill:#268dca">●</text>
-<text y="997.5" x="24.0" style="fill:#000000"> pond </text>
-<text y="1009.0" x="0.0" style="fill:#000000"> F </text>
-<text y="1009.0" x="18.0" style="fill:#1a1818">✈</text>
-<text y="1009.0" x="24.0" style="fill:#000000"> airplane </text>
-<text y="1020.5" x="0.0" style="fill:#000000"> t </text>
-<text y="1020.5" x="18.0" style="fill:#783908">.</text>
-<text y="1020.5" x="24.0" style="fill:#000000"> animal </text>
-<text y="1032.0" x="0.0" style="fill:#000000"> ? ? label </text>
-<text y="1043.5" x="0.0" style="fill:#000000"> $ </text>
-<text y="1043.5" x="18.0" style="fill:#d67088">$</text>
-<text y="1043.5" x="24.0" style="fill:#000000"> debugger </text>
-<text y="1055.0" x="0.0" style="fill:#000000"> E </text>
-<text y="1055.0" x="18.0" style="fill:#cdcdcd">E</text>
-<text y="1055.0" x="24.0" style="fill:#000000"> error </text>
+<text y="284.5" x="0.0" style="fill:#000000"> s </text>
+<text y="284.5" x="18.0" style="fill:#cdcdcd">█</text>
+<text y="284.5" x="24.0" style="fill:#000000"> plaza </text>
+<text y="296.0" x="0.0" style="fill:#000000"> S </text>
+<text y="296.0" x="18.0" style="fill:#cdcdcd">█</text>
+<text y="296.0" x="24.0" style="fill:#000000"> plaza_connecting </text>
+<text y="307.5" x="0.0" style="fill:#000000"> x </text>
+<text y="307.5" x="18.0" style="fill:#1a1818">┃</text>
+<text y="307.5" x="24.0" style="fill:#000000"> street </text>
+<text y="319.0" x="0.0" style="fill:#000000"> 0 </text>
+<text y="319.0" x="18.0" style="fill:#1a1818">╋</text>
+<text y="319.0" x="24.0" style="fill:#000000"> street_crossing </text>
+<text y="330.5" x="0.0" style="fill:#000000"> - </text>
+<text y="330.5" x="18.0" style="fill:#1a1818">━</text>
+<text y="330.5" x="24.0" style="fill:#000000"> street_h </text>
+<text y="342.0" x="0.0" style="fill:#000000"> | </text>
+<text y="342.0" x="18.0" style="fill:#1a1818">┃</text>
+<text y="342.0" x="24.0" style="fill:#000000"> street_v </text>
+<text y="353.5" x="0.0" style="fill:#000000"> 1 </text>
+<text y="353.5" x="18.0" style="fill:#1a1818">┓</text>
+<text y="353.5" x="24.0" style="fill:#000000"> street_1 </text>
+<text y="365.0" x="0.0" style="fill:#000000"> 2 </text>
+<text y="365.0" x="18.0" style="fill:#1a1818">┏</text>
+<text y="365.0" x="24.0" style="fill:#000000"> street_2 </text>
+<text y="376.5" x="0.0" style="fill:#000000"> 3 </text>
+<text y="376.5" x="18.0" style="fill:#1a1818">┛</text>
+<text y="376.5" x="24.0" style="fill:#000000"> street_3 </text>
+<text y="388.0" x="0.0" style="fill:#000000"> 4 </text>
+<text y="388.0" x="18.0" style="fill:#1a1818">┗</text>
+<text y="388.0" x="24.0" style="fill:#000000"> street_4 </text>
+<text y="399.5" x="0.0" style="fill:#000000"> 5 </text>
+<text y="399.5" x="18.0" style="fill:#1a1818">┳</text>
+<text y="399.5" x="24.0" style="fill:#000000"> street_5 </text>
+<text y="411.0" x="0.0" style="fill:#000000"> 6 </text>
+<text y="411.0" x="18.0" style="fill:#1a1818">┻</text>
+<text y="411.0" x="24.0" style="fill:#000000"> street_6 </text>
+<text y="422.5" x="0.0" style="fill:#000000"> 7 </text>
+<text y="422.5" x="18.0" style="fill:#1a1818">┫</text>
+<text y="422.5" x="24.0" style="fill:#000000"> street_7 </text>
+<text y="434.0" x="0.0" style="fill:#000000"> 8 </text>
+<text y="434.0" x="18.0" style="fill:#1a1818">┣</text>
+<text y="434.0" x="24.0" style="fill:#000000"> street_8 </text>
+<text y="445.5" x="0.0" style="fill:#000000"> 9 </text>
+<text y="445.5" x="18.0" style="fill:#1a1818">▪</text>
+<text y="445.5" x="24.0" style="fill:#000000"> street_none </text>
+<text y="457.0" x="0.0" style="fill:#000000"> + </text>
+<text y="457.0" x="18.0" style="fill:#783908">│</text>
+<text y="457.0" x="24.0" style="fill:#000000"> dirtroad </text>
+<text y="468.5" x="0.0" style="fill:#000000"> ₀ </text>
+<text y="468.5" x="18.0" style="fill:#783908">┼</text>
+<text y="468.5" x="24.0" style="fill:#000000"> dirtroad_crossing </text>
+<text y="480.0" x="0.0" style="fill:#000000"> ~ </text>
+<text y="480.0" x="18.0" style="fill:#783908">─</text>
+<text y="480.0" x="24.0" style="fill:#000000"> dirtroad_h </text>
+<text y="491.5" x="0.0" style="fill:#000000"> ! </text>
+<text y="491.5" x="18.0" style="fill:#783908">│</text>
+<text y="491.5" x="24.0" style="fill:#000000"> dirtroad_v </text>
+<text y="503.0" x="0.0" style="fill:#000000"> ₁ </text>
+<text y="503.0" x="18.0" style="fill:#783908">┐</text>
+<text y="503.0" x="24.0" style="fill:#000000"> dirtroad_1 </text>
+<text y="514.5" x="0.0" style="fill:#000000"> ₂ </text>
+<text y="514.5" x="18.0" style="fill:#783908">┌</text>
+<text y="514.5" x="24.0" style="fill:#000000"> dirtroad_2 </text>
+<text y="526.0" x="0.0" style="fill:#000000"> ₃ </text>
+<text y="526.0" x="18.0" style="fill:#783908">┘</text>
+<text y="526.0" x="24.0" style="fill:#000000"> dirtroad_3 </text>
+<text y="537.5" x="0.0" style="fill:#000000"> ₄ </text>
+<text y="537.5" x="18.0" style="fill:#783908">└</text>
+<text y="537.5" x="24.0" style="fill:#000000"> dirtroad_4 </text>
+<text y="549.0" x="0.0" style="fill:#000000"> ₅ </text>
+<text y="549.0" x="18.0" style="fill:#783908">┬</text>
+<text y="549.0" x="24.0" style="fill:#000000"> dirtroad_5 </text>
+<text y="560.5" x="0.0" style="fill:#000000"> ₆ </text>
+<text y="560.5" x="18.0" style="fill:#783908">┴</text>
+<text y="560.5" x="24.0" style="fill:#000000"> dirtroad_6 </text>
+<text y="572.0" x="0.0" style="fill:#000000"> ₇ </text>
+<text y="572.0" x="18.0" style="fill:#783908">┤</text>
+<text y="572.0" x="24.0" style="fill:#000000"> dirtroad_7 </text>
+<text y="583.5" x="0.0" style="fill:#000000"> ₈ </text>
+<text y="583.5" x="18.0" style="fill:#783908">├</text>
+<text y="583.5" x="24.0" style="fill:#000000"> dirtroad_8 </text>
+<text y="595.0" x="0.0" style="fill:#000000"> ₉ </text>
+<text y="595.0" x="18.0" style="fill:#783908">▪</text>
+<text y="595.0" x="24.0" style="fill:#000000"> dirtroad_none </text>
+<text y="606.5" x="0.0" style="fill:#000000"> r </text>
+<text y="606.5" x="18.0" style="fill:#c52525">║</text>
+<text y="606.5" x="24.0" style="fill:#000000"> rails </text>
+<text y="618.0" x="0.0" style="fill:#000000"> ⁰ </text>
+<text y="618.0" x="18.0" style="fill:#c52525">╬</text>
+<text y="618.0" x="24.0" style="fill:#000000"> rails_crossing </text>
+<text y="629.5" x="0.0" style="fill:#000000"> = </text>
+<text y="629.5" x="18.0" style="fill:#c52525">═</text>
+<text y="629.5" x="24.0" style="fill:#000000"> rails_h </text>
+<text y="641.0" x="0.0" style="fill:#000000"> § </text>
+<text y="641.0" x="18.0" style="fill:#c52525">║</text>
+<text y="641.0" x="24.0" style="fill:#000000"> rails_v </text>
+<text y="652.5" x="0.0" style="fill:#000000"> ¹ </text>
+<text y="652.5" x="18.0" style="fill:#c52525">╗</text>
+<text y="652.5" x="24.0" style="fill:#000000"> rails_1 </text>
+<text y="664.0" x="0.0" style="fill:#000000"> ² </text>
+<text y="664.0" x="18.0" style="fill:#c52525">╔</text>
+<text y="664.0" x="24.0" style="fill:#000000"> rails_2 </text>
+<text y="675.5" x="0.0" style="fill:#000000"> ³ </text>
+<text y="675.5" x="18.0" style="fill:#c52525">╝</text>
+<text y="675.5" x="24.0" style="fill:#000000"> rails_3 </text>
+<text y="687.0" x="0.0" style="fill:#000000"> ⁴ </text>
+<text y="687.0" x="18.0" style="fill:#c52525">╚</text>
+<text y="687.0" x="24.0" style="fill:#000000"> rails_4 </text>
+<text y="698.5" x="0.0" style="fill:#000000"> ⁵ </text>
+<text y="698.5" x="18.0" style="fill:#c52525">╦</text>
+<text y="698.5" x="24.0" style="fill:#000000"> rails_5 </text>
+<text y="710.0" x="0.0" style="fill:#000000"> ⁶ </text>
+<text y="710.0" x="18.0" style="fill:#c52525">╩</text>
+<text y="710.0" x="24.0" style="fill:#000000"> rails_6 </text>
+<text y="721.5" x="0.0" style="fill:#000000"> ⁷ </text>
+<text y="721.5" x="18.0" style="fill:#c52525">╣</text>
+<text y="721.5" x="24.0" style="fill:#000000"> rails_7 </text>
+<text y="733.0" x="0.0" style="fill:#000000"> ⁸ </text>
+<text y="733.0" x="18.0" style="fill:#c52525">╠</text>
+<text y="733.0" x="24.0" style="fill:#000000"> rails_8 </text>
+<text y="744.5" x="0.0" style="fill:#000000"> ⁹ </text>
+<text y="744.5" x="18.0" style="fill:#c52525">▪</text>
+<text y="744.5" x="24.0" style="fill:#000000"> rails_none </text>
+<text y="756.0" x="0.0" style="fill:#000000"> c </text>
+<text y="756.0" x="18.0" style="fill:#c52525">╫</text>
+<text y="756.0" x="24.0" style="fill:#000000"> street-rails-crossing-horizontal </text>
+<text y="767.5" x="0.0" style="fill:#000000"> C </text>
+<text y="767.5" x="18.0" style="fill:#c52525">╪</text>
+<text y="767.5" x="24.0" style="fill:#000000"> street-rails-crossing-vertical </text>
+<text y="779.0" x="0.0" style="fill:#000000"> * </text>
+<text y="779.0" x="18.0" style="fill:#1a1818">│</text>
+<text y="779.0" x="24.0" style="fill:#000000"> waterway </text>
+<text y="790.5" x="0.0" style="fill:#000000"> ⑩ </text>
+<text y="790.5" x="18.0" style="fill:#1a1818">┼</text>
+<text y="790.5" x="24.0" style="fill:#000000"> waterway_crossing </text>
+<text y="802.0" x="0.0" style="fill:#000000"> ⑪ </text>
+<text y="802.0" x="18.0" style="fill:#1a1818">─</text>
+<text y="802.0" x="24.0" style="fill:#000000"> waterway_h </text>
+<text y="813.5" x="0.0" style="fill:#000000"> ⑫ </text>
+<text y="813.5" x="18.0" style="fill:#1a1818">│</text>
+<text y="813.5" x="24.0" style="fill:#000000"> waterway_v </text>
+<text y="825.0" x="0.0" style="fill:#000000"> ① </text>
+<text y="825.0" x="18.0" style="fill:#1a1818">┐</text>
+<text y="825.0" x="24.0" style="fill:#000000"> waterway_1 </text>
+<text y="836.5" x="0.0" style="fill:#000000"> ② </text>
+<text y="836.5" x="18.0" style="fill:#1a1818">┌</text>
+<text y="836.5" x="24.0" style="fill:#000000"> waterway_2 </text>
+<text y="848.0" x="0.0" style="fill:#000000"> ③ </text>
+<text y="848.0" x="18.0" style="fill:#1a1818">┘</text>
+<text y="848.0" x="24.0" style="fill:#000000"> waterway_3 </text>
+<text y="859.5" x="0.0" style="fill:#000000"> ④ </text>
+<text y="859.5" x="18.0" style="fill:#1a1818">└</text>
+<text y="859.5" x="24.0" style="fill:#000000"> waterway_4 </text>
+<text y="871.0" x="0.0" style="fill:#000000"> ⑤ </text>
+<text y="871.0" x="18.0" style="fill:#1a1818">┬</text>
+<text y="871.0" x="24.0" style="fill:#000000"> waterway_5 </text>
+<text y="882.5" x="0.0" style="fill:#000000"> ⑥ </text>
+<text y="882.5" x="18.0" style="fill:#1a1818">┴</text>
+<text y="882.5" x="24.0" style="fill:#000000"> waterway_6 </text>
+<text y="894.0" x="0.0" style="fill:#000000"> ⑦ </text>
+<text y="894.0" x="18.0" style="fill:#1a1818">┤</text>
+<text y="894.0" x="24.0" style="fill:#000000"> waterway_7 </text>
+<text y="905.5" x="0.0" style="fill:#000000"> ⑧ </text>
+<text y="905.5" x="18.0" style="fill:#1a1818">├</text>
+<text y="905.5" x="24.0" style="fill:#000000"> waterway_8 </text>
+<text y="917.0" x="0.0" style="fill:#000000"> ⑨ </text>
+<text y="917.0" x="18.0" style="fill:#1a1818">▪</text>
+<text y="917.0" x="24.0" style="fill:#000000"> waterway_none </text>
+<text y="928.5" x="0.0" style="fill:#000000"> j </text>
+<text y="928.5" x="18.0" style="fill:#1a1818">║</text>
+<text y="928.5" x="24.0" style="fill:#000000"> bridgev </text>
+<text y="940.0" x="0.0" style="fill:#000000"> q </text>
+<text y="940.0" x="18.0" style="fill:#1a1818">═</text>
+<text y="940.0" x="24.0" style="fill:#000000"> bridgeh </text>
+<text y="951.5" x="0.0" style="fill:#000000"> p </text>
+<text y="951.5" x="18.0" style="fill:#268dca">▐</text>
+<text y="951.5" x="24.0" style="fill:#000000"> pool_right </text>
+<text y="963.0" x="0.0" style="fill:#000000"> P </text>
+<text y="963.0" x="18.0" style="fill:#268dca">▌</text>
+<text y="963.0" x="24.0" style="fill:#000000"> pool_left </text>
+<text y="974.5" x="0.0" style="fill:#000000"> o </text>
+<text y="974.5" x="18.0" style="fill:#268dca">●</text>
+<text y="974.5" x="24.0" style="fill:#000000"> pond </text>
+<text y="986.0" x="0.0" style="fill:#000000"> F </text>
+<text y="986.0" x="18.0" style="fill:#1a1818">✈</text>
+<text y="986.0" x="24.0" style="fill:#000000"> airplane </text>
+<text y="997.5" x="0.0" style="fill:#000000"> t </text>
+<text y="997.5" x="18.0" style="fill:#783908">.</text>
+<text y="997.5" x="24.0" style="fill:#000000"> animal </text>
+<text y="1009.0" x="0.0" style="fill:#000000"> ? ? label </text>
+<text y="1020.5" x="0.0" style="fill:#000000"> $ </text>
+<text y="1020.5" x="18.0" style="fill:#d67088">$</text>
+<text y="1020.5" x="24.0" style="fill:#000000"> debugger </text>
+<text y="1032.0" x="0.0" style="fill:#000000"> E </text>
+<text y="1032.0" x="18.0" style="fill:#cdcdcd">E</text>
+<text y="1032.0" x="24.0" style="fill:#000000"> error </text>
 </svg>

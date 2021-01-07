@@ -11,10 +11,10 @@ w.............a.aa...a..a.a.........
 a.aww.....+B..b+b...+b.......w.w..w.
 ..www..agg+..ab+...b+.........wwwww.
 www.w..agg++++++.yyy.yyy........www.
-mmmmw...gga.yyyy.yyy.yyy........www.
-mmmmw.......yyyy.yyy.yyy........wwww
-mmmww.......yyyy.yyy.yyy..........ww
-mwww.........yyy..............aaa..w
-wwmm..........yy..........aaaaaaaa.w
-mmmm...........y...........aa..aaa..
-mmmm.......................aa....a..
+mmmmw...gga+yyyy.yyy.yyy........www.
+mmmmw......+yyyy.yyy.yyy........wwww
+mmmww......+yyyy.yyy.yyy..........ww
+mwww.......+.yyy..............aaa..w
+wwmm.......+..yy..........aaaaaaaa.w
+mmmmaa..++++...y...........aa..aaa..
+mmmmaaaa+aaaaaaaa..........aa....a..
