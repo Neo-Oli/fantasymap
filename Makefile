@@ -4,16 +4,16 @@ endef
 
 
 .PHONY: whole
-whole: dist/whole.ansi
+whole: dist/whole-truecolor.ansi
 	$(call display,$<)
 
-%: dist/%.ansi
+%: dist/%-truecolor.ansi
 	$(call display,$<)
 
 m-%: dist/%-monochrome.ansi
 	$(call display,$<)
 
-t-%: dist/%-truecolor.ansi
+16-%: dist/%.ansi
 	$(call display,$<)
 
 i-%: dist/%.png
