@@ -73,7 +73,7 @@ _fast
 HISTORY := \
 	$(subst history,dist/history,$(subst .map,.svg,$(wildcard history/*)))\
 	$(subst history,dist/history,$(subst .map,.png,$(wildcard history/*)))\
-	dist/history/history.mp4
+	dist/history/history.webm
 .PHONY: all
 all: $(ALL) dist/index.js $(HISTORY)
 
@@ -191,8 +191,8 @@ history-sources:
 .PHONY: history
 history: $(HISTORY)
 
-dist/history/history.mp4: $(HISTORY)
-	ffmpeg -y -r 1 -pattern_type glob -i 'dist/history/*.png' -c:v libx264 $@
+dist/history/history.webm: $(HISTORY)
+	ffmpeg -y -r 1 -pattern_type glob -i 'dist/history/*.png' $@
 
 dist/history/%.svg: history/%.map $(BASE)
 	@mkdir -p dist/history
