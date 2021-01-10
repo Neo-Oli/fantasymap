@@ -335,10 +335,6 @@ def render(
         lastc = ""
         lastfg = ""
         lastbg = ""
-        # for j in range(0, len(grid[i])):
-        # c = grid[i][j]
-        # if isLabel(grid,i,j):
-        # grid[i][j]=objectsByName["label"]
         for j in range(0, len(grid[i])):
             c = grid[i][j]
             backgroundcolor = ""
