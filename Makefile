@@ -58,7 +58,7 @@ ALL := \
 $(subst recipes,dist,$(subst .rec,.ansi,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,.txt,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,-monochrome.ansi,$(wildcard recipes/*)))\
-$(subst recipes,dist,$(subst .rec,-truecolor.ansi,$(wildcard recipes/*)))\
+$(subst recipes,dist,$(subst .rec,-16color.ansi,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,.html,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,-monochrome.html,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,.svg,$(wildcard recipes/*)))\
