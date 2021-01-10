@@ -414,14 +414,19 @@ def render(
                         c = objectsByName["water_deep"]
                 elif c == objectsByName["forest on grass"]:
                     numtrees_top = 1
-                    while i - numtrees_top > 0 and grid[i - numtrees_top][j] == objectsByName["forest on grass"]:
+                    while (
+                        i - numtrees_top > 0
+                        and grid[i - numtrees_top][j]
+                        == objectsByName["forest on grass"]
+                    ):
                         numtrees_top += 1
                     if numtrees_top % 2:
                         if downc == objectsByName["forest on grass"]:
                             numtrees_left = 1
                             while (
                                 j - numtrees_left > 0
-                                and grid[i][j - numtrees_left] == objectsByName["forest on grass"]
+                                and grid[i][j - numtrees_left]
+                                == objectsByName["forest on grass"]
                             ):
                                 numtrees_left += 1
                             mod = (numtrees_left - 1) % 4
@@ -435,7 +440,8 @@ def render(
                         numtrees_right = 1
                         while (
                             j + numtrees_right <= linewidth
-                            and grid[i][j + numtrees_right] == objectsByName["forest on grass"]
+                            and grid[i][j + numtrees_right]
+                            == objectsByName["forest on grass"]
                         ):
                             numtrees_right += 1
                         mod = (numtrees_right - 1) % 3
