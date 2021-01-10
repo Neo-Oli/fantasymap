@@ -12,6 +12,26 @@ big = 1000000000
 heightstretch = 2
 
 
+def config(filename):
+    obj = {}
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    config = configparser.ConfigParser()
+    config.read("{}/{}".format(dir_path, filename))
+    for section in config.sections():
+        obj[section] = {}
+        for option in config[section]:
+            value = config[section][option]
+            if isinstance(value, str):
+                value = value[1:-1]
+            value = value.replace("\\033", "\033")
+            obj[section][option] = value
+            if option in ["average_ignore_type"]:
+                obj[section][option] = obj[section][option].split(",")
+                for key, val in enumerate(obj[section][option]):
+                    obj[section][option][key] = val.strip()
+    return obj
+
+
 def error(err):
     print(err, file=sys.stderr)
 
@@ -40,22 +60,6 @@ def findObjects(name, objects, fields=["name"]):
         for field in fields:
             if objects[c][field] == name:
                 obj.append(c)
-    return obj
-
-
-def config(filename):
-    obj = {}
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    config = configparser.ConfigParser()
-    config.read("{}/{}".format(dir_path, filename))
-    for section in config.sections():
-        obj[section] = {}
-        for option in config[section]:
-            value = config[section][option]
-            if isinstance(value, str):
-                value = value[1:-1]
-            value = value.replace("\\033", "\033")
-            obj[section][option] = value
     return obj
 
 
@@ -94,7 +98,7 @@ def vim():
     print(output)
 
 
-def isNear(objects, grid, i, j, fields, values, radius=5):
+def isNear(grid, i, j, fields, values, radius=5):
     for y in range(i - radius, i + radius):
         for x in range(j - radius, j + radius):
             if (
@@ -212,16 +216,6 @@ def render(
     output["postfix"] = ""
     # endy=endy-1
     # endx=endx-1
-    objects = config("objects.ini")
-    colors = config("colors.ini")
-
-    # get values from type
-    for c in objects:
-        if "type" in objects[c]:
-            parent = objects[findObjects(objects[c]["type"], objects)[0]]
-            new = parent.copy()
-            new.update(objects[c])
-            objects[c] = new
 
     grid = map.split("\n")
     del grid[-1]  # delete last, empty line
@@ -337,6 +331,10 @@ def render(
         lastc = ""
         lastfg = ""
         lastbg = ""
+        # for j in range(0, len(grid[i])):
+        # c = grid[i][j]
+        # if isLabel(grid,i,j):
+        # grid[i][j]=objectsByName["label"]
         for j in range(0, len(grid[i])):
             c = grid[i][j]
             backgroundcolor = ""
@@ -396,10 +394,9 @@ def render(
                 backgroundcolor = objects["?"]["bgcolor"]
                 character = c
             else:
-                if c == "w":
+                if c == objectsByName["water"]:
                     if (
                         isNear(
-                            objects,
                             grid,
                             i,
                             j,
@@ -407,28 +404,26 @@ def render(
                             ["grass", "sand", "dirt"],
                             5,
                         )
-                        or isNear(
-                            objects, grid, i, j, ["name", "type"], ["mountain"], 3
-                        )
+                        or isNear(grid, i, j, ["name", "type"], ["mountain"], 3)
                     ):
-                        c = findObjects("water_shallow", objects)[0]
+                        c = objectsByName["water_shallow"]
                     else:
-                        c = findObjects("water_deep", objects)[0]
-                elif c == "a":
+                        c = objectsByName["water_deep"]
+                elif c == objectsByName["forest on grass"]:
                     numtrees_top = 1
-                    while i - numtrees_top > 0 and grid[i - numtrees_top][j] == "a":
+                    while i - numtrees_top > 0 and grid[i - numtrees_top][j] == objectsByName["forest on grass"]:
                         numtrees_top += 1
                     if numtrees_top % 2:
-                        if downc == "a":
+                        if downc == objectsByName["forest on grass"]:
                             numtrees_left = 1
                             while (
                                 j - numtrees_left > 0
-                                and grid[i][j - numtrees_left] == "a"
+                                and grid[i][j - numtrees_left] == objectsByName["forest on grass"]
                             ):
                                 numtrees_left += 1
                             mod = (numtrees_left - 1) % 4
-                            c = findObjects("tree_top_{}".format(mod), objects)[0]
-                            if upc != "a":
+                            c = objectsByName["tree_top_{}".format(mod)]
+                            if upc != objectsByName["forest on grass"]:
                                 try:
                                     backgroundcolor = objects[upc]["bgcolor"]
                                 except:
@@ -437,19 +432,19 @@ def render(
                         numtrees_right = 1
                         while (
                             j + numtrees_right <= linewidth
-                            and grid[i][j + numtrees_right] == "a"
+                            and grid[i][j + numtrees_right] == objectsByName["forest on grass"]
                         ):
                             numtrees_right += 1
                         mod = (numtrees_right - 1) % 3
-                        c = findObjects("tree_bottom_{}".format(mod), objects)[0]
+                        c = objectsByName["tree_bottom_{}".format(mod)]
                 elif c in list("x+r*"):
                     rails = False
-                    if c == "r":
+                    if c == objectsByName["rails"]:
                         rails = True
                         prefix = "rails_{}"
-                    elif c == "+":
+                    elif c == objectsByName["dirtroad"]:
                         prefix = "dirtroad_{}"
-                    elif c == "*":
+                    elif c == objectsByName["waterway"]:
                         prefix = "waterway_{}"
                     else:
                         prefix = "street_{}"
@@ -497,7 +492,7 @@ def render(
                         p = "none"
                     else:
                         p = "none"
-                    c = findObjects(prefix.format(p), objects)[0]
+                    c = objectsByName[prefix.format(p)]
                 if not c in objects:
                     error("Error at line:{} c={}".format(str(i + 1), str(j + 1), c))
                     c = "E"
@@ -530,7 +525,7 @@ def render(
                             pass
                 if allcolors:
                     counted = Counter(allcolors).most_common()
-                    if c == "$":
+                    if c == objectsByName["debugger"]:
                         error("Average Debug: {}".format(counted))
                     if len(counted) == 1 or counted[0][1] != counted[1][1]:
                         backgroundcolor = counted[0][0]
@@ -661,6 +656,20 @@ def display(output):
     p += output["postfix"]
     print(p.strip())
 
+
+objects = config("objects.ini")
+colors = config("colors.ini")
+objectsByName = {}
+
+# get values from type
+for c in objects:
+    objectsByName[objects[c]["name"]] = c
+    if "type" in objects[c]:
+        # use findObjects here because objectsByName isn't fully populated yet
+        parent = objects[findObjects(objects[c]["type"], objects)[0]]
+        new = parent.copy()
+        new.update(objects[c])
+        objects[c] = new
 
 main()
 if "NOPROGRESS" not in os.environ:
