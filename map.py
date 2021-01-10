@@ -138,7 +138,7 @@ def main():
     parser.add_argument("-i", action="store_true", help="Create png image")
     parser.add_argument("-s", action="store_true", help="Create svg image")
     parser.add_argument("-l", action="store_true", help="Show Mapmakers legend")
-    parser.add_argument("-T", action="store_true", help="Print true color ansi")
+    parser.add_argument("-T", action="store_true", help="Disable true color ansi")
     parser.add_argument(
         "-t", action="store_true", help="Output input text (cuts map file)"
     )
@@ -187,7 +187,7 @@ def main():
             options.starty,
             options.endy,
             options.S,
-            options.T,
+            not options.T,
         )
         display(output)
 

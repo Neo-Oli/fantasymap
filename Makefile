@@ -4,16 +4,16 @@ endef
 
 
 .PHONY: whole
-whole: dist/whole-truecolor.ansi
+whole: dist/whole.ansi
 	$(call display,$<)
 
-%: dist/%-truecolor.ansi
+%: dist/%.ansi
 	$(call display,$<)
 
 m-%: dist/%-monochrome.ansi
 	$(call display,$<)
 
-16-%: dist/%.ansi
+16-%: dist/%-16color.ansi
 	$(call display,$<)
 
 i-%: dist/%.png
@@ -102,7 +102,7 @@ dist/%-monochrome.html: $(REQ)
 dist/%-monochrome.ansi: $(REQ)
 	@mkdir -p dist
 	./map.py -b map.map `./getCoordinates.py $<` > $@
-dist/%-truecolor.ansi: $(REQ)
+dist/%-16color.ansi: $(REQ)
 	@mkdir -p dist
 	./map.py -T map.map `./getCoordinates.py $<` > $@
 dist/%.svg: $(REQ)
