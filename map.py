@@ -122,6 +122,10 @@ def isNear(grid, i, j, fields, values, radius=5):
                         pass
 
 
+def isLabel(grid, y, x):
+    return grid[y][0:x].count("(") > grid[y][0 : x + 1].count(")")
+
+
 def hexToRGB(color):
     color = color.lstrip("#")
     return tuple(int(color[i : i + 2], 16) for i in (0, 2, 4))
@@ -388,8 +392,7 @@ def render(
                 leftc = " "
             if i == 0:
                 upc = " "
-            # We're within a label
-            if grid[i][0:j].count("(") > grid[i][0 : j + 1].count(")"):
+            if isLabel(grid, i, j):
                 foregroundcolor = objects["?"]["color"]
                 backgroundcolor = objects["?"]["bgcolor"]
                 character = c
@@ -509,11 +512,23 @@ def render(
                         if y == i and x == j:
                             # ignore self
                             continue
+                        # if isLabel(grid,y,x):
+                        # continue
                         try:
                             f = grid[y][x]
                         except IndexError:
                             continue
                         try:
+                            ignored = False
+                            if "average_ignore_type" in objects[c]:
+                                for ignore in objects[c]["average_ignore_type"]:
+                                    if objects[f]["name"] == ignore:
+                                        ignored = True
+                                    if "type" in objects[c]:
+                                        if objects[c]["type"] == ignore:
+                                            ignored = True
+                            if ignored:
+                                continue
                             avcolor = objects[f]["bgcolor"]
                             if "bgcolor_average_overwrite" in objects[f]:
                                 avcolor = objects[f]["bgcolor_average_overwrite"]
