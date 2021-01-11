@@ -12,9 +12,9 @@ iiiiiwiiw.a.wwwiwiiiwwwwiiwwwwwwwwww..ii..aa.iimmmmmmmmmmmmiiiiiiiiiiiiiimmmm(Bi
 iiiiwwi...a.wwwiwiiw..wwiwwwwwwwwww....ii...mmmmmmmmmmmmmmmiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmmmaaaaaaaa..i.............wwwwww...
 iiiiiii.....wwwiwwww..wiiwwwwwwwww..aa....immmmmmmmmmmmmmmmiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmmaaaaa.i..............i...iiiiiiw
 iiiiiiiww..wiwww...ii.wwwwwww..w...aaaaaa.mmmmmmmmmmmmmmmmmiiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmmaaa..ii..iiii.......i..iiiiiiii
-iiiiiiwwwwwwiiii...iiwwww..ww........aaaammmmmmmmmmmmmmmmmmiiiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmma..ii........i........iiwiiii.
-iiiiiiwwwwwwwwiiwwwwwwwwwwwwww.aa.ww..aaammmmmmmmmmmmmmmmmmiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmmmma.iii.aaaaaa.i.a..........ii..
-iiiiiiwwwwwwwwiiwwwwwwwwwwwwww....ww..aaaammmmmmmmmmmmmmmmiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmmmma..ii....aaaa..............ii..
+iiiiiiwwwwwwiiii...iiwwww..ww........aaaammmmmmmiiimmmmmmmmiiiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmma..ii........i........iiwiiii.
+iiiiiiwwwwwwwwiiwwwwwwwwwwwwww.aa.ww..aaammmmmmmiiimmmmmmmmiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmmmma.iii.aaaaaa.i.a..........ii..
+iiiiiiwwwwwwwwiiwwwwwwwwwwwwww....ww..aaaammmmmmiiimmmmmmmiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmmmma..ii....aaaa..............ii..
 iiwiiiiiiwwwwwwwwwwwwwwwww..wwwwwwww.aaaa.mmmmmmmmmmmmmmmiiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmmmmmmiii....aaaa...ii...aaa....iii
 wwwwwwwwwwwwwwwwwwwwwwwwww....wwwwww.aa....mmmmmmmmmmmmmiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmmmmmmmm....aaaaa...ii.........aa....
 wwwwwwwwwwwwwwwwwwwwwwwwww....wwwwww........mmmmmmmmmmmiiiiiiiiiiiiiiiiimmmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaaa.iii..aa..iii.aa...i
@@ -22,7 +22,7 @@ wwwwwwwwwwwwwwwwwwwwwwwwww....wwwwwww...mmmmmmmmmmmmmmiiiiiiiiiiiiiiiimmmmmmmmmm
 wwwwwwwww....ww...wwwwwwwww...wwwwwmmmmmmmmmmmmmmmmmmmmmmmmmmwmmmmmmmmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaaaa.iii...wwwiiiiiii..
 .....wwww.aa....a...wwww...wwwwwwwmmmmmmmmmmmmmmmmmmmmmmmmmmmwmmmmmmmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaaa...iiiiiwwwwwwwwiii.a
 aaaa.wwww.aaaaaaaaa...ww......wwmmmmmmmmmmmmmmmmmmmmmmmmmmmmmwmmmmmmmmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaa.iiiiiwwwwwwwwwwwww.a
-aaa..ww.....aaaaaaaa...w..mmmmmmmmmmm..mmmmmmmmmmmmmmmmmmmmwwwmmmmmmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaa......a..iii...wwwwwwwwwww..
+aaa..ww.....aaaaaaaa...w..mmmmmmmmmmmiimmmmmmmmmmmmmmmmmmmmwwwmmmmmmmmmmmmmmmmmmmmmmmmmmmaaaaaaaaa......a..iii...wwwwwwwwwww..
 aaa.....a.w.aaaaaaaaaammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmwmmmmmmmmmmmmmmmmmmmmmtaaaaaaaaaaaaaa...i....aa.....a.wwwwwwwwwwwwi
 aaaa..aaammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmwwwmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaa..i..a...aaaa..a....wwwwwwiiww
 aaaaaaaaammmmmmmmmmmmmmwwwwwwwwwmmmmwwwwmmmmmmmmmmmmmmmmmmmmmwmmmmmmmmmmmmmmmmmmmmaaaaaaaaaaaaaaa...a..i..aaaaaaa....wwwwwiiii
@@ -51,8 +51,8 @@ aaa......wmmmmmmmmmmmmmmmmmmmmwwwwwwwwwwwwwwwwwwwwwwwwwwwwwmmmmmmmmmmmmmmmmmmm.m
 aa.....a...mmmmmmmmmmmmmmmmmmmmwwwwwwwwwwwwwwwwwwwwwwwwwwwwwmmmmmmmmmmmmmmmmmmmmmm,..........aaaa.....a....................www
 aa.....aaaa...mmmmmmm(Marauber Dam)wwwwwwwwwwwwwwwwwwwwwwwwmmmmmmmmmmmmmmmmmm.mm.mm..................aaa...................www
 aaaa....aa......mmmmmmmmmmmmmmmmmwwwwwwwwwwwwwwwwwwwwwwwwwmmmmBBB.bmmmmmmmmmmmmmmmmmm.......................................ww
-aaaaa...aa.........mmmmmmmmmmmmBBwwwwwwwwwwwwwwwwwwwwwwwwBBmmb₆~~~₆ssmmmmmmm.....m,..........................................w
-aaaaaaaaaaaa......aaammmmmmmmmmmBBBBBBBBBBBBBBBBBBBBBBBBBBmmmmxxxxxssmmmmm....mm.............................................w
+aaaaa...aa.........mmmmmmmmmmmmBBwwwwwwwwwwwwwwwwwwwwwwwwBBmmb₆~~~₆;;mmmmmmm.....m,..........................................w
+aaaaaaaaaaaa......aaammmmmmmmmmmBBBBBBBBBBBBBBBBBBBBBBBBBBmmmmxxxxx;;mmmmm....mm.............................................w
 aaaaaaaaaaaaaa..ammmmmmmmmmmmmmmmmBBBBBBBBBBBBBBBBBBBBBBmmmmmmxmmmmmmmmmmmmmmmmm,....,m.......................................
 aaaaaaaaaaaaaaaammmmmmmmmmmmmmmmmmmBBBBBBBBBBBBBBBBBBBmmmmmmmmxxxxxxxmmmmmm.mmmmm....mm..........aaaaa........................
 aaaaaaaaaaaaaaaammmmmmmmmmmmmmmmmmmm;;;;;;;;;;;;;+;;;;;mmmmmmmmmmmmmxmmmmmm....,mm..........a...aaaaaa.......................w
@@ -69,7 +69,7 @@ aaaaaaaaaaaaaaaa..mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmx.m.aaa.m,mmm
 mm.aaaaaa.m.aaaaaaaaammmmmmmmmmmmmmmmmmmmmmmmmxxxxxxxxxxxxxxxxxxxxxxmmm............wwwww.....aaaaaaaaaaaaaaaa.............aaaa
 m......aa.m..aaaaaaaaaa..mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm.xm.m.a...mmmww.www.m..aaaaaaaaaaaaaaaaaaa.............aaaaa
 ..a.,m.aa..m.aaaaaaaaaaa.aaaaammmmmmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxxmx,.....wwwwwwwwwwwwww..aaaaaaaaaaaaaaaaaa............aaaaaa
-aaa.mm.aaa...aaaaaaaaaaa.aaaaaaaaa.,mmmmmmmmmmmmammmmmmm...x,mm..x,x...,wwwww(Burgin Lake)aaaaaaaaaaaaaaaaaa............aaaaaa
+aaa.mm.aaa...aaaaaaaaaaa.aaaaaaaaa..mmmmmmmmmmmmammmmmmm...x,mm..x,x...,wwwww(Burgin Lake)aaaaaaaaaaaaaaaaaa............aaaaaa
 aaa.m....aa....aaaaa.....aaaaaaaaa(Bigletsch Hydroelectric)xmmm..xxx..wwwwwwwwwwwwwwwwwa..a....aaa.......aaaaa..........aaaaaa
 aaa.m..m.aaa.m..aaaa.mm...aaaaaaaa......(Power Plant)a.....xmmm..mmmmwwwwwwwwwwaaaaaaaaa....mm.aaa.m..mm..aaa...a.....aaaaaaaa
 .......m.aaa..m.a...........aaaaaaaaaa.m..............BBBBBxmmm.,mmm.ww.wwwwwwwwwwaaaaaa.m,..m..aa.m..mmm..aa...aaaaaaaaaaaaaa
