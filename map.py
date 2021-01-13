@@ -25,7 +25,7 @@ def config(filename):
                 value = value[1:-1]
             value = value.replace("\\033", "\033")
             obj[section][option] = value
-            if option in ["average_ignore_type"]:
+            if option in ["average_ignore_type", "connects", "connections"]:
                 obj[section][option] = obj[section][option].split(",")
                 for key, val in enumerate(obj[section][option]):
                     obj[section][option][key] = val.strip()
@@ -38,6 +38,8 @@ def error(err):
 
 def progress(done, ultimate):
     if "NOPROGRESS" not in os.environ:
+        if ultimate == 0:
+            return
         width = 50
         bar = ""
         percentage = math.floor((done / ultimate) * 100)
@@ -58,8 +60,9 @@ def findObjects(name, objects, fields=["name"]):
     obj = []
     for c in objects:
         for field in fields:
-            if objects[c][field] == name:
-                obj.append(c)
+            if field in objects[c]:
+                if objects[c][field] == name:
+                    obj.append(c)
     return obj
 
 
@@ -352,42 +355,42 @@ def render(
             try:
                 leftc = grid[i][j - 1]
             except IndexError:
-                leftc = " "
+                leftc = "N"
             try:
                 rightc = grid[i][j + 1]
             except IndexError:
-                rightc = " "
+                rightc = "N"
             try:
                 upc = grid[i - 1][j]
             except IndexError:
-                upc = " "
+                upc = "N"
             try:
                 downc = grid[i + 1][j]
             except IndexError:
-                downc = " "
+                downc = "N"
             try:
                 upleftc = grid[i - 1][j - 1]
             except IndexError:
-                upleftc = " "
+                upleftc = "N"
             try:
                 uprightc = grid[i - 1][j + 1]
             except IndexError:
-                uprightc = " "
+                uprightc = "N"
 
             try:
                 downleftc = grid[i + 1][j - 1]
             except IndexError:
-                downleftc = " "
+                downleftc = "N"
             try:
                 downrightc = grid[i + 1][j + 1]
             except IndexError:
-                downrightc = " "
+                downrightc = "N"
 
             # Reading from -1 causes wrap
             if j == 0:
-                leftc = " "
+                leftc = "N"
             if i == 0:
-                upc = " "
+                upc = "N"
             if isLabel(grid, i, j):
                 foregroundcolor = objects["?"]["color"]
                 backgroundcolor = objects["?"]["bgcolor"]
@@ -442,64 +445,47 @@ def render(
                             numtrees_right += 1
                         mod = (numtrees_right - 1) % 3
                         c = objectsByName["tree_bottom_{}".format(mod)]
-                elif c in list("x+r*"):
-                    rails = False
-                    if c == objectsByName["rails"]:
-                        rails = True
-                        prefix = "rails_{}"
-                    elif c == objectsByName["dirtroad"]:
-                        prefix = "dirtroad_{}"
-                    elif c == objectsByName["waterway"]:
-                        prefix = "waterway_{}"
-                    else:
-                        prefix = "street_{}"
-                    if rails:
-                        uptrue = upc in list("§r[⁰¹²⁵⁷⁸")
-                        downtrue = downc in list("§rc⁰³⁴⁶⁷⁸")
-                        lefttrue = leftc in list("=rC⁰²⁴⁵⁶⁸")
-                        righttrue = rightc in list("=rC⁰¹³⁵⁶⁷")
-                    else:
-                        uptrue = upc in list("x+*S|!012578jC₀₁₂₅₇₈⑩⑫①②⑤⑦⑧")
-                        downtrue = downc in list("x+*S!|034678jC₀₃₄₆₇₈⑩⑫③④⑥⑦⑧")
-                        lefttrue = leftc in list("x+*S~-024568qc₀₂₄₅₆₈⑩⑪②④⑤⑥⑧")
-                        righttrue = rightc in list("x+*S~-013567qc₀₁₃₅₆₇⑩⑪①③⑤⑥⑦")
-                    if uptrue and downtrue and lefttrue and righttrue:
-                        p = "crossing"
-                    elif not uptrue and not downtrue and lefttrue and righttrue:
-                        p = "h"
-                    elif not uptrue and not downtrue and lefttrue and not righttrue:
-                        p = "h"
-                    elif not uptrue and not downtrue and not lefttrue and righttrue:
-                        p = "h"
-                    elif uptrue and downtrue and not lefttrue and not righttrue:
-                        p = "v"
-                    elif uptrue and not downtrue and not lefttrue and not righttrue:
-                        p = "v"
-                    elif not uptrue and downtrue and not lefttrue and not righttrue:
-                        p = "v"
-                    elif not uptrue and downtrue and lefttrue and not righttrue:
-                        p = "1"
-                    elif not uptrue and downtrue and not lefttrue and righttrue:
-                        p = "2"
-                    elif uptrue and not downtrue and lefttrue and not righttrue:
-                        p = "3"
-                    elif uptrue and not downtrue and not lefttrue and righttrue:
-                        p = "4"
-                    elif not uptrue and downtrue and lefttrue and righttrue:
-                        p = "5"
-                    elif uptrue and not downtrue and lefttrue and righttrue:
-                        p = "6"
-                    elif uptrue and downtrue and lefttrue and not righttrue:
-                        p = "7"
-                    elif uptrue and downtrue and not lefttrue and righttrue:
-                        p = "8"
-                    elif not uptrue and not downtrue and not lefttrue and not righttrue:
-                        p = "none"
-                    else:
-                        p = "none"
-                    c = objectsByName[prefix.format(p)]
+                elif objects[c]["connects"]:
+                    nc = ""
+                    for ofType in findObjects(objects[c]["name"], objects, ["type"]):
+                        if c == ofType:
+                            continue
+                        cont = False
+                        for directions in [
+                            ["u", "d", upc],
+                            ["d", "u", downc],
+                            ["l", "r", leftc],
+                            ["r", "l", rightc],
+                        ]:
+                            connectSelf = directions[0]
+                            connectDirection = directions[1]
+                            direction = directions[2]
+                            dirc = objects[direction]
+                            ofc = objects[ofType]
+                            if (
+                                dirc["name"] in objects[c]["connects"]
+                                or dirc["type"] in objects[c]["connects"]
+                            ) and (
+                                connectDirection in dirc["connections"]
+                                or not dirc["connections"]
+                            ):
+                                if connectSelf not in ofc["connections"]:
+                                    cont = True
+                                    break
+                            else:
+                                if connectSelf in ofc["connections"]:
+                                    cont = True
+                                    break
+                        if cont:
+                            continue
+                        nc = ofType
+                    c = nc
                 if not c in objects:
-                    error("Error at line:{} c={}".format(str(i + 1), str(j + 1), c))
+                    error(
+                        "Error at line:{} char:{} c:{}".format(
+                            str(i + 1), str(j + 1), c
+                        )
+                    )
                     c = "E"
                 if not foregroundcolor:
                     foregroundcolor = objects[c]["color"]
@@ -526,9 +512,8 @@ def render(
                                 for ignore in objects[c]["average_ignore_type"]:
                                     if objects[f]["name"] == ignore:
                                         ignored = True
-                                    if "type" in objects[c]:
-                                        if objects[c]["type"] == ignore:
-                                            ignored = True
+                                    if objects[f]["type"] == ignore:
+                                        ignored = True
                             if ignored:
                                 continue
                             avcolor = objects[f]["bgcolor"]
@@ -630,16 +615,15 @@ def render(
             lastcharacter = character
             output["fg"][i]["chars"][j] = cout
             output["bg"][i]["chars"][j] = coutbg
-        if j > 0:
-            if mode == "html":
-                output["fg"][i]["postfix"] = "<br />"
-            elif mode == "txt":
+        if mode == "html":
+            output["fg"][i]["postfix"] = "<br />"
+        elif mode == "txt":
+            output["fg"][i]["postfix"] = "\n"
+        elif mode == "ansi":
+            if not monochrome:
+                output["fg"][i]["postfix"] = "{}\n".format(colors["ansi"]["reset"])
+            else:
                 output["fg"][i]["postfix"] = "\n"
-            elif mode == "ansi":
-                if not monochrome:
-                    output["fg"][i]["postfix"] = "{}\n".format(colors["ansi"]["reset"])
-                else:
-                    output["fg"][i]["postfix"] = "\n"
     if mode == "html":
         output["postfix"] = htmlend
     elif mode == "svg":
@@ -683,10 +667,20 @@ for c in objects:
     objectsByName[objects[c]["name"]] = c
     if "type" in objects[c]:
         # use findObjects here because objectsByName isn't fully populated yet
-        parent = objects[findObjects(objects[c]["type"], objects)[0]]
+        try:
+            parent = objects[findObjects(objects[c]["type"], objects)[0]]
+        except IndexError:
+            error("parent of {} not found".format(objects[c]["name"]))
         new = parent.copy()
+        new["connects"] = []  # don't copy connects from parent
         new.update(objects[c])
         objects[c] = new
+    else:
+        objects[c]["type"] = False
+    if "connections" not in objects[c]:
+        objects[c]["connections"] = []
+    if "connects" not in objects[c]:
+        objects[c]["connects"] = []
 
 main()
 if "NOPROGRESS" not in os.environ:
