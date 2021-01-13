@@ -460,7 +460,10 @@ def render(
                             connectSelf = directions[0]
                             connectDirection = directions[1]
                             direction = directions[2]
-                            dirc = objects[direction]
+                            try:
+                                dirc = objects[direction]
+                            except KeyError:
+                                dirc=objects["N"]
                             ofc = objects[ofType]
                             if (
                                 dirc["name"] in objects[c]["connects"]
