@@ -28,7 +28,10 @@ def config(filename):
             if option in ["average_ignore_type", "connects", "connections", "r"]:
                 obj[section][option] = obj[section][option].split(",")
                 for key, val in enumerate(obj[section][option]):
-                    obj[section][option][key] = val.strip()
+                    if len(val)>1:
+                        obj[section][option][key] = val.strip()
+                    else:
+                        obj[section][option][key] = val
     return obj
 
 
