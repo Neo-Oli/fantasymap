@@ -421,7 +421,7 @@ def render(
                 elif c == objectsByName["forest on grass"]:
                     numtrees_top = 1
                     while (
-                        i - numtrees_top > 0
+                        i - numtrees_top > -1
                         and grid[i - numtrees_top][j]
                         == objectsByName["forest on grass"]
                     ):
@@ -444,12 +444,13 @@ def render(
                                     pass
                     else:
                         numtrees_right = 1
-                        while (
-                            j + numtrees_right <= linewidth
-                            and grid[i][j + numtrees_right]
-                            == objectsByName["forest on grass"]
-                        ):
-                            numtrees_right += 1
+                        if j+1 in grid[i]:
+                            while (
+                                j + numtrees_right <= linewidth
+                                and grid[i][j + numtrees_right]
+                                == objectsByName["forest on grass"]
+                            ):
+                                numtrees_right += 1
                         mod = (numtrees_right - 1) % 3
                         c = objectsByName["tree_bottom_{}".format(mod)]
                 elif objects[c]["connects"]:
