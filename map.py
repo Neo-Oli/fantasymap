@@ -25,7 +25,7 @@ def config(filename):
                 value = value[1:-1]
             value = value.replace("\\033", "\033")
             obj[section][option] = value
-            if option in ["average_ignore_type", "connects", "connections"]:
+            if option in ["average_ignore_type", "connects", "connections", "r"]:
                 obj[section][option] = obj[section][option].split(",")
                 for key, val in enumerate(obj[section][option]):
                     obj[section][option][key] = val.strip()
@@ -444,7 +444,7 @@ def render(
                                     pass
                     else:
                         numtrees_right = 1
-                        if j+1 in grid[i]:
+                        if j + 1 in grid[i]:
                             while (
                                 j + numtrees_right <= linewidth
                                 and grid[i][j + numtrees_right]
@@ -471,7 +471,7 @@ def render(
                             try:
                                 dirc = objects[direction]
                             except KeyError:
-                                dirc=objects["N"]
+                                dirc = objects["N"]
                             ofc = objects[ofType]
                             if (
                                 dirc["name"] in objects[c]["connects"]
@@ -502,7 +502,14 @@ def render(
                     foregroundcolor = objects[c]["color"]
                 if not backgroundcolor:
                     backgroundcolor = objects[c]["bgcolor"]
-                character = objects[c]["r"]
+                if len(objects[c]["r"]) == 1:
+                    character = objects[c]["r"][0]
+                else:
+                    index = ((j * i) + 1) % len(objects[c]["r"])
+                    index = math.floor(math.sin(j) * math.sin(i) * 100000) % len(
+                        objects[c]["r"]
+                    )
+                    character = objects[c]["r"][index]
             radius = 1
             while backgroundcolor == "s_average":
                 allcolors = []
