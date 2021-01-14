@@ -4,7 +4,7 @@ import re
 import sys
 import argparse
 from uuid import uuid4
-import configparser
+import json
 import math
 from collections import Counter
 
@@ -15,24 +15,8 @@ heightstretch = 2
 def config(filename):
     obj = {}
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    config = configparser.ConfigParser()
-    config.read("{}/{}".format(dir_path, filename))
-    for section in config.sections():
-        obj[section] = {}
-        for option in config[section]:
-            value = config[section][option]
-            if isinstance(value, str):
-                value = value[1:-1]
-            value = value.replace("\\033", "\033")
-            obj[section][option] = value
-            if option in ["average_ignore_type", "connects", "connections", "r"]:
-                obj[section][option] = obj[section][option].split(",")
-                for key, val in enumerate(obj[section][option]):
-                    if len(val)>1:
-                        obj[section][option][key] = val.strip()
-                    else:
-                        obj[section][option][key] = val
-    return obj
+    f = open("{}/{}".format(dir_path, filename))
+    return json.load(f)
 
 
 def error(err):
@@ -73,7 +57,7 @@ def legend():
     map = "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#test\n"
     map += "r(        Legend for Mapmakers        )r\n"
     map += "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\n"
-    objects = config("objects.ini")
+    objects = config("objects.json")
     for key in objects:
         o = objects[key]
         if key in ["(", ")"] or len(key) > 1:
@@ -86,8 +70,8 @@ def legend():
 def vim():
     output = "setlocal nowrap\n"
     output = "{}setlocal redrawtime=10000".format(output)
-    objects = config("objects.ini")
-    colors = config("colors.ini")
+    objects = config("objects.json")
+    colors = config("colors.json")
     i = 0
     for c in objects:
         rule = "rule_{}".format(i)
@@ -689,8 +673,8 @@ def display(output):
     print(p.strip())
 
 
-objects = config("objects.ini")
-colors = config("colors.ini")
+objects = config("objects.json")
+colors = config("colors.json")
 objectsByName = {}
 
 # get values from type

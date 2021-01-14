@@ -90,7 +90,7 @@ dist/index.js: $(ALL) dist/tiles/1/0/0.png
 		sed -e "s/^/import '/" -e "s/$$/'/" \
 		> index.js
 
-BASE := map.py map.map objects.ini colors.ini getCoordinates.py
+BASE := map.py map.map objects.json colors.json getCoordinates.py
 REQ := recipes/%.rec $(BASE)
 .PRECIOUS: dist/%
 dist/%.html: $(REQ)
@@ -179,6 +179,11 @@ dist/tiles/1/0/0.png: $(BASE) tiles.py
 lint: VENV/pyvenv.cfg
 	. VENV/bin/activate;\
 	black *.py
+	for f in *.json; do \
+		echo $$f;\
+		jq -M . $$f > $$f.pretty&&\
+		mv $$f.pretty $$f;\
+	done
 
 VENV/pyvenv.cfg: requirements.txt
 	python3 -m venv VENV
