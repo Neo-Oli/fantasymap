@@ -3,7 +3,7 @@ commits=`git log --pretty=format:'%H' --all --reverse`
 old=""
 for c in $commits;do
     for name in map.map mapfile.map map;do
-        map="`git show $c:$name 2>/dev/null`"
+        map="`git show --encoding="UTF-8" $c:$name 2>/dev/null`"
         if [ "$?" == 0 ];then
             break
         fi
