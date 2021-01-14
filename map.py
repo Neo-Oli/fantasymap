@@ -508,10 +508,20 @@ def render(
                 if len(objects[c]["r"]) == 1:
                     character = objects[c]["r"][0]
                 else:
-                    index = ((j * i) + 1) % len(objects[c]["r"])
-                    index = math.floor(math.sin(j) * math.sin(i) * 100000) % len(
-                        objects[c]["r"]
-                    )
+                    if "tiling_mode" in objects[c] and objects[c]["tiling_mode"] == "1":
+                        radius = 3
+                        surroundings = 0
+                        for y in range(0 - radius, radius):
+                            for x in range(0 - radius, radius):
+                                try:
+                                    surroundings += ord(grid[i - y][j - x])
+                                except KeyError:
+                                    continue
+                        index = surroundings % len(objects[c]["r"])
+                    else:
+                        index = math.floor(math.sin(j) * math.sin(i) * 100000) % len(
+                            objects[c]["r"]
+                        )
                     character = objects[c]["r"][index]
             radius = 1
             while backgroundcolor == "s_average":
