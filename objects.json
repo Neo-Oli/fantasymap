@@ -25,7 +25,11 @@
   },
   ".": {
     "name": "grass",
-    "r": "⌄",
+    "r": [
+      "⌄",
+      "\"",
+      "ˈ"
+    ],
     "color": "igreen",
     "bgcolor": "on_green"
   },
