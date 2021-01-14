@@ -396,6 +396,13 @@ def render(
                 backgroundcolor = objects["?"]["bgcolor"]
                 character = c
             else:
+                if not c in objects:
+                    error(
+                        "Error at line:{} char:{} c:{}".format(
+                            str(i + 1), str(j + 1), c
+                        )
+                    )
+                    c = "E"
                 if c == objectsByName["water"]:
                     if (
                         isNear(

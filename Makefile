@@ -202,6 +202,7 @@ dist/history/%.png: dist/history/%.svg $(BASE)
 	@mkdir -p dist/history
 	convert -size 2000x2000 $< $@
 
-.PHONY: test
-test:
-	for f in tests/*;do ./$$f||exit 1;done
+test: $(subst .sh,.sh.tested,$(wildcard tests/*))
+
+tests/%.sh.tested: tests/%.sh
+	./$<
