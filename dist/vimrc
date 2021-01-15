@@ -13,7 +13,7 @@ hi def rule_4 ctermfg=10 ctermbg=2
 syn match rule_5 /[i]/
 hi def rule_5 ctermfg=7 ctermbg=7
 syn match rule_6 /[y]/
-hi def rule_6 ctermfg=3 ctermbg=2
+hi def rule_6 ctermfg=3 ctermbg=11
 syn match rule_7 /[U]/
 hi def rule_7 ctermfg=8 ctermbg=11
 syn match rule_8 /[;]/
@@ -84,111 +84,179 @@ syn match rule_40 /[7]/
 hi def rule_40 ctermfg=None ctermbg=None
 syn match rule_41 /[8]/
 hi def rule_41 ctermfg=None ctermbg=None
-syn match rule_42 /[9]/
+syn match rule_42 /[╹]/
 hi def rule_42 ctermfg=None ctermbg=None
-syn match rule_43 /[+]/
+syn match rule_43 /[╻]/
 hi def rule_43 ctermfg=None ctermbg=None
-syn match rule_44 /[₀]/
+syn match rule_44 /[╺]/
 hi def rule_44 ctermfg=None ctermbg=None
-syn match rule_45 /[~]/
+syn match rule_45 /[╸]/
 hi def rule_45 ctermfg=None ctermbg=None
-syn match rule_46 /[!]/
+syn match rule_46 /[9]/
 hi def rule_46 ctermfg=None ctermbg=None
-syn match rule_47 /[₁]/
+syn match rule_47 /[+]/
 hi def rule_47 ctermfg=None ctermbg=None
-syn match rule_48 /[₂]/
+syn match rule_48 /[₀]/
 hi def rule_48 ctermfg=None ctermbg=None
-syn match rule_49 /[₃]/
+syn match rule_49 /[~]/
 hi def rule_49 ctermfg=None ctermbg=None
-syn match rule_50 /[₄]/
+syn match rule_50 /[!]/
 hi def rule_50 ctermfg=None ctermbg=None
-syn match rule_51 /[₅]/
+syn match rule_51 /[₁]/
 hi def rule_51 ctermfg=None ctermbg=None
-syn match rule_52 /[₆]/
+syn match rule_52 /[₂]/
 hi def rule_52 ctermfg=None ctermbg=None
-syn match rule_53 /[₇]/
+syn match rule_53 /[₃]/
 hi def rule_53 ctermfg=None ctermbg=None
-syn match rule_54 /[₈]/
+syn match rule_54 /[₄]/
 hi def rule_54 ctermfg=None ctermbg=None
-syn match rule_55 /[₉]/
+syn match rule_55 /[₅]/
 hi def rule_55 ctermfg=None ctermbg=None
-syn match rule_56 /[r]/
-hi def rule_56 ctermfg=9 ctermbg=7
-syn match rule_57 /[⁰]/
+syn match rule_56 /[₆]/
+hi def rule_56 ctermfg=None ctermbg=None
+syn match rule_57 /[₇]/
 hi def rule_57 ctermfg=None ctermbg=None
-syn match rule_58 /[=]/
+syn match rule_58 /[₈]/
 hi def rule_58 ctermfg=None ctermbg=None
-syn match rule_59 /[§]/
+syn match rule_59 /[₉]/
 hi def rule_59 ctermfg=None ctermbg=None
-syn match rule_60 /[¹]/
+syn match rule_60 /[╴]/
 hi def rule_60 ctermfg=None ctermbg=None
-syn match rule_61 /[²]/
+syn match rule_61 /[╶]/
 hi def rule_61 ctermfg=None ctermbg=None
-syn match rule_62 /[³]/
+syn match rule_62 /[╵]/
 hi def rule_62 ctermfg=None ctermbg=None
-syn match rule_63 /[⁴]/
+syn match rule_63 /[╷]/
 hi def rule_63 ctermfg=None ctermbg=None
-syn match rule_64 /[⁵]/
-hi def rule_64 ctermfg=None ctermbg=None
-syn match rule_65 /[⁶]/
+syn match rule_64 /[r]/
+hi def rule_64 ctermfg=9 ctermbg=7
+syn match rule_65 /[⁰]/
 hi def rule_65 ctermfg=None ctermbg=None
-syn match rule_66 /[⁷]/
+syn match rule_66 /[=]/
 hi def rule_66 ctermfg=None ctermbg=None
-syn match rule_67 /[⁸]/
+syn match rule_67 /[§]/
 hi def rule_67 ctermfg=None ctermbg=None
-syn match rule_68 /[⁹]/
+syn match rule_68 /[¹]/
 hi def rule_68 ctermfg=None ctermbg=None
-syn match rule_69 /[c]/
+syn match rule_69 /[²]/
 hi def rule_69 ctermfg=None ctermbg=None
-syn match rule_70 /[C]/
+syn match rule_70 /[³]/
 hi def rule_70 ctermfg=None ctermbg=None
-syn match rule_71 /[*]/
-hi def rule_71 ctermfg=8 ctermbg=4
-syn match rule_72 /[⑩]/
+syn match rule_71 /[⁴]/
+hi def rule_71 ctermfg=None ctermbg=None
+syn match rule_72 /[⁵]/
 hi def rule_72 ctermfg=None ctermbg=None
-syn match rule_73 /[⑪]/
+syn match rule_73 /[⁶]/
 hi def rule_73 ctermfg=None ctermbg=None
-syn match rule_74 /[⑫]/
+syn match rule_74 /[⁷]/
 hi def rule_74 ctermfg=None ctermbg=None
-syn match rule_75 /[①]/
+syn match rule_75 /[⁸]/
 hi def rule_75 ctermfg=None ctermbg=None
-syn match rule_76 /[②]/
+syn match rule_76 /[⁹]/
 hi def rule_76 ctermfg=None ctermbg=None
-syn match rule_77 /[③]/
+syn match rule_77 /[⒑]/
 hi def rule_77 ctermfg=None ctermbg=None
-syn match rule_78 /[④]/
+syn match rule_78 /[⒒]/
 hi def rule_78 ctermfg=None ctermbg=None
-syn match rule_79 /[⑤]/
+syn match rule_79 /[⒓]/
 hi def rule_79 ctermfg=None ctermbg=None
-syn match rule_80 /[⑥]/
+syn match rule_80 /[⒔]/
 hi def rule_80 ctermfg=None ctermbg=None
-syn match rule_81 /[⑦]/
+syn match rule_81 /[c]/
 hi def rule_81 ctermfg=None ctermbg=None
-syn match rule_82 /[⑧]/
+syn match rule_82 /[C]/
 hi def rule_82 ctermfg=None ctermbg=None
-syn match rule_83 /[⑨]/
-hi def rule_83 ctermfg=None ctermbg=None
-syn match rule_84 /[j]/
-hi def rule_84 ctermfg=8 ctermbg=4
-syn match rule_85 /[q]/
-hi def rule_85 ctermfg=8 ctermbg=4
-syn match rule_86 /[p]/
-hi def rule_86 ctermfg=4 ctermbg=7
-syn match rule_87 /[P]/
-hi def rule_87 ctermfg=4 ctermbg=7
-syn match rule_88 /[o]/
-hi def rule_88 ctermfg=4 ctermbg=7
-syn match rule_89 /[F]/
+syn match rule_83 /[*]/
+hi def rule_83 ctermfg=8 ctermbg=4
+syn match rule_84 /[⑮]/
+hi def rule_84 ctermfg=None ctermbg=None
+syn match rule_85 /[⑯]/
+hi def rule_85 ctermfg=None ctermbg=None
+syn match rule_86 /[⑰]/
+hi def rule_86 ctermfg=None ctermbg=None
+syn match rule_87 /[⑱]/
+hi def rule_87 ctermfg=None ctermbg=None
+syn match rule_88 /[⑩]/
+hi def rule_88 ctermfg=None ctermbg=None
+syn match rule_89 /[⑪]/
 hi def rule_89 ctermfg=None ctermbg=None
-syn match rule_90 /[t]/
+syn match rule_90 /[⑫]/
 hi def rule_90 ctermfg=None ctermbg=None
-syn match rule_91 /[(]/
+syn match rule_91 /[①]/
 hi def rule_91 ctermfg=None ctermbg=None
-syn match rule_92 /[)]/
+syn match rule_92 /[②]/
 hi def rule_92 ctermfg=None ctermbg=None
-syn match rule_93 /[?]/
-hi def rule_93 ctermfg=0 ctermbg=3
-syn match rule_94 /[$]/
+syn match rule_93 /[③]/
+hi def rule_93 ctermfg=None ctermbg=None
+syn match rule_94 /[④]/
 hi def rule_94 ctermfg=None ctermbg=None
-syn match rule_95 /[E]/
-hi def rule_95 ctermfg=7 ctermbg=1
+syn match rule_95 /[⑤]/
+hi def rule_95 ctermfg=None ctermbg=None
+syn match rule_96 /[⑥]/
+hi def rule_96 ctermfg=None ctermbg=None
+syn match rule_97 /[⑦]/
+hi def rule_97 ctermfg=None ctermbg=None
+syn match rule_98 /[⑧]/
+hi def rule_98 ctermfg=None ctermbg=None
+syn match rule_99 /[⑨]/
+hi def rule_99 ctermfg=None ctermbg=None
+syn match rule_100 /[q]/
+hi def rule_100 ctermfg=8 ctermbg=4
+syn match rule_101 /[j]/
+hi def rule_101 ctermfg=None ctermbg=None
+syn match rule_102 /[p]/
+hi def rule_102 ctermfg=4 ctermbg=7
+syn match rule_103 /[P]/
+hi def rule_103 ctermfg=4 ctermbg=7
+syn match rule_104 /[o]/
+hi def rule_104 ctermfg=4 ctermbg=7
+syn match rule_105 /[F]/
+hi def rule_105 ctermfg=None ctermbg=None
+syn match rule_106 /[t]/
+hi def rule_106 ctermfg=None ctermbg=None
+syn match rule_107 /[(]/
+hi def rule_107 ctermfg=None ctermbg=None
+syn match rule_108 /[)]/
+hi def rule_108 ctermfg=None ctermbg=None
+syn match rule_109 /[?]/
+hi def rule_109 ctermfg=0 ctermbg=3
+syn match rule_110 /[$]/
+hi def rule_110 ctermfg=None ctermbg=None
+syn match rule_111 /[E]/
+hi def rule_111 ctermfg=7 ctermbg=1
+syn match rule_112 /[N]/
+hi def rule_112 ctermfg=0 ctermbg=0
+syn match rule_113 /[¬]/
+hi def rule_113 ctermfg=None ctermbg=None
+syn match rule_114 /[ᴬ]/
+hi def rule_114 ctermfg=None ctermbg=None
+syn match rule_115 /[ᴮ]/
+hi def rule_115 ctermfg=None ctermbg=None
+syn match rule_116 /[ᴰ]/
+hi def rule_116 ctermfg=None ctermbg=None
+syn match rule_117 /[ᴱ]/
+hi def rule_117 ctermfg=None ctermbg=None
+syn match rule_118 /[ᴳ]/
+hi def rule_118 ctermfg=None ctermbg=None
+syn match rule_119 /[ᴴ]/
+hi def rule_119 ctermfg=None ctermbg=None
+syn match rule_120 /[ᴵ]/
+hi def rule_120 ctermfg=None ctermbg=None
+syn match rule_121 /[ᴶ]/
+hi def rule_121 ctermfg=None ctermbg=None
+syn match rule_122 /[ᴷ]/
+hi def rule_122 ctermfg=None ctermbg=None
+syn match rule_123 /[ᴸ]/
+hi def rule_123 ctermfg=None ctermbg=None
+syn match rule_124 /[ᴹ]/
+hi def rule_124 ctermfg=None ctermbg=None
+syn match rule_125 /[ᴺ]/
+hi def rule_125 ctermfg=None ctermbg=None
+syn match rule_126 /[ᴼ]/
+hi def rule_126 ctermfg=None ctermbg=None
+syn match rule_127 /[ᴾ]/
+hi def rule_127 ctermfg=None ctermbg=None
+syn match rule_128 /[ᴿ]/
+hi def rule_128 ctermfg=None ctermbg=None
+syn match rule_129 /[ᵀ]/
+hi def rule_129 ctermfg=None ctermbg=None

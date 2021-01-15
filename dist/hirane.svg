@@ -100,20 +100,20 @@
 </text>
 <text y="66.0" x="180.0" style="fill:#1a1818">▲<text y="77.5" x="0.0" style="fill:#cdcdcd">░░░░░░░░░░░░░░░░</text>
 <text y="77.5" x="96.0" style="fill:#783908">│</text>
-<text y="77.5" x="102.0" style="fill:#000000">■</text>
+<text y="77.5" x="102.0" style="fill:#000000">▅</text>
 <text y="77.5" x="108.0" style="fill:#783908">└</text>
 <text y="77.5" x="114.0" style="fill:#783908">┐</text>
-<text y="77.5" x="120.0" style="fill:#000000">■■</text>
+<text y="77.5" x="120.0" style="fill:#000000">■▘</text>
 <text y="77.5" x="132.0" style="fill:#cdcdcd">░░</text>
 <text y="77.5" x="144.0" style="fill:#1a1818">▲▲▲▲▲</text>
 <text y="77.5" x="174.0" style="fill:#cdcdcd">░</text>
 </text>
 <text y="77.5" x="180.0" style="fill:#1a1818">▲<text y="89.0" x="0.0" style="fill:#cdcdcd">░░░░░░░</text>
-<text y="89.0" x="42.0" style="fill:#000000">■</text>
+<text y="89.0" x="42.0" style="fill:#000000">▝</text>
 <text y="89.0" x="48.0" style="fill:#cdcdcd">░░░░░░░</text>
-<text y="89.0" x="90.0" style="fill:#000000">■</text>
+<text y="89.0" x="90.0" style="fill:#000000">▅</text>
 <text y="89.0" x="96.0" style="fill:#783908">└┐</text>
-<text y="89.0" x="108.0" style="fill:#000000">■</text>
+<text y="89.0" x="108.0" style="fill:#000000">▅</text>
 <text y="89.0" x="114.0" style="fill:#783908">└──</text>
 <text y="89.0" x="132.0" style="fill:#783908">┐</text>
 <text y="89.0" x="138.0" style="fill:#cdcdcd">░░</text>
@@ -121,32 +121,32 @@
 <text y="89.0" x="174.0" style="fill:#cdcdcd">░</text>
 </text>
 <text y="89.0" x="180.0" style="fill:#1a1818">▲<text y="100.5" x="0.0" style="fill:#cdcdcd">░░░░░░░░░░░░░░░░</text>
-<text y="100.5" x="96.0" style="fill:#000000">■</text>
+<text y="100.5" x="96.0" style="fill:#000000">▅</text>
 <text y="100.5" x="102.0" style="fill:#783908">│</text>
 <text y="100.5" x="108.0" style="fill:#cdcdcd">░</text>
 <text y="100.5" x="114.0" style="fill:#268dca">▐</text>
 <text y="100.5" x="120.0" style="fill:#cdcdcd">░</text>
-<text y="100.5" x="126.0" style="fill:#000000">■</text>
+<text y="100.5" x="126.0" style="fill:#000000">▘</text>
 <text y="100.5" x="132.0" style="fill:#783908">│</text>
 <text y="100.5" x="138.0" style="fill:#cdcdcd">░░░░░░</text>
 <text y="100.5" x="174.0" style="fill:#1a1818">▲</text>
 ▲<text y="112.0" x="0.0" style="fill:#cdcdcd">░░░░░░░░░░░░░░</text>
-<text y="112.0" x="84.0" style="fill:#000000">■</text>
-<text y="112.0" x="90.0" style="fill:#783908">──</text>
-<text y="112.0" x="102.0" style="fill:#783908">┴──</text>
-<text y="112.0" x="120.0" style="fill:#000000">■</text>
+<text y="112.0" x="84.0" style="fill:#000000">▝</text>
+<text y="112.0" x="90.0" style="fill:#783908">╶─</text>
+<text y="112.0" x="102.0" style="fill:#783908">┴─╴</text>
+<text y="112.0" x="120.0" style="fill:#000000">▝</text>
 <text y="112.0" x="126.0" style="fill:#783908">┌┘</text>
 <text y="112.0" x="138.0" style="fill:#cdcdcd">░░░░░░</text>
 <text y="112.0" x="174.0" style="fill:#1a1818">▲</text>
 ▲<text y="123.5" x="0.0" style="fill:#cdcdcd">░░░░░░░░░░░░░░░░░</text>
-<text y="123.5" x="102.0" style="fill:#000000">■■■</text>
-<text y="123.5" x="120.0" style="fill:#783908">─</text>
+<text y="123.5" x="102.0" style="fill:#000000">■▗▅</text>
+<text y="123.5" x="120.0" style="fill:#783908">╶</text>
 <text y="123.5" x="126.0" style="fill:#783908">┘</text>
 <text y="123.5" x="132.0" style="fill:#cdcdcd">░░</text>
 <text y="123.5" x="144.0" style="fill:#1a1818">▲▲▲▲▲▲</text>
 </text>
 <text y="123.5" x="180.0" style="fill:#cdcdcd">░<text y="135.0" x="0.0" style="fill:#cdcdcd">░░░░░░░░░░░░░░░░░░░░░</text>
-<text y="135.0" x="126.0" style="fill:#000000">■</text>
+<text y="135.0" x="126.0" style="fill:#000000">▝</text>
 <text y="135.0" x="132.0" style="fill:#cdcdcd">░░</text>
 <text y="135.0" x="144.0" style="fill:#1a1818">▲▲▲▲▲▲</text>
 ▲<text y="146.5" x="0.0" style="fill:#cdcdcd">░░░░░░░░░░░░░░░░░░░░░░░░</text>

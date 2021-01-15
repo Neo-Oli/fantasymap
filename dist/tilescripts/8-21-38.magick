@@ -1,4 +1,4 @@
-#c3fd785cbc64b74668469bcfd911d5d9  -
+#3f0d4261ec3b0ed451d92c4046ca4afe  -
 #!/usr/bin/env magick-script
 -size 258x256
 xc:none
@@ -48,11 +48,11 @@ xc:none
 -fill '#34d231'
 -draw "text 0.0,51.405 '█'"
 -fill '#1b8b1b'
--draw "text 0.0,51.405 '⌄'"
+-draw "text 0.0,51.405 'ˈ'"
 -fill '#34d231'
 -draw "text 25.724850000000004,51.405 '█'"
 -fill '#1b8b1b'
--draw "text 25.724850000000004,51.405 '⌄'"
+-draw "text 25.724850000000004,51.405 '\"'"
 -fill '#268dca'
 -draw "text 51.44970000000001,51.405 '█'"
 -fill '#ffffff'
@@ -92,7 +92,7 @@ xc:none
 -fill '#34d231'
 -draw "text 25.724850000000004,102.81 '█'"
 -fill '#1b8b1b'
--draw "text 25.724850000000004,102.81 '⌄'"
+-draw "text 25.724850000000004,102.81 'ˈ'"
 -fill '#268dca'
 -draw "text 51.44970000000001,102.81 '█'"
 -fill '#ffffff'
@@ -132,7 +132,7 @@ xc:none
 -fill '#34d231'
 -draw "text 25.724850000000004,154.215 '█'"
 -fill '#1b8b1b'
--draw "text 25.724850000000004,154.215 '⌄'"
+-draw "text 25.724850000000004,154.215 '\"'"
 -fill '#268dca'
 -draw "text 51.44970000000001,154.215 '█'"
 -fill '#ffffff'

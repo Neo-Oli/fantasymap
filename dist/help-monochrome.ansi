@@ -5,9 +5,9 @@
  W ~ water_shallow 
  D ≈ water_deep 
  , ░ sand 
- . ⌄ grass 
+ . " grass 
  i ▓ snow 
- y █ farmland 
+ y ▉ farmland 
  U ░ dirt 
  ; ░ gravel 
  a ● forest on grass 
@@ -16,7 +16,7 @@
  u * palmforest on sand 
  ü * palmforest on plaza 
  ú * palmforest on grass 
- b ■ building 
+ b ▝ building 
  B █ multiblock_building 
  L ◘ lighthouse 
  O ○ Well 
@@ -36,8 +36,12 @@
  6 ┻ street_6 
  7 ┫ street_7 
  8 ┣ street_8 
+ ╹ ╹ street_10 
+ ╻ ╻ street_11 
+ ╺ ╺ street_12 
+ ╸ ╸ street_12 
  9 ▪ street_none 
- + │ dirtroad 
+ + ╷ dirtroad 
  ₀ ┼ dirtroad_crossing 
  ~ ─ dirtroad_h 
  ! │ dirtroad_v 
@@ -50,6 +54,10 @@
  ₇ ┤ dirtroad_7 
  ₈ ├ dirtroad_8 
  ₉ ▪ dirtroad_none 
+ ╴ ╴ dirtroad_9 
+ ╶ ╶ dirtroad_10 
+ ╵ ╵ dirtroad_11 
+ ╷ ╷ dirtroad_12 
  r ║ rails 
  ⁰ ╬ rails_crossing 
  = ═ rails_h 
@@ -63,9 +71,17 @@
  ⁷ ╣ rails_7 
  ⁸ ╠ rails_8 
  ⁹ ▪ rails_none 
- c ╫ street-rails-crossing-horizontal 
+ ⒑ ═ rails_10 
+ ⒒ ═ rails_11 
+ ⒓ ║ rails_12 
+ ⒔ ║ rails_13 
+ c ╫ street-rails-crossing 
  C ╪ street-rails-crossing-vertical 
- * │ waterway 
+ * ╵ waterway 
+ ⑮ ╴ waterway_9 
+ ⑯ ╶ waterway_10 
+ ⑰ ╵ waterway_11 
+ ⑱ ╷ waterway_12 
  ⑩ ┼ waterway_crossing 
  ⑪ ─ waterway_h 
  ⑫ │ waterway_v 
@@ -78,8 +94,8 @@
  ⑦ ┤ waterway_7 
  ⑧ ├ waterway_8 
  ⑨ ▪ waterway_none 
+ q ═ bridge 
  j ║ bridgev 
- q ═ bridgeh 
  p ▐ pool_right 
  P ▌ pool_left 
  o ● pond 
@@ -87,4 +103,22 @@
  t . animal 
  ? ? label 
  $ $ debugger 
- E E error
+ E E error 
+ N N null space for testing 
+ ¬ ▗ wall 
+ ᴬ ▐ wall_v 
+ ᴮ ▀ wall_h 
+ ᴰ ▜ wall_crossing 
+ ᴱ ▜ wall_1 
+ ᴳ ▐ wall_2 
+ ᴴ ▀ wall_3 
+ ᴵ ▝ wall_4 
+ ᴶ ▜ wall_5 
+ ᴷ ▀ wall_6 
+ ᴸ ▜ wall_7 
+ ᴹ ▐ wall_8 
+ ᴺ ▝ wall_10 
+ ᴼ ▗ wall_11 
+ ᴾ ▝ wall_12 
+ ᴿ ▘ wall_12 
+ ᵀ ▜ wall_none
