@@ -197,7 +197,7 @@ history-sources:
 history: $(HISTORY)
 
 dist/history/history.webm: $(HISTORY)
-	ffmpeg -y -r 1 -pattern_type glob -i 'dist/history/*.png' $@
+	ffmpeg -y -r 5 -pattern_type glob -i 'dist/history/*.png' $@
 
 dist/history/%.svg: history/%.map $(BASE)
 	@mkdir -p dist/history
