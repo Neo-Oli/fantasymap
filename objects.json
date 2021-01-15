@@ -42,9 +42,9 @@
   },
   "y": {
     "name": "farmland",
-    "r": "█",
+    "r": "▉",
     "color": "yellow",
-    "bgcolor": "on_green"
+    "bgcolor": "on_iyellow"
   },
   "U": {
     "name": "dirt",
