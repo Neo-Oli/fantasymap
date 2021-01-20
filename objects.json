@@ -67,44 +67,32 @@
     "bgcolor": "s_average",
     "bgcolor_fallback": "on_iyellow"
   },
-  "tree_top_0": {
-    "name": "tree_top_0",
-    "r": "▆",
+  "tree_top": {
+    "name": "tree_top",
+    "r": [
+      "▆",
+      "▊",
+      "▉",
+      "▅",
+      "▇",
+      "▓",
+      "▙",
+      "▟"
+    ],
     "color": "igreen",
     "bgcolor": "s_average",
     "bgcolor_fallback": "on_green"
   },
-  "tree_top_1": {
-    "name": "tree_top_1",
-    "r": "▊",
-    "type": "tree_top_0"
-  },
-  "tree_top_2": {
-    "name": "tree_top_2",
-    "r": "▅",
-    "type": "tree_top_0"
-  },
-  "tree_top_3": {
-    "name": "tree_top_3",
-    "r": "█",
-    "type": "tree_top_0"
-  },
-  "tree_bottom_0": {
-    "name": "tree_bottom_0",
-    "r": "╹",
+  "tree_bottom": {
+    "name": "tree_bottom",
+    "r": [
+      "╹",
+      "╵",
+      "┸"
+    ],
     "color": "black",
     "bgcolor": "s_average",
     "bgcolor_fallback": "on_igreen"
-  },
-  "tree_bottom_1": {
-    "name": "tree_bottom_1",
-    "r": "╵",
-    "type": "tree_bottom_0"
-  },
-  "tree_bottom_2": {
-    "name": "tree_bottom_2",
-    "r": "┸",
-    "type": "tree_bottom_0"
   },
   "ä": {
     "name": "forest on plaza",

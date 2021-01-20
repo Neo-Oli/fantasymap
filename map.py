@@ -406,40 +406,13 @@ def render(
                     else:
                         c = objectsByName["water_deep"]
                 elif c == objectsByName["forest on grass"]:
-                    numtrees_top = 1
-                    while (
-                        i - numtrees_top > -1
-                        and grid[i - numtrees_top][j]
-                        == objectsByName["forest on grass"]
+                    if (
+                        upc == objectsByName["forest on grass"]
+                        and downc != objectsByName["forest on grass"]
                     ):
-                        numtrees_top += 1
-                    if numtrees_top % 2:
-                        if downc == objectsByName["forest on grass"]:
-                            numtrees_left = 1
-                            while (
-                                j - numtrees_left > 0
-                                and grid[i][j - numtrees_left]
-                                == objectsByName["forest on grass"]
-                            ):
-                                numtrees_left += 1
-                            mod = (numtrees_left - 1) % 4
-                            c = objectsByName["tree_top_{}".format(mod)]
-                            if upc != objectsByName["forest on grass"]:
-                                try:
-                                    backgroundcolor = objects[upc]["bgcolor"]
-                                except:
-                                    pass
+                        c = objectsByName["tree_bottom"]
                     else:
-                        numtrees_right = 1
-                        if j + 1 in grid[i]:
-                            while (
-                                j + numtrees_right <= linewidth
-                                and grid[i][j + numtrees_right]
-                                == objectsByName["forest on grass"]
-                            ):
-                                numtrees_right += 1
-                        mod = (numtrees_right - 1) % 3
-                        c = objectsByName["tree_bottom_{}".format(mod)]
+                        c = objectsByName["tree_top"]
                 elif objects[c]["connects"]:
                     nc = ""
                     for ofType in findObjects(objects[c]["name"], objects, ["type"]):
