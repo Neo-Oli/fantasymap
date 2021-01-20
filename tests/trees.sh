@@ -6,6 +6,6 @@ a
 a'
 expected='
 ▆
-╹
-●'
+▆
+╹'
 maptest "$input" "$expected"
