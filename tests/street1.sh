@@ -12,4 +12,4 @@ N╻NN
 N┣╸N
 N╹NN
 NNNN'
-maptest "$input" "$expected"
+maptest "$input" "$expected" "-b"

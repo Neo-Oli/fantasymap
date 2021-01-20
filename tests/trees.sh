@@ -8,4 +8,4 @@ expected='
 ▆
 ▆
 ╹'
-maptest "$input" "$expected"
+maptest "$input" "$expected" "-b"

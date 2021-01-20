@@ -8,4 +8,4 @@ expected='
 NNN
 N▪N
 NNN'
-maptest "$input" "$expected"
+maptest "$input" "$expected" "-b"
