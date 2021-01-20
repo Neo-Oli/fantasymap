@@ -411,7 +411,7 @@ def render(
                         and downc != objectsByName["forest on grass"]
                     ):
                         c = objectsByName["tree_bottom"]
-                    else:
+                    elif downc == objectsByName["forest on grass"]:
                         c = objectsByName["tree_top"]
                 elif objects[c]["connects"]:
                     nc = ""
