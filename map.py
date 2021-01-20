@@ -568,7 +568,7 @@ def render(
                 pos = "{},{}".format(posx, posy)
                 cout += "\n-fill '{}'".format(colors["hex"][backgroundcolor])
                 quote = ""
-                if character in ["'", "`","\""]:
+                if character in ["'", "`", '"']:
                     quote = "\\"
                 cout += "\n".join(
                     [
