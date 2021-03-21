@@ -567,15 +567,18 @@ def render(
                 posy = (i - starty) * scale * hshift
                 pos = "{},{}".format(posx, posy)
                 cout += "\n-fill '{}'".format(colors["hex"][backgroundcolor])
-                quote = ""
-                if character in ["'", "`", '"']:
-                    quote = "\\"
+                if character == "'":
+                    quote = '\\"\'\\"'.format(character)
+                elif character in ["'", "`", '"']:
+                    quote = "'\\{}'".format(character)
+                else:
+                    quote = "'{}'".format(character)
                 cout += "\n".join(
                     [
                         "",
                         "-draw \"text {} '█'\"".format(pos),
                         "-fill '{}'".format(colors["hex"][foregroundcolor]),
-                        "-draw \"text {} '{}{}'\"".format(pos, quote, character),
+                        '-draw "text {} {}"'.format(pos, quote),
                     ]
                 )
             elif mode == "txt":
