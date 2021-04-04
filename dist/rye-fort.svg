@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="246.0px" height="241.5px" viewBox="0 0 246.0 241.5" style="letter-spacing:0em;font-size:10px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
-    <text y="8.5" x="0.0" style="fill:#783908">████████████████████████████████████████</text>
-█<text y="20.0" x="0.0" style="fill:#783908">████████████████████████████████████████</text>
-█<text y="31.5" x="0.0" style="fill:#783908">████████████████████████████████████████</text>
-</text>
-<text y="31.5" x="240.0" style="fill:#783908">█<text y="43.0" x="0.0" style="fill:#783908">████████████████████████████████████████</text>
-</text>
-<text y="43.0" x="240.0" style="fill:#34d231">█<text y="54.5" x="0.0" style="fill:#783908">███████████████████</text>
+    <text y="8.5" x="0.0" style="fill:#783908">█████████████████████████████████████████</text>
+<text y="20.0" x="0.0" style="fill:#783908">█████████████████████████████████████████</text>
+<text y="31.5" x="0.0" style="fill:#783908">████████████████████████████████████████</text>
+<text y="31.5" x="240.0" style="fill:#783908">█</text>
+<text y="43.0" x="0.0" style="fill:#783908">████████████████████████████████████████</text>
+<text y="43.0" x="240.0" style="fill:#34d231">█</text>
+<text y="54.5" x="0.0" style="fill:#783908">███████████████████</text>
 <text y="54.5" x="114.0" style="fill:#783908">██████████</text>
 <text y="54.5" x="174.0" style="fill:#783908">███████████</text>
-</text>
-<text y="54.5" x="240.0" style="fill:#34d231">█<text y="66.0" x="0.0" style="fill:#783908">███████████████████</text>
+<text y="54.5" x="240.0" style="fill:#34d231">█</text>
+<text y="66.0" x="0.0" style="fill:#783908">███████████████████</text>
 <text y="66.0" x="114.0" style="fill:#eab91c">██████████</text>
 <text y="66.0" x="174.0" style="fill:#783908">█</text>
 <text y="66.0" x="180.0" style="fill:#783908">███</text>
@@ -18,23 +18,23 @@
 <text y="66.0" x="204.0" style="fill:#783908">███</text>
 <text y="66.0" x="222.0" style="fill:#783908">██</text>
 <text y="66.0" x="234.0" style="fill:#34d231">█</text>
-</text>
-<text y="66.0" x="240.0" style="fill:#34d231">█<text y="77.5" x="0.0" style="fill:#783908">█████████████████████████████</text>
+<text y="66.0" x="240.0" style="fill:#34d231">█</text>
+<text y="77.5" x="0.0" style="fill:#783908">█████████████████████████████</text>
 <text y="77.5" x="174.0" style="fill:#783908">█</text>
 <text y="77.5" x="180.0" style="fill:#34d231">███</text>
 <text y="77.5" x="198.0" style="fill:#34d231">█</text>
 <text y="77.5" x="204.0" style="fill:#34d231">███</text>
 <text y="77.5" x="222.0" style="fill:#783908">█</text>
 <text y="77.5" x="228.0" style="fill:#34d231">█</text>
-<text y="77.5" x="234.0" style="fill:#34d231">█</text>
-█<text y="89.0" x="0.0" style="fill:#783908">███████████████████</text>
+<text y="77.5" x="234.0" style="fill:#34d231">██</text>
+<text y="89.0" x="0.0" style="fill:#783908">███████████████████</text>
 <text y="89.0" x="114.0" style="fill:#783908">██████████</text>
 <text y="89.0" x="174.0" style="fill:#34d231">██</text>
 <text y="89.0" x="186.0" style="fill:#268dca">█</text>
 <text y="89.0" x="192.0" style="fill:#34d231">███</text>
 <text y="89.0" x="210.0" style="fill:#268dca">█</text>
-<text y="89.0" x="216.0" style="fill:#34d231">████</text>
-█<text y="100.5" x="0.0" style="fill:#783908">██████████████████</text>
+<text y="89.0" x="216.0" style="fill:#34d231">█████</text>
+<text y="100.5" x="0.0" style="fill:#783908">██████████████████</text>
 <text y="100.5" x="108.0" style="fill:#783908">█</text>
 <text y="100.5" x="114.0" style="fill:#34d231">█</text>
 <text y="100.5" x="120.0" style="fill:#783908">█</text>
@@ -42,16 +42,16 @@
 <text y="100.5" x="168.0" style="fill:#cdcdcd">████</text>
 <text y="100.5" x="192.0" style="fill:#268dca">█████</text>
 <text y="100.5" x="222.0" style="fill:#34d231">██</text>
-<text y="100.5" x="234.0" style="fill:#268dca">█</text>
-█<text y="112.0" x="0.0" style="fill:#783908">█████████████████</text>
+<text y="100.5" x="234.0" style="fill:#268dca">██</text>
+<text y="112.0" x="0.0" style="fill:#783908">█████████████████</text>
 <text y="112.0" x="102.0" style="fill:#783908">█</text>
 <text y="112.0" x="108.0" style="fill:#34d231">██</text>
 <text y="112.0" x="120.0" style="fill:#cdcdcd">█</text>
 <text y="112.0" x="126.0" style="fill:#cdcdcd">███████████</text>
 <text y="112.0" x="192.0" style="fill:#268dca">█████</text>
 <text y="112.0" x="222.0" style="fill:#34d231">██</text>
-<text y="112.0" x="234.0" style="fill:#268dca">█</text>
-█<text y="123.5" x="0.0" style="fill:#783908">████████████████</text>
+<text y="112.0" x="234.0" style="fill:#268dca">██</text>
+<text y="123.5" x="0.0" style="fill:#783908">████████████████</text>
 <text y="123.5" x="96.0" style="fill:#783908">█</text>
 <text y="123.5" x="102.0" style="fill:#34d231">███</text>
 <text y="123.5" x="120.0" style="fill:#cdcdcd">█</text>
@@ -61,8 +61,8 @@
 <text y="123.5" x="162.0" style="fill:#cdcdcd">█</text>
 <text y="123.5" x="168.0" style="fill:#cdcdcd">█</text>
 <text y="123.5" x="174.0" style="fill:#cdcdcd">███</text>
-<text y="123.5" x="192.0" style="fill:#268dca">████████</text>
-█<text y="135.0" x="0.0" style="fill:#783908">████████████████</text>
+<text y="123.5" x="192.0" style="fill:#268dca">█████████</text>
+<text y="135.0" x="0.0" style="fill:#783908">████████████████</text>
 <text y="135.0" x="96.0" style="fill:#34d231">████</text>
 <text y="135.0" x="120.0" style="fill:#cdcdcd">█</text>
 <text y="135.0" x="126.0" style="fill:#cdcdcd">█</text>
@@ -71,8 +71,8 @@
 <text y="135.0" x="144.0" style="fill:#cdcdcd">██</text>
 <text y="135.0" x="156.0" style="fill:#cdcdcd">███</text>
 <text y="135.0" x="174.0" style="fill:#cdcdcd">███</text>
-<text y="135.0" x="192.0" style="fill:#268dca">████████</text>
-█<text y="146.5" x="0.0" style="fill:#783908">████████████████</text>
+<text y="135.0" x="192.0" style="fill:#268dca">█████████</text>
+<text y="146.5" x="0.0" style="fill:#783908">████████████████</text>
 <text y="146.5" x="96.0" style="fill:#34d231">████</text>
 <text y="146.5" x="120.0" style="fill:#cdcdcd">█</text>
 <text y="146.5" x="126.0" style="fill:#cdcdcd">███</text>
@@ -83,8 +83,8 @@
 <text y="146.5" x="174.0" style="fill:#cdcdcd">███</text>
 <text y="146.5" x="192.0" style="fill:#268dca">████</text>
 <text y="146.5" x="216.0" style="fill:#0d49e4">██</text>
-<text y="146.5" x="228.0" style="fill:#268dca">██</text>
-█<text y="158.0" x="0.0" style="fill:#783908">██</text>
+<text y="146.5" x="228.0" style="fill:#268dca">███</text>
+<text y="158.0" x="0.0" style="fill:#783908">██</text>
 <text y="158.0" x="12.0" style="fill:#34d231">███</text>
 <text y="158.0" x="30.0" style="fill:#783908">███████████</text>
 <text y="158.0" x="96.0" style="fill:#34d231">████</text>
@@ -98,8 +98,8 @@
 <text y="158.0" x="186.0" style="fill:#eab91c">█</text>
 <text y="158.0" x="192.0" style="fill:#268dca">███</text>
 <text y="158.0" x="210.0" style="fill:#0d49e4">█████</text>
-</text>
-<text y="158.0" x="240.0" style="fill:#268dca">█<text y="169.5" x="0.0" style="fill:#783908">██</text>
+<text y="158.0" x="240.0" style="fill:#268dca">█</text>
+<text y="169.5" x="0.0" style="fill:#783908">██</text>
 <text y="169.5" x="12.0" style="fill:#34d231">████</text>
 <text y="169.5" x="36.0" style="fill:#783908">█</text>
 <text y="169.5" x="42.0" style="fill:#783908">██████████</text>
@@ -115,8 +115,8 @@
 <text y="169.5" x="186.0" style="fill:#eab91c">█</text>
 <text y="169.5" x="192.0" style="fill:#268dca">███</text>
 <text y="169.5" x="210.0" style="fill:#0d49e4">█████</text>
-</text>
-<text y="169.5" x="240.0" style="fill:#268dca">█<text y="181.0" x="0.0" style="fill:#783908">██</text>
+<text y="169.5" x="240.0" style="fill:#268dca">█</text>
+<text y="181.0" x="0.0" style="fill:#783908">██</text>
 <text y="181.0" x="12.0" style="fill:#34d231">██</text>
 <text y="181.0" x="24.0" style="fill:#34d231">█</text>
 <text y="181.0" x="30.0" style="fill:#34d231">██</text>
@@ -130,20 +130,20 @@
 <text y="181.0" x="174.0" style="fill:#34d231">███</text>
 <text y="181.0" x="192.0" style="fill:#268dca">█████</text>
 <text y="181.0" x="222.0" style="fill:#0d49e4">███</text>
-</text>
-<text y="181.0" x="240.0" style="fill:#268dca">█<text y="192.5" x="0.0" style="fill:#783908">███</text>
+<text y="181.0" x="240.0" style="fill:#268dca">█</text>
+<text y="192.5" x="0.0" style="fill:#783908">███</text>
 <text y="192.5" x="18.0" style="fill:#34d231">████</text>
 <text y="192.5" x="42.0" style="fill:#783908">██████████████████████</text>
 <text y="192.5" x="174.0" style="fill:#34d231">████</text>
 <text y="192.5" x="198.0" style="fill:#268dca">█████</text>
-<text y="192.5" x="228.0" style="fill:#0d49e4">██</text>
-█<text y="204.0" x="0.0" style="fill:#783908">██</text>
+<text y="192.5" x="228.0" style="fill:#0d49e4">███</text>
+<text y="204.0" x="0.0" style="fill:#783908">██</text>
 <text y="204.0" x="12.0" style="fill:#783908">█</text>
 <text y="204.0" x="18.0" style="fill:#34d231">███</text>
 <text y="204.0" x="36.0" style="fill:#783908">█████████████████████████</text>
 <text y="204.0" x="186.0" style="fill:#34d231">███</text>
-<text y="204.0" x="204.0" style="fill:#268dca">██████</text>
-█<text y="215.5" x="0.0" style="fill:#783908">██</text>
+<text y="204.0" x="204.0" style="fill:#268dca">███████</text>
+<text y="215.5" x="0.0" style="fill:#783908">██</text>
 <text y="215.5" x="12.0" style="fill:#34d231">███</text>
 <text y="215.5" x="30.0" style="fill:#34d231">█</text>
 <text y="215.5" x="36.0" style="fill:#783908">██████</text>
@@ -151,8 +151,8 @@
 <text y="215.5" x="162.0" style="fill:#783908">████</text>
 <text y="215.5" x="186.0" style="fill:#34d231">█</text>
 <text y="215.5" x="192.0" style="fill:#34d231">██</text>
-<text y="215.5" x="204.0" style="fill:#268dca">██████</text>
-█<text y="227.0" x="0.0" style="fill:#783908">██</text>
+<text y="215.5" x="204.0" style="fill:#268dca">███████</text>
+<text y="227.0" x="0.0" style="fill:#783908">██</text>
 <text y="227.0" x="12.0" style="fill:#34d231">█</text>
 <text y="227.0" x="18.0" style="fill:#34d231">█</text>
 <text y="227.0" x="24.0" style="fill:#34d231">████████</text>
@@ -161,8 +161,8 @@
 <text y="227.0" x="162.0" style="fill:#34d231">███████</text>
 <text y="227.0" x="204.0" style="fill:#268dca">████</text>
 <text y="227.0" x="228.0" style="fill:#34d231">██</text>
-</text>
-<text y="227.0" x="240.0" style="fill:#268dca">█<text y="238.5" x="0.0" style="fill:#783908">██</text>
+<text y="227.0" x="240.0" style="fill:#268dca">█</text>
+<text y="238.5" x="0.0" style="fill:#783908">██</text>
 <text y="238.5" x="12.0" style="fill:#34d231">██</text>
 <text y="238.5" x="24.0" style="fill:#eab91c">█</text>
 <text y="238.5" x="30.0" style="fill:#34d231">█</text>
@@ -174,18 +174,18 @@
 <text y="238.5" x="144.0" style="fill:#783908">██</text>
 <text y="238.5" x="156.0" style="fill:#34d231">██</text>
 <text y="238.5" x="168.0" style="fill:#268dca">██████████</text>
-<text y="238.5" x="228.0" style="fill:#34d231">██</text>
-█<text y="8.5" x="0.0" style="fill:#1b8b1b">▓▊▆▆▇▆▇▉▙▙▙▊▉▉▆▉▉▇▆▊▓▊▊▙▙▟▉▓▉▆▙▇▓▙▆▅▟▟▇▙</text>
-▓<text y="20.0" x="0.0" style="fill:#1b8b1b">▆▙▇▇▆▟▅▉▙▓▊▊▊▓▙▉▉▊▓▆▇▟▓▉▙▆▉▟▇▅▟▟▉▓▇▇▓▇▆▊</text>
-▇<text y="31.5" x="0.0" style="fill:#1b8b1b">▇▉▉▇▙▅▓▟▊▆▆▆▅▓▟▙▊▅▊▆▉▊▊▙▇▊▓▊▆▅▇▇▟▆▊▙▊▙▊▙</text>
-</text>
-<text y="31.5" x="240.0" style="fill:#000000">╹<text y="43.0" x="0.0" style="fill:#1b8b1b">▇▟▉▓▟▇▟▇▊▇▆▉▇▙▓▙▟▊▙▅▓▅▊▉▊▊▆▟▆▊▆▇▉▅▉▙▟▙▅▉</text>
-</text>
-<text y="43.0" x="240.0" style="fill:#1b8b1b">⌄<text y="54.5" x="0.0" style="fill:#1b8b1b">▙▇▉▓▅▅▇▊▟▊▙▅▓▇▓▙▙▉▅</text>
+<text y="238.5" x="228.0" style="fill:#34d231">███</text>
+<text y="8.5" x="0.0" style="fill:#1b8b1b">▓▊▆▆▇▆▇▉▙▙▙▊▉▉▆▉▉▇▆▊▓▊▊▙▙▟▉▓▉▆▙▇▓▙▆▅▟▟▇▙▓</text>
+<text y="20.0" x="0.0" style="fill:#1b8b1b">▆▙▇▇▆▟▅▉▙▓▊▊▊▓▙▉▉▊▓▆▇▟▓▉▙▆▉▟▇▅▟▟▉▓▇▇▓▇▆▊▇</text>
+<text y="31.5" x="0.0" style="fill:#1b8b1b">▇▉▉▇▙▅▓▟▊▆▆▆▅▓▟▙▊▅▊▆▉▊▊▙▇▊▓▊▆▅▇▇▟▆▊▙▊▙▊▙</text>
+<text y="31.5" x="240.0" style="fill:#000000">╹</text>
+<text y="43.0" x="0.0" style="fill:#1b8b1b">▇▟▉▓▟▇▟▇▊▇▆▉▇▙▓▙▟▊▙▅▓▅▊▉▊▊▆▟▆▊▆▇▉▅▉▙▟▙▅▉</text>
+<text y="43.0" x="240.0" style="fill:#1b8b1b">⌄</text>
+<text y="54.5" x="0.0" style="fill:#1b8b1b">▙▇▉▓▅▅▇▊▟▊▙▅▓▇▓▙▙▉▅</text>
 <text y="54.5" x="114.0" style="fill:#000000">┸┸╹╵╹╵┸╹╵╹</text>
 <text y="54.5" x="174.0" style="fill:#1b8b1b">▓▊▙▆▇▆▉▅▓▟▆</text>
-</text>
-<text y="54.5" x="240.0" style="fill:#1b8b1b">ˈ<text y="66.0" x="0.0" style="fill:#1b8b1b">▆▊▙▆▊▉▓▙▊▊▇▊▇▇▓▓▊▆▟</text>
+<text y="54.5" x="240.0" style="fill:#1b8b1b">ˈ</text>
+<text y="66.0" x="0.0" style="fill:#1b8b1b">▆▊▙▆▊▉▓▙▊▊▇▊▇▇▓▓▊▆▟</text>
 <text y="66.0" x="114.0" style="fill:#000000"> Rye Fort </text>
 <text y="66.0" x="174.0" style="fill:#1b8b1b">▆</text>
 <text y="66.0" x="180.0" style="fill:#000000">┸╹╹</text>
@@ -193,23 +193,23 @@
 <text y="66.0" x="204.0" style="fill:#000000">╵┸╹</text>
 <text y="66.0" x="222.0" style="fill:#1b8b1b">▅▊</text>
 <text y="66.0" x="234.0" style="fill:#000000">┸</text>
-</text>
-<text y="66.0" x="240.0" style="fill:#1b8b1b">"<text y="77.5" x="0.0" style="fill:#1b8b1b">▇▉▟▉▆▅▓▓▊▇▇▓▆▓▇▆▟▙▊▟▟▙▇▟▇▉▉▇▅</text>
+<text y="66.0" x="240.0" style="fill:#1b8b1b">"</text>
+<text y="77.5" x="0.0" style="fill:#1b8b1b">▇▉▟▉▆▅▓▓▊▇▇▓▆▓▇▆▟▙▊▟▟▙▇▟▇▉▉▇▅</text>
 <text y="77.5" x="174.0" style="fill:#000000">╹</text>
 <text y="77.5" x="180.0" style="fill:#1b8b1b">ˈˈˈ</text>
 <text y="77.5" x="198.0" style="fill:#000000">╹</text>
 <text y="77.5" x="204.0" style="fill:#1b8b1b">ˈ⌄ˈ</text>
 <text y="77.5" x="222.0" style="fill:#000000">┸</text>
 <text y="77.5" x="228.0" style="fill:#000000">╵</text>
-<text y="77.5" x="234.0" style="fill:#1b8b1b">"</text>
-ˈ<text y="89.0" x="0.0" style="fill:#1b8b1b">▆▉▙▙▓▉▅▟▆▅▇▅▙▆▆▙▓▆▙</text>
+<text y="77.5" x="234.0" style="fill:#1b8b1b">"ˈ</text>
+<text y="89.0" x="0.0" style="fill:#1b8b1b">▆▉▙▙▓▉▅▟▆▅▇▅▙▆▆▙▓▆▙</text>
 <text y="89.0" x="114.0" style="fill:#000000">╵┸╹┸╹╹╹╹┸╵</text>
 <text y="89.0" x="174.0" style="fill:#1b8b1b">⌄⌄</text>
 <text y="89.0" x="186.0" style="fill:#ffffff">~</text>
 <text y="89.0" x="192.0" style="fill:#1b8b1b">ˈ⌄ˈ</text>
 <text y="89.0" x="210.0" style="fill:#ffffff">~</text>
-<text y="89.0" x="216.0" style="fill:#1b8b1b">ˈ⌄"ˈ</text>
-⌄<text y="100.5" x="0.0" style="fill:#1b8b1b">▇▇▊▆▊▇▓▙▉▆▉▓▅▊▉▇▟▓</text>
+<text y="89.0" x="216.0" style="fill:#1b8b1b">ˈ⌄"ˈ⌄</text>
+<text y="100.5" x="0.0" style="fill:#1b8b1b">▇▇▊▆▊▇▓▙▉▆▉▓▅▊▉▇▟▓</text>
 <text y="100.5" x="108.0" style="fill:#000000">╵</text>
 <text y="100.5" x="114.0" style="fill:#1b8b1b">"</text>
 <text y="100.5" x="120.0" style="fill:#1a1818">▐</text>
@@ -217,16 +217,16 @@
 <text y="100.5" x="168.0" style="fill:#000000">████</text>
 <text y="100.5" x="192.0" style="fill:#ffffff">~~~~~</text>
 <text y="100.5" x="222.0" style="fill:#1b8b1b">⌄⌄</text>
-<text y="100.5" x="234.0" style="fill:#ffffff">~</text>
-~<text y="112.0" x="0.0" style="fill:#1b8b1b">▇▅▙▇▆▇▆▟▟▊▊▉▊▓▓▅▓</text>
+<text y="100.5" x="234.0" style="fill:#ffffff">~~</text>
+<text y="112.0" x="0.0" style="fill:#1b8b1b">▇▅▙▇▆▇▆▟▟▊▊▉▊▓▓▅▓</text>
 <text y="112.0" x="102.0" style="fill:#000000">╹</text>
 <text y="112.0" x="108.0" style="fill:#1b8b1b">"⌄</text>
 <text y="112.0" x="120.0" style="fill:#1a1818">▐</text>
 <text y="112.0" x="126.0" style="fill:#000000">██▗▖▝▅█████</text>
 <text y="112.0" x="192.0" style="fill:#ffffff">~~~~~</text>
 <text y="112.0" x="222.0" style="fill:#1b8b1b">"ˈ</text>
-<text y="112.0" x="234.0" style="fill:#ffffff">~</text>
-~<text y="123.5" x="0.0" style="fill:#1b8b1b">▊▟▙▙▟▅▙▆▙▆▊▓▇▓▙▙</text>
+<text y="112.0" x="234.0" style="fill:#ffffff">~~</text>
+<text y="123.5" x="0.0" style="fill:#1b8b1b">▊▟▙▙▟▅▙▆▙▆▊▓▇▓▙▙</text>
 <text y="123.5" x="96.0" style="fill:#000000">┸</text>
 <text y="123.5" x="102.0" style="fill:#1b8b1b">⌄ˈˈ</text>
 <text y="123.5" x="120.0" style="fill:#1a1818">▐</text>
@@ -236,8 +236,8 @@
 <text y="123.5" x="162.0" style="fill:#000000">█</text>
 <text y="123.5" x="168.0" style="fill:#783908">╷</text>
 <text y="123.5" x="174.0" style="fill:#000000">███</text>
-<text y="123.5" x="192.0" style="fill:#ffffff">~~~~~~~~</text>
-~<text y="135.0" x="0.0" style="fill:#000000">╵╵╵┸╹╹╵╵╵╹╹╹┸┸╵╵</text>
+<text y="123.5" x="192.0" style="fill:#ffffff">~~~~~~~~~</text>
+<text y="135.0" x="0.0" style="fill:#000000">╵╵╵┸╹╹╵╵╵╹╹╹┸┸╵╵</text>
 <text y="135.0" x="96.0" style="fill:#1b8b1b">⌄""⌄</text>
 <text y="135.0" x="120.0" style="fill:#1a1818">▐</text>
 <text y="135.0" x="126.0" style="fill:#000000">┸</text>
@@ -246,8 +246,8 @@
 <text y="135.0" x="144.0" style="fill:#000000">▅■</text>
 <text y="135.0" x="156.0" style="fill:#783908">├─┤</text>
 <text y="135.0" x="174.0" style="fill:#000000">███</text>
-<text y="135.0" x="192.0" style="fill:#ffffff">~~~~~~~~</text>
-~<text y="146.5" x="0.0" style="fill:#000000">────────────────</text>
+<text y="135.0" x="192.0" style="fill:#ffffff">~~~~~~~~~</text>
+<text y="146.5" x="0.0" style="fill:#000000">────────────────</text>
 <text y="146.5" x="96.0" style="fill:#783908">───╴</text>
 <text y="146.5" x="120.0" style="fill:#1a1818">▐</text>
 <text y="146.5" x="126.0" style="fill:#783908">╶┬┘</text>
@@ -258,8 +258,8 @@
 <text y="146.5" x="174.0" style="fill:#1a1818">▝▀▜</text>
 <text y="146.5" x="192.0" style="fill:#ffffff">~~~~</text>
 <text y="146.5" x="216.0" style="fill:#ffffff">≈≈</text>
-<text y="146.5" x="228.0" style="fill:#ffffff">~~</text>
-~<text y="158.0" x="0.0" style="fill:#1b8b1b">▟▟</text>
+<text y="146.5" x="228.0" style="fill:#ffffff">~~~</text>
+<text y="158.0" x="0.0" style="fill:#1b8b1b">▟▟</text>
 <text y="158.0" x="12.0" style="fill:#1b8b1b">⌄"●</text>
 <text y="158.0" x="30.0" style="fill:#1b8b1b">●▉▆▆▟▊▊▆▙▓▓</text>
 <text y="158.0" x="96.0" style="fill:#1b8b1b">⌄""⌄</text>
@@ -273,8 +273,8 @@
 <text y="158.0" x="186.0" style="fill:#1a1818">▐</text>
 <text y="158.0" x="192.0" style="fill:#ffffff">~~~</text>
 <text y="158.0" x="210.0" style="fill:#ffffff">≈≈≈≈≈</text>
-</text>
-<text y="158.0" x="240.0" style="fill:#ffffff">~<text y="169.5" x="0.0" style="fill:#1b8b1b">▟▉</text>
+<text y="158.0" x="240.0" style="fill:#ffffff">~</text>
+<text y="169.5" x="0.0" style="fill:#1b8b1b">▟▉</text>
 <text y="169.5" x="12.0" style="fill:#1b8b1b">ˈˈˈˈ</text>
 <text y="169.5" x="36.0" style="fill:#000000">┸</text>
 <text y="169.5" x="42.0" style="fill:#1b8b1b">▙▉▇▆▊▅▅▅▅▙</text>
@@ -290,8 +290,8 @@
 <text y="169.5" x="186.0" style="fill:#1a1818">▐</text>
 <text y="169.5" x="192.0" style="fill:#ffffff">~~~</text>
 <text y="169.5" x="210.0" style="fill:#ffffff">≈≈≈≈≈</text>
-</text>
-<text y="169.5" x="240.0" style="fill:#ffffff">~<text y="181.0" x="0.0" style="fill:#1b8b1b">▙▉</text>
+<text y="169.5" x="240.0" style="fill:#ffffff">~</text>
+<text y="181.0" x="0.0" style="fill:#1b8b1b">▙▉</text>
 <text y="181.0" x="12.0" style="fill:#1b8b1b">⌄"</text>
 <text y="181.0" x="24.0" style="fill:#1a1818">▲</text>
 <text y="181.0" x="30.0" style="fill:#1b8b1b">ˈ⌄</text>
@@ -305,20 +305,20 @@
 <text y="181.0" x="174.0" style="fill:#1a1818">▀▀▀</text>
 <text y="181.0" x="192.0" style="fill:#ffffff">~~~~~</text>
 <text y="181.0" x="222.0" style="fill:#ffffff">≈≈≈</text>
-</text>
-<text y="181.0" x="240.0" style="fill:#ffffff">~<text y="192.5" x="0.0" style="fill:#1b8b1b">▅▙▊</text>
+<text y="181.0" x="240.0" style="fill:#ffffff">~</text>
+<text y="192.5" x="0.0" style="fill:#1b8b1b">▅▙▊</text>
 <text y="192.5" x="18.0" style="fill:#1b8b1b">"⌄"ˈ</text>
 <text y="192.5" x="42.0" style="fill:#1b8b1b">▅▓▅▓▆▆▅▉▊▓▆▟▉▅▇▓▇▙▉▆▟▟</text>
 <text y="192.5" x="174.0" style="fill:#1b8b1b">"ˈˈ"</text>
 <text y="192.5" x="198.0" style="fill:#ffffff">~~~~~</text>
-<text y="192.5" x="228.0" style="fill:#ffffff">≈≈</text>
-≈<text y="204.0" x="0.0" style="fill:#1b8b1b">▊▉</text>
+<text y="192.5" x="228.0" style="fill:#ffffff">≈≈≈</text>
+<text y="204.0" x="0.0" style="fill:#1b8b1b">▊▉</text>
 <text y="204.0" x="12.0" style="fill:#000000">╹</text>
 <text y="204.0" x="18.0" style="fill:#1b8b1b">●●▉</text>
 <text y="204.0" x="36.0" style="fill:#1b8b1b">▅▅▅▟▙▅▟▊▉▅▙▓▙▅▇▊▓▉▉▟▙▙▉▆▙</text>
 <text y="204.0" x="186.0" style="fill:#1b8b1b">▙⌄ˈ</text>
-<text y="204.0" x="204.0" style="fill:#ffffff">~~~~~~</text>
-~<text y="215.5" x="0.0" style="fill:#1b8b1b">▊▉</text>
+<text y="204.0" x="204.0" style="fill:#ffffff">~~~~~~~</text>
+<text y="215.5" x="0.0" style="fill:#1b8b1b">▊▉</text>
 <text y="215.5" x="12.0" style="fill:#1b8b1b">⌄ˈ"</text>
 <text y="215.5" x="30.0" style="fill:#000000">╵</text>
 <text y="215.5" x="36.0" style="fill:#000000">╵╵╹┸┸╵</text>
@@ -326,8 +326,8 @@
 <text y="215.5" x="162.0" style="fill:#000000">╹┸┸┸</text>
 <text y="215.5" x="186.0" style="fill:#000000">╵</text>
 <text y="215.5" x="192.0" style="fill:#1b8b1b">●⌄</text>
-<text y="215.5" x="204.0" style="fill:#ffffff">~~~~~~</text>
-~<text y="227.0" x="0.0" style="fill:#1b8b1b">▟▊</text>
+<text y="215.5" x="204.0" style="fill:#ffffff">~~~~~~~</text>
+<text y="227.0" x="0.0" style="fill:#1b8b1b">▟▊</text>
 <text y="227.0" x="12.0" style="fill:#1b8b1b">⌄</text>
 <text y="227.0" x="18.0" style="fill:#1a1818">▲</text>
 <text y="227.0" x="24.0" style="fill:#1b8b1b">""ˈˈ⌄⌄⌄⌄</text>
@@ -336,8 +336,8 @@
 <text y="227.0" x="162.0" style="fill:#1b8b1b">"ˈˈ⌄⌄"ˈ</text>
 <text y="227.0" x="204.0" style="fill:#ffffff">~~~~</text>
 <text y="227.0" x="228.0" style="fill:#1b8b1b">⌄ˈ</text>
-</text>
-<text y="227.0" x="240.0" style="fill:#ffffff">~<text y="238.5" x="0.0" style="fill:#1b8b1b">▉▅</text>
+<text y="227.0" x="240.0" style="fill:#ffffff">~</text>
+<text y="238.5" x="0.0" style="fill:#1b8b1b">▉▅</text>
 <text y="238.5" x="12.0" style="fill:#1b8b1b">"⌄</text>
 <text y="238.5" x="24.0" style="fill:#cdcdcd">░</text>
 <text y="238.5" x="30.0" style="fill:#1a1818">▲</text>
@@ -349,5 +349,5 @@
 <text y="238.5" x="144.0" style="fill:#000000">┸┸</text>
 <text y="238.5" x="156.0" style="fill:#1b8b1b">⌄"</text>
 <text y="238.5" x="168.0" style="fill:#ffffff">~~~~~~~~~~</text>
-<text y="238.5" x="228.0" style="fill:#1b8b1b">ˈ"</text>
-"</svg>
+<text y="238.5" x="228.0" style="fill:#1b8b1b">ˈ""</text>
+</svg>
