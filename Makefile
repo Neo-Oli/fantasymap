@@ -199,6 +199,7 @@ history-sources:
 .PHONY: history
 history: dist/history/history.webm
 
+.INTERMEDIATE: dist/history/input.txt
 dist/history/input.txt: $(HISTORY)
 	for f in dist/history/*.png;do \
 		last=$$f;\
