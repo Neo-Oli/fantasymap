@@ -10,7 +10,7 @@ from collections import Counter
 
 big = 1000000000
 heightstretch = 2
-DISABLE_ERRORS=False
+DISABLE_ERRORS = False
 
 
 def config(filename):
@@ -180,7 +180,7 @@ def main():
         if options.t:
             mode = "txt"
         global DISABLE_ERRORS
-        DISABLE_ERRORS=options.q
+        DISABLE_ERRORS = options.q
         output = render(
             map,
             mode,
