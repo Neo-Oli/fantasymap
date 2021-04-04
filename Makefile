@@ -208,11 +208,10 @@ dist/history/%.png: dist/history/%.svg $(BASE)
 	@mkdir -p dist/history
 	source=history/$$(basename $< .svg).map;\
 	width=$$(echo -n "$$(head -n1 "$$source"|sed 's/#.*$$//' )"|wc -m);\
-	width=$$((width*2));\
 	height=$$(cat "$$source"|wc -l);\
-	height=$$((height*4));\
+	height=$$((height*2));\
 	echo $${width}x$${height}
-	convert -size $${width}x$${height} $< $@
+	convert -size $${width}x$${height} $< -resize 1920x1080 -background black -gravity center -extent 1920x1080 $@
 
 test: $(subst .sh,.sh.tested,$(wildcard tests/*))
 
