@@ -325,7 +325,7 @@ def render(
             continue
         if grid[i] == "":
             continue
-        linewidth = min([len(grid[i]), endx])
+        linewidth = min([len(grid[i]), endx + 1 ])
         output["width"] = max(output["width"], linewidth)
         lastc = ""
         lastfg = ""
