@@ -8,7 +8,7 @@ import json
 import math
 from collections import Counter
 
-realpath=(os.path.dirname(os.path.realpath(__file__)))
+realpath = os.path.dirname(os.path.realpath(__file__))
 big = 1000000000
 heightstretch = 2
 DISABLE_ERRORS = False
@@ -129,7 +129,9 @@ def main():
     parser.description = "Best viewed when piped into `less -RS`"
     parser.add_argument("file", help="Mapfile")
     parser.add_argument("-x", action="store_true", help="print HTML instead of ANSI")
-    parser.add_argument("-H", action="store_true", help="Disable header output for html and SVG mode")
+    parser.add_argument(
+        "-H", action="store_true", help="Disable header output for html and SVG mode"
+    )
     parser.add_argument(
         "-v",
         action="store_true",
@@ -193,7 +195,7 @@ def main():
             options.endy,
             options.S,
             not options.T,
-            not options.H
+            not options.H,
         )
         display(output)
 
@@ -208,7 +210,7 @@ def render(
     endy=big,
     scale="12",
     truecolor=False,
-    header=True
+    header=True,
 ):
     block = "█"
     build = uuid4()
@@ -239,7 +241,7 @@ def render(
             width = argwidth
 
     if mode == "html":
-        with open(os.path.join(realpath,"map.css"), "r") as myfile:
+        with open(os.path.join(realpath, "map.css"), "r") as myfile:
             css = myfile.read()
         csscolors = ""
         for key in colors["hex"]:
@@ -248,8 +250,8 @@ def render(
                 prefix = "background-"
             color = ".map .{}{{{}color:{};}}".format(key, prefix, colors["hex"][key])
             csscolors = "{}{}".format(csscolors, color)
-        htmlstart=""
-        htmlend=""
+        htmlstart = ""
+        htmlend = ""
         if header:
             htmlstart = """
         <!DOCTYPE html>
@@ -267,9 +269,7 @@ def render(
             htmlend = """
             </body>
         </html>"""
-        htmlstart = """{}<div class="map">""".format(
-            htmlstart
-        )
+        htmlstart = """{}<div class="map">""".format(htmlstart)
         htmlend = """</div>
             {}""".format(
             htmlend
@@ -286,14 +286,14 @@ def render(
 
         outputbg = ""
         outputfg = ""
-        svgstart=""
-        svgend=""
+        svgstart = ""
+        svgend = ""
         if header:
             svgstart = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="{}px" height="{}px" viewBox="0 0 {} {}" style="letter-spacing:0em;font-size:{}px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
     """.format(
-            picwidth, picheight, picwidth, picheight, scale
-        )
+                picwidth, picheight, picwidth, picheight, scale
+            )
             svgend = """</svg>"""
 
         svglineend = "</text>\n"
@@ -333,7 +333,7 @@ def render(
             continue
         if grid[i] == "":
             continue
-        linewidth = min([len(grid[i]), endx + 1 ])
+        linewidth = min([len(grid[i]), endx + 1])
         output["width"] = max(output["width"], linewidth)
         lastc = ""
         lastfg = ""
