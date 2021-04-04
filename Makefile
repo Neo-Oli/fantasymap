@@ -201,7 +201,7 @@ dist/history/history.webm: $(HISTORY)
 
 dist/history/%.svg: history/%.map $(BASE)
 	@mkdir -p dist/history
-	./map.py -s $< > $@
+	./map.py -q -s $< > $@
 
 dist/history/%.png: dist/history/%.svg $(BASE)
 	@mkdir -p dist/history

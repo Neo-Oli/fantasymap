@@ -10,6 +10,7 @@ from collections import Counter
 
 big = 1000000000
 heightstretch = 2
+DISABLE_ERRORS=False
 
 
 def config(filename):
@@ -20,7 +21,8 @@ def config(filename):
 
 
 def error(err):
-    print(err, file=sys.stderr)
+    if not DISABLE_ERRORS:
+        print(err, file=sys.stderr)
 
 
 def progress(done, ultimate):
@@ -137,6 +139,7 @@ def main():
     parser.add_argument("-s", action="store_true", help="Create svg image")
     parser.add_argument("-l", action="store_true", help="Show Mapmakers legend")
     parser.add_argument("-T", action="store_true", help="Disable true color ansi")
+    parser.add_argument("-q", action="store_true", help="Disable printing of errors")
     parser.add_argument(
         "-t", action="store_true", help="Output input text (cuts map file)"
     )
@@ -176,6 +179,8 @@ def main():
             mode = "svg"
         if options.t:
             mode = "txt"
+        global DISABLE_ERRORS
+        DISABLE_ERRORS=options.q
         output = render(
             map,
             mode,
