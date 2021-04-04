@@ -8,6 +8,7 @@ import json
 import math
 from collections import Counter
 
+realpath=(os.path.dirname(os.path.realpath(__file__)))
 big = 1000000000
 heightstretch = 2
 DISABLE_ERRORS = False
