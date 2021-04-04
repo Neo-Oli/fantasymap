@@ -132,7 +132,7 @@ dist/recipes/%.rec: $(REQ)
 .PHONY: _fast_source
 _fast_source: $(BASE)
 	mkdir -p dist/lines
-	i=0;\
+	i=1;\
 	while read line; do \
 		linename=$$(printf "%05d" $$i);\
 		old="";\
@@ -151,7 +151,7 @@ _fast_source: $(BASE)
 		i=$$((i+1));\
 	done < map.map
 
-linenum := $(patsubst %,dist/lines/%.ansi,$(shell seq -f %05g 000 $$(cat map.map|wc -l)))
+linenum := $(patsubst %,dist/lines/%.ansi,$(shell seq -f %05g 1 $$(cat map.map|wc -l)))
 
 dist/lines/%.ansi: dist/lines/%.txt
 	rec=$$(basename $<|cut -d'.' -f1);\
