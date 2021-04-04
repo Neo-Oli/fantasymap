@@ -128,6 +128,7 @@ def main():
     parser.description = "Best viewed when piped into `less -RS`"
     parser.add_argument("file", help="Mapfile")
     parser.add_argument("-x", action="store_true", help="print HTML instead of ANSI")
+    parser.add_argument("-H", action="store_true", help="Disable header output for html and SVG mode")
     parser.add_argument(
         "-v",
         action="store_true",
@@ -191,6 +192,7 @@ def main():
             options.endy,
             options.S,
             not options.T,
+            not options.H
         )
         display(output)
 
@@ -205,6 +207,7 @@ def render(
     endy=big,
     scale="12",
     truecolor=False,
+    header=True
 ):
     block = "█"
     build = uuid4()
@@ -235,7 +238,7 @@ def render(
             width = argwidth
 
     if mode == "html":
-        with open("map.css", "r") as myfile:
+        with open(os.path.join(realpath,"map.css"), "r") as myfile:
             css = myfile.read()
         csscolors = ""
         for key in colors["hex"]:
@@ -244,28 +247,29 @@ def render(
                 prefix = "background-"
             color = ".map .{}{{{}color:{};}}".format(key, prefix, colors["hex"][key])
             csscolors = "{}{}".format(csscolors, color)
-        htmlstart = """
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="UTF-8">
-        <style>
-        {}
-        {}
-        </style>
-        </head>
-        <body>""".format(
-            css, csscolors
-        )
-        htmlend = """
-        </body>
-    </html>"""
-        htmlstart = """{}
-            <div class="map">""".format(
+        htmlstart=""
+        htmlend=""
+        if header:
+            htmlstart = """
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="UTF-8">
+            <style>
+            {}
+            {}
+            </style>
+            </head>
+            <body>""".format(
+                css, csscolors
+            )
+            htmlend = """
+            </body>
+        </html>"""
+        htmlstart = """{}<div class="map">""".format(
             htmlstart
         )
-        htmlend = """
-            </div>
+        htmlend = """</div>
             {}""".format(
             htmlend
         )
@@ -281,12 +285,15 @@ def render(
 
         outputbg = ""
         outputfg = ""
-        svgstart = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        svgstart=""
+        svgend=""
+        if header:
+            svgstart = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="{}px" height="{}px" viewBox="0 0 {} {}" style="letter-spacing:0em;font-size:{}px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
     """.format(
             picwidth, picheight, picwidth, picheight, scale
         )
-        svgend = """</svg>"""
+            svgend = """</svg>"""
 
         svglineend = "</text>\n"
         output["prefix"] = svgstart
