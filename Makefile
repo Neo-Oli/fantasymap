@@ -68,14 +68,15 @@ $(filter-out dist/whole.png, $(subst recipes,dist,$(subst .rec,.png,$(wildcard r
 $(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
 dist/recipes\
 dist/vimrc\
+dist/history/history.webm\
 _fast
 
 HISTORY := \
 	$(subst history,dist/history,$(subst .map,.svg,$(wildcard history/*)))\
-	$(subst history,dist/history,$(subst .map,.png,$(wildcard history/*)))\
-	dist/history/history.webm
+	$(subst history,dist/history,$(subst .map,.png,$(wildcard history/*)))
+
 .PHONY: all
-all: $(ALL) dist/index.js $(HISTORY)
+all: $(ALL) dist/index.js
 
 dist/recipes/%: recipes/%.rec
 	cp -vr recipes dist/recipes
@@ -194,11 +195,27 @@ VENV/pyvenv.cfg: requirements.txt
 .PHONY: history-sources
 history-sources:
 	./history.sh
-.PHONY: history
-history: $(HISTORY)
 
-dist/history/history.webm: $(HISTORY)
-	ffmpeg -y -r 5 -pattern_type glob -i 'dist/history/*.png' $@
+.PHONY: history
+history: dist/history/history.webm
+
+dist/history/input.txt: $(HISTORY)
+	for f in dist/history/*.png;do \
+		last=$$f;\
+	done;\
+	for f in dist/history/*.png;do \
+		if [ "$$f" != "$$last" ];then \
+			echo "file '$$(basename $$f)'";\
+			echo "duration 1";\
+		else \
+			echo "file '$$(basename $$f)'";\
+			echo "duration 5";\
+			echo "file '$$(basename $$f)'";\
+		fi;\
+	done > $@
+
+dist/history/history.webm: dist/history/input.txt
+	ffmpeg -y -f concat -i $< -vf fps=30 $@
 
 dist/history/%.svg: history/%.map $(BASE)
 	@mkdir -p dist/history
