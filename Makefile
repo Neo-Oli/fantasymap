@@ -205,7 +205,13 @@ dist/history/%.svg: history/%.map $(BASE)
 
 dist/history/%.png: dist/history/%.svg $(BASE)
 	@mkdir -p dist/history
-	convert -size 2000x2000 $< $@
+	source=history/$$(basename $< .svg).map;\
+	width=$$(echo -n "$$(head -n1 "$$source"|sed 's/#.*$$//' )"|wc -m);\
+	width=$$((width*2));\
+	height=$$(cat "$$source"|wc -l);\
+	height=$$((height*4));\
+	echo $${width}x$${height}
+	convert -size $${width}x$${height} $< $@
 
 test: $(subst .sh,.sh.tested,$(wildcard tests/*))
 
