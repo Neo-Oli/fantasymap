@@ -150,7 +150,7 @@ _fast_source: $(BASE)
 		i=$$((i+1));\
 	done < map.map
 
-linenum := $(patsubst %,dist/lines/%.ansi,$(shell seq -f %05g 000 499))
+linenum := $(patsubst %,dist/lines/%.ansi,$(shell seq -f %05g 000 $$(cat map.map|wc -l)))
 
 dist/lines/%.ansi: dist/lines/%.txt
 	rec=$$(basename $<|cut -d'.' -f1);\
