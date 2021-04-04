@@ -1,4 +1,4 @@
-#21c27dee1d7e67018230f982a2456fac  -
+#74e72c55baa8aee665d022371c3ac105  -
 #!/usr/bin/env magick-script
 -size 258x256
 xc:none
@@ -77,14 +77,14 @@ xc:none
 -draw "text 180.07395000000002,51.405 '█'"
 -fill '#ffffff'
 -draw "text 180.07395000000002,51.405 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 205.79880000000003,51.405 '█'"
 -fill '#ffffff'
--draw "text 205.79880000000003,51.405 '~'"
--fill '#268dca'
+-draw "text 205.79880000000003,51.405 '≈'"
+-fill '#0d49e4'
 -draw "text 231.52365,51.405 '█'"
 -fill '#ffffff'
--draw "text 231.52365,51.405 '~'"
+-draw "text 231.52365,51.405 '≈'"
 -fill '#0d49e4'
 -draw "text 0.0,102.81 '█'"
 -fill '#ffffff'
@@ -117,14 +117,14 @@ xc:none
 -draw "text 180.07395000000002,102.81 '█'"
 -fill '#ffffff'
 -draw "text 180.07395000000002,102.81 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 205.79880000000003,102.81 '█'"
 -fill '#ffffff'
--draw "text 205.79880000000003,102.81 '~'"
--fill '#268dca'
+-draw "text 205.79880000000003,102.81 '≈'"
+-fill '#0d49e4'
 -draw "text 231.52365,102.81 '█'"
 -fill '#ffffff'
--draw "text 231.52365,102.81 '~'"
+-draw "text 231.52365,102.81 '≈'"
 -fill '#0d49e4'
 -draw "text 0.0,154.215 '█'"
 -fill '#ffffff'
@@ -157,14 +157,14 @@ xc:none
 -draw "text 180.07395000000002,154.215 '█'"
 -fill '#ffffff'
 -draw "text 180.07395000000002,154.215 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 205.79880000000003,154.215 '█'"
 -fill '#ffffff'
--draw "text 205.79880000000003,154.215 '~'"
--fill '#268dca'
+-draw "text 205.79880000000003,154.215 '≈'"
+-fill '#0d49e4'
 -draw "text 231.52365,154.215 '█'"
 -fill '#ffffff'
--draw "text 231.52365,154.215 '~'"
+-draw "text 231.52365,154.215 '≈'"
 -fill '#0d49e4'
 -draw "text 0.0,205.62 '█'"
 -fill '#ffffff'
@@ -201,9 +201,9 @@ xc:none
 -draw "text 205.79880000000003,205.62 '█'"
 -fill '#ffffff'
 -draw "text 205.79880000000003,205.62 '≈'"
--fill '#268dca'
+-fill '#0d49e4'
 -draw "text 231.52365,205.62 '█'"
 -fill '#ffffff'
--draw "text 231.52365,205.62 '~'"
+-draw "text 231.52365,205.62 '≈'"
 -crop 256x256+1+0
 -write png:-
