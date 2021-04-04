@@ -12,6 +12,7 @@ for c in $commits;do
         if [ "$map" != "$old" ];then
             old="$map"
             date="`git show -s --format=%ci $c 2>/dev/null`"
+            echo $date
             timestamp="`date +%s --date="$date"`"
             filename="history/${timestamp}"
             if [ ! -f "${filename}.map" ];then
