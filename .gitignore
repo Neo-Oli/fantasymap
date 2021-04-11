@@ -2,3 +2,4 @@
 VENV
 dist/lines
 dist/vimrc
+dist/fast.ansi
