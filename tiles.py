@@ -35,6 +35,7 @@ except FileNotFoundError:
 lines = map.split("\n")
 clines = cachemap.split("\n")
 files = os.listdir("dist/tilescripts/")
+
 del lines[-1]  # delete last, empty line
 del clines[-1]  # delete last, empty line
 h = len(lines)
@@ -58,10 +59,21 @@ for i in range(0, h, yi):
             xm = round(j / xi)
             ym = round(i / yi)
             name = "{}-{}-{}".format(z, xm, ym)
+            pngname = "{}/{}/{}.png".format(z, xm, ym)
             cachename = "{}.cache".format(name)
+            magickname = "{}.magick".format(name)
             if cachename not in files or old != new:
+                print("{} changed".format(name))
                 Path("dist/tilescripts/{}".format(cachename)).touch()
-                print("change detected in {}".format(name))
+            else:
+                print("{}".format(name))
+                if magickname in files:
+                    Path("dist/tilescripts/{}".format(magickname)).touch()
+                try:
+                    Path("dist/tiles/{}".format(pngname)).touch()
+                except FileNotFoundError:
+                    pass
+
 copyfile(mapfile, cachemapfile)
 magick = []
 png = []
