@@ -69,7 +69,6 @@ $(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monoc
 dist/recipes\
 dist/vimrc\
 dist/history/history.webm\
-_fast
 
 HISTORY := \
 	$(subst history,dist/history,$(subst .map,.svg,$(wildcard history/*)))\
@@ -133,47 +132,27 @@ dist/recipes/%.rec: $(REQ)
 	@mkdir -p dist/recipes
 	cp $< $@
 
-
-
-.PHONY: _fast_source
-_fast_source: $(BASE)
-	mkdir -p dist/lines
-	i=1;\
-	while read line; do \
-		linename=$$(printf "%05d" $$i);\
-		old="";\
-		if [ -f dist/lines/$${linename}.txt ];then \
-			old=$$(cat dist/lines/$${linename}.txt);\
-		fi;\
-		if [ "$$old" != "$$line" ];then \
-			echo "$$line" > dist/lines/$${linename}.txt;\
-			echo "line $${linename}.txt updated";\
-		else\
-			if [ -f dist/lines/$${linename}.ansi ]; then \
-				touch -r dist/lines/$${linename}.txt dist/lines/$${linename}.ansi;\
-			fi;\
-			echo "line $${linename}.txt";\
-		fi;\
-		i=$$((i+1));\
-	done < map.map
-
 linenum := $(patsubst %,dist/lines/%.ansi,$(shell seq -f %05g 1 $$(cat map.map|wc -l)))
 
-dist/lines/%.ansi: dist/lines/%.txt
-	rec=$$(basename $<|cut -d'.' -f1);\
-	./map.py map.map $$rec 0 $$rec 10000 > $@
+dist/lines/%.ansi: $(BASE)
+	rec=$$(basename $@|cut -d'.' -f1| sed 's/^0*//');\
+	coord="$$((rec - 1))";\
+	line=$$(sed "$${rec}q;d" map.map);\
+	if [ -f "$@.cache" ];then \
+		old="$$(cat $@.cache)";\
+	fi;\
+	if [ "$${line}" != "$$old" ];then \
+		./map.py map.map $$coord 0 $$coord 10000 > $@;\
+		echo "$$line" > $@.cache;\
+	else \
+		touch $@;\
+	fi
 
-.PHONY: _fast
 dist/fast.ansi: $(linenum)
 	cat $(linenum) > $@
 
-
-.PHONY: _fast
-_fast:
-	$(MAKE) _fast_source
-	$(MAKE) dist/fast.ansi
 .PHONY: fast
-fast: _fast
+fast: dist/fast.ansi
 	$(call display,dist/fast.ansi)
 
 .PHONY: tiles
