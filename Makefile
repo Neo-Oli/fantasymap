@@ -88,7 +88,7 @@ dist/index.js: $(ALL) dist/tiles/1/0/0.png
 		grep -v '\/tilescripts\/'|\
 		grep -v '\/lines\/'|\
 		grep -v '\/history\/'|\
-		grep -v '\/fast.ansi\/';\
+		grep -v '\/fast.ansi';\
 		echo ./dist/history/history.webm;\
 		)|\
 		sort|\
