@@ -22,7 +22,7 @@ os.system("mkdir -p dist/tilescripts")
 
 xi = 10
 yi = 5
-z = 8
+z = 9
 mapfile = "map.map"
 cachemapfile = "dist/tilescripts/cache.map"
 with open(mapfile, "r") as myfile:
