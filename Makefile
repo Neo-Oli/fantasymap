@@ -83,10 +83,15 @@ dist/recipes/%: recipes/%.rec
 
 dist/index.js: $(ALL) dist/tiles/1/0/0.png
 	cd dist;\
+		(\
 		find -type f |\
 		grep -v 'vimrc$$'|\
 		grep -v '\/tilescripts\/'|\
 		grep -v '\/lines\/'|\
+		grep -v '\/history\/'|\
+		grep -v '\/fast.ansi\/';\
+		echo ./dist/history/history.webm;\
+		)|\
 		sort|\
 		sed -e "s/^/import '/" -e "s/$$/'/" \
 		> index.js
