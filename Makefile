@@ -89,7 +89,7 @@ dist/index.js: $(ALL) dist/tiles/1/0/0.png
 		grep -v '\/lines\/'|\
 		grep -v '\/history\/'|\
 		grep -v '\/fast.ansi';\
-		echo ./dist/history/history.webm;\
+		echo ./history/history.webm;\
 		)|\
 		sort|\
 		sed -e "s/^/import '/" -e "s/$$/'/" \
