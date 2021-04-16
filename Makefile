@@ -134,7 +134,9 @@ dist/recipes/%.rec: $(REQ)
 
 linenum := $(patsubst %,dist/lines/%.ansi,$(shell seq -f %05g 1 $$(cat map.map|wc -l)))
 
-dist/lines/%.ansi: $(BASE)
+dist/lines:
+	mkdir -p $@
+dist/lines/%.ansi: $(BASE) dist/lines
 	rec=$$(basename $@|cut -d'.' -f1| sed 's/^0*//');\
 	coord="$$((rec - 1))";\
 	line=$$(sed "$${rec}q;d" map.map);\
@@ -145,7 +147,9 @@ dist/lines/%.ansi: $(BASE)
 		./map.py map.map $$coord 0 $$coord 10000 > $@;\
 		echo "$$line" > $@.cache;\
 	else \
-		touch $@;\
+		if [ -f $@ ];then \
+			touch $@;\
+		fi;\
 	fi
 
 dist/fast.ansi: $(linenum)
