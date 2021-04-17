@@ -69,6 +69,7 @@ $(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monoc
 dist/recipes\
 dist/vimrc\
 dist/history/history.webm\
+dist/whole-small.ong\
 
 HISTORY := \
 	$(subst history,dist/history,$(subst .map,.svg,$(wildcard history/*)))\
@@ -213,6 +214,14 @@ dist/history/%.svg: history/%.map $(BASE)
 dist/history/%.png: dist/history/%.svg $(BASE)
 	@mkdir -p dist/history
 	source=history/$$(basename $< .svg).map;\
+	width=$$(echo -n "$$(head -n1 "$$source"|sed 's/#.*$$//' )"|wc -m);\
+	height=$$(cat "$$source"|wc -l);\
+	height=$$((height*2));\
+	echo $${width}x$${height}
+	convert -size $${width}x$${height} $< -resize 1920x1080 -background black -gravity center -extent 1920x1080 $@
+
+dist/whole-small.png: dist/whole.svg $(BASE)
+	source=map.map;\
 	width=$$(echo -n "$$(head -n1 "$$source"|sed 's/#.*$$//' )"|wc -m);\
 	height=$$(cat "$$source"|wc -l);\
 	height=$$((height*2));\
