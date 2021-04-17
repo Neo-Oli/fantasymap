@@ -69,7 +69,7 @@ $(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monoc
 dist/recipes\
 dist/vimrc\
 dist/history/history.webm\
-dist/whole-small.ong\
+dist/whole-small.png\
 
 HISTORY := \
 	$(subst history,dist/history,$(subst .map,.svg,$(wildcard history/*)))\
