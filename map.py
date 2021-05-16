@@ -7,6 +7,7 @@ from uuid import uuid4
 import json
 import math
 from collections import Counter
+from css_html_js_minify import css_minify
 
 realpath = os.path.dirname(os.path.realpath(__file__))
 big = 1000000000
@@ -253,27 +254,24 @@ def render(
         htmlstart = ""
         htmlend = ""
         if header:
-            htmlstart = """
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <meta charset="UTF-8">
-            <style>
-            {}
-            {}
-            </style>
-            </head>
-            <body>""".format(
-                css, csscolors
+            htmlstart = "".join(
+                [
+                    "<!DOCTYPE html>",
+                    '<html lang="en">',
+                    "<head>",
+                    '<meta charset="UTF-8">',
+                    "<title>Map</title>",
+                    "<style>",
+                    css_minify(css),
+                    csscolors,
+                    "</style>",
+                    "</head>",
+                    "<body>",
+                ]
             )
-            htmlend = """
-            </body>
-        </html>"""
+            htmlend = "</body></html>"
         htmlstart = """{}<div class="map">""".format(htmlstart)
-        htmlend = """</div>
-            {}""".format(
-            htmlend
-        )
+        htmlend = """</div>{}""".format(htmlend)
         output["prefix"] = htmlstart
 
     elif mode == "svg":
@@ -620,7 +618,7 @@ def render(
             output["fg"][i]["chars"][j] = cout
             output["bg"][i]["chars"][j] = coutbg
         if mode == "html":
-            output["fg"][i]["postfix"] = "<br />"
+            output["fg"][i]["postfix"] = "<br>"
         elif mode == "txt":
             output["fg"][i]["postfix"] = "\n"
         elif mode == "ansi":

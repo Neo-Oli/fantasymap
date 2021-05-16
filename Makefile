@@ -25,6 +25,7 @@ edit: dist/vimrc
 
 dist/vimrc: map.py
 	mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py -V /dev/null > "$@"
 
 .PHONY: clean
@@ -96,38 +97,48 @@ dist/index.js: $(ALL) dist/tiles/1/0/0.png
 		sed -e "s/^/import '/" -e "s/$$/'/" \
 		> index.js
 
-BASE := map.py map.map objects.json colors.json getCoordinates.py
+BASE := map.py map.map objects.json colors.json getCoordinates.py VENV/pyvenv.cfg
 REQ := recipes/%.rec $(BASE)
 .PRECIOUS: dist/%
 dist/%.html: $(REQ)
 	@mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py -x map.map `./getCoordinates.py $<` > $@
 dist/%-monochrome.html: $(REQ)
 	@mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py -xb map.map `./getCoordinates.py $<` > $@
 dist/%-monochrome.ansi: $(REQ)
 	@mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py -b map.map `./getCoordinates.py $<` > $@
 dist/%-16color.ansi: $(REQ)
 	@mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py -T map.map `./getCoordinates.py $<` > $@
 dist/%.svg: $(REQ)
 	@mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py -s map.map `./getCoordinates.py $<` > $@
 dist/%-monochrome.svg: $(REQ)
 	@mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py -sb map.map `./getCoordinates.py $<` > $@
 dist/%.ansi: $(REQ)
 	@mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py map.map `./getCoordinates.py $<` > $@
 dist/%.txt: $(REQ)
 	@mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py -t map.map `./getCoordinates.py $<` > $@
 dist/%.png: $(REQ)
 	@mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py -iS 22.35 map.map `./getCoordinates.py $<` | magick-script - > $@
 dist/%-monochrome.png: $(REQ)
 	@mkdir -p dist
+	. VENV/bin/activate;\
 	./map.py -biS 22.35 map.map `./getCoordinates.py $<` | magick-script - > $@
 dist/recipes/%.rec: $(REQ)
 	@mkdir -p dist/recipes
@@ -138,6 +149,7 @@ linenum := $(patsubst %,dist/lines/%.ansi,$(shell seq -f %05g 1 $$(cat map.map|w
 dist/lines:
 	mkdir -p $@
 dist/lines/%.ansi: $(BASE) dist/lines
+	. VENV/bin/activate;\
 	rec=$$(basename $@|cut -d'.' -f1| sed 's/^0*//');\
 	coord="$$((rec - 1))";\
 	line=$$(sed "$${rec}q;d" map.map);\
@@ -209,6 +221,7 @@ dist/history/history.webm: dist/history/input.txt
 
 dist/history/%.svg: history/%.map $(BASE)
 	@mkdir -p dist/history
+	. VENV/bin/activate;\
 	./map.py -q -s $< > $@
 
 dist/history/%.png: dist/history/%.svg $(BASE)
