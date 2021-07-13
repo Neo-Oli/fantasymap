@@ -3,8 +3,16 @@ commits=`git log --pretty=format:'%H' --all --reverse`
 old=""
 for c in $commits;do
     for name in map.map mapfile.map map;do
-        map="`git show --encoding="UTF-8" $c:$name 2>/dev/null`"
-        if [ "$?" == 0 ];then
+        git show $c:$name 2>/dev/null > history/temp
+        if ! python3 -c "open(\"history/temp\",\"r\").read()";then
+            git show --encoding="UTF-8" $c:$name 2>/dev/null > history/temp
+            if ! python3 -c "open(\"history/temp\",\"r\").read()";then
+                echo "Error: File ${filename}.map not readable"
+                exit 1
+            fi
+        fi
+        map=$(<history/temp)
+        if [ -n "$map" ];then
             break
         fi
     done
@@ -17,14 +25,11 @@ for c in $commits;do
             filename="history/${timestamp}"
             if [ ! -f "${filename}.map" ];then
                 mkdir -p history
-                echo "$map" > "${filename}.map"
-            fi
-            if ! python3 -c "open(\"${filename}.map\",\"r\").read()";then
-                echo "Error: File ${filename}.map not readable"
-                exit 1
+                mv history/temp "${filename}.map"
             fi
         fi
     else
         echo error at $c
     fi
 done
+rm -f history/temp
