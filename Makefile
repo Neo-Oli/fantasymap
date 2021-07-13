@@ -23,7 +23,7 @@ i-%: dist/%.png
 edit: dist/vimrc
 	$(EDITOR) map.map -c ":so dist/vimrc"
 
-dist/vimrc: map.py
+dist/vimrc: $(BASE)
 	mkdir -p dist
 	. VENV/bin/activate;\
 	./map.py -V /dev/null > "$@"
