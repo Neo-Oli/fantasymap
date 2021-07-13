@@ -2,6 +2,24 @@ define display
 	less -RSF "$(1)"
 endef
 
+BASE := map.py map.map objects.json colors.json getCoordinates.py VENV/pyvenv.cfg
+REQ := recipes/%.rec $(BASE)
+
+ALL := \
+$(subst recipes,dist,$(subst .rec,.ansi,$(wildcard recipes/*)))\
+$(subst recipes,dist,$(subst .rec,.txt,$(wildcard recipes/*)))\
+$(subst recipes,dist,$(subst .rec,-monochrome.ansi,$(wildcard recipes/*)))\
+$(subst recipes,dist,$(subst .rec,-16color.ansi,$(wildcard recipes/*)))\
+$(subst recipes,dist,$(subst .rec,.html,$(wildcard recipes/*)))\
+$(subst recipes,dist,$(subst .rec,-monochrome.html,$(wildcard recipes/*)))\
+$(subst recipes,dist,$(subst .rec,.svg,$(wildcard recipes/*)))\
+$(subst recipes,dist,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
+$(subst recipes,dist/recipes,$(wildcard recipes/*))\
+$(filter-out dist/whole.png, $(subst recipes,dist,$(subst .rec,.png,$(wildcard recipes/*))))\
+$(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
+dist/vimrc\
+dist/history/history.webm\
+dist/whole-small.png\
 
 .PHONY: whole
 whole: dist/whole.ansi
@@ -56,21 +74,6 @@ compare:
 		tput cup 0 0;\
 	done
 
-ALL := \
-$(subst recipes,dist,$(subst .rec,.ansi,$(wildcard recipes/*)))\
-$(subst recipes,dist,$(subst .rec,.txt,$(wildcard recipes/*)))\
-$(subst recipes,dist,$(subst .rec,-monochrome.ansi,$(wildcard recipes/*)))\
-$(subst recipes,dist,$(subst .rec,-16color.ansi,$(wildcard recipes/*)))\
-$(subst recipes,dist,$(subst .rec,.html,$(wildcard recipes/*)))\
-$(subst recipes,dist,$(subst .rec,-monochrome.html,$(wildcard recipes/*)))\
-$(subst recipes,dist,$(subst .rec,.svg,$(wildcard recipes/*)))\
-$(subst recipes,dist,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
-$(subst recipes,dist/recipes,$(wildcard recipes/*))\
-$(filter-out dist/whole.png, $(subst recipes,dist,$(subst .rec,.png,$(wildcard recipes/*))))\
-$(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
-dist/vimrc\
-dist/history/history.webm\
-dist/whole-small.png\
 
 HISTORY := \
 	$(subst history,dist/history,$(subst .map,.svg,$(wildcard history/*)))\
@@ -94,8 +97,6 @@ dist/index.js: $(ALL) dist/tiles/1/0/0.png
 		sed -e "s/^/import '/" -e "s/$$/'/" \
 		> index.js
 
-BASE := map.py map.map objects.json colors.json getCoordinates.py VENV/pyvenv.cfg
-REQ := recipes/%.rec $(BASE)
 .PRECIOUS: dist/%
 dist/%.html: $(REQ)
 	@mkdir -p dist
