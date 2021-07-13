@@ -67,7 +67,6 @@ $(subst recipes,dist,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
 $(subst recipes,dist/recipes,$(wildcard recipes/*))\
 $(filter-out dist/whole.png, $(subst recipes,dist,$(subst .rec,.png,$(wildcard recipes/*))))\
 $(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
-dist/recipes\
 dist/vimrc\
 dist/history/history.webm\
 dist/whole-small.png\
@@ -78,9 +77,6 @@ HISTORY := \
 
 .PHONY: all
 all: $(ALL) dist/index.js
-
-dist/recipes/%: recipes/%.rec
-	cp -vr recipes dist/recipes
 
 dist/index.js: $(ALL) dist/tiles/1/0/0.png
 	cd dist;\
