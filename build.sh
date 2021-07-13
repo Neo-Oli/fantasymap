@@ -5,6 +5,7 @@ dependencies+=('python3')
 dependencies+=('optipng')
 dependencies+=('ttf-dejavu')
 dependencies+=('ffmpeg')
+dependencies+=('gcc')
 buildcommands[master]="
 export NOPROGRESS=true;
 git branch -D builder||:;
