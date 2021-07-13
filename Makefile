@@ -248,5 +248,6 @@ dist/whole-small.png: dist/whole.svg $(BASE)
 
 test: $(subst .sh,.sh.tested,$(wildcard tests/*))
 
-tests/%.sh.tested: tests/%.sh
+tests/%.sh.tested: tests/%.sh $(BASE)
+	. VENV/bin/activate;\
 	./$<
