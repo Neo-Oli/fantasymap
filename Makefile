@@ -152,7 +152,12 @@ dist/lines/%.ansi: $(BASE) dist/lines
 	. VENV/bin/activate;\
 	rec=$$(basename $@|cut -d'.' -f1| sed 's/^0*//');\
 	coord="$$((rec - 1))";\
-	line=$$(sed "$${rec}q;d" map.map);\
+	start=$$((rec-1));\
+	end=$$((rec+1));\
+	if [ "$$start" -lt "1" ]; then \
+		start=1;\
+	fi;\
+	line=$$(sed -n "$${start},$${end}p" map.map);\
 	if [ -f "$@.cache" ];then \
 		old="$$(cat $@.cache)";\
 	fi;\
