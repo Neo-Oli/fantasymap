@@ -31,6 +31,7 @@ dist/vimrc: $(BASE)
 .PHONY: clean
 clean:
 	@rm -fvr dist
+	@rm -fvr VENV
 
 .PHONY: compare
 COMP ?= oogle
