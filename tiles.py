@@ -93,6 +93,7 @@ for y in range(0, h, yi):
         magick.append("{}: {}".format(file, cachefile))
         magick.append("\t@echo Building $@")
         magick.append('\t@if [ ! -f "$@" ];then touch "$@";fi;\\')
+        magick.append('\t. ../../VENV/bin/activate;\\')
         magick.append(
             '\tres="`../../map.py -iS 44.7 ../../map.map {} {} {} {}`";\\'.format(
                 y, x, yy - 1, xx - 1
