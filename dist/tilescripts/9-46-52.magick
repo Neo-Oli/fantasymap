@@ -1,4 +1,4 @@
-#e5f64c9512a262152183f982b854cb1d  -
+#89ee932a16a454352c4e8ab52ea4f589  -
 #!/usr/bin/env magick-script
 -size 258x256
 xc:none
@@ -17,10 +17,10 @@ xc:none
 -draw "text 51.44970000000001,0.0 '█'"
 -fill '#ffffff'
 -draw "text 51.44970000000001,0.0 '~'"
--fill '#0d49e4'
+-fill '#268dca'
 -draw "text 77.17455000000001,0.0 '█'"
 -fill '#ffffff'
--draw "text 77.17455000000001,0.0 '≈'"
+-draw "text 77.17455000000001,0.0 '~'"
 -fill '#0d49e4'
 -draw "text 102.89940000000001,0.0 '█'"
 -fill '#ffffff'
@@ -57,10 +57,10 @@ xc:none
 -draw "text 51.44970000000001,51.405 '█'"
 -fill '#ffffff'
 -draw "text 51.44970000000001,51.405 '~'"
--fill '#0d49e4'
+-fill '#268dca'
 -draw "text 77.17455000000001,51.405 '█'"
 -fill '#ffffff'
--draw "text 77.17455000000001,51.405 '≈'"
+-draw "text 77.17455000000001,51.405 '~'"
 -fill '#0d49e4'
 -draw "text 102.89940000000001,51.405 '█'"
 -fill '#ffffff'
@@ -97,10 +97,10 @@ xc:none
 -draw "text 51.44970000000001,102.81 '█'"
 -fill '#ffffff'
 -draw "text 51.44970000000001,102.81 '~'"
--fill '#0d49e4'
+-fill '#268dca'
 -draw "text 77.17455000000001,102.81 '█'"
 -fill '#ffffff'
--draw "text 77.17455000000001,102.81 '≈'"
+-draw "text 77.17455000000001,102.81 '~'"
 -fill '#0d49e4'
 -draw "text 102.89940000000001,102.81 '█'"
 -fill '#ffffff'
@@ -137,10 +137,10 @@ xc:none
 -draw "text 51.44970000000001,154.215 '█'"
 -fill '#ffffff'
 -draw "text 51.44970000000001,154.215 '~'"
--fill '#0d49e4'
+-fill '#268dca'
 -draw "text 77.17455000000001,154.215 '█'"
 -fill '#ffffff'
--draw "text 77.17455000000001,154.215 '≈'"
+-draw "text 77.17455000000001,154.215 '~'"
 -fill '#0d49e4'
 -draw "text 102.89940000000001,154.215 '█'"
 -fill '#ffffff'
@@ -177,10 +177,10 @@ xc:none
 -draw "text 51.44970000000001,205.62 '█'"
 -fill '#ffffff'
 -draw "text 51.44970000000001,205.62 '~'"
--fill '#0d49e4'
+-fill '#268dca'
 -draw "text 77.17455000000001,205.62 '█'"
 -fill '#ffffff'
--draw "text 77.17455000000001,205.62 '≈'"
+-draw "text 77.17455000000001,205.62 '~'"
 -fill '#0d49e4'
 -draw "text 102.89940000000001,205.62 '█'"
 -fill '#ffffff'
