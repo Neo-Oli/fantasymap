@@ -7,6 +7,7 @@ rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 (,),(sand)
 (.).(grass)
 (i)i(snow)
+(l)l(lava)
 (y)y(farmland)
 (U)U(dirt)
 (;);(gravel)
