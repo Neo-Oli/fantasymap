@@ -40,6 +40,13 @@
     "bgcolor": "on_white",
     "bgcolor_average_overwrite": "on_white"
   },
+  "l": {
+    "name": "lava",
+    "r": "░",
+    "color": "yellow",
+    "bgcolor": "on_red",
+    "bgcolor_average_overwrite": "on_white"
+  },
   "y": {
     "name": "farmland",
     "r": "▉",
