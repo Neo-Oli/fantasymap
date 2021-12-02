@@ -234,7 +234,10 @@ dist/history/%.png: dist/history/%.svg $(BASE)
 	height=$$(cat "$$source"|wc -l);\
 	height=$$((height*2));\
 	echo $${width}x$${height}
-	convert -size $${width}x$${height} $< -resize 1920x1080 -background black -gravity center -extent 1920x1080 $@
+	date=$$(basename $<);\
+	date=$${date%.svg};\
+	date=$$(date -d @$$date);\
+	convert -size $${width}x$${height} $< -resize 1920x1080 -background black -gravity center -extent 1920x1080 -gravity Northwest -font DejaVu-Sans-mono -pointsize 30 -draw "text 60,10 '$$date'" $@
 
 dist/whole-small.png: dist/whole.svg $(BASE)
 	source=map.map;\
