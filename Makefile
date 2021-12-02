@@ -184,7 +184,9 @@ dist/tiles/1/0/0.png: $(BASE) tiles.py
 .PHONY: lint
 lint: VENV/pyvenv.cfg
 	. VENV/bin/activate;\
-	black *.py
+	for f in *.py; do \
+		black $$f;\
+	done
 	for f in *.json; do \
 		echo $$f;\
 		jq -M . $$f > $$f.pretty&&\
