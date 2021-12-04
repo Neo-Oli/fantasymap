@@ -3,3 +3,5 @@ VENV
 dist/lines
 dist/vimrc
 dist/fast.ansi
+dist/history/*.svg
+dist/history/*.png
