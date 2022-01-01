@@ -14,18 +14,15 @@ big = 1000000000
 heightstretch = 2
 DISABLE_ERRORS = False
 
-
 def config(filename):
     obj = {}
     dir_path = os.path.dirname(os.path.realpath(__file__))
     f = open("{}/{}".format(dir_path, filename))
     return json.load(f)
 
-
 def error(err):
     if not DISABLE_ERRORS:
         print(err, file=sys.stderr)
-
 
 def progress(done, ultimate):
     if "NOPROGRESS" not in os.environ:
@@ -46,7 +43,6 @@ def progress(done, ultimate):
                 end="",
             )
 
-
 def findObjects(name, objects, fields=["name"]):
     obj = []
     for c in objects:
@@ -55,7 +51,6 @@ def findObjects(name, objects, fields=["name"]):
                 if objects[c][field] == name:
                     obj.append(c)
     return obj
-
 
 def legend():
     map = "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#test\n"
@@ -69,7 +64,6 @@ def legend():
             continue
         map += "({}){}({})\n".format(key, key, o["name"])
     return map
-
 
 def vim():
     output = "setlocal nowrap\n"
@@ -91,14 +85,10 @@ def vim():
         i += 1
     print(output)
 
-
 def isNear(grid, i, j, fields, values, radius=5):
     for y in range(i - radius, i + radius):
         for x in range(j - radius, j + radius):
-            if (
-                math.sqrt(math.pow((x - j), 2) + math.pow((y - i) * heightstretch, 2))
-                < radius
-            ):
+            if (math.sqrt(math.pow((x - j), 2) + math.pow((y - i) * heightstretch, 2)) < radius):
                 if x == j and y == i:
                     continue
                 else:
@@ -106,33 +96,28 @@ def isNear(grid, i, j, fields, values, radius=5):
                         c = objects[grid[y][x]]
                         for field in fields:
                             if c[field] in values:
-                                if grid[y][0:x].count("(") <= grid[y][0 : x + 1].count(
-                                    ")"
-                                ):
+                                if grid[y][0:x].count("(") <= grid[y][0:x + 1].count(")"):
                                     return True
                     except IndexError:
                         pass
                     except KeyError:
                         pass
 
-
 def isLabel(grid, y, x):
-    return grid[y][0:x].count("(") > grid[y][0 : x + 1].count(")")
-
+    return grid[y][0:x].count("(") > grid[y][0:x + 1].count(")")
 
 def hexToRGB(color):
     color = color.lstrip("#")
-    return tuple(int(color[i : i + 2], 16) for i in (0, 2, 4))
-
+    return tuple(int(color[i:i + 2], 16) for i in (0, 2, 4))
 
 def main():
     parser = argparse.ArgumentParser()
     parser.description = "Best viewed when piped into `less -RS`"
     parser.add_argument("file", help="Mapfile")
     parser.add_argument("-x", action="store_true", help="print HTML instead of ANSI")
-    parser.add_argument(
-        "-H", action="store_true", help="Disable header output for html and SVG mode"
-    )
+    parser.add_argument("-H",
+                        action="store_true",
+                        help="Disable header output for html and SVG mode")
     parser.add_argument(
         "-v",
         action="store_true",
@@ -145,9 +130,7 @@ def main():
     parser.add_argument("-l", action="store_true", help="Show Mapmakers legend")
     parser.add_argument("-T", action="store_true", help="Disable true color ansi")
     parser.add_argument("-q", action="store_true", help="Disable printing of errors")
-    parser.add_argument(
-        "-t", action="store_true", help="Output input text (cuts map file)"
-    )
+    parser.add_argument("-t", action="store_true", help="Output input text (cuts map file)")
 
     parser.add_argument("starty", type=int, help="Start Y", nargs="?", default=0)
     parser.add_argument("startx", type=int, help="Start X", nargs="?", default=0)
@@ -199,7 +182,6 @@ def main():
             not options.H,
         )
         display(output)
-
 
 def render(
     map,
@@ -254,21 +236,19 @@ def render(
         htmlstart = ""
         htmlend = ""
         if header:
-            htmlstart = "".join(
-                [
-                    "<!DOCTYPE html>",
-                    '<html lang="en">',
-                    "<head>",
-                    '<meta charset="UTF-8">',
-                    "<title>Map</title>",
-                    "<style>",
-                    css_minify(css),
-                    csscolors,
-                    "</style>",
-                    "</head>",
-                    "<body>",
-                ]
-            )
+            htmlstart = "".join([
+                "<!DOCTYPE html>",
+                '<html lang="en">',
+                "<head>",
+                '<meta charset="UTF-8">',
+                "<title>Map</title>",
+                "<style>",
+                css_minify(css),
+                csscolors,
+                "</style>",
+                "</head>",
+                "<body>",
+            ])
             htmlend = "</body></html>"
         htmlstart = """{}<div class="map">""".format(htmlstart)
         htmlend = """</div>{}""".format(htmlend)
@@ -289,9 +269,7 @@ def render(
         if header:
             svgstart = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="{}px" height="{}px" viewBox="0 0 {} {}" style="letter-spacing:0em;font-size:{}px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
-    """.format(
-                picwidth, picheight, picwidth, picheight, scale
-            )
+    """.format(picwidth, picheight, picwidth, picheight, scale)
             svgend = """</svg>"""
 
         svglineend = "</text>\n"
@@ -303,17 +281,15 @@ def render(
 
         picheight = round((height * scale * hshift) - 1)
         picwidth = round((width * scale * wshift) + 1)
-        output["prefix"] = "\n".join(
-            [
-                "#!/usr/bin/env magick-script",
-                # "-monitor",
-                "-size {}x{}".format(picwidth, picheight),
-                "xc:none",
-                "-font DejaVu-Sans-mono",
-                "-pointsize {}".format(scale),
-                "-gravity NorthWest",
-            ]
-        )
+        output["prefix"] = "\n".join([
+            "#!/usr/bin/env magick-script",
+            # "-monitor",
+            "-size {}x{}".format(picwidth, picheight),
+            "xc:none",
+            "-font DejaVu-Sans-mono",
+            "-pointsize {}".format(scale),
+            "-gravity NorthWest",
+        ])
     output["width"] = wholewidth
     for i in range(0, len(grid)):
         output["height"] = wholeheight
@@ -395,32 +371,23 @@ def render(
                 character = c
             else:
                 if not c in objects:
-                    error(
-                        "Error at line:{} char:{} c:{}".format(
-                            str(i + 1), str(j + 1), c
-                        )
-                    )
+                    error("Error at line:{} char:{} c:{}".format(str(i + 1), str(j + 1), c))
                     c = "E"
                 if c == objectsByName["water"]:
-                    if (
-                        isNear(
+                    if (isNear(
                             grid,
                             i,
                             j,
-                            ["name", "type"],
-                            ["grass", "sand", "dirt"],
+                        ["name", "type"],
+                        ["grass", "sand", "dirt"],
                             5,
-                        )
-                        or isNear(grid, i, j, ["name", "type"], ["mountain"], 3)
-                    ):
+                    ) or isNear(grid, i, j, ["name", "type"], ["mountain"], 3)):
                         c = objectsByName["water_shallow"]
                     else:
                         c = objectsByName["water_deep"]
                 elif c == objectsByName["forest on grass"]:
-                    if (
-                        upc == objectsByName["forest on grass"]
-                        and downc != objectsByName["forest on grass"]
-                    ):
+                    if (upc == objectsByName["forest on grass"]
+                            and downc != objectsByName["forest on grass"]):
                         c = objectsByName["tree_bottom"]
                     elif downc == objectsByName["forest on grass"]:
                         c = objectsByName["tree_top"]
@@ -444,13 +411,10 @@ def render(
                             except KeyError:
                                 dirc = objects["N"]
                             ofc = objects[ofType]
-                            if (
-                                dirc["name"] in objects[c]["connects"]
-                                or dirc["type"] in objects[c]["connects"]
-                            ) and (
-                                connectDirection in dirc["connections"]
-                                or not dirc["connections"]
-                            ):
+                            if (dirc["name"] in objects[c]["connects"]
+                                    or dirc["type"] in objects[c]["connects"]) and (
+                                        connectDirection in dirc["connections"]
+                                        or not dirc["connections"]):
                                 if connectSelf not in ofc["connections"]:
                                     cont = True
                                     break
@@ -463,11 +427,7 @@ def render(
                         nc = ofType
                     c = nc
                 if not c in objects:
-                    error(
-                        "Error at line:{} char:{} c:{}".format(
-                            str(i + 1), str(j + 1), c
-                        )
-                    )
+                    error("Error at line:{} char:{} c:{}".format(str(i + 1), str(j + 1), c))
                     c = "E"
                 if not foregroundcolor:
                     foregroundcolor = objects[c]["color"]
@@ -488,8 +448,7 @@ def render(
                         index = surroundings % len(objects[c]["r"])
                     else:
                         index = math.floor(math.sin(j) * math.sin(i) * 100000) % len(
-                            objects[c]["r"]
-                        )
+                            objects[c]["r"])
                     character = objects[c]["r"][index]
             radius = 1
             while backgroundcolor == "s_average":
@@ -532,10 +491,8 @@ def render(
                         backgroundcolor = counted[0][0]
                 radius += 1
 
-            if (
-                backgroundcolor == "on_{}".format(foregroundcolor)
-                and "same_color_fallback" in objects[c]
-            ):
+            if (backgroundcolor == "on_{}".format(foregroundcolor)
+                    and "same_color_fallback" in objects[c]):
                 foregroundcolor = objects[c]["same_color_fallback"]
             if monochrome:
                 foregroundcolor = "white"
@@ -546,9 +503,8 @@ def render(
                 else:
                     if not j == startx:
                         cout += "</i>"
-                    cout += """<i class="{} {}">{}""".format(
-                        foregroundcolor, backgroundcolor, character
-                    )
+                    cout += """<i class="{} {}">{}""".format(foregroundcolor, backgroundcolor,
+                                                             character)
                 if j + 1 == linewidth:
                     cout += "</i>"
             elif mode == "svg":
@@ -561,15 +517,10 @@ def render(
                         coutbg += svglineend
                     yshift = movedown + (((i - starty) + 1) * (scale * hshift))
                     xshift = moveright + (((j - startx)) * (scale * wshift))
-                    text = """<text y="{}" x="{}" style="fill:{{}}">""".format(
-                        yshift, xshift
-                    )
-                    cout += """{}{}""".format(
-                        text.format(colors["hex"][foregroundcolor]), character
-                    )
-                    coutbg += """{}{}""".format(
-                        text.format(colors["hex"][backgroundcolor]), block
-                    )
+                    text = """<text y="{}" x="{}" style="fill:{{}}">""".format(yshift, xshift)
+                    cout += """{}{}""".format(text.format(colors["hex"][foregroundcolor]),
+                                              character)
+                    coutbg += """{}{}""".format(text.format(colors["hex"][backgroundcolor]), block)
                 if j + 1 == linewidth:
                     cout += svglineend
                     coutbg += svglineend
@@ -584,25 +535,19 @@ def render(
                     quote = "'\\{}'".format(character)
                 else:
                     quote = "'{}'".format(character)
-                cout += "\n".join(
-                    [
-                        "",
-                        "-draw \"text {} '█'\"".format(pos),
-                        "-fill '{}'".format(colors["hex"][foregroundcolor]),
-                        '-draw "text {} {}"'.format(pos, quote),
-                    ]
-                )
+                cout += "\n".join([
+                    "",
+                    "-draw \"text {} '█'\"".format(pos),
+                    "-fill '{}'".format(colors["hex"][foregroundcolor]),
+                    '-draw "text {} {}"'.format(pos, quote),
+                ])
             elif mode == "txt":
                 cout += orig
             elif mode == "ansi":
-                if (
-                    lastbg is not backgroundcolor or lastfg is not foregroundcolor
-                ) and not monochrome:
+                if (lastbg is not backgroundcolor
+                        or lastfg is not foregroundcolor) and not monochrome:
                     if not truecolor:
-                        cout += (
-                            colors["ansi"][foregroundcolor]
-                            + colors["ansi"][backgroundcolor]
-                        )
+                        cout += (colors["ansi"][foregroundcolor] + colors["ansi"][backgroundcolor])
                     else:
                         r, g, b = hexToRGB(colors["hex"][backgroundcolor])
                         bg = "\x1b[48;2;{};{};{}m".format(r, g, b)
@@ -632,11 +577,9 @@ def render(
         output["postfix"] = svgend
     elif mode == "png":
         output["postfix"] = "\n".join(
-            ["", "-crop {}x{}+1+0".format(picwidth - 2, picheight), "-write png:-"]
-        )
+            ["", "-crop {}x{}+1+0".format(picwidth - 2, picheight), "-write png:-"])
 
     return output
-
 
 def display(output):
     p = output["prefix"]
@@ -658,7 +601,6 @@ def display(output):
         p += output["fg"][i]["postfix"]
     p += output["postfix"]
     print(p.strip())
-
 
 objects = config("objects.json")
 colors = config("colors.json")
