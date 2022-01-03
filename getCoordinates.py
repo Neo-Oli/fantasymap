@@ -18,11 +18,17 @@ for y in range(0, len(lines)):
     line = lines[y]
     x = line.find(conf.get("name"))
     if x >= 0:
-        print("{} {} {} {}".format(
-            y + int(conf.get("source_y", 0)),
-            x + int(conf.get("source_x", -1)),
-            y + int(conf.get("height", 10)),
-            x + int(conf.get("width", len(conf.get("name")))),
-        ))
+        print(
+            "{} {} {} {}".format(
+                y + int(conf.get("source_y",
+                                 0)),
+                x + int(conf.get("source_x",
+                                 -1)),
+                y + int(conf.get("height",
+                                 10)),
+                x + int(conf.get("width",
+                                 len(conf.get("name")))),
+            )
+        )
         sys.exit(0)
 sys.exit(1)

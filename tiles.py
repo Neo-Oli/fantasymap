@@ -93,8 +93,14 @@ for y in range(0, h, yi):
         magick.append("\t@echo Building $@")
         magick.append('\t@if [ ! -f "$@" ];then touch "$@";fi;\\')
         magick.append("\t. ../../VENV/bin/activate;\\")
-        magick.append('\tres="`../../map.py -iS 44.7 ../../map.map {} {} {} {}`";\\'.format(
-            y, x, yy - 1, xx - 1))
+        magick.append(
+            '\tres="`../../map.py -iS 44.7 ../../map.map {} {} {} {}`";\\'.format(
+                y,
+                x,
+                yy - 1,
+                xx - 1
+            )
+        )
         magick.append('\thash="#`echo \\"$$res\\"|md5sum`";\\')
         magick.append('\tif [ "$$hash" != "`head -n1 $@`" ]; then \\')
         magick.append('\t\techo "$$hash" > $@;\\')
@@ -124,10 +130,18 @@ for zoom in range(z, 0, -1):
             path = "../tiles/{}".format(zoom + 1)
             newpath = "../tiles/{}/{}/{}.png".format(zoom, round(x / 2), round(y / 2))
             im = [
-                "{}/{}/{}.png".format(path, x, y),
-                "{}/{}/{}.png".format(path, x + 1, y),
-                "{}/{}/{}.png".format(path, x, y + 1),
-                "{}/{}/{}.png".format(path, x + 1, y + 1),
+                "{}/{}/{}.png".format(path,
+                                      x,
+                                      y),
+                "{}/{}/{}.png".format(path,
+                                      x + 1,
+                                      y),
+                "{}/{}/{}.png".format(path,
+                                      x,
+                                      y + 1),
+                "{}/{}/{}.png".format(path,
+                                      x + 1,
+                                      y + 1),
             ]
             ie = im[:]
             if x >= j - 1:
@@ -146,7 +160,11 @@ for zoom in range(z, 0, -1):
             name = "{}-{}-{}".format(zoom, round(x / 2), round(y / 2))
             stitched.append(
                 "\tmontage -font DejaVu-Sans -background none {} {} {} {} -geometry 128x128 -tile 2x $@"
-                .format(im[0], im[1], im[2], im[3]))
+                .format(im[0],
+                        im[1],
+                        im[2],
+                        im[3])
+            )
             stitched.append("\t@optipng $@ 2> /dev/null")
             newj += 1
         newi += 1
@@ -159,5 +177,7 @@ tiles: ../tiles/1/0/0.png
 {}
 {}
 {}
-""".format("\n".join(magick), "\n".join(png), "\n".join(stitched))
+""".format("\n".join(magick),
+           "\n".join(png),
+           "\n".join(stitched))
 write(filename, makefile)

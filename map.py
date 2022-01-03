@@ -30,15 +30,18 @@ def progress(done, ultimate):
             return
         width = 50
         bar = ""
-        percentage = math.floor((done / ultimate) * 100)
+        percentage = math.floor((done/ultimate) * 100)
         if done % 1000 == 0 or percentage == 100:
             for i in range(0, width):
-                if (i / width) * 100 <= percentage:
+                if (i/width) * 100 <= percentage:
                     bar += "="
                 else:
                     bar += " "
             print(
-                "\r[{}] {}% {}/{}".format(bar, percentage, done, ultimate),
+                "\r[{}] {}% {}/{}".format(bar,
+                                          percentage,
+                                          done,
+                                          ultimate),
                 file=sys.stderr,
                 end="",
             )
@@ -88,7 +91,7 @@ def vim():
 def isNear(grid, i, j, fields, values, radius=5):
     for y in range(i - radius, i + radius):
         for x in range(j - radius, j + radius):
-            if (math.sqrt(math.pow((x - j), 2) + math.pow((y - i) * heightstretch, 2)) < radius):
+            if (math.sqrt(math.pow((x - j), 2) + math.pow((y-i) * heightstretch, 2)) < radius):
                 if x == j and y == i:
                     continue
                 else:
@@ -115,9 +118,11 @@ def main():
     parser.description = "Best viewed when piped into `less -RS`"
     parser.add_argument("file", help="Mapfile")
     parser.add_argument("-x", action="store_true", help="print HTML instead of ANSI")
-    parser.add_argument("-H",
-                        action="store_true",
-                        help="Disable header output for html and SVG mode")
+    parser.add_argument(
+        "-H",
+        action="store_true",
+        help="Disable header output for html and SVG mode"
+    )
     parser.add_argument(
         "-v",
         action="store_true",
@@ -236,19 +241,21 @@ def render(
         htmlstart = ""
         htmlend = ""
         if header:
-            htmlstart = "".join([
-                "<!DOCTYPE html>",
-                '<html lang="en">',
-                "<head>",
-                '<meta charset="UTF-8">',
-                "<title>Map</title>",
-                "<style>",
-                css_minify(css),
-                csscolors,
-                "</style>",
-                "</head>",
-                "<body>",
-            ])
+            htmlstart = "".join(
+                [
+                    "<!DOCTYPE html>",
+                    '<html lang="en">',
+                    "<head>",
+                    '<meta charset="UTF-8">',
+                    "<title>Map</title>",
+                    "<style>",
+                    css_minify(css),
+                    csscolors,
+                    "</style>",
+                    "</head>",
+                    "<body>",
+                ]
+            )
             htmlend = "</body></html>"
         htmlstart = """{}<div class="map">""".format(htmlstart)
         htmlend = """</div>{}""".format(htmlend)
@@ -259,8 +266,8 @@ def render(
         hshift = 1.15
         movedown = -0.3 * scale
         moveright = 0 * scale
-        picheight = height * (scale * hshift)
-        picwidth = width * (scale * wshift)
+        picheight = height * (scale*hshift)
+        picwidth = width * (scale*wshift)
 
         outputbg = ""
         outputfg = ""
@@ -269,7 +276,11 @@ def render(
         if header:
             svgstart = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="{}px" height="{}px" viewBox="0 0 {} {}" style="letter-spacing:0em;font-size:{}px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
-    """.format(picwidth, picheight, picwidth, picheight, scale)
+    """.format(picwidth,
+               picheight,
+               picwidth,
+               picheight,
+               scale)
             svgend = """</svg>"""
 
         svglineend = "</text>\n"
@@ -279,17 +290,20 @@ def render(
         wshift = 0.5755
         hshift = 1.15
 
-        picheight = round((height * scale * hshift) - 1)
-        picwidth = round((width * scale * wshift) + 1)
-        output["prefix"] = "\n".join([
-            "#!/usr/bin/env magick-script",
-            # "-monitor",
-            "-size {}x{}".format(picwidth, picheight),
-            "xc:none",
-            "-font DejaVu-Sans-mono",
-            "-pointsize {}".format(scale),
-            "-gravity NorthWest",
-        ])
+        picheight = round((height*scale*hshift) - 1)
+        picwidth = round((width*scale*wshift) + 1)
+        output["prefix"] = "\n".join(
+            [
+                "#!/usr/bin/env magick-script",
+                # "-monitor",
+                "-size {}x{}".format(picwidth,
+                                     picheight),
+                "xc:none",
+                "-font DejaVu-Sans-mono",
+                "-pointsize {}".format(scale),
+                "-gravity NorthWest",
+            ]
+        )
     output["width"] = wholewidth
     for i in range(0, len(grid)):
         output["height"] = wholeheight
@@ -323,7 +337,7 @@ def render(
                 continue
             if j > endx:
                 continue
-            progress((((i - starty) * width) + (j - startx)) + 1, height * width)
+            progress((((i-starty) * width) + (j-startx)) + 1, height * width)
             # get the surounding characters
 
             try:
@@ -378,10 +392,19 @@ def render(
                             grid,
                             i,
                             j,
-                        ["name", "type"],
-                        ["grass", "sand", "dirt"],
+                        ["name",
+                         "type"],
+                        ["grass",
+                         "sand",
+                         "dirt"],
                             5,
-                    ) or isNear(grid, i, j, ["name", "type"], ["mountain"], 3)):
+                    ) or isNear(grid,
+                                i,
+                                j,
+                                ["name",
+                                 "type"],
+                                ["mountain"],
+                                3)):
                         c = objectsByName["water_shallow"]
                     else:
                         c = objectsByName["water_deep"]
@@ -398,10 +421,18 @@ def render(
                             continue
                         cont = False
                         for directions in [
-                            ["u", "d", upc],
-                            ["d", "u", downc],
-                            ["l", "r", leftc],
-                            ["r", "l", rightc],
+                            ["u",
+                             "d",
+                             upc],
+                            ["d",
+                             "u",
+                             downc],
+                            ["l",
+                             "r",
+                             leftc],
+                            ["r",
+                             "l",
+                             rightc],
                         ]:
                             connectSelf = directions[0]
                             connectDirection = directions[1]
@@ -447,8 +478,8 @@ def render(
                                     continue
                         index = surroundings % len(objects[c]["r"])
                     else:
-                        index = math.floor(math.sin(j) * math.sin(i) * 100000) % len(
-                            objects[c]["r"])
+                        index = math.floor(math.sin(j) * math.sin(i) * 100000
+                                           ) % len(objects[c]["r"])
                     character = objects[c]["r"][index]
             radius = 1
             while backgroundcolor == "s_average":
@@ -503,8 +534,11 @@ def render(
                 else:
                     if not j == startx:
                         cout += "</i>"
-                    cout += """<i class="{} {}">{}""".format(foregroundcolor, backgroundcolor,
-                                                             character)
+                    cout += """<i class="{} {}">{}""".format(
+                        foregroundcolor,
+                        backgroundcolor,
+                        character
+                    )
                 if j + 1 == linewidth:
                     cout += "</i>"
             elif mode == "svg":
@@ -515,18 +549,20 @@ def render(
                     if not j == startx:
                         cout += svglineend
                         coutbg += svglineend
-                    yshift = movedown + (((i - starty) + 1) * (scale * hshift))
-                    xshift = moveright + (((j - startx)) * (scale * wshift))
+                    yshift = movedown + (((i-starty) + 1) * (scale*hshift))
+                    xshift = moveright + (((j-startx)) * (scale*wshift))
                     text = """<text y="{}" x="{}" style="fill:{{}}">""".format(yshift, xshift)
-                    cout += """{}{}""".format(text.format(colors["hex"][foregroundcolor]),
-                                              character)
+                    cout += """{}{}""".format(
+                        text.format(colors["hex"][foregroundcolor]),
+                        character
+                    )
                     coutbg += """{}{}""".format(text.format(colors["hex"][backgroundcolor]), block)
                 if j + 1 == linewidth:
                     cout += svglineend
                     coutbg += svglineend
             elif mode == "png":
-                posx = (j - startx) * scale * wshift
-                posy = (i - starty) * scale * hshift
+                posx = (j-startx) * scale * wshift
+                posy = (i-starty) * scale * hshift
                 pos = "{},{}".format(posx, posy)
                 cout += "\n-fill '{}'".format(colors["hex"][backgroundcolor])
                 if character == "'":
@@ -535,12 +571,15 @@ def render(
                     quote = "'\\{}'".format(character)
                 else:
                     quote = "'{}'".format(character)
-                cout += "\n".join([
-                    "",
-                    "-draw \"text {} '█'\"".format(pos),
-                    "-fill '{}'".format(colors["hex"][foregroundcolor]),
-                    '-draw "text {} {}"'.format(pos, quote),
-                ])
+                cout += "\n".join(
+                    [
+                        "",
+                        "-draw \"text {} '█'\"".format(pos),
+                        "-fill '{}'".format(colors["hex"][foregroundcolor]),
+                        '-draw "text {} {}"'.format(pos,
+                                                    quote),
+                    ]
+                )
             elif mode == "txt":
                 cout += orig
             elif mode == "ansi":
@@ -577,7 +616,11 @@ def render(
         output["postfix"] = svgend
     elif mode == "png":
         output["postfix"] = "\n".join(
-            ["", "-crop {}x{}+1+0".format(picwidth - 2, picheight), "-write png:-"])
+            ["",
+             "-crop {}x{}+1+0".format(picwidth - 2,
+                                      picheight),
+             "-write png:-"]
+        )
 
     return output
 
