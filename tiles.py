@@ -164,7 +164,6 @@ for zoom in range(z, 0, -1):
                         im[2],
                         im[3])
             )
-            stitched.append("\t@optiwebp $@ 2> /dev/null")
             newj += 1
         newi += 1
 
