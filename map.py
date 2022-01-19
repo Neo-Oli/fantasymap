@@ -130,7 +130,7 @@ def main():
     )
     parser.add_argument("-b", action="store_true", help="Don't print color")
     parser.add_argument("-V", action="store_true", help="Print vim ftplugin file")
-    parser.add_argument("-i", action="store_true", help="Create png image")
+    parser.add_argument("-i", action="store_true", help="Create webp image")
     parser.add_argument("-s", action="store_true", help="Create svg image")
     parser.add_argument("-l", action="store_true", help="Show Mapmakers legend")
     parser.add_argument("-T", action="store_true", help="Disable true color ansi")
@@ -167,7 +167,7 @@ def main():
         if options.v:
             mode = "none"
         if options.i:
-            mode = "png"
+            mode = "webp"
         if options.s:
             mode = "svg"
         if options.t:
@@ -286,7 +286,7 @@ def render(
         svglineend = "</text>\n"
         output["prefix"] = svgstart
 
-    elif mode == "png":
+    elif mode == "webp":
         wshift = 0.5755
         hshift = 1.15
 
@@ -560,7 +560,7 @@ def render(
                 if j + 1 == linewidth:
                     cout += svglineend
                     coutbg += svglineend
-            elif mode == "png":
+            elif mode == "webp":
                 posx = (j-startx) * scale * wshift
                 posy = (i-starty) * scale * hshift
                 pos = "{},{}".format(posx, posy)
@@ -614,12 +614,12 @@ def render(
         output["postfix"] = htmlend
     elif mode == "svg":
         output["postfix"] = svgend
-    elif mode == "png":
+    elif mode == "webp":
         output["postfix"] = "\n".join(
             ["",
              "-crop {}x{}+1+0".format(picwidth - 2,
                                       picheight),
-             "-write png:-"]
+             "-write webp:-"]
         )
 
     return output

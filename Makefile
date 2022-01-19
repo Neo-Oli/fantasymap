@@ -15,11 +15,11 @@ $(subst recipes,dist,$(subst .rec,-monochrome.html,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,.svg,$(wildcard recipes/*)))\
 $(subst recipes,dist,$(subst .rec,-monochrome.svg,$(wildcard recipes/*)))\
 $(subst recipes,dist/recipes,$(wildcard recipes/*))\
-$(filter-out dist/whole.png, $(subst recipes,dist,$(subst .rec,.png,$(wildcard recipes/*))))\
-$(filter-out dist/whole-monochrome.png, $(subst recipes,dist,$(subst .rec,-monochrome.png,$(wildcard recipes/*))))\
+$(filter-out dist/whole.webp, $(subst recipes,dist,$(subst .rec,.webp,$(wildcard recipes/*))))\
+$(filter-out dist/whole-monochrome.webp, $(subst recipes,dist,$(subst .rec,-monochrome.webp,$(wildcard recipes/*))))\
 dist/vimrc\
 dist/history/history.webm\
-dist/whole-small.png\
+dist/whole-small.webp\
 
 .PHONY: whole
 whole: dist/whole.ansi
@@ -34,7 +34,7 @@ m-%: dist/%-monochrome.ansi
 16-%: dist/%-16color.ansi
 	$(call display,$<)
 
-i-%: dist/%.png
+i-%: dist/%.webp
 	feh $<
 
 .PHONY: edit
@@ -77,12 +77,12 @@ compare:
 
 HISTORY := \
 	$(subst history,dist/history,$(subst .map,.svg,$(wildcard history/*)))\
-	$(subst history,dist/history,$(subst .map,.png,$(wildcard history/*)))
+	$(subst history,dist/history,$(subst .map,.webp,$(wildcard history/*)))
 
 .PHONY: all
 all: $(ALL) dist/index.js
 
-dist/index.js: $(ALL) dist/tiles/1/0/0.png
+dist/index.js: $(ALL) dist/tiles/1/0/0.webp
 	cd dist;\
 		(\
 		find -type f |\
@@ -130,11 +130,11 @@ dist/%.txt: $(REQ)
 	@mkdir -p dist
 	. VENV/bin/activate;\
 	./map.py -t map.map `./getCoordinates.py $<` > $@
-dist/%.png: $(REQ)
+dist/%.webp: $(REQ)
 	@mkdir -p dist
 	. VENV/bin/activate;\
 	./map.py -iS 22.35 map.map `./getCoordinates.py $<` | magick-script - > $@
-dist/%-monochrome.png: $(REQ)
+dist/%-monochrome.webp: $(REQ)
 	@mkdir -p dist
 	. VENV/bin/activate;\
 	./map.py -biS 22.35 map.map `./getCoordinates.py $<` | magick-script - > $@
@@ -176,8 +176,8 @@ fast: dist/fast.ansi
 	$(call display,dist/fast.ansi)
 
 .PHONY: tiles
-tiles: dist/tiles/1/0/0.png
-dist/tiles/1/0/0.png: $(BASE) tiles.py
+tiles: dist/tiles/1/0/0.webp
+dist/tiles/1/0/0.webp: $(BASE) tiles.py
 	./tiles.py
 	$(MAKE) -C dist/tilescripts
 
@@ -205,10 +205,10 @@ history: dist/history/history.webm
 
 .INTERMEDIATE: dist/history/input.txt
 dist/history/input.txt: $(HISTORY)
-	for f in dist/history/*.png;do \
+	for f in dist/history/*.webp;do \
 		last=$$f;\
 	done;\
-	for f in dist/history/*.png;do \
+	for f in dist/history/*.webp;do \
 		if [ "$$f" != "$$last" ];then \
 			echo "file '$$(basename $$f)'";\
 			echo "duration 1";\
@@ -227,7 +227,7 @@ dist/history/%.svg: history/%.map $(BASE)
 	. VENV/bin/activate;\
 	./map.py -q -s $< > $@
 
-dist/history/%.png: dist/history/%.svg $(BASE)
+dist/history/%.webp: dist/history/%.svg $(BASE)
 	@mkdir -p dist/history
 	source=history/$$(basename $< .svg).map;\
 	width=$$(echo -n "$$(head -n1 "$$source"|sed 's/#.*$$//' )"|wc -m);\
@@ -239,7 +239,7 @@ dist/history/%.png: dist/history/%.svg $(BASE)
 	date=$$(date -d @$$date);\
 	convert -size $${width}x$${height} $< -resize 1920x1080 -background white -gravity center -extent 1920x1080 -gravity Northwest -font DejaVu-Sans-mono -pointsize 30 -draw "text 60,10 '$$date'" $@
 
-dist/whole-small.png: dist/whole.svg $(BASE)
+dist/whole-small.webp: dist/whole.svg $(BASE)
 	source=map.map;\
 	width=$$(echo -n "$$(head -n1 "$$source"|sed 's/#.*$$//' )"|wc -m);\
 	height=$$(cat "$$source"|wc -l);\

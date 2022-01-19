@@ -58,7 +58,7 @@ for i in range(0, h, yi):
             xm = round(j / xi)
             ym = round(i / yi)
             name = "{}-{}-{}".format(z, xm, ym)
-            pngname = "{}/{}/{}.png".format(z, xm, ym)
+            webpname = "{}/{}/{}.webp".format(z, xm, ym)
             cachename = "{}.cache".format(name)
             magickname = "{}.magick".format(name)
             if cachename not in files or old != new:
@@ -69,13 +69,13 @@ for i in range(0, h, yi):
                 if magickname in files:
                     Path("dist/tilescripts/{}".format(magickname)).touch()
                 try:
-                    Path("dist/tiles/{}".format(pngname)).touch()
+                    Path("dist/tiles/{}".format(webpname)).touch()
                 except FileNotFoundError:
                     pass
 
 copyfile(mapfile, cachemapfile)
 magick = []
-png = []
+webp = []
 stitched = []
 i = 0
 for y in range(0, h, yi):
@@ -87,7 +87,7 @@ for y in range(0, h, yi):
         ym = round(y / yi)
         name = "{}-{}-{}".format(z, xm, ym)
         cachefile = "{}.cache".format(name)
-        newpath = "../tiles/{}/{}/{}.png".format(z, xm, ym)
+        newpath = "../tiles/{}/{}/{}.webp".format(z, xm, ym)
         file = "{}.magick".format(name)
         magick.append("{}: {}".format(file, cachefile))
         magick.append("\t@echo Building $@")
@@ -108,11 +108,10 @@ for y in range(0, h, yi):
         magick.append("\telse \\")
         magick.append("\t\ttouch -r $@ $<;\\")
         magick.append("\tfi")
-        png.append("{}: {}".format(newpath, file))
-        png.append("\t@echo Building $@")
-        png.append('\t@mkdir -p "../tiles/{}/{}"'.format(z, xm))
-        png.append("\t@magick-script $< > $@")
-        png.append("\t@optipng $@ 2>/dev/null")
+        webp.append("{}: {}".format(newpath, file))
+        webp.append("\t@echo Building $@")
+        webp.append('\t@mkdir -p "../tiles/{}/{}"'.format(z, xm))
+        webp.append("\t@magick-script $< > $@")
         j += 1
     i += 1
 
@@ -128,18 +127,18 @@ for zoom in range(z, 0, -1):
         newj = 0
         for x in range(0, j, 2):
             path = "../tiles/{}".format(zoom + 1)
-            newpath = "../tiles/{}/{}/{}.png".format(zoom, round(x / 2), round(y / 2))
+            newpath = "../tiles/{}/{}/{}.webp".format(zoom, round(x / 2), round(y / 2))
             im = [
-                "{}/{}/{}.png".format(path,
+                "{}/{}/{}.webp".format(path,
                                       x,
                                       y),
-                "{}/{}/{}.png".format(path,
+                "{}/{}/{}.webp".format(path,
                                       x + 1,
                                       y),
-                "{}/{}/{}.png".format(path,
+                "{}/{}/{}.webp".format(path,
                                       x,
                                       y + 1),
-                "{}/{}/{}.png".format(path,
+                "{}/{}/{}.webp".format(path,
                                       x + 1,
                                       y + 1),
             ]
@@ -165,7 +164,7 @@ for zoom in range(z, 0, -1):
                         im[2],
                         im[3])
             )
-            stitched.append("\t@optipng $@ 2> /dev/null")
+            stitched.append("\t@optiwebp $@ 2> /dev/null")
             newj += 1
         newi += 1
 
@@ -173,11 +172,11 @@ filename = "dist/tilescripts/Makefile"
 
 makefile = """
 .PHONY: tiles
-tiles: ../tiles/1/0/0.png
+tiles: ../tiles/1/0/0.webp
 {}
 {}
 {}
 """.format("\n".join(magick),
-           "\n".join(png),
+           "\n".join(webp),
            "\n".join(stitched))
 write(filename, makefile)
