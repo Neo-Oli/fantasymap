@@ -1,4 +1,4 @@
-#0df31a31db4dc7a58209f1b234d3c820  -
+#b52aa66aca143facb1a63fd18bd21cd3  -
 #!/usr/bin/env magick-script
 -size 258x256
 xc:none
@@ -206,4 +206,4 @@ xc:none
 -fill '#1a1818'
 -draw "text 231.52365,205.62 '✈'"
 -crop 256x256+1+0
--write png:-
+-write webp:-

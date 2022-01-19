@@ -1,4 +1,4 @@
-#31e492abff25d77046766c26eadba77d  -
+#481e5b36345af2610fdb4f0f6e1ab825  -
 #!/usr/bin/env magick-script
 -size 258x256
 xc:none
@@ -206,4 +206,4 @@ xc:none
 -fill '#cdcdcd'
 -draw "text 231.52365,205.62 '▓'"
 -crop 256x256+1+0
--write png:-
+-write webp:-
