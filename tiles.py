@@ -95,10 +95,7 @@ for y in range(0, h, yi):
         magick.append("\t. ../../VENV/bin/activate;\\")
         magick.append(
             '\tres="`../../map.py -iS 44.7 ../../map.map {} {} {} {}`";\\'.format(
-                y,
-                x,
-                yy - 1,
-                xx - 1
+                y, x, yy - 1, xx - 1
             )
         )
         magick.append('\thash="#`echo \\"$$res\\"|md5sum`";\\')
@@ -129,18 +126,10 @@ for zoom in range(z, 0, -1):
             path = "../tiles/{}".format(zoom + 1)
             newpath = "../tiles/{}/{}/{}.webp".format(zoom, round(x / 2), round(y / 2))
             im = [
-                "{}/{}/{}.webp".format(path,
-                                      x,
-                                      y),
-                "{}/{}/{}.webp".format(path,
-                                      x + 1,
-                                      y),
-                "{}/{}/{}.webp".format(path,
-                                      x,
-                                      y + 1),
-                "{}/{}/{}.webp".format(path,
-                                      x + 1,
-                                      y + 1),
+                "{}/{}/{}.webp".format(path, x, y),
+                "{}/{}/{}.webp".format(path, x + 1, y),
+                "{}/{}/{}.webp".format(path, x, y + 1),
+                "{}/{}/{}.webp".format(path, x + 1, y + 1),
             ]
             ie = im[:]
             if x >= j - 1:
@@ -159,10 +148,7 @@ for zoom in range(z, 0, -1):
             name = "{}-{}-{}".format(zoom, round(x / 2), round(y / 2))
             stitched.append(
                 "\tmontage -font DejaVu-Sans -background none {} {} {} {} -geometry 128x128 -tile 2x $@"
-                .format(im[0],
-                        im[1],
-                        im[2],
-                        im[3])
+                .format(im[0], im[1], im[2], im[3])
             )
             newj += 1
         newi += 1
@@ -175,7 +161,5 @@ tiles: ../tiles/1/0/0.webp
 {}
 {}
 {}
-""".format("\n".join(magick),
-           "\n".join(webp),
-           "\n".join(stitched))
+""".format("\n".join(magick), "\n".join(webp), "\n".join(stitched))
 write(filename, makefile)

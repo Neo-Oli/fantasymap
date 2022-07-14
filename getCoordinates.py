@@ -20,14 +20,10 @@ for y in range(0, len(lines)):
     if x >= 0:
         print(
             "{} {} {} {}".format(
-                y + int(conf.get("source_y",
-                                 0)),
-                x + int(conf.get("source_x",
-                                 -1)),
-                y + int(conf.get("height",
-                                 10)),
-                x + int(conf.get("width",
-                                 len(conf.get("name")))),
+                y + int(conf.get("source_y", 0)),
+                x + int(conf.get("source_x", -1)),
+                y + int(conf.get("height", 10)),
+                x + int(conf.get("width", len(conf.get("name")))),
             )
         )
         sys.exit(0)

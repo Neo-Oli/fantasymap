@@ -38,10 +38,7 @@ def progress(done, ultimate):
                 else:
                     bar += " "
             print(
-                "\r[{}] {}% {}/{}".format(bar,
-                                          percentage,
-                                          done,
-                                          ultimate),
+                "\r[{}] {}% {}/{}".format(bar, percentage, done, ultimate),
                 file=sys.stderr,
                 end="",
             )
@@ -119,9 +116,7 @@ def main():
     parser.add_argument("file", help="Mapfile")
     parser.add_argument("-x", action="store_true", help="print HTML instead of ANSI")
     parser.add_argument(
-        "-H",
-        action="store_true",
-        help="Disable header output for html and SVG mode"
+        "-H", action="store_true", help="Disable header output for html and SVG mode"
     )
     parser.add_argument(
         "-v",
@@ -276,11 +271,7 @@ def render(
         if header:
             svgstart = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="{}px" height="{}px" viewBox="0 0 {} {}" style="letter-spacing:0em;font-size:{}px;font-family:&apos;DejaVu Sans Mono&apos;;stroke:none">
-    """.format(picwidth,
-               picheight,
-               picwidth,
-               picheight,
-               scale)
+    """.format(picwidth, picheight, picwidth, picheight, scale)
             svgend = """</svg>"""
 
         svglineend = "</text>\n"
@@ -296,8 +287,7 @@ def render(
             [
                 "#!/usr/bin/env magick-script",
                 # "-monitor",
-                "-size {}x{}".format(picwidth,
-                                     picheight),
+                "-size {}x{}".format(picwidth, picheight),
                 "xc:none",
                 "-font DejaVu-Sans-mono",
                 "-pointsize {}".format(scale),
@@ -392,19 +382,10 @@ def render(
                             grid,
                             i,
                             j,
-                        ["name",
-                         "type"],
-                        ["grass",
-                         "sand",
-                         "dirt"],
+                        ["name", "type"],
+                        ["grass", "sand", "dirt"],
                             5,
-                    ) or isNear(grid,
-                                i,
-                                j,
-                                ["name",
-                                 "type"],
-                                ["mountain"],
-                                3)):
+                    ) or isNear(grid, i, j, ["name", "type"], ["mountain"], 3)):
                         c = objectsByName["water_shallow"]
                     else:
                         c = objectsByName["water_deep"]
@@ -421,18 +402,10 @@ def render(
                             continue
                         cont = False
                         for directions in [
-                            ["u",
-                             "d",
-                             upc],
-                            ["d",
-                             "u",
-                             downc],
-                            ["l",
-                             "r",
-                             leftc],
-                            ["r",
-                             "l",
-                             rightc],
+                            ["u", "d", upc],
+                            ["d", "u", downc],
+                            ["l", "r", leftc],
+                            ["r", "l", rightc],
                         ]:
                             connectSelf = directions[0]
                             connectDirection = directions[1]
@@ -535,9 +508,7 @@ def render(
                     if not j == startx:
                         cout += "</i>"
                     cout += """<i class="{} {}">{}""".format(
-                        foregroundcolor,
-                        backgroundcolor,
-                        character
+                        foregroundcolor, backgroundcolor, character
                     )
                 if j + 1 == linewidth:
                     cout += "</i>"
@@ -553,8 +524,7 @@ def render(
                     xshift = moveright + (((j-startx)) * (scale*wshift))
                     text = """<text y="{}" x="{}" style="fill:{{}}">""".format(yshift, xshift)
                     cout += """{}{}""".format(
-                        text.format(colors["hex"][foregroundcolor]),
-                        character
+                        text.format(colors["hex"][foregroundcolor]), character
                     )
                     coutbg += """{}{}""".format(text.format(colors["hex"][backgroundcolor]), block)
                 if j + 1 == linewidth:
@@ -576,8 +546,7 @@ def render(
                         "",
                         "-draw \"text {} '█'\"".format(pos),
                         "-fill '{}'".format(colors["hex"][foregroundcolor]),
-                        '-draw "text {} {}"'.format(pos,
-                                                    quote),
+                        '-draw "text {} {}"'.format(pos, quote),
                     ]
                 )
             elif mode == "txt":
@@ -616,10 +585,7 @@ def render(
         output["postfix"] = svgend
     elif mode == "webp":
         output["postfix"] = "\n".join(
-            ["",
-             "-crop {}x{}+1+0".format(picwidth - 2,
-                                      picheight),
-             "-write webp:-"]
+            ["", "-crop {}x{}+1+0".format(picwidth - 2, picheight), "-write webp:-"]
         )
 
     return output
