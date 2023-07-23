@@ -13,4 +13,4 @@ git checkout -b builder;
 make clean;
 make test all tiles -j4;
 git add --all;
-git commit -m 'dist updated by builder';git push -f origin builder"
+git commit -m 'dist updated by builder' --no-gpg-sign;git push -f origin builder"
